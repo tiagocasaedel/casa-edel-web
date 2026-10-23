@@ -5,7 +5,8 @@
 <meta name="description" content="Catálogo de materiales eléctricos de Casa Edel con precios. Armá tu pedido y envialo por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f6f4ef">
 <style>
 /* Layout: the counter of Casa Edel, in the colours of the central's sign (red and navy), softened over a warm white.
    Every product sits on the same light tile at the same size; the order becomes a "nota de pedido" sent by WhatsApp. */
@@ -90,7 +91,7 @@ header.top.scrolled{background:var(--paper)}
 .qpanel{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:45;background:var(--paper);border-radius:22px;box-shadow:0 24px 60px rgba(29,35,64,.18),0 0 0 1px rgba(29,35,64,.06);overflow:auto;overscroll-behavior:contain;max-height:min(72vh,600px);padding:8px;
   opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top center;transition:opacity 180ms var(--ease-out),transform 220ms var(--ease-out)}
 .qpanel.on{opacity:1;transform:none}
-.qhead{margin:4px 10px 6px;font-size:.8125rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+.qhead{margin:4px 10px 6px;font-size:.875rem;font-weight:600;color:var(--ink-soft)}
 .qlist{list-style:none;margin:0;padding:0}
 .qlist button{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:14px;align-items:center;width:100%;border:0;background:transparent;text-align:left;padding:8px;border-radius:16px;color:inherit;font:inherit;transition:background-color 120ms ease}
 .qlist [aria-selected="true"] button{background:var(--ground-2)}
@@ -577,6 +578,120 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;transition-duration:1ms!important;scroll-behavior:auto!important}
 }
+
+/* ===================== identidad: tipografía de cartel + movimiento ===================== */
+:root{
+  --ground:#f6f4ef; --ground-2:#ece8e0; --paper:#ffffff; --ink:#141a38; --ink-soft:#50566a;
+  --accent:#c4302a; --accent-deep:#97231e; --navy:#22306f; --navy-deep:#161f4a; --tile:#efece6; --copper:#c27a3a;
+  --field-1:#f2ede3; --field-2:#e6eaf3; --field-3:#f5e6e2; --field-4:#ebe7df;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+body{font-stretch:100%}
+button,a,[role="button"]{-webkit-user-select:none;user-select:none}
+/* display type: wide and heavy, like the shop sign */
+.h2,.s-video-copy h2,.s-prod-copy h2,.steps .t,.pd h2,.menu-in > a,.empty-note h3{font-stretch:125%;font-weight:800;letter-spacing:-.04em}
+.h2{font-size:clamp(2.2rem,1.1rem + 4vw,4.6rem);line-height:.9}
+.sub{font-size:1.0625rem}
+.s-video-copy h2,.s-prod-copy h2{line-height:.92}
+.steps .t{font-size:clamp(2rem,1rem + 3.2vw,4rem);line-height:.88}
+.pd h2{font-size:1.75rem;line-height:1.02;letter-spacing:-.03em}
+/* prices: condensed, they are the figures people read */
+.price,.qpr,.lt,.totals b,.price-tag,.pd .price{font-stretch:78%;font-weight:700;letter-spacing:-.005em}
+.price{font-size:1.5rem}
+.pd .price{font-size:2.4rem}
+.nav > a,.has-mega > button{font-stretch:108%;font-weight:600}
+.btn,.add,.cart-btn,.qall{font-stretch:112%;font-weight:700}
+.chip,.qcats button{font-stretch:108%}
+.card h3{font-weight:500;font-size:1.0313rem;line-height:1.25}
+.card .meta{font-stretch:92%}
+.rubro .nm{font-stretch:115%;font-weight:700;letter-spacing:-.02em;font-size:1.125rem;line-height:1.08}
+.rubro .ct{font-stretch:88%}
+.place h3,.bh-txt b{font-stretch:112%;font-weight:700}
+.bcard .bname,.bhead-in .bname,.ribbon .it span{font-stretch:120%;font-weight:800}
+
+/* headings: words rise out of a mask, then a short cable is drawn with its terminal */
+.h2 .wd{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .1em 0;margin-bottom:-.1em}
+.h2 .wd > span{display:inline-block;transform:translateY(108%);transition:transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 70ms)}
+.h2.in .wd > span{transform:none}
+.cable{display:block;position:relative;width:min(132px,30vw);height:4px;margin-top:20px}
+.cable::before{content:"";position:absolute;inset:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--copper));transform:scaleX(0);transform-origin:left;transition:transform 900ms var(--ease-in-out) 250ms}
+.cable::after{content:"";position:absolute;right:-7px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 4px var(--copper);transform:scale(0);transition:transform 420ms var(--ease-out) 1050ms}
+.h2.in + .cable::before{transform:scaleX(1)}
+.h2.in + .cable::after{transform:scale(1)}
+.cat-head .cable{margin-top:16px}
+.cable + .sub{margin-top:20px}
+
+/* first paint: the carousel opens like a shutter */
+@keyframes shutter{from{clip-path:inset(7% 5% 7% 5% round 28px);transform:scale(.985)}to{clip-path:inset(0 0 0 0 round 0);transform:none}}
+.car{animation:shutter 1100ms var(--ease-out) 80ms both}
+header.top .top-row > *{animation:dropIn 700ms var(--ease-out) both}
+header.top .top-row > :nth-child(2){animation-delay:60ms}header.top .top-row > :nth-child(3){animation-delay:120ms}header.top .top-row > :nth-child(4){animation-delay:180ms}
+@keyframes dropIn{from{opacity:0;transform:translateY(-10px)}}
+
+/* scroll: the hero stays behind as the page slides over it */
+.hero2{position:relative}
+.car{--py:0;translate:0 calc(var(--py) * 22%)}
+.car::after{content:"";position:absolute;inset:0;z-index:4;background:var(--ink);opacity:calc(var(--py) * .55);pointer-events:none}
+.ribbon{z-index:5}
+.ribbon .it{transform:skewX(var(--sk,0deg));transition:transform 300ms var(--ease-out),filter 220ms ease}
+@media (hover:hover) and (pointer:fine){.ribbon .it:hover{transform:skewX(var(--sk,0deg)) scale(1.12)}}
+/* header steps out of the way while reading down, comes back on the way up */
+header.top{transition:transform 360ms var(--ease-out),background-color 200ms ease,box-shadow 200ms ease}
+header.top.scrolled{box-shadow:0 1px 0 rgba(20,26,56,.06),0 10px 30px rgba(20,26,56,.06)}
+header.top.away{transform:translateY(-100%)}
+
+/* products enter as they are seen, column by column */
+.card{animation:none;opacity:0;transform:translateY(26px)}
+.card.seen{opacity:1;transform:none;transition:opacity 600ms var(--ease-out),transform 700ms var(--ease-out);transition-delay:var(--cd,0ms)}
+.card .tile .ph{transition:transform 900ms var(--ease-out)}
+.card:not(.seen) .tile .ph{transform:scale(.86)}
+/* category tiles lean toward the pointer */
+@media (hover:hover) and (pointer:fine){
+  .rubro .tile{transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform 300ms var(--ease-out)}
+  .rubro:hover .tile{box-shadow:0 18px 40px rgba(20,26,56,.12)}
+}
+.rubro .tile{transition:transform 300ms var(--ease-out),box-shadow 300ms ease}
+/* how to order: a current runs through the three steps */
+.steps{position:relative}
+.steps .t{position:relative;overflow:hidden}
+.steps .t::after{content:"";position:absolute;left:20px;right:20px;top:20px;height:3px;border-radius:3px;background:currentColor;opacity:.25}
+.steps .t::before{content:"";position:absolute;top:16px;left:20px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(196,48,42,.18);z-index:1;opacity:0}
+.steps.in .t::before{opacity:1;animation:current 2.8s var(--ease-in-out) infinite;animation-delay:calc(var(--s,0) * 450ms)}
+.steps li:nth-child(2) .t{--s:1}.steps li:nth-child(3) .t{--s:2}
+.steps li:nth-child(3) .t::before{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.2)}
+@keyframes current{0%{transform:translateX(0);opacity:0}12%{opacity:1}70%{opacity:1}100%{transform:translateX(calc(var(--w,200px) - 52px));opacity:0}}
+/* map pins drop when the map comes into view */
+.map2:not(.in) .pin2 .dot{animation:none;opacity:0}
+.map2:not(.in) .pin2::after{animation:none;opacity:0}
+
+/* ---------- phone ---------- */
+@media (max-width:700px){
+  .car{aspect-ratio:4/5;max-height:80svh}
+  .kb{inset:0}
+  .kb img{animation-name:kenburnsL;transform-origin:center top}
+  .kb img,.s-vent .kb img{object-position:center top}
+  .s-vent::after,.s-vent .vent-copy,.vent-badge{display:none!important}
+  .s-vent .vent-cta{left:18px;bottom:22px}
+  .s-video video{object-position:center}
+  .s-video-copy{bottom:64px}
+  .s-video-copy h2{font-size:2.25rem}
+  .s-prod-copy h2{font-size:2rem}
+  .s-prod-copy p{display:block;font-size:1rem}
+  .h2{font-size:clamp(2.3rem,11vw,3.2rem)}
+  /* categories become a two-row strip you swipe sideways */
+  .rubros{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-template-columns:none;grid-auto-columns:40vw;gap:14px 12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gut)) calc(-1 * var(--gut-r));padding:4px var(--gut-r) 10px var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none;overscroll-behavior-x:contain}
+  .rubros::-webkit-scrollbar{display:none}
+  .rubro{scroll-snap-align:start}
+  .rubro .nm{font-size:1rem}
+  .steps .t{font-size:2.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .h2 .wd > span,.card,.card .tile .ph{transform:none!important;opacity:1!important}
+  .car{translate:none!important;animation:none}.car::after{opacity:0!important}
+  header.top.away{transform:none}
+}
 </style>
 
 <div class="band" aria-hidden="true"></div>
@@ -619,13 +734,13 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
       <div class="car" id="car" aria-roledescription="carrusel" aria-label="Destacados">
         <div class="slide on" data-i="0" aria-roledescription="diapositiva" aria-label="1 de 4">
           <a class="s-banner" href="#catalogo" data-goto aria-label="Electricidad Casa Edel, la casa amiga del gremio: ver productos">
-            <picture class="kb"><source media="(max-width:700px)" srcset="img/banner-m.webp"><img src="img/banner.webp" alt="Electricidad Casa Edel, la casa amiga del gremio. Todo lo que necesitás para tus proyectos: hogar, obra, industria e instalación" width="2048" height="650" fetchpriority="high"></picture>
+            <picture class="kb"><source media="(max-width:700px)" srcset="img/banner-v.webp"><img src="img/banner.webp" alt="Electricidad Casa Edel, la casa amiga del gremio. Todo lo que necesitás para tus proyectos: hogar, obra, industria e instalación" width="2048" height="650" fetchpriority="high"></picture>
             <span class="shine" aria-hidden="true"></span>
           </a>
         </div>
         <div class="slide" data-i="1" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true">
           <div class="s-vent">
-            <picture class="kb"><source media="(max-width:700px)" srcset="img/vent-m.webp"><img src="img/vent.webp" alt="¡Nuevo ingreso! Ventilador retráctil con 3 tonos de luz (cálida, neutra y fría), aspas retráctiles y control a distancia" width="2576" height="851" loading="lazy"></picture>
+            <picture class="kb"><source media="(max-width:700px)" srcset="img/vent-v.webp"><img src="img/vent.webp" alt="¡Nuevo ingreso! Ventilador retráctil con 3 tonos de luz (cálida, neutra y fría), aspas retráctiles y control a distancia" width="2576" height="851" loading="lazy"></picture>
             <span class="shine" aria-hidden="true"></span>
             <span class="vent-badge">Nuevo ingreso</span>
             <div class="vent-copy" aria-hidden="true"><b>Ventilador retráctil</b><span>3 tonos de luz · aspas retráctiles · control a distancia</span></div>
@@ -928,7 +1043,7 @@ const STAGE_DESK = [
   {l:2,t:10,w:20,d:1},{l:24,t:2,w:16,d:.6},{l:42,t:14,w:19,d:1.3},{l:63,t:4,w:15,d:.7},{l:80,t:16,w:17,d:1.5},
   {l:8,t:56,w:15,d:.8},{l:27,t:50,w:17,d:1.4},{l:47,t:60,w:14,d:.5},{l:63,t:48,w:18,d:1.1},{l:84,t:62,w:13,d:1.7}];
 const STAGE_MOB = [
-  {l:3,t:22,w:22,d:1},{l:27,t:10,w:22,d:.6},{l:51,t:24,w:22,d:1.3},{l:75,t:8,w:22,d:.8}];
+  {l:3,t:6,w:30,d:1},{l:35,t:0,w:30,d:.6},{l:67,t:8,w:30,d:1.3},{l:3,t:52,w:30,d:.8},{l:35,t:46,w:30,d:1.1},{l:67,t:54,w:30,d:.7}];
 function renderStage(){
   const wide = matchMedia('(min-width:701px)').matches;
   const pos = wide ? STAGE_DESK : STAGE_MOB;
@@ -1020,7 +1135,7 @@ let revealIO;
 function setupReveal(root=document){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   revealIO ||= new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('reveal-in'); e.target.classList.remove('reveal-wait'); revealIO.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
-  const groups = ['.block .h2', '.block .sub', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .name', 'footer .row'];
+  const groups = ['.block .sub', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .name', 'footer .row'];
   groups.forEach(sel => root.querySelectorAll(sel).forEach((el,i) => {
     if (el.dataset.rv) return; el.dataset.rv = 1;
     if (el.getBoundingClientRect().top < innerHeight) return;
@@ -1154,6 +1269,7 @@ function renderCatalog(reset=true){
     return head + cardHTML(p, state.shown + j);
   }).join(''));
   state.shown += next.length;
+  observeCards();
   $('#more').hidden = state.shown >= arr.length;
   // heading
   const t = state.q ? `Resultados para “${state.q}”${state.rubro ? ' en ' + state.rubro : ''}` : state.rubro ? [state.rubro, state.brand, state.sub].filter(Boolean).join(' · ') : 'Lo más pedido';
@@ -1165,7 +1281,7 @@ function renderCatalog(reset=true){
   }
   // brands
   const sel = $('#brand'), cur = state.brand;
-  sel.innerHTML = '<option value="">Todas las marcas</option>' + Object.keys(bc).sort((a,b)=>a.localeCompare(b,'es')).map(b => `<option value="${esc(b)}" ${b===cur?'selected':''}>${esc(b)} (${bc[b]})</option>`).join('');
+  sel.innerHTML = '<option value="">Todas las marcas</option>' + Object.keys(bc).filter(Boolean).sort((a,b)=>a.localeCompare(b,'es')).map(b => `<option value="${esc(b)}" ${b===cur?'selected':''}>${esc(b)} (${bc[b]})</option>`).join('');
   // subrubros
   const subs = $('#subs');
   const brands = $('#brands');
@@ -1375,6 +1491,70 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape'){ setMega(fal
   d.addEventListener('click', e => { if (e.target === d) d.close(); });   // tap outside
   d.addEventListener('close', () => updateCount());
 });
+
+/* ---------- motion ---------- */
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cardIO = null;
+function observeCards(){
+  const cards = document.querySelectorAll('#grid .card:not(.seen):not([data-ob])');
+  if (REDUCE || !('IntersectionObserver' in window)){ cards.forEach(c => c.classList.add('seen')); return; }
+  cardIO ||= new IntersectionObserver(es => {
+    let k = 0;
+    es.forEach(e => { if (!e.isIntersecting) return; e.target.style.setProperty('--cd', (k++ % 6) * 60 + 'ms'); e.target.classList.add('seen'); cardIO.unobserve(e.target); });
+  }, { rootMargin: '0px 0px -6% 0px' });
+  cards.forEach(c => { c.dataset.ob = 1; cardIO.observe(c); });
+}
+(function headings(){
+  document.querySelectorAll('section.block .h2').forEach(h => {
+    let i = 0;
+    const words = h.textContent.trim().split(/\s+/);
+    h.setAttribute('aria-label', h.textContent.trim());
+    h.innerHTML = words.map(w => `<span class="wd" aria-hidden="true"><span style="--i:${i++}">${esc(w)}</span></span>`).join(' ');
+    h.insertAdjacentHTML('afterend', '<span class="cable" aria-hidden="true"></span>');
+  });
+  const targets = [...document.querySelectorAll('section.block .h2, .steps, .map2')];
+  if (REDUCE || !('IntersectionObserver' in window)){ targets.forEach(t => t.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+  targets.forEach(t => io.observe(t));
+  // the current in "Cómo pedir" travels the width of each tile
+  const setW = () => document.querySelectorAll('.steps .t').forEach(t => t.style.setProperty('--w', t.clientWidth + 'px'));
+  setW(); addEventListener('resize', setW);
+})();
+(function scrollFx(){
+  if (REDUCE) return;
+  const top = $('#top'), car = $('#car'), ribbon = document.querySelector('.ribbon');
+  let lastY = scrollY, vel = 0, raf = 0, dirAcc = 0, anim = null;
+  const busy = () => document.activeElement === $('#q') || !$('#qPanel').hidden || $('#megaBtn').getAttribute('aria-expanded') === 'true';
+  function frame(){
+    const y = scrollY, dy = y - lastY; lastY = y;
+    vel += (dy - vel) * .25;
+    // header: away after a real downward run, back on any upward one
+    dirAcc = Math.sign(dy) === Math.sign(dirAcc) ? dirAcc + dy : dy;
+    if (y < 160 || busy()) top.classList.remove('away');
+    else if (dirAcc > 60) top.classList.add('away');
+    else if (dirAcc < -24) top.classList.remove('away');
+    // hero falls behind
+    if (car){ const h = car.offsetHeight || 1; car.style.setProperty('--py', Math.min(1, Math.max(0, y / (h * 1.1))).toFixed(3)); }
+    // brands ribbon leans and speeds up with the scroll
+    if (ribbon){
+      ribbon.style.setProperty('--sk', Math.max(-12, Math.min(12, -vel * .35)).toFixed(2) + 'deg');
+      anim ||= $('#track').getAnimations()[0];
+      if (anim) anim.playbackRate = 1 + Math.min(10, Math.abs(vel) * .35);
+    }
+    if (Math.abs(vel) > .05){ raf = requestAnimationFrame(frame); }
+    else { raf = 0; vel = 0; if (ribbon) ribbon.style.setProperty('--sk', '0deg'); if (anim) anim.playbackRate = 1; }
+  }
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
+  // category tiles lean toward the pointer
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.addEventListener('pointermove', e => {
+      const t = e.target.closest && e.target.closest('.rubro .tile'); if (!t) return;
+      const r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, yy = (e.clientY - r.top) / r.height - .5;
+      t.style.setProperty('--ry', (x * 10).toFixed(2) + 'deg'); t.style.setProperty('--rx', (-yy * 10).toFixed(2) + 'deg');
+    });
+    document.addEventListener('pointerout', e => { const t = e.target.closest && e.target.closest('.rubro .tile'); if (t && !t.contains(e.relatedTarget)){ t.style.setProperty('--rx','0deg'); t.style.setProperty('--ry','0deg'); } });
+  }
+})();
 
 /* ---------- boot ---------- */
 load().then(() => {
