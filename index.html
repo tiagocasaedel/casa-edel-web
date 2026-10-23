@@ -80,7 +80,7 @@ header.top.scrolled{background:var(--paper)}
 .mark{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
 .mark img{height:46px;width:auto;display:block;transition:transform 220ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){.mark:hover img{transform:scale(1.04) rotate(-1deg)}}
-@media (max-width:760px){.mark img{height:36px}}
+@media (max-width:760px){.mark{justify-self:center;align-items:center}.mark img{height:38px;width:auto;max-width:100%;object-fit:contain}}
 .mark b{font-style:italic;font-weight:800;font-size:1.55rem;letter-spacing:-.01em;color:var(--accent)}
 .mark b span{color:var(--ink)}
 .mark small{font-size:var(--s-small);color:var(--ink-soft);margin-top:5px;letter-spacing:.01em}
