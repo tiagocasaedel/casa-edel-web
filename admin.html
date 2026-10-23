@@ -374,7 +374,8 @@ const DB = {
   async all(){
     if (DEMO){
       const base = (await (await fetch('products.json')).json()).map(fromJson);
-      const ov = store.get('ce-demo-ov', {}); return base.map(r => ov[r.id] ? Object.assign(r, ov[r.id]) : r).concat(store.get('ce-demo-new', []));
+      const ov = store.get('ce-demo-ov', {}), gone = new Set(store.get('ce-demo-gone', []));
+      return base.map(r => ov[r.id] ? Object.assign(r, ov[r.id]) : r).concat(store.get('ce-demo-new', [])).filter(r => !gone.has(r.id));
     }
     const out = []; let from = 0;
     for (;;){ const { data, error } = await sb.from('productos').select('*').order('id').range(from, from + 999); if (error) throw error; out.push(...data); if (data.length < 1000) break; from += 1000; }
@@ -390,6 +391,11 @@ const DB = {
       store.set('ce-demo-ov', ov); store.set('ce-demo-new', nw); return;
     }
     for (const part of chunk(rows, 400)){ const { error } = await sb.from('productos').upsert(part); if (error) throw error; }
+  },
+  async remove(ids){
+    if (!ids.length) return;
+    if (DEMO){ const g = store.get('ce-demo-gone', []); store.set('ce-demo-gone', [...new Set(g.concat(ids))]); return; }
+    for (const part of chunk(ids, 200)){ const { error } = await sb.from('productos').delete().in('id', part); if (error) throw error; }
   },
   async log(items){
     if (!items.length) return;
@@ -792,7 +798,24 @@ async function start(){
   DOLAR = await DB.dolar(); $('#dolar').value = DOLAR;
   try { R = await DB.all(); } catch (err) { toast('No pude leer los productos: ' + (err.message || err), true); R = []; }
   if (!R.length && !DEMO){ try { $('#seedN').textContent = (await (await fetch('products.json')).json()).length.toLocaleString('es-AR'); } catch {} $('#seed').hidden = false; }
+  if (R.length) await migrate();
   index(); fillSelects(); applyFilters();
+}
+/* one-off catalogue changes asked for after the first load; each one only acts if it still applies */
+const GONE_BRANDS = ['Light Lion'];
+async function migrate(){
+  try {
+    const drop = R.filter(r => GONE_BRANDS.includes(r.marca) || r.id === 'cinta-aisladora-3m').map(r => r.id);
+    const want = ['cinta-3m-aisladora-profes-165-10mts-negra','cinta-3m-aisladora-indust-175-20mts-negra','cinta-3m-aisladora-indust-175-10mts-negra'];
+    const have = new Set(R.map(r => r.id));
+    let add = [];
+    if (want.some(id => !have.has(id))){ const src = await (await fetch('products.json', { cache:'no-store' })).json(); add = src.filter(p => want.includes(p.id) && !have.has(p.id)).map(fromJson); }
+    if (!drop.length && !add.length) return;
+    if (drop.length){ await DB.remove(drop); await DB.log(drop.map(id => ({ producto:id, detalle:{ motivo:'Producto quitado del catálogo', nombre:(BYID.get(id) || R.find(r => r.id === id) || {}).nombre || id } }))); }
+    if (add.length){ await DB.save(add); await DB.log(add.map(r => ({ producto:r.id, detalle:{ motivo:'Producto agregado', nombre:r.nombre } }))); }
+    R = R.filter(r => !drop.includes(r.id)).concat(add);
+    toast(`Catálogo actualizado: ${drop.length} quitados, ${add.length} agregados`);
+  } catch (err) { toast('No se pudo actualizar el catálogo: ' + (err.message || err), true); }
 }
 DB.init().then(start);
 </script>
