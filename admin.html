@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Panel Casa Edel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#faf6ee; --ground-2:#f1eadd; --paper:#fffdf8; --ink:#1d2340; --ink-soft:#545b6e; --edge:#d8cfbf;
+  --accent:#b8382c; --accent-deep:#8c261d; --navy:#26346e; --tile:#efebe3; --ok:#2f6b3a; --ok-bg:#e3efe0; --warn-bg:#f6e7e2;
+  --font:"Rubik", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45}
+button,input,select,textarea{font:inherit;color:inherit}
+input,select,textarea{font-size:16px}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45em;border:0;border-radius:999px;padding:.62em 1.15em;font-weight:600;text-decoration:none;white-space:nowrap;
+  background:var(--ground-2);color:var(--ink);transition:transform 140ms var(--ease-out),background-color 160ms ease}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+.btn.go{background:var(--accent);color:#fff}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.sm{padding:.42em .9em;font-size:.875rem}
+@media (hover:hover) and (pointer:fine){.btn.go:hover{background:var(--accent-deep)}.btn:not(.go):not(.navy):hover{background:#e8dfcf}}
+.field{height:42px;border-radius:12px;border:2px solid var(--edge);background:var(--paper);padding:0 12px;outline:none;min-width:0}
+.field:focus{border-color:var(--accent)}
+select.field{appearance:none;-webkit-appearance:none;padding-right:32px;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23545b6e' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E") no-repeat right 12px center}
+label.lab{display:grid;gap:4px;font-size:.8125rem;font-weight:600;color:var(--ink-soft)}
+label.lab .field{font-weight:400;color:var(--ink)}
+
+/* top */
+.band{height:6px;background:var(--accent)}
+header{background:var(--paper);box-shadow:0 1px 0 rgba(29,35,64,.06);position:sticky;top:0;z-index:20}
+.hrow{display:flex;align-items:center;gap:14px;padding:10px 0}
+.hrow img{height:34px;width:auto}
+.hrow h1{margin:0;font-size:1rem;font-weight:600;color:var(--ink-soft);border-left:2px solid var(--edge);padding-left:14px}
+.hrow .sp{flex:1}
+.who{font-size:.875rem;color:var(--ink-soft)}
+.demo{background:#fff3cd;color:#6b4e00;font-size:.875rem;padding:8px 0;text-align:center}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.tabs button{border:0;background:transparent;border-radius:999px;padding:8px 16px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:background-color 160ms ease,color 160ms ease}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+
+main{padding:20px 0 120px}
+.panel{background:var(--paper);border-radius:20px;padding:18px;box-shadow:0 1px 0 rgba(29,35,64,.05)}
+.panel+.panel{margin-top:16px}
+h2{margin:0 0 4px;font-size:1.25rem;font-weight:600;letter-spacing:-.01em}
+.hint{margin:0 0 14px;color:var(--ink-soft);font-size:.9375rem;max-width:70ch}
+
+/* login */
+.login{max-width:380px;margin:12vh auto 0;background:var(--paper);border-radius:24px;padding:28px;display:grid;gap:14px;box-shadow:0 20px 50px rgba(29,35,64,.08)}
+.login img{height:40px;width:auto;justify-self:start}
+.err{color:var(--accent-deep);font-size:.875rem;margin:0}
+
+/* products */
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.tools .q{flex:1 1 240px}
+.count{color:var(--ink-soft);font-size:.875rem;margin:0 0 8px}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;padding:8px 6px;border-bottom:1px solid var(--edge);position:sticky;top:0;background:var(--paper)}
+.tbl td{padding:6px;border-bottom:1px dashed #e6dfd2;vertical-align:middle}
+.tbl tr.dirty td{background:#fff8e6}
+.tbl tr.sel td{background:#eef1f8}
+.th{display:block;width:46px;height:46px;border-radius:10px;background:var(--tile);position:relative;overflow:hidden;container-type:size;flex:none}
+.th .ph{position:absolute;inset:0;margin:auto;width:84cqw;height:84cqh;background-repeat:no-repeat;mix-blend-mode:multiply}
+.nm b{display:block;font-weight:500;line-height:1.25}
+.nm small{color:var(--ink-soft)}
+.tag{display:inline-block;font-size:.6875rem;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:999px;background:var(--ground-2);color:var(--ink-soft);margin-left:4px;vertical-align:1px}
+.tag.usd{background:#e3e9f6;color:var(--navy)}
+.tag.off{background:var(--warn-bg);color:var(--accent-deep)}
+.pin{width:110px;height:36px;border-radius:10px;border:2px solid transparent;background:var(--ground);padding:0 8px;text-align:right;outline:none}
+.pin:focus{border-color:var(--accent);background:#fff}
+.pin.usd{width:84px}
+.eff{font-size:.75rem;color:var(--ink-soft);text-align:right;display:block}
+.sw{position:relative;width:42px;height:24px;border-radius:999px;border:0;background:#cfc6b6;transition:background-color 160ms ease;padding:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform 180ms var(--ease-out)}
+.sw[aria-checked="true"]{background:var(--ok)}
+.sw[aria-checked="true"]::after{transform:translateX(18px)}
+.more{display:flex;justify-content:center;margin-top:14px}
+@media (max-width:760px){
+  .tbl thead{display:none}
+  .tbl tr{display:grid;grid-template-columns:24px 46px minmax(0,1fr) auto;gap:6px 10px;padding:12px 0;border-bottom:1px dashed #e6dfd2;align-items:center}
+  .tbl td{border:0;padding:0}
+  .tbl td.c-rub{display:none}
+  .tbl td.c-vis{grid-column:4;grid-row:1}
+  .tbl td.c-pr{grid-column:2/4;grid-row:2}.tbl td.c-usd{grid-column:2/4;grid-row:3}
+  .tbl td.c-ed{grid-column:4;grid-row:2/4;align-self:center}
+  .tools{display:grid;grid-template-columns:1fr 1fr}
+  .tools .q{grid-column:1/-1}
+  .tools .field{width:100%}
+  .who,.hrow h1{display:none}
+  .demo{font-size:.8125rem;padding:6px 12px}
+  .tbl td.c-pr,.tbl td.c-usd{display:flex;align-items:center;gap:8px}
+  .tbl td.c-pr::before{content:"Precio $";font-size:.8125rem;color:var(--ink-soft);width:70px}
+  .tbl td.c-usd::before{content:"Precio USD";font-size:.8125rem;color:var(--ink-soft);width:70px}
+  .eff{text-align:left}
+  .tbl tr.dirty,.tbl tr.sel{background:#fff8e6}
+}
+
+/* floating bars */
+.bar{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:30;background:var(--ink);color:#fff;border-radius:18px;padding:10px 10px 10px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  box-shadow:0 18px 40px rgba(29,35,64,.3);transition:transform 320ms var(--ease-out),visibility 0s linear 320ms;max-width:calc(100vw - 24px);visibility:hidden}
+.bar.on{transform:translate(-50%,0);visibility:visible;transition:transform 320ms var(--ease-out),visibility 0s}
+.bar .btn:not(.go){background:rgba(255,255,255,.12);color:#fff}
+.bar .field{height:36px;width:84px;background:rgba(255,255,255,.1);border-color:transparent;color:#fff}
+.bar b{font-weight:600}
+#selBar{bottom:84px}
+
+/* dollar & bulk */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.big{font-size:2rem;font-weight:600;letter-spacing:-.02em}
+.mini{font-size:.875rem;color:var(--ink-soft)}
+.list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;font-size:.875rem}
+.list li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #e6dfd2;padding:4px 0}
+
+/* import */
+.drop{display:block;cursor:pointer;border:2px dashed var(--edge);border-radius:18px;padding:28px;text-align:center;background:var(--ground);transition:border-color 160ms ease,background-color 160ms ease}
+.drop.over{border-color:var(--accent);background:#fff}
+.drop b{display:block;font-size:1.0625rem;margin-bottom:4px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:.9375rem}
+.chk input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent)}
+.sum{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.pill{border-radius:14px;padding:10px 14px;background:var(--ground)}
+.pill b{display:block;font-size:1.375rem;font-weight:600}
+.pill.ok{background:var(--ok-bg)}.pill.warn{background:var(--warn-bg)}
+.up{color:var(--accent-deep);font-weight:600}.down{color:var(--ok);font-weight:600}
+.scroll{max-height:460px;overflow:auto;border-radius:12px;border:1px solid #eee5d6}
+
+/* dialog */
+dialog{border:0;border-radius:22px;padding:0;width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 24px);background:var(--paper);color:var(--ink);box-shadow:0 30px 80px rgba(29,35,64,.3)}
+dialog::backdrop{background:rgba(24,34,74,.4)}
+dialog[open]{animation:dIn 240ms var(--ease-out)}
+@keyframes dIn{from{opacity:0;transform:scale(.96)}}
+.dlg{padding:20px;display:grid;gap:14px}
+.dlg header{position:static;background:none;box-shadow:none;display:flex;justify-content:space-between;align-items:center}
+.f2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.photo{display:flex;gap:14px;align-items:center}
+.photo .th{width:110px;height:110px;border-radius:16px}
+.vt{width:100%;border-collapse:collapse;font-size:.9375rem}
+.vt td{padding:4px}
+.vt .field{height:36px;width:100%}
+.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;bottom:0;background:var(--paper);padding-top:10px;border-top:1px solid #eee5d6}
+.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-30px);opacity:0;z-index:60;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:.9375rem;transition:opacity 200ms ease,transform 300ms var(--ease-out);pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.bad{background:var(--accent-deep)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:1ms!important;animation-duration:1ms!important}}
+</style>
+</head>
+<body>
+<div class="band"></div>
+
+<section id="loginView" hidden>
+  <form class="login" id="loginForm">
+    <img src="img/logo-casaedel.png" alt="Casa Edel" width="541" height="143">
+    <div><h2>Panel de administración</h2><p class="hint" style="margin:0">Entrá con el mail y la contraseña de administrador.</p></div>
+    <label class="lab">Mail<input class="field" id="lgMail" type="email" autocomplete="username" required></label>
+    <label class="lab">Contraseña<input class="field" id="lgPass" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="lgErr" hidden></p>
+    <button class="btn go" type="submit">Entrar</button>
+  </form>
+</section>
+
+<div id="app" hidden>
+<header>
+  <div class="demo" id="demoNote" hidden>Modo prueba: los cambios quedan solo en este navegador. Cuando conectemos la base de datos, se guardan de verdad y la web los muestra al instante.</div>
+  <div class="wrap">
+    <div class="hrow">
+      <img src="img/logo-casaedel.png" alt="Casa Edel" width="541" height="143">
+      <h1>Panel</h1>
+      <span class="sp"></span>
+      <span class="who" id="who"></span>
+      <a class="btn sm" href="index.html" target="_blank" rel="noopener">Ver la web</a>
+      <button class="btn sm" type="button" id="logout">Salir</button>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" aria-selected="true" data-tab="prod">Productos</button>
+      <button role="tab" aria-selected="false" data-tab="imp">Subir planilla</button>
+      <button role="tab" aria-selected="false" data-tab="usd">Dólar y aumentos</button>
+      <button role="tab" aria-selected="false" data-tab="hist">Historial</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- PRODUCTOS -->
+  <section data-view="prod">
+    <div class="panel" id="seed" hidden>
+      <h2>La base de datos está vacía</h2>
+      <p class="hint">Cargo los <b id="seedN"></b> productos que tiene hoy la web, con sus precios, fotos y orden de ventas. Se hace una sola vez.</p>
+      <button class="btn go" type="button" id="seedBtn">Cargar el catálogo actual</button>
+    </div>
+    <div class="panel">
+      <div class="tools">
+        <input class="field q" id="fq" type="search" placeholder="Buscar por nombre, marca o código" autocomplete="off">
+        <select class="field" id="frub" aria-label="Rubro"></select>
+        <select class="field" id="fmar" aria-label="Marca"></select>
+        <select class="field" id="fest" aria-label="Estado">
+          <option value="">Todos</option><option value="usd">En dólares</option><option value="ars">En pesos</option>
+          <option value="off">Ocultos</option><option value="nofoto">Sin foto</option><option value="recent">Cambiados hoy</option>
+        </select>
+        <button class="btn go" type="button" id="newBtn">+ Nuevo producto</button>
+        <button class="btn" type="button" id="xlsBtn">Descargar Excel</button>
+      </div>
+      <p class="count num" id="pcount"></p>
+      <table class="tbl">
+        <thead><tr><th><input type="checkbox" id="selAll" aria-label="Seleccionar todos los visibles"></th><th></th><th>Producto</th><th>Rubro</th><th style="text-align:right">Precio $</th><th style="text-align:right">USD</th><th>En la web</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="more"><button class="btn" type="button" id="moreBtn" hidden>Ver más</button></div>
+    </div>
+  </section>
+
+  <!-- IMPORTAR -->
+  <section data-view="imp" hidden>
+    <div class="panel">
+      <h2>Subir una lista de precios</h2>
+      <p class="hint">Subí el Excel del proveedor o de tu sistema. Busco cada artículo por su código y te muestro qué precios cambian antes de guardar nada.</p>
+      <label class="drop" id="drop">
+        <b>Elegí o arrastrá el archivo</b><span class="mini">Excel (.xlsx, .xls) o CSV</span>
+        <input type="file" id="file" accept=".xlsx,.xls,.csv,.ods" class="vh">
+      </label>
+      <div id="impCfg" hidden>
+        <p class="mini" id="impFile" style="margin-top:12px"></p>
+        <div class="opts">
+          <label class="lab">Hoja<select class="field" id="iSheet"></select></label>
+          <label class="lab">Columna con el código<select class="field" id="iCode"></select></label>
+          <label class="lab">Columna con el precio<select class="field" id="iPrice"></select></label>
+          <label class="lab">Buscar el código en<select class="field" id="iKey"><option value="codigo">Código / SKU del producto</option><option value="id">Identificador de la web (planilla exportada de acá)</option></select></label>
+          <label class="lab">Solo productos de la marca<select class="field" id="iBrand"></select></label>
+          <label class="lab">Moneda de la lista<select class="field" id="iCur"><option value="ars">Pesos</option><option value="usd">Dólares (se multiplica por la cotización)</option></select></label>
+          <label class="lab">Qué precio trae<select class="field" id="iKind"><option value="lista">Precio de lista (le aplico el descuento web)</option><option value="final">Precio final para la web</option></select></label>
+          <label class="lab">Descuento web sobre lista (%)<input class="field num" id="iDesc" type="number" step="0.5" value="35"></label>
+        </div>
+        <div class="opts" style="margin-top:0">
+          <label class="chk"><input type="checkbox" id="iIva"> La lista es sin IVA: sumarle 21%</label>
+          <label class="chk"><input type="checkbox" id="iProp" checked> Si cambia el rollo, ajustar el metro en la misma proporción (y al revés)</label>
+          <label class="chk"><input type="checkbox" id="iShow"> Volver a mostrar en la web los productos ocultos que estén en la lista</label>
+        </div>
+        <div class="sum" id="iSum"></div>
+        <div class="row" style="margin-bottom:10px">
+          <select class="field" id="iView"><option value="chg">Ver precios que cambian</option><option value="big">Ver solo cambios mayores al 30%</option><option value="miss">Ver códigos que no encontré</option></select>
+          <span class="sp" style="flex:1"></span>
+          <button class="btn go" type="button" id="iApply" disabled>Actualizar precios</button>
+        </div>
+        <div class="scroll"><table class="tbl" id="iTbl"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÓLAR Y AUMENTOS -->
+  <section data-view="usd" hidden>
+    <div class="grid2">
+      <div class="panel">
+        <h2>Cotización del dólar</h2>
+        <p class="hint">Los productos con precio en USD se calculan con este valor. Al cambiarlo, la web se actualiza sola.</p>
+        <div class="row">
+          <label class="lab">Dólar ($ por USD)<input class="field num" id="dolar" type="number" step="0.5" style="width:160px"></label>
+          <button class="btn go" type="button" id="dolarSave">Guardar cotización</button>
+        </div>
+        <p class="mini" id="dolarInfo" style="margin-top:12px"></p>
+        <ul class="list num" id="dolarList"></ul>
+      </div>
+      <div class="panel">
+        <h2>Aumento por marca o rubro</h2>
+        <p class="hint">Para cuando un proveedor aumenta todo. Usá un número negativo para bajar.</p>
+        <div class="opts" style="margin:0 0 12px">
+          <label class="lab">Marca<select class="field" id="bMar"></select></label>
+          <label class="lab">Rubro<select class="field" id="bRub"></select></label>
+          <label class="lab">Variación (%)<input class="field num" id="bPct" type="number" step="0.5" placeholder="Ej.: 8"></label>
+          <label class="lab">Redondeo<select class="field" id="bRound"><option value="1">Al peso</option><option value="10">A $10</option><option value="50">A $50</option><option value="100">A $100</option></select></label>
+        </div>
+        <label class="chk" style="margin-bottom:12px"><input type="checkbox" id="bUsd"> Incluir los productos en dólares (cambia su precio en USD)</label>
+        <p class="mini" id="bInfo"></p>
+        <ul class="list num" id="bList"></ul>
+        <div class="row" style="margin-top:14px"><button class="btn go" type="button" id="bApply" disabled>Aplicar aumento</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIAL -->
+  <section data-view="hist" hidden>
+    <div class="panel">
+      <h2>Últimos cambios</h2>
+      <p class="hint">Cada modificación de precio, foto o datos queda registrada con fecha y usuario.</p>
+      <div class="scroll" style="max-height:none"><table class="tbl" id="hTbl"></table></div>
+    </div>
+  </section>
+</main>
+
+<div class="bar" id="saveBar" role="region" aria-label="Cambios sin guardar"><span><b id="dirtyN">0</b> cambios sin guardar</span><button class="btn sm" type="button" id="discard">Descartar</button><button class="btn sm go" type="button" id="saveAll">Guardar</button></div>
+<div class="bar" id="selBar" role="region" aria-label="Seleccionados"><span><b id="selN">0</b> seleccionados</span>
+  <input class="field num" id="selPct" type="number" step="0.5" placeholder="%" aria-label="Porcentaje"><button class="btn sm" type="button" id="selPctGo">Aumentar %</button>
+  <button class="btn sm" type="button" data-selvis="0">Ocultar</button><button class="btn sm" type="button" data-selvis="1">Mostrar</button>
+  <button class="btn sm" type="button" id="selClear">Quitar selección</button></div>
+</div>
+
+<dialog id="dlg" aria-labelledby="dT"><form class="dlg" id="dForm" method="dialog">
+  <header><h2 id="dT">Editar producto</h2><button class="btn sm" type="button" data-close>Cerrar</button></header>
+  <div class="photo">
+    <div class="th" id="dPh"></div>
+    <div style="display:grid;gap:8px">
+      <label class="btn sm" style="cursor:pointer">Subir foto<input type="file" id="dFile" accept="image/*" class="vh"></label>
+      <span class="mini">Le pongo fondo blanco y la centro, igual que las demás.</span>
+    </div>
+  </div>
+  <label class="lab">Nombre<input class="field" id="dN" required></label>
+  <div class="f2">
+    <label class="lab">Marca<input class="field" id="dB" list="brandsDL"></label>
+    <label class="lab">Rubro<select class="field" id="dC"></select></label>
+    <label class="lab">Subrubro<input class="field" id="dS" list="subsDL"></label>
+    <label class="lab">Código / SKU<input class="field" id="dK"></label>
+  </div>
+  <div class="f2">
+    <label class="lab">Precio web $<input class="field num" id="dP" type="number" step="1"></label>
+    <label class="lab">Precio web USD (opcional)<input class="field num" id="dU" type="number" step="0.01" placeholder="vacío = en pesos"></label>
+    <label class="lab">Se vende por<select class="field" id="dUn"><option value="u">Unidad</option><option value="m">Metro</option></select></label>
+    <label class="lab">Ranking de ventas<input class="field num" id="dR" type="number" step="1" placeholder="1 = el que más sale"></label>
+  </div>
+  <label class="chk"><input type="checkbox" id="dV"> Mostrar en la web</label>
+  <div>
+    <div class="row" style="justify-content:space-between;margin-bottom:6px"><b>Presentaciones (rollo, metro, colores…)</b><button class="btn sm" type="button" id="vAdd">+ Agregar</button></div>
+    <table class="vt"><tbody id="vRows"></tbody></table>
+    <p class="mini" id="vNone">Sin presentaciones: se vende con el precio de arriba.</p>
+  </div>
+  <div class="foot"><span class="mini" id="dMeta"></span><div class="row"><button class="btn" type="button" data-close>Cancelar</button><button class="btn go" type="submit" id="dSave">Guardar</button></div></div>
+</form></dialog>
+<datalist id="brandsDL"></datalist><datalist id="subsDL"></datalist>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="config.js" onerror="void 0"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* Casa Edel · panel. With config.js (supabaseUrl + supabaseKey) it works on the real database;
+   without it, it runs in "modo prueba" on products.json and keeps changes in this browser. */
+const CFG = Object.assign({ supabaseUrl:'', supabaseKey:'', descuento:35 }, window.CE_CONFIG || {});
+const DEMO = !CFG.supabaseUrl || !window.supabase;
+const RUBROS = ['Cables','Llaves de Luz y Tomas','Iluminación','Protecciones y Maniobra','Caños y Canalización','Cajas y Gabinetes','Bornes y Terminales','Fichas y Prolongadores','Herramientas y Ferretería','Energía y Puesta a Tierra','Tecnología y Seguridad','Climatización y Hogar'];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/,/g,'.');
+const money = n => n == null || isNaN(n) ? '—' : '$ ' + Math.round(n).toLocaleString('es-AR');
+const usd = n => n == null || n === '' ? '' : 'US$ ' + Number(n).toLocaleString('es-AR', {maximumFractionDigits:2});
+const store = { get(k,d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+let tt; function toast(m, bad){ const t = $('#toast'); t.textContent = m; t.classList.toggle('bad', !!bad); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2600); }
+const chunk = (a, n) => { const o = []; for (let i = 0; i < a.length; i += n) o.push(a.slice(i, i + n)); return o; };
+
+/* ---------- data layer ---------- */
+const fromJson = p => ({ id:p.id, nombre:p.n, marca:p.b||'', rubro:p.c||'', subrubro:p.s||'', unidad:p.u||'u', codigo:p.k||'', precio:p.p||0, precio_usd:null,
+  variantes:p.v||null, foto:p.i||'', visible:true, orden:p.r||0, orden_cat:p.o ?? null });
+let sb = null;
+const DB = {
+  async init(){ if (!DEMO) sb = supabase.createClient(CFG.supabaseUrl, CFG.supabaseKey); },
+  async user(){ if (DEMO) return {email:'modo prueba'}; const { data } = await sb.auth.getSession(); return data.session ? data.session.user : null; },
+  async login(email, pass){ const { error } = await sb.auth.signInWithPassword({ email, password: pass }); if (error) throw error; },
+  async logout(){ if (!DEMO) await sb.auth.signOut(); },
+  async all(){
+    if (DEMO){
+      const base = (await (await fetch('products.json')).json()).map(fromJson);
+      const ov = store.get('ce-demo-ov', {}); return base.map(r => ov[r.id] ? Object.assign(r, ov[r.id]) : r).concat(store.get('ce-demo-new', []));
+    }
+    const out = []; let from = 0;
+    for (;;){ const { data, error } = await sb.from('productos').select('*').order('id').range(from, from + 999); if (error) throw error; out.push(...data); if (data.length < 1000) break; from += 1000; }
+    return out;
+  },
+  async save(rows){
+    if (!rows.length) return;
+    const isNew = new Set(rows.filter(r => r._new).map(r => r.id));
+    rows = rows.map(r => { const c = Object.assign({}, r); delete c._d; delete c._new; delete c._old; delete c.actualizado; return c; });
+    if (DEMO){
+      const ov = store.get('ce-demo-ov', {}), nw = store.get('ce-demo-new', []);
+      rows.forEach(r => { const i = nw.findIndex(x => x.id === r.id); if (i > -1) nw[i] = r; else if (isNew.has(r.id)) nw.push(r); else ov[r.id] = r; });
+      store.set('ce-demo-ov', ov); store.set('ce-demo-new', nw); return;
+    }
+    for (const part of chunk(rows, 400)){ const { error } = await sb.from('productos').upsert(part); if (error) throw error; }
+  },
+  async log(items){
+    if (!items.length) return;
+    if (DEMO){ const h = store.get('ce-demo-hist', []); store.set('ce-demo-hist', items.map(x => Object.assign({cuando:new Date().toISOString(), quien:'modo prueba'}, x)).concat(h).slice(0, 500)); return; }
+    for (const part of chunk(items, 500)) await sb.from('historial').insert(part);
+  },
+  async hist(){ if (DEMO) return store.get('ce-demo-hist', []); const { data } = await sb.from('historial').select('*').order('cuando', {ascending:false}).limit(300); return data || []; },
+  async dolar(){ if (DEMO) return store.get('ce-demo-dolar', 1450); const { data } = await sb.from('ajustes').select('valor').eq('clave','dolar').maybeSingle(); return data ? Number(data.valor) : 0; },
+  async setDolar(v){ if (DEMO) return store.set('ce-demo-dolar', v); const { error } = await sb.from('ajustes').upsert({clave:'dolar', valor:v}); if (error) throw error; },
+  async upload(blob, name){
+    if (DEMO) return await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(blob); });
+    const path = `productos/${name}-${Date.now()}.jpg`;
+    const { error } = await sb.storage.from('fotos').upload(path, blob, { contentType:'image/jpeg', upsert:true }); if (error) throw error;
+    return sb.storage.from('fotos').getPublicUrl(path).data.publicUrl;
+  }
+};
+
+/* ---------- state ---------- */
+let R = [], BYID = new Map(), BYCODE = new Map(), ATLAS = {}, DOLAR = 0;
+const dirty = new Map();       // id -> edited row copy
+const sel = new Set();
+let shown = 60, filtered = [];
+const effP = r => r.precio_usd != null && r.precio_usd !== '' ? Math.round(Number(r.precio_usd) * DOLAR) : Number(r.precio) || 0;
+const effV = v => v.usd != null && v.usd !== '' ? Math.round(Number(v.usd) * DOLAR) : Number(v.p) || 0;
+const codeKey = s => String(s ?? '').trim().toUpperCase().replace(/\s+/g, '');
+function index(){
+  BYID = new Map(R.map(r => [r.id, r])); BYCODE = new Map();
+  const put = (k, hit) => { k = codeKey(k); if (!k) return; (BYCODE.get(k) || BYCODE.set(k, []).get(k)).push(hit); };
+  R.forEach(r => { if (r.variantes && r.variantes.length) r.variantes.forEach((v,i) => put(v.k, {r, vi:i})); else put(r.codigo, {r, vi:-1}); });
+}
+function phStyle(foto){
+  const a = ATLAS[foto];
+  if (a){ const [s, c] = a; return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${(c%6)*20}% ${Math.floor(c/6)*20}%`; }
+  if (!foto) return '';
+  const src = /^(https?:|data:)/.test(foto) ? foto : 'https://raw.githubusercontent.com/TiagoJobson25/fotos-casa-edel/main/' + foto;
+  return `background-image:url("${src}");background-size:contain;background-position:center`;
+}
+const thumb = foto => `<span class="th">${phStyle(foto) ? `<span class="ph" style="${phStyle(foto)}"></span>` : ''}</span>`;
+const cur = id => dirty.get(id) || BYID.get(id);
+
+/* ---------- products view ---------- */
+function fillSelects(){
+  const brands = [...new Set(R.map(r => r.marca).filter(Boolean))].sort((a,b) => a.localeCompare(b,'es'));
+  const rubs = RUBROS.concat([...new Set(R.map(r => r.rubro))].filter(x => x && !RUBROS.includes(x)));
+  const bOpts = brands.map(b => `<option>${esc(b)}</option>`).join('');
+  $('#fmar').innerHTML = '<option value="">Todas las marcas</option>' + bOpts;
+  $('#bMar').innerHTML = '<option value="">Todas</option>' + bOpts;
+  $('#iBrand').innerHTML = '<option value="">Cualquiera</option>' + bOpts;
+  const rOpts = rubs.map(r => `<option>${esc(r)}</option>`).join('');
+  $('#frub').innerHTML = '<option value="">Todos los rubros</option>' + rOpts;
+  $('#bRub').innerHTML = '<option value="">Todos</option>' + rOpts;
+  $('#dC').innerHTML = rOpts;
+  $('#brandsDL').innerHTML = brands.map(b => `<option value="${esc(b)}">`).join('');
+  $('#subsDL').innerHTML = [...new Set(R.map(r => r.subrubro).filter(Boolean))].sort().map(s => `<option value="${esc(s)}">`).join('');
+}
+function applyFilters(){
+  const toks = norm($('#fq').value).split(/\s+/).filter(Boolean), rub = $('#frub').value, mar = $('#fmar').value, est = $('#fest').value;
+  const today = new Date().toISOString().slice(0,10), recent = new Set(store.get('ce-today', {})[today] || []);
+  filtered = R.filter(r0 => {
+    const r = cur(r0.id);
+    if (rub && r.rubro !== rub) return false;
+    if (mar && r.marca !== mar) return false;
+    if (est === 'usd' && (r.precio_usd == null || r.precio_usd === '')) return false;
+    if (est === 'ars' && !(r.precio_usd == null || r.precio_usd === '')) return false;
+    if (est === 'off' && r.visible) return false;
+    if (est === 'nofoto' && r.foto) return false;
+    if (est === 'recent' && !recent.has(r.id)) return false;
+    if (toks.length){ const h = norm([r.nombre, r.marca, r.codigo, (r.variantes||[]).map(v => v.k).join(' '), r.id].join(' ')); if (!toks.every(t => h.includes(t))) return false; }
+    return true;
+  }).sort((a,b) => ((a.orden||1e5) - (b.orden||1e5)) || a.nombre.localeCompare(b.nombre,'es'));
+  shown = 60; renderRows();
+}
+function rowHTML(r0){
+  const r = cur(r0.id), isU = r.precio_usd != null && r.precio_usd !== '', hasV = r.variantes && r.variantes.length > 1;
+  return `<tr data-id="${esc(r.id)}" class="${dirty.has(r.id) ? 'dirty' : ''} ${sel.has(r.id) ? 'sel' : ''}">
+    <td><input type="checkbox" data-sel aria-label="Seleccionar" ${sel.has(r.id) ? 'checked' : ''}></td>
+    <td>${thumb(r.foto)}</td>
+    <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}${hasV ? `<span class="tag">${r.variantes.length} presentaciones</span>` : ''}</b><small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo].filter(Boolean).join(' · '))}</small></td>
+    <td class="c-rub mini">${esc(r.rubro)}</td>
+    <td class="c-pr" style="text-align:right">${hasV ? `<span class="num">${r.variantes.map(v => money(effV(v))).slice(0,2).join(' / ')}</span>` : `<input class="pin num" data-f="precio" inputmode="decimal" value="${isU ? effP(r) : r.precio}" ${isU ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos">`}</td>
+    <td class="c-usd" style="text-align:right">${hasV ? '' : `<input class="pin usd num" data-f="precio_usd" inputmode="decimal" value="${isU ? r.precio_usd : ''}" placeholder="—" aria-label="Precio en dólares">`}</td>
+    <td class="c-vis"><button type="button" class="sw" role="switch" data-vis aria-checked="${!!r.visible}" aria-label="Mostrar en la web"></button></td>
+    <td class="c-ed"><button class="btn sm" type="button" data-edit>Editar</button></td></tr>`;
+}
+function renderRows(){
+  $('#rows').innerHTML = filtered.slice(0, shown).map(rowHTML).join('');
+  $('#moreBtn').hidden = shown >= filtered.length;
+  $('#pcount').textContent = `${filtered.length.toLocaleString('es-AR')} productos` + (filtered.length > shown ? ` · mostrando ${shown}` : '');
+  $('#selAll').checked = filtered.slice(0, shown).length > 0 && filtered.slice(0, shown).every(r => sel.has(r.id));
+}
+function refreshRow(id){ const tr = document.querySelector(`#rows tr[data-id="${CSS.escape(id)}"]`); if (tr) tr.outerHTML = rowHTML(BYID.get(id)); }
+function markDirty(row){ dirty.set(row.id, row); updateBars(); }
+function updateBars(){
+  $('#dirtyN').textContent = dirty.size; $('#saveBar').classList.toggle('on', dirty.size > 0);
+  $('#selN').textContent = sel.size; $('#selBar').classList.toggle('on', sel.size > 0);
+  $('#selBar').style.bottom = dirty.size ? '84px' : '16px';
+}
+const num = v => { if (typeof v === 'number') return v; let s = String(v ?? '').replace(/[^\d.,-]/g, ''); if (!s) return NaN;
+  if (/,\d{1,2}$/.test(s) || (s.includes(',') && !s.includes('.') && !/,\d{3}$/.test(s))) s = s.replace(/\./g,'').replace(',', '.');
+  else if (s.includes(',') && s.includes('.')) s = s.replace(/,/g,'');
+  else if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g,'');
+  else s = s.replace(/,/g,'');
+  return Number(s); };
+const today = () => new Date().toISOString().slice(0,10);
+function rememberToday(ids){ const t = store.get('ce-today', {}), d = today(); t[d] = [...new Set((t[d]||[]).concat(ids))]; store.set('ce-today', {[d]: t[d]}); }
+function diff(a, b){ const o = {}; ['nombre','marca','rubro','subrubro','codigo','unidad','precio','precio_usd','visible','foto','orden'].forEach(k => { if (String(a?.[k] ?? '') !== String(b[k] ?? '')) o[k] = [a?.[k] ?? null, b[k] ?? null]; });
+  if (JSON.stringify(a?.variantes || null) !== JSON.stringify(b.variantes || null)) o.variantes = [(a?.variantes||[]).map(v => v.l + ' ' + (v.usd ?? v.p)).join(' | '), (b.variantes||[]).map(v => v.l + ' ' + (v.usd ?? v.p)).join(' | ')];
+  if (o.foto) o.foto = ['anterior', 'nueva'];
+  return o; }
+async function commit(rows, why){
+  if (!rows.length) return 0;
+  const logs = rows.map(r => ({ producto: r.id, detalle: Object.assign({ motivo: why, nombre: r.nombre }, diff(BYID.get(r.id), r)) }));
+  await DB.save(rows); await DB.log(logs);
+  rows.forEach(r => { delete r._new; if (BYID.has(r.id)) Object.assign(BYID.get(r.id), r); else { R.push(r); } dirty.delete(r.id); });
+  index(); rememberToday(rows.map(r => r.id));
+  return rows.length;
+}
+
+/* ---------- edit dialog ---------- */
+let edit = null;
+function openEdit(id){
+  const base = id ? cur(id) : { id:'', nombre:'', marca:'', rubro:RUBROS[0], subrubro:'', unidad:'u', codigo:'', precio:0, precio_usd:null, variantes:null, foto:'', visible:true, orden:0, _new:true };
+  edit = JSON.parse(JSON.stringify(base));
+  $('#dT').textContent = id ? 'Editar producto' : 'Nuevo producto';
+  $('#dN').value = edit.nombre; $('#dB').value = edit.marca; $('#dC').value = edit.rubro; $('#dS').value = edit.subrubro; $('#dK').value = edit.codigo;
+  $('#dP').value = edit.precio_usd != null ? '' : edit.precio; $('#dU').value = edit.precio_usd ?? ''; $('#dUn').value = edit.unidad; $('#dR').value = edit.orden || ''; $('#dV').checked = !!edit.visible;
+  $('#dMeta').textContent = id ? `Identificador: ${id}` : '';
+  renderEditPhoto(); renderVariants(); $('#dlg').showModal();
+}
+function renderEditPhoto(){ $('#dPh').innerHTML = phStyle(edit.foto) ? `<span class="ph" style="${phStyle(edit.foto)}"></span>` : ''; }
+function renderVariants(){
+  const v = edit.variantes || [];
+  $('#vNone').hidden = v.length > 0;
+  $('#vRows').innerHTML = v.map((x,i) => `<tr data-vi="${i}"><td><input class="field" data-vf="l" value="${esc(x.l)}" placeholder="Ej.: Rollo x 100 m" aria-label="Presentación"></td><td style="width:120px"><input class="field num" data-vf="p" type="number" value="${x.usd != null ? '' : x.p}" placeholder="$" aria-label="Precio en pesos"></td><td style="width:100px"><input class="field num" data-vf="usd" type="number" step="0.01" value="${x.usd ?? ''}" placeholder="USD" aria-label="Precio en dólares"></td><td style="width:130px"><input class="field" data-vf="k" value="${esc(x.k)}" placeholder="Código" aria-label="Código"></td><td style="width:44px"><button class="btn sm" type="button" data-vdel aria-label="Quitar">×</button></td></tr>`).join('');
+}
+function slug(s){ return norm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80); }
+async function processPhoto(file){
+  const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(file); });
+  const S = 900, c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d');
+  g.fillStyle = '#fff'; g.fillRect(0, 0, S, S);
+  // trim near-white borders so every product ends up the same size
+  const t = document.createElement('canvas'); t.width = img.naturalWidth; t.height = img.naturalHeight; const tg = t.getContext('2d'); tg.drawImage(img, 0, 0);
+  let x0 = 0, y0 = 0, x1 = t.width, y1 = t.height;
+  try {
+    const d = tg.getImageData(0, 0, t.width, t.height).data, W = t.width, H = t.height, light = i => d[i] > 238 && d[i+1] > 238 && d[i+2] > 238 || d[i+3] < 20;
+    let a = W, b = H, cx = 0, cy = 0;
+    for (let y = 0; y < H; y += 2) for (let x = 0; x < W; x += 2){ if (!light((y*W + x)*4)){ if (x < a) a = x; if (y < b) b = y; if (x > cx) cx = x; if (y > cy) cy = y; } }
+    if (cx > a && cy > b){ x0 = a; y0 = b; x1 = cx + 2; y1 = cy + 2; }
+  } catch {}
+  const w = x1 - x0, h = y1 - y0, k = (S * .8) / Math.max(w, h);
+  g.drawImage(t, x0, y0, w, h, (S - w*k)/2, (S - h*k)/2, w*k, h*k);
+  return await new Promise(r => c.toBlob(r, 'image/jpeg', .86));
+}
+
+/* ---------- import ---------- */
+let WB = null, SHEET = [], HEAD = 0, PLAN = null;
+function readFile(f){
+  const fr = new FileReader();
+  fr.onload = () => {
+    try { WB = XLSX.read(fr.result, { type:'array' }); } catch { toast('No pude leer ese archivo', true); return; }
+    $('#impFile').textContent = `Archivo: ${f.name}`;
+    $('#iSheet').innerHTML = WB.SheetNames.map(n => `<option>${esc(n)}</option>`).join('');
+    loadSheet(); $('#impCfg').hidden = false;
+  };
+  fr.readAsArrayBuffer(f);
+}
+function loadSheet(){
+  SHEET = XLSX.utils.sheet_to_json(WB.Sheets[$('#iSheet').value], { header:1, raw:true, defval:'' });
+  HEAD = 0; let best = -1;
+  SHEET.slice(0, 25).forEach((row, i) => { const t = row.map(c => norm(c)); const sc = (t.some(c => /cod|sku|art(ic|\.)|ref/.test(c)) ? 1 : 0) + (t.some(c => /precio|lista|importe|unit|valor|p\.? ?vta/.test(c)) ? 1 : 0); if (sc > best){ best = sc; HEAD = i; } });
+  if (best <= 0) HEAD = -1;
+  const width = Math.max(...SHEET.slice(0, 50).map(r => r.length), 1);
+  const head = HEAD > -1 ? SHEET[HEAD] : [];
+  const opts = Array.from({ length: width }, (_, i) => `<option value="${i}">${esc(XLSX.utils.encode_col(i))}${head[i] ? ' · ' + esc(String(head[i]).slice(0, 28)) : ''}</option>`).join('');
+  $('#iCode').innerHTML = opts; $('#iPrice').innerHTML = opts;
+  const hn = head.map(norm);
+  let ci = hn.findIndex(c => /^cod|codigo|sku|cod\.|art/.test(c)); if (ci < 0) ci = 0;
+  let pi = hn.findIndex(c => /precio|lista|importe|unit|valor/.test(c)); if (pi < 0) pi = Math.min(1, width - 1);
+  if (hn.some(c => c === 'id')){ ci = hn.indexOf('id'); $('#iKey').value = 'id'; pi = hn.findIndex(c => c === 'precio'); $('#iKind').value = 'final'; }
+  if (hn.some(c => /usd|u\$s|dolar/.test(c))) $('#iCur').value = 'usd';
+  $('#iCode').value = ci; $('#iPrice').value = pi < 0 ? 1 : pi;
+  plan();
+}
+function plan(){
+  const ci = +$('#iCode').value, pi = +$('#iPrice').value, key = $('#iKey').value, brand = $('#iBrand').value, cur_ = $('#iCur').value;
+  const kind = $('#iKind').value, desc = num($('#iDesc').value) || 0, iva = $('#iIva').checked, prop = $('#iProp').checked, show = $('#iShow').checked;
+  const conv = x => { let v = x; if (iva) v *= 1.21; if (kind === 'lista') v *= (1 - desc/100); return cur_ === 'usd' ? Math.round(v * 100) / 100 : Math.round(v); };
+  const changes = new Map(), miss = [], seen = new Set();
+  SHEET.slice(HEAD + 1).forEach(row => {
+    const code = row[ci], raw = num(row[pi]); if (code === '' || code == null || !(raw > 0)) return;
+    const k = codeKey(code); if (seen.has(k)) return; seen.add(k);
+    let hits = key === 'id' ? (BYID.has(String(code).trim()) ? [{ r: BYID.get(String(code).trim()), vi: -1 }] : []) : (BYCODE.get(k) || []);
+    if (brand) hits = hits.filter(h => h.r.marca === brand);
+    if (!hits.length){ miss.push({ code, raw, desc: row.find((c, i) => i !== ci && i !== pi && typeof c === 'string' && c.length > 3) || '' }); return; }
+    hits.forEach(({ r, vi }) => {
+      const base = changes.get(r.id) || JSON.parse(JSON.stringify(cur(r.id)));
+      const nv = conv(raw);
+      if (vi > -1 || (key === 'id' && base.variantes && base.variantes.length)){
+        const i = vi > -1 ? vi : 0, v = base.variantes[i], old = effV(v);
+        if (cur_ === 'usd'){ v.usd = nv; } else { v.p = nv; delete v.usd; }
+        v._chg = true; v._old = old;
+      } else {
+        base._old = effP(base);
+        if (cur_ === 'usd') base.precio_usd = nv; else { base.precio = nv; base.precio_usd = null; }
+      }
+      if (show) base.visible = true;
+      changes.set(r.id, base);
+    });
+  });
+  // keep roll / metre in proportion
+  changes.forEach(r => {
+    if (!r.variantes) return;
+    const ch = r.variantes.filter(v => v._chg);
+    if (prop && ch.length && ch.length < r.variantes.length){
+      const ratio = ch.reduce((s, v) => s + effV(v) / (v._old || effV(v)), 0) / ch.length;
+      r.variantes.forEach(v => { if (!v._chg){ v._old = effV(v); if (v.usd != null) v.usd = Math.round(v.usd * ratio * 100) / 100; else v.p = Math.round(v.p * ratio); v._chg = 'prop'; } });
+    }
+  });
+  const lines = [];
+  changes.forEach(r => {
+    if (r.variantes && r.variantes.some(v => v._chg)) r.variantes.forEach(v => { if (v._chg) lines.push({ r, label: v.l, old: v._old, neu: effV(v), prop: v._chg === 'prop' }); });
+    else lines.push({ r, label: '', old: r._old, neu: effP(r) });
+  });
+  const real = lines.filter(l => Math.round(l.old) !== Math.round(l.neu));
+  PLAN = { changes, lines, real, miss };
+  const up = real.filter(l => l.neu > l.old).length, big = real.filter(l => Math.abs(l.neu / (l.old || 1) - 1) > .3).length;
+  $('#iSum').innerHTML = `<div class="pill ok"><b class="num">${changes.size}</b>productos encontrados</div><div class="pill"><b class="num">${real.length}</b>precios cambian (${up} suben)</div>${big ? `<div class="pill warn"><b class="num">${big}</b>cambian más de 30%: revisalos</div>` : ''}<div class="pill"><b class="num">${miss.length}</b>códigos sin encontrar</div>`;
+  $('#iApply').disabled = !real.length && !show;
+  $('#iApply').textContent = `Actualizar ${real.length.toLocaleString('es-AR')} precios`;
+  renderPlan();
+}
+function renderPlan(){
+  if (!PLAN) return;
+  const v = $('#iView').value;
+  if (v === 'miss'){
+    $('#iTbl').innerHTML = `<thead><tr><th>Código</th><th>Descripción en la planilla</th><th style="text-align:right">Precio</th></tr></thead><tbody>${PLAN.miss.slice(0, 500).map(m => `<tr><td class="num">${esc(m.code)}</td><td>${esc(m.desc)}</td><td class="num" style="text-align:right">${esc(m.raw)}</td></tr>`).join('') || '<tr><td colspan="3" class="mini">Todos los códigos se encontraron.</td></tr>'}</tbody>`;
+    return;
+  }
+  let L = PLAN.real; if (v === 'big') L = L.filter(l => Math.abs(l.neu / (l.old || 1) - 1) > .3);
+  $('#iTbl').innerHTML = `<thead><tr><th>Producto</th><th style="text-align:right">Antes</th><th style="text-align:right">Ahora</th><th style="text-align:right">Variación</th></tr></thead><tbody>${L.slice(0, 800).map(l => {
+    const pct = l.old ? (l.neu / l.old - 1) * 100 : 0;
+    return `<tr><td class="nm"><b>${esc(l.r.nombre)}${l.label ? ' · ' + esc(l.label) : ''}${l.prop ? ' <span class="tag">proporcional</span>' : ''}</b><small>${esc(l.r.marca)} · cód. ${esc(l.r.codigo)}</small></td><td class="num" style="text-align:right">${money(l.old)}</td><td class="num" style="text-align:right"><b>${money(l.neu)}</b></td><td class="num ${pct > 0 ? 'up' : 'down'}" style="text-align:right">${pct > 0 ? '+' : ''}${pct.toFixed(1)}%</td></tr>`; }).join('') || '<tr><td colspan="4" class="mini">No hay precios para cambiar.</td></tr>'}</tbody>`;
+}
+
+/* ---------- dollar & bulk ---------- */
+function renderDolar(){
+  const U = R.filter(r => cur(r.id).precio_usd != null && cur(r.id).precio_usd !== '' || (cur(r.id).variantes || []).some(v => v.usd != null));
+  const nd = num($('#dolar').value) || DOLAR;
+  $('#dolarInfo').textContent = U.length ? `${U.length} productos tienen precio en dólares.` + (nd !== DOLAR ? ` Con $ ${nd.toLocaleString('es-AR')} quedarían así:` : ' Algunos ejemplos:') : 'Todavía no hay productos en dólares. Cargalos desde "Productos" (columna USD) o subiendo una lista en dólares.';
+  $('#dolarList').innerHTML = U.slice(0, 8).map(r0 => { const r = cur(r0.id), u = r.precio_usd ?? (r.variantes.find(v => v.usd != null) || {}).usd; return `<li><span>${esc(r.nombre)}</span><span>${usd(u)} → <b>${money(u * nd)}</b></span></li>`; }).join('');
+}
+function bulkTargets(){
+  const m = $('#bMar').value, ru = $('#bRub').value, inclU = $('#bUsd').checked;
+  if (!m && !ru) return [];
+  return R.map(r => cur(r.id)).filter(r => (!m || r.marca === m) && (!ru || r.rubro === ru) && (inclU || r.precio_usd == null || r.precio_usd === ''));
+}
+const roundTo = (v, step) => Math.max(step, Math.round(v / step) * step);
+function bulkApplyTo(r, pct, step){
+  const f = 1 + pct / 100, o = JSON.parse(JSON.stringify(r));
+  if (o.precio_usd != null && o.precio_usd !== '') o.precio_usd = Math.round(o.precio_usd * f * 100) / 100; else o.precio = roundTo(o.precio * f, step);
+  if (o.variantes) o.variantes.forEach(v => { if (v.usd != null) v.usd = Math.round(v.usd * f * 100) / 100; else v.p = roundTo(v.p * f, step); });
+  return o;
+}
+function renderBulk(){
+  const T = bulkTargets(), pct = num($('#bPct').value), step = +$('#bRound').value;
+  $('#bApply').disabled = !T.length || !pct;
+  $('#bInfo').textContent = !$('#bMar').value && !$('#bRub').value ? 'Elegí una marca, un rubro o los dos.' : `${T.length} productos.` + (pct ? ` Ejemplos con ${pct > 0 ? '+' : ''}${pct}%:` : '');
+  $('#bList').innerHTML = pct ? T.slice(0, 6).map(r => { const n = bulkApplyTo(r, pct, step); return `<li><span>${esc(r.nombre)}</span><span>${money(effP(r))} → <b>${money(effP(n))}</b></span></li>`; }).join('') : '';
+  $('#bApply').textContent = `Aplicar a ${T.length} productos`;
+}
+
+/* ---------- history ---------- */
+async function renderHist(){
+  const H = await DB.hist();
+  const lab = { precio:'precio $', precio_usd:'precio USD', visible:'en la web', nombre:'nombre', foto:'foto', variantes:'presentaciones', marca:'marca', rubro:'rubro', codigo:'código', orden:'ranking', subrubro:'subrubro', unidad:'unidad' };
+  $('#hTbl').innerHTML = `<thead><tr><th>Cuándo</th><th>Producto</th><th>Cambio</th></tr></thead><tbody>${H.map(h => { const d = h.detalle || {};
+    const ch = Object.keys(d).filter(k => lab[k]).map(k => `${lab[k]}: ${esc(d[k][0] ?? '—')} → <b>${esc(d[k][1] ?? '—')}</b>`).join('<br>');
+    return `<tr><td class="mini num">${new Date(h.cuando).toLocaleString('es-AR', {dateStyle:'short', timeStyle:'short'})}<br>${esc(h.quien || '')}</td><td class="nm"><b>${esc(d.nombre || h.producto)}</b><small>${esc(d.motivo || '')}</small></td><td class="mini">${ch || '—'}</td></tr>`; }).join('') || '<tr><td colspan="3" class="mini">Todavía no hay cambios.</td></tr>'}</tbody>`;
+}
+
+/* ---------- export ---------- */
+function exportXlsx(){
+  const rows = [['id','nombre','marca','rubro','subrubro','unidad','codigo','precio','precio_usd','variante','visible','orden']];
+  R.forEach(r0 => { const r = cur(r0.id); (r.variantes && r.variantes.length ? r.variantes : [null]).forEach(v => rows.push([r.id, r.nombre, r.marca, r.rubro, r.subrubro, r.unidad, v ? v.k : r.codigo, v ? effV(v) : effP(r), v ? (v.usd ?? '') : (r.precio_usd ?? ''), v ? v.l : '', r.visible ? 'si' : 'no', r.orden || ''])); });
+  const ws = XLSX.utils.aoa_to_sheet(rows); ws['!cols'] = [{wch:30},{wch:50},{wch:16},{wch:22},{wch:22},{wch:6},{wch:16},{wch:12},{wch:10},{wch:26},{wch:7},{wch:7}];
+  const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Productos');
+  XLSX.writeFile(wb, `catalogo-casa-edel-${today()}.xlsx`);
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', async e => {
+  const t = e.target.closest('button,[data-tab]'); if (!t) return;
+  if (t.dataset.tab){ $$('.tabs button').forEach(b => b.setAttribute('aria-selected', b === t)); $$('[data-view]').forEach(v => v.hidden = v.dataset.view !== t.dataset.tab);
+    if (t.dataset.tab === 'hist') renderHist(); if (t.dataset.tab === 'usd'){ renderDolar(); renderBulk(); } return; }
+  const tr = t.closest('#rows tr'), id = tr && tr.dataset.id;
+  if (t.hasAttribute('data-vis') && id){ const r = JSON.parse(JSON.stringify(cur(id))); r.visible = !r.visible; markDirty(r); refreshRow(id); return; }
+  if (t.hasAttribute('data-edit') && id){ openEdit(id); return; }
+  if (t.hasAttribute('data-close')){ $('#dlg').close(); return; }
+  if (t.hasAttribute('data-vdel')){ edit.variantes.splice(+t.closest('tr').dataset.vi, 1); if (!edit.variantes.length) edit.variantes = null; renderVariants(); return; }
+  if (t.dataset.selvis){ sel.forEach(i => { const r = JSON.parse(JSON.stringify(cur(i))); r.visible = t.dataset.selvis === '1'; markDirty(r); }); renderRows(); return; }
+});
+$('#rows').addEventListener('change', e => {
+  const tr = e.target.closest('tr'), id = tr.dataset.id;
+  if (e.target.matches('[data-sel]')){ e.target.checked ? sel.add(id) : sel.delete(id); tr.classList.toggle('sel', e.target.checked); updateBars(); return; }
+  const f = e.target.dataset.f; if (!f) return;
+  const r = JSON.parse(JSON.stringify(cur(id))), v = e.target.value.trim();
+  if (f === 'precio'){ const n = num(v); if (!(n >= 0)){ toast('Precio inválido', true); e.target.value = r.precio; return; } r.precio = Math.round(n); }
+  if (f === 'precio_usd'){ if (v === ''){ r.precio = effP(r); r.precio_usd = null; } else { const n = num(v); if (!(n > 0)){ toast('Precio en USD inválido', true); return; } r.precio_usd = Math.round(n * 100) / 100; } }
+  markDirty(r); refreshRow(id);
+});
+$('#selAll').addEventListener('change', e => { filtered.slice(0, shown).forEach(r => e.target.checked ? sel.add(r.id) : sel.delete(r.id)); renderRows(); updateBars(); });
+$('#selClear').addEventListener('click', () => { sel.clear(); renderRows(); updateBars(); });
+$('#selPctGo').addEventListener('click', () => { const p = num($('#selPct').value); if (!p){ toast('Escribí un porcentaje', true); return; } sel.forEach(i => markDirty(bulkApplyTo(cur(i), p, 1))); renderRows(); toast(`${sel.size} precios ajustados ${p > 0 ? '+' : ''}${p}%. Tocá Guardar.`); });
+$('#saveAll').addEventListener('click', async () => {
+  const b = $('#saveAll'); b.disabled = true;
+  try { const n = await commit([...dirty.values()], 'Edición en la tabla'); toast(`${n} productos guardados`); applyFilters(); } catch (err) { toast('No se pudo guardar: ' + (err.message || err), true); }
+  b.disabled = false; updateBars();
+});
+$('#discard').addEventListener('click', () => { dirty.clear(); renderRows(); updateBars(); });
+$('#moreBtn').addEventListener('click', () => { shown += 60; renderRows(); });
+let fqT; $('#fq').addEventListener('input', () => { clearTimeout(fqT); fqT = setTimeout(applyFilters, 120); });
+['#frub','#fmar','#fest'].forEach(s => $(s).addEventListener('change', applyFilters));
+$('#newBtn').addEventListener('click', () => openEdit(null));
+$('#xlsBtn').addEventListener('click', exportXlsx);
+// edit dialog
+$('#vAdd').addEventListener('click', () => { (edit.variantes ||= []).push({ l:'', p: edit.precio || 0, k: edit.codigo || '' }); renderVariants(); });
+$('#vRows').addEventListener('input', e => { const i = +e.target.closest('tr').dataset.vi, f = e.target.dataset.vf, v = edit.variantes[i];
+  if (f === 'p'){ v.p = Math.round(num(e.target.value) || 0); } else if (f === 'usd'){ if (e.target.value === '') delete v.usd; else v.usd = num(e.target.value); } else v[f] = e.target.value; });
+$('#dFile').addEventListener('change', async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try { toast('Preparando la foto…'); const blob = await processPhoto(f); edit.foto = await DB.upload(blob, slug(edit.nombre || 'producto')); renderEditPhoto(); toast('Foto lista. Tocá Guardar.'); }
+  catch (err) { toast('No se pudo subir la foto: ' + (err.message || err), true); }
+  e.target.value = '';
+});
+$('#dForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const n = $('#dN').value.trim(); if (!n){ toast('Falta el nombre', true); return; }
+  Object.assign(edit, { nombre:n, marca:$('#dB').value.trim(), rubro:$('#dC').value, subrubro:$('#dS').value.trim(), codigo:$('#dK').value.trim(), unidad:$('#dUn').value, visible:$('#dV').checked, orden: num($('#dR').value) || 0 });
+  const u = $('#dU').value.trim(); edit.precio_usd = u === '' ? null : Math.round(num(u) * 100) / 100;
+  edit.precio = u === '' ? Math.round(num($('#dP').value) || 0) : effP(edit);
+  if (edit.variantes){ edit.variantes = edit.variantes.filter(v => v.l.trim()); if (!edit.variantes.length) edit.variantes = null; else edit.precio = Math.min(...edit.variantes.map(effV)); }
+  if (!edit.id){ let base = slug((edit.marca ? edit.marca + '-' : '') + n) || 'producto', id = base, k = 2; while (BYID.has(id)) id = base + '-' + k++; edit.id = id; }
+  $('#dSave').disabled = true;
+  try { await commit([edit], edit._new ? 'Producto nuevo' : 'Edición de producto'); dirty.delete(edit.id); fillSelects(); applyFilters(); $('#dlg').close(); toast('Guardado'); }
+  catch (err) { toast('No se pudo guardar: ' + (err.message || err), true); }
+  $('#dSave').disabled = false;
+});
+// import
+const drop = $('#drop');
+['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) readFile(f); });
+$('#file').addEventListener('change', e => { const f = e.target.files[0]; if (f) readFile(f); e.target.value = ''; });
+$('#iSheet').addEventListener('change', loadSheet);
+['#iCode','#iPrice','#iKey','#iBrand','#iCur','#iKind','#iDesc','#iIva','#iProp','#iShow'].forEach(s => $(s).addEventListener('change', plan));
+$('#iView').addEventListener('change', renderPlan);
+$('#iApply').addEventListener('click', async () => {
+  const b = $('#iApply'); b.disabled = true; b.textContent = 'Guardando…';
+  const rows = [...PLAN.changes.values()].map(r => { delete r._old; (r.variantes || []).forEach(v => { delete v._chg; delete v._old; }); if (r.variantes) r.precio = Math.min(...r.variantes.map(effV)); return r; });
+  try { const n = await commit(rows, 'Lista de precios: ' + $('#impFile').textContent.replace('Archivo: ', '')); toast(`${n} productos actualizados`); PLAN = null; $('#impCfg').hidden = true; applyFilters(); }
+  catch (err) { toast('No se pudo guardar: ' + (err.message || err), true); b.disabled = false; }
+});
+// dollar & bulk
+$('#dolar').addEventListener('input', renderDolar);
+$('#dolarSave').addEventListener('click', async () => {
+  const v = num($('#dolar').value); if (!(v > 0)){ toast('Cotización inválida', true); return; }
+  try { await DB.setDolar(v); await DB.log([{ producto:'(dólar)', detalle:{ motivo:'Cotización del dólar', nombre:'Dólar', precio:[DOLAR, v] } }]); DOLAR = v; renderDolar(); applyFilters(); toast(`Dólar en $ ${v.toLocaleString('es-AR')}`); }
+  catch (err) { toast('No se pudo guardar: ' + (err.message || err), true); }
+});
+['#bMar','#bRub','#bRound','#bUsd'].forEach(s => $(s).addEventListener('change', renderBulk)); $('#bPct').addEventListener('input', renderBulk);
+$('#bApply').addEventListener('click', async () => {
+  const T = bulkTargets(), pct = num($('#bPct').value), step = +$('#bRound').value;
+  if (!confirmBulk.armed){ confirmBulk.armed = true; $('#bApply').textContent = `Confirmar: ${pct > 0 ? '+' : ''}${pct}% a ${T.length} productos`; setTimeout(() => { confirmBulk.armed = false; renderBulk(); }, 4000); return; }
+  confirmBulk.armed = false;
+  try { const n = await commit(T.map(r => bulkApplyTo(r, pct, step)), `Aumento ${pct > 0 ? '+' : ''}${pct}% ${[$('#bMar').value, $('#bRub').value].filter(Boolean).join(' / ')}`); toast(`${n} precios actualizados`); $('#bPct').value = ''; renderBulk(); applyFilters(); }
+  catch (err) { toast('No se pudo guardar: ' + (err.message || err), true); }
+});
+const confirmBulk = { armed:false };
+// seed
+$('#seedBtn').addEventListener('click', async () => {
+  const b = $('#seedBtn'); b.disabled = true;
+  try { const rows = (await (await fetch('products.json')).json()).map(fromJson); for (const [i, part] of chunk(rows, 400).entries()){ b.textContent = `Cargando… ${Math.min((i+1)*400, rows.length)} de ${rows.length}`; await DB.save(part); }
+    R = rows; index(); fillSelects(); applyFilters(); $('#seed').hidden = true; toast('Catálogo cargado'); }
+  catch (err) { toast('No se pudo cargar: ' + (err.message || err), true); b.disabled = false; b.textContent = 'Reintentar'; }
+});
+// auth
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault(); $('#lgErr').hidden = true;
+  try { await DB.login($('#lgMail').value.trim(), $('#lgPass').value); start(); }
+  catch (err) { $('#lgErr').textContent = /invalid/i.test(err.message) ? 'Mail o contraseña incorrectos.' : err.message; $('#lgErr').hidden = false; }
+});
+$('#logout').addEventListener('click', async () => { await DB.logout(); location.reload(); });
+addEventListener('beforeunload', e => { if (dirty.size){ e.preventDefault(); e.returnValue = ''; } });
+
+async function start(){
+  const u = await DB.user();
+  if (!u){ $('#loginView').hidden = false; $('#app').hidden = true; return; }
+  $('#loginView').hidden = true; $('#app').hidden = false; $('#demoNote').hidden = !DEMO; $('#who').textContent = u.email;
+  try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
+  DOLAR = await DB.dolar(); $('#dolar').value = DOLAR;
+  try { R = await DB.all(); } catch (err) { toast('No pude leer los productos: ' + (err.message || err), true); R = []; }
+  if (!R.length && !DEMO){ try { $('#seedN').textContent = (await (await fetch('products.json')).json()).length.toLocaleString('es-AR'); } catch {} $('#seed').hidden = false; }
+  index(); fillSelects(); applyFilters();
+}
+DB.init().then(start);
+</script>
+</body>
+</html>
