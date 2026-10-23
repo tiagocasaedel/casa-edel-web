@@ -692,6 +692,33 @@ header.top.away{transform:translateY(-100%)}
   .car{translate:none!important;animation:none}.car::after{opacity:0!important}
   header.top.away{transform:none}
 }
+
+/* ===== video claro, cintas de color y secciones que siguen el color ===== */
+.s-light{background:#e9e8e6}
+.s-light::after{background:linear-gradient(90deg,rgba(246,244,239,.92) 0%,rgba(246,244,239,.55) 34%,rgba(246,244,239,0) 58%)}
+.s-light .s-video-copy{color:var(--ink)}
+.s-light .s-video-copy h2{color:var(--navy)}
+@media (max-width:700px){.s-light::after{background:linear-gradient(180deg,rgba(233,232,230,.85) 0%,rgba(233,232,230,0) 38%)}.s-light .s-video-copy{top:26px;bottom:auto;transform:none}.s-light .s-video-copy p{display:block;font-size:.9375rem;max-width:30ch}}
+.ribbon .track{animation-duration:42s}
+.tick{overflow:hidden;position:relative;padding-block:clamp(14px,2vw,22px);border:0}
+.tick-in{display:flex;align-items:center;width:max-content;gap:clamp(22px,3vw,44px);animation:marquee 26s linear infinite;padding-right:clamp(22px,3vw,44px)}
+.tick span{font-stretch:125%;font-weight:800;font-size:clamp(1.6rem,1rem + 2.6vw,3.4rem);line-height:1;letter-spacing:-.035em;white-space:nowrap}
+.tick i{width:clamp(14px,1.4vw,22px);height:clamp(14px,1.4vw,22px);border-radius:50%;flex:none;box-shadow:inset 0 0 0 clamp(3px,.35vw,5px) currentColor;opacity:.7}
+.tick.t-navy{background:var(--navy);color:#f3efe6}
+.tick.t-red{background:var(--accent);color:#fff}
+.tick.t-red .tick-in{animation-direction:reverse;animation-duration:30s}
+/* the section after a band keeps its colour, so the band reads as its edge */
+section.t-navy{background:var(--navy);color:#f3efe6;padding-top:clamp(40px,6vw,84px)}
+section.t-navy .h2{color:#fff}
+section.t-navy .steps p{color:#dfe3f1}
+section.t-navy .steps p b{color:#fff}
+section.t-navy .steps li:nth-child(1) .t{background:#2d3c80;color:#fff}
+section.t-navy .steps li:nth-child(2) .t{background:#3a4a94;color:#fff}
+section.t-navy .steps li:nth-child(3) .t{background:var(--accent);color:#fff}
+section.t-navy .steps li:nth-child(3) .t::before{background:#fff}
+section.t-navy .steps .t::before{background:#ffd9a8;box-shadow:0 0 0 4px rgba(255,217,168,.25)}
+section.t-navy .cable::after{background:var(--navy)}
+@media (prefers-reduced-motion:reduce){.tick-in{animation:none}}
 </style>
 
 <div class="band" aria-hidden="true"></div>
@@ -732,13 +759,13 @@ header.top.away{transform:translateY(-100%)}
     <h1 class="vh" id="heroT">Casa Edel, materiales eléctricos en Santa Fe</h1>
     <div class="wrap">
       <div class="car" id="car" aria-roledescription="carrusel" aria-label="Destacados">
-        <div class="slide on" data-i="0" aria-roledescription="diapositiva" aria-label="1 de 4">
+        <div class="slide on" data-i="0" aria-roledescription="diapositiva" aria-label="1 de 5">
           <a class="s-banner" href="#catalogo" data-goto aria-label="Electricidad Casa Edel, la casa amiga del gremio: ver productos">
             <picture class="kb"><source media="(max-width:700px)" srcset="img/banner-v.webp"><img src="img/banner.webp" alt="Electricidad Casa Edel, la casa amiga del gremio. Todo lo que necesitás para tus proyectos: hogar, obra, industria e instalación" width="2048" height="650" fetchpriority="high"></picture>
             <span class="shine" aria-hidden="true"></span>
           </a>
         </div>
-        <div class="slide" data-i="1" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true">
+        <div class="slide" data-i="1" aria-roledescription="diapositiva" aria-label="2 de 5" aria-hidden="true">
           <div class="s-vent">
             <picture class="kb"><source media="(max-width:700px)" srcset="img/vent-v.webp"><img src="img/vent.webp" alt="¡Nuevo ingreso! Ventilador retráctil con 3 tonos de luz (cálida, neutra y fría), aspas retráctiles y control a distancia" width="2576" height="851" loading="lazy"></picture>
             <span class="shine" aria-hidden="true"></span>
@@ -747,7 +774,17 @@ header.top.away{transform:translateY(-100%)}
             <a class="btn btn-go vent-cta" href="https://wa.me/5493425956706?text=Hola%20Casa%20Edel!%20Quiero%20consultar%20por%20el%20ventilador%20retr%C3%A1ctil." target="_blank" rel="noopener" tabindex="-1">Consultar precio <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-        <div class="slide" data-i="2" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true">
+        <div class="slide" data-i="2" aria-roledescription="diapositiva" aria-label="3 de 5" aria-hidden="true">
+          <div class="s-video s-light">
+            <video muted playsinline loop preload="metadata" poster="img/cajas.jpg"><source src="img/cajas.mp4" type="video/mp4"></video>
+            <div class="s-video-copy">
+              <h2>Todo en su lugar</h2>
+              <p>Cajas de herramientas y organizadores Jadever, Keter, Biassoni y Crossmaster.</p>
+              <button class="btn btn-go" type="button" data-cat="Herramientas y Ferretería" data-csub="Cajas, Bolsos y Candados" tabindex="-1">Ver cajas <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="slide" data-i="3" aria-roledescription="diapositiva" aria-label="4 de 5" aria-hidden="true">
           <div class="s-video">
             <video id="vid" muted playsinline loop preload="metadata" poster="img/herramientas.jpg"><source src="img/herramientas.mp4" type="video/mp4"></video>
             <div class="s-video-copy">
@@ -757,7 +794,7 @@ header.top.away{transform:translateY(-100%)}
             </div>
           </div>
         </div>
-        <div class="slide" data-i="3" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true">
+        <div class="slide" data-i="4" aria-roledescription="diapositiva" aria-label="5 de 5" aria-hidden="true">
           <div class="s-prod">
             <div class="s-prod-copy">
               <h2>Pedí tu material eléctrico</h2>
@@ -772,8 +809,9 @@ header.top.away{transform:translateY(-100%)}
         <div class="dots" role="tablist" aria-label="Elegir diapositiva">
           <button type="button" role="tab" aria-selected="true" data-dot="0" aria-label="Banner Casa Edel"><i></i></button>
           <button type="button" role="tab" aria-selected="false" data-dot="1" aria-label="Ventilador retráctil"><i></i></button>
-          <button type="button" role="tab" aria-selected="false" data-dot="2" aria-label="Herramientas"><i></i></button>
-          <button type="button" role="tab" aria-selected="false" data-dot="3" aria-label="Productos destacados"><i></i></button>
+          <button type="button" role="tab" aria-selected="false" data-dot="2" aria-label="Cajas de herramientas"><i></i></button>
+          <button type="button" role="tab" aria-selected="false" data-dot="3" aria-label="Herramientas"><i></i></button>
+          <button type="button" role="tab" aria-selected="false" data-dot="4" aria-label="Productos destacados"><i></i></button>
         </div>
       </div>
     </div>
@@ -816,7 +854,8 @@ header.top.away{transform:translateY(-100%)}
     </div>
   </section>
 
-  <section class="block" id="como-pedir" aria-labelledby="howT" style="background:var(--ground-2)">
+  <div class="tick t-navy" aria-hidden="true"><div class="tick-in"><span>Cables</span><i></i><span>Llaves y tomas</span><i></i><span>Térmicas</span><i></i><span>Iluminación LED</span><i></i><span>Caños</span><i></i><span>Herramientas</span><i></i><span>Tableros</span><i></i><span>Bornes</span><i></i><span>Cables</span><i></i><span>Llaves y tomas</span><i></i><span>Térmicas</span><i></i><span>Iluminación LED</span><i></i><span>Caños</span><i></i><span>Herramientas</span><i></i><span>Tableros</span><i></i><span>Bornes</span><i></i></div></div>
+  <section class="block t-navy" id="como-pedir" aria-labelledby="howT">
     <div class="wrap">
       <h2 class="h2" id="howT">Cómo pedir</h2>
       <ol class="steps">
@@ -874,6 +913,7 @@ header.top.away{transform:translateY(-100%)}
   </section>
 </main>
 
+  <div class="tick t-red" aria-hidden="true"><div class="tick-in"><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Precio de mostrador</span><i></i><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Precio de mostrador</span><i></i></div></div>
 <footer>
   <div class="wrap">
     <img class="name" src="img/logo-casaedel.png?v=2" alt="Electricidad Casa Edel" width="541" height="143" loading="lazy">
@@ -1083,7 +1123,7 @@ function renderMarquee(){
   $('#track').innerHTML = row + row.replace(/<span class="it">/g,'<span class="it" aria-hidden="true">').replace(/alt="[^"]*"/g,'alt=""');
 }
 /* carousel */
-const CAR = { i:0, n:4, t:0, dur:7000, paused:false };
+const CAR = { i:0, n:5, t:0, dur:7000, paused:false };
 function carShow(i){
   CAR.i = (i + CAR.n) % CAR.n;
   document.querySelectorAll('#car .slide').forEach((el,k) => {
@@ -1094,12 +1134,12 @@ function carShow(i){
     d.setAttribute('aria-selected', k===CAR.i);
     const i_ = d.querySelector('i'); i_.replaceWith(i_.cloneNode());   // restart the progress bar
   });
-  const v = $('#vid'), vi = v ? [...document.querySelectorAll('#car .slide')].findIndex(s => s.contains(v)) : -1; if (v){ if (CAR.i === vi){ v.currentTime = 0; v.play().catch(()=>{}); } else v.pause(); }
+  document.querySelectorAll('#car .slide').forEach((sl,k) => sl.querySelectorAll('video').forEach(v => { if (k === CAR.i){ v.currentTime = 0; v.play().catch(()=>{}); } else v.pause(); }));
   carTimer();
 }
 function carTimer(){
   clearTimeout(CAR.t);
-  const dur = document.querySelectorAll('#car .slide')[CAR.i]?.contains($('#vid')) ? 10500 : CAR.dur;
+  const dur = document.querySelectorAll('#car .slide')[CAR.i]?.querySelector('video') ? 10000 : CAR.dur;
   $('#car').style.setProperty('--dur', dur + 'ms');
   if (!CAR.paused) CAR.t = setTimeout(() => carShow(CAR.i + 1), dur);
 }
@@ -1538,11 +1578,11 @@ function observeCards(){
     // brands ribbon leans and speeds up with the scroll
     if (ribbon){
       ribbon.style.setProperty('--sk', Math.max(-12, Math.min(12, -vel * .35)).toFixed(2) + 'deg');
-      anim ||= $('#track').getAnimations()[0];
-      if (anim) anim.playbackRate = 1 + Math.min(10, Math.abs(vel) * .35);
+      anim ||= [...document.querySelectorAll('#track, .tick-in')].map(el => el.getAnimations()[0]).filter(Boolean);
+      anim.forEach(a => a.playbackRate = 1 + Math.min(8, Math.abs(vel) * .3));
     }
     if (Math.abs(vel) > .05){ raf = requestAnimationFrame(frame); }
-    else { raf = 0; vel = 0; if (ribbon) ribbon.style.setProperty('--sk', '0deg'); if (anim) anim.playbackRate = 1; }
+    else { raf = 0; vel = 0; if (ribbon) ribbon.style.setProperty('--sk', '0deg'); if (anim) anim.forEach(a => a.playbackRate = 1); }
   }
   addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
   // category tiles lean toward the pointer
