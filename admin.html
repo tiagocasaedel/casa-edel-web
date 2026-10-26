@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-qiRvLN76UlHgRKRiT96Cjf6GNQPgFT9YxGTKxvCXpCA='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-witkRoWPp2mtXaRPjCi8oq4goaJN0P1+igmfnmRgAys='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -255,6 +255,7 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
           <label class="lab">Buscar el código en<select class="field" id="iKey"><option value="codigo">Código / SKU del producto</option><option value="id">Identificador de la web (planilla exportada de acá)</option></select></label>
           <label class="lab">Solo productos de la marca<select class="field" id="iBrand"></select></label>
           <label class="lab">Moneda de la lista<select class="field" id="iCur"><option value="ars">Pesos</option><option value="usd">Dólares (se multiplica por la cotización)</option></select></label>
+          <label class="lab">Columna con la moneda (opcional)<select class="field" id="iMon"></select></label>
           <label class="lab">Qué precio trae<select class="field" id="iKind"><option value="lista">Precio de lista (le aplico el descuento web)</option><option value="final">Precio final para la web</option></select></label>
           <label class="lab">Descuento web sobre lista (%)<input class="field num" id="iDesc" type="number" step="0.5" value="35"></label>
         </div>
@@ -262,6 +263,8 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
           <label class="chk"><input type="checkbox" id="iIva"> La lista es sin IVA: sumarle 21%</label>
           <label class="chk"><input type="checkbox" id="iProp" checked> Si cambia el rollo, ajustar el metro en la misma proporción (y al revés)</label>
           <label class="chk"><input type="checkbox" id="iShow"> Volver a mostrar en la web los productos ocultos que estén en la lista</label>
+          <label class="chk"><input type="checkbox" id="iHold" checked> No cambiar los precios que suben o bajan más de 30% (quedan para revisar)</label>
+          <label class="chk"><input type="checkbox" id="iKeepUsd" checked> Los productos marcados en dólares siguen en dólares (el precio en pesos de la lista se pasa a dólares con la cotización)</label>
         </div>
         <div class="sum" id="iSum"></div>
         <div class="row" style="margin-bottom:10px">
@@ -379,7 +382,7 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/,/g,'.');
 const money = n => n == null || isNaN(n) ? '—' : '$ ' + Math.round(n).toLocaleString('es-AR');
-const usd = n => n == null || n === '' ? '' : 'US$ ' + Number(n).toLocaleString('es-AR', {maximumFractionDigits:2});
+const usd = n => n == null || n === '' ? '' : 'US$ ' + Number(n).toLocaleString('es-AR', {maximumFractionDigits:4});
 const store = { get(k,d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
 let tt; function toast(m, bad){ const t = $('#toast'); t.textContent = m; t.classList.toggle('bad', !!bad); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2600); }
 const chunk = (a, n) => { const o = []; for (let i = 0; i < a.length; i += n) o.push(a.slice(i, i + n)); return o; };
@@ -442,6 +445,7 @@ const sel = new Set();
 let shown = 60, filtered = [];
 const effP = r => r.precio_usd != null && r.precio_usd !== '' ? Math.round(Number(r.precio_usd) * DOLAR) : Number(r.precio) || 0;
 const effV = v => v.usd != null && v.usd !== '' ? Math.round(Number(v.usd) * DOLAR) : Number(v.p) || 0;
+const r4 = n => Math.round(n * 10000) / 10000;
 const codeKey = s => String(s ?? '').trim().toUpperCase().replace(/\s+/g, '');
 function index(){
   BYID = new Map(R.map(r => [r.id, r])); BYCODE = new Map();
@@ -605,19 +609,25 @@ function loadSheet(){
   const width = Math.max(...SHEET.slice(0, 50).map(r => r.length), 1);
   const head = HEAD > -1 ? SHEET[HEAD] : [];
   const opts = Array.from({ length: width }, (_, i) => `<option value="${i}">${esc(colName(i))}${head[i] ? ' · ' + esc(String(head[i]).slice(0, 28)) : ''}</option>`).join('');
-  $('#iCode').innerHTML = opts; $('#iPrice').innerHTML = opts;
+  $('#iCode').innerHTML = opts; $('#iPrice').innerHTML = opts; $('#iMon').innerHTML = '<option value="">No tiene</option>' + opts;
   const hn = head.map(norm);
   let ci = hn.findIndex(c => /^cod|codigo|sku|cod\.|art/.test(c)); if (ci < 0) ci = 0;
   let pi = hn.findIndex(c => /precio|lista|importe|unit|valor/.test(c)); if (pi < 0) pi = Math.min(1, width - 1);
   if (hn.some(c => c === 'id')){ ci = hn.indexOf('id'); $('#iKey').value = 'id'; pi = hn.findIndex(c => c === 'precio'); $('#iKind').value = 'final'; }
   if (hn.some(c => /usd|u\$s|dolar/.test(c))) $('#iCur').value = 'usd';
+  /* the shop system's export: supplier code in cod_aso, list price with VAT in precio */
+  if (hn.includes('cod_aso') && hn.includes('precio')){ ci = hn.indexOf('cod_aso'); pi = hn.indexOf('precio'); $('#iKey').value = 'codigo'; $('#iKind').value = 'lista'; $('#iCur').value = 'ars'; $('#iIva').checked = false; }
+  const mc = hn.findIndex(c => c === 'moneda'); $('#iMon').value = mc > -1 ? String(mc) : '';
   $('#iCode').value = ci; $('#iPrice').value = pi < 0 ? 1 : pi;
   plan();
 }
 function plan(){
   const ci = +$('#iCode').value, pi = +$('#iPrice').value, key = $('#iKey').value, brand = $('#iBrand').value, cur_ = $('#iCur').value;
   const kind = $('#iKind').value, desc = num($('#iDesc').value) || 0, iva = $('#iIva').checked, prop = $('#iProp').checked, show = $('#iShow').checked;
-  const conv = x => { let v = x; if (iva) v *= 1.21; if (kind === 'lista') v *= (1 - desc/100); return cur_ === 'usd' ? Math.round(v * 100) / 100 : Math.round(v); };
+  const mi = $('#iMon').value === '' ? -1 : +$('#iMon').value, keepU = $('#iKeepUsd').checked;
+  const isUsdRow = row => mi > -1 ? /us|u\$s|dol/i.test(String(row[mi])) : cur_ === 'usd';
+  const conv = (x, u) => { let v = x; if (iva) v *= 1.21; if (kind === 'lista') v *= (1 - desc/100); return u ? r4(v) : Math.round(v); };
+  const hasU = o => o.usd != null && o.usd !== '';
   const changes = new Map(), miss = [], seen = new Set();
   SHEET.slice(HEAD + 1).forEach(row => {
     const code = row[ci], raw = num(row[pi]); if (code === '' || code == null || !(raw > 0)) return;
@@ -627,14 +637,16 @@ function plan(){
     if (!hits.length){ miss.push({ code, raw, desc: row.find((c, i) => i !== ci && i !== pi && typeof c === 'string' && c.length > 3) || '' }); return; }
     hits.forEach(({ r, vi }) => {
       const base = changes.get(r.id) || JSON.parse(JSON.stringify(cur(r.id)));
-      const nv = conv(raw);
+      const u = isUsdRow(row), nv = conv(raw, u);
+      /* a product already in dollars stays in dollars: its peso price from the list is turned back into dollars */
+      const toUsd = (wasUsd) => u ? nv : (keepU && wasUsd && DOLAR > 0 ? r4(nv / DOLAR) : null);
       if (vi > -1 || (key === 'id' && base.variantes && base.variantes.length)){
-        const i = vi > -1 ? vi : 0, v = base.variantes[i], old = effV(v);
-        if (cur_ === 'usd'){ v.usd = nv; } else { v.p = nv; delete v.usd; }
+        const i = vi > -1 ? vi : 0, v = base.variantes[i], old = effV(v), us = toUsd(hasU(v));
+        if (us != null){ v.usd = us; v.p = Math.round(us * DOLAR); } else { v.p = nv; delete v.usd; }
         v._chg = true; v._old = old;
       } else {
-        base._old = effP(base);
-        if (cur_ === 'usd') base.precio_usd = nv; else { base.precio = nv; base.precio_usd = null; }
+        base._old = effP(base); const us = toUsd(base.precio_usd != null && base.precio_usd !== '');
+        if (us != null){ base.precio_usd = us; base.precio = Math.round(us * DOLAR); } else { base.precio = nv; base.precio_usd = null; }
       }
       if (show) base.visible = true;
       changes.set(r.id, base);
@@ -646,7 +658,7 @@ function plan(){
     const ch = r.variantes.filter(v => v._chg);
     if (prop && ch.length && ch.length < r.variantes.length){
       const ratio = ch.reduce((s, v) => s + effV(v) / (v._old || effV(v)), 0) / ch.length;
-      r.variantes.forEach(v => { if (!v._chg){ v._old = effV(v); if (v.usd != null) v.usd = Math.round(v.usd * ratio * 100) / 100; else v.p = Math.round(v.p * ratio); v._chg = 'prop'; } });
+      r.variantes.forEach(v => { if (!v._chg){ v._old = effV(v); if (v.usd != null) v.usd = r4(v.usd * ratio); else v.p = Math.round(v.p * ratio); v._chg = 'prop'; } });
     }
   });
   const lines = [];
@@ -654,10 +666,17 @@ function plan(){
     if (r.variantes && r.variantes.some(v => v._chg)) r.variantes.forEach(v => { if (v._chg) lines.push({ r, label: v.l, old: v._old, neu: effV(v), prop: v._chg === 'prop' }); });
     else lines.push({ r, label: '', old: r._old, neu: effP(r) });
   });
-  const real = lines.filter(l => Math.round(l.old) !== Math.round(l.neu));
-  PLAN = { changes, lines, real, miss };
-  const up = real.filter(l => l.neu > l.old).length, big = real.filter(l => Math.abs(l.neu / (l.old || 1) - 1) > .3).length;
-  $('#iSum').innerHTML = `<div class="pill ok"><b class="num">${changes.size}</b>productos encontrados</div><div class="pill"><b class="num">${real.length}</b>precios cambian (${up} suben)</div>${big ? `<div class="pill warn"><b class="num">${big}</b>cambian más de 30%: revisalos</div>` : ''}<div class="pill"><b class="num">${miss.length}</b>códigos sin encontrar</div>`;
+  const isBig = l => Math.abs(l.neu / (l.old || 1) - 1) > .3;
+  /* big jumps are usually a wrong load in the system: they wait for a manual check instead of going straight to the web */
+  const held = new Set();
+  if ($('#iHold').checked) lines.forEach(l => { if (Math.round(l.old) !== Math.round(l.neu) && isBig(l)) held.add(l.r.id); });
+  held.forEach(id => changes.delete(id));
+  const real = lines.filter(l => !held.has(l.r.id) && Math.round(l.old) !== Math.round(l.neu));
+  const bigL = lines.filter(l => held.has(l.r.id) || (Math.round(l.old) !== Math.round(l.neu) && isBig(l)));
+  const nUsd = [...changes.values()].filter(r => (r.precio_usd != null && r.precio_usd !== '') || (r.variantes || []).some(v => v.usd != null)).length;
+  PLAN = { changes, lines, real, miss, bigL, held };
+  const up = real.filter(l => l.neu > l.old).length;
+  $('#iSum').innerHTML = `<div class="pill ok"><b class="num">${changes.size.toLocaleString('es-AR')}</b>productos a actualizar</div><div class="pill"><b class="num">${real.length.toLocaleString('es-AR')}</b>precios cambian (${up} suben)</div>${nUsd ? `<div class="pill"><b class="num">${nUsd}</b>quedan en dólares</div>` : ''}${bigL.length ? `<div class="pill warn"><b class="num">${bigL.length}</b>cambian más de 30%${held.size ? ': no se tocan, revisalos' : ''}</div>` : ''}<div class="pill"><b class="num">${miss.length.toLocaleString('es-AR')}</b>códigos que no están en la web</div>`;
   $('#iApply').disabled = !real.length && !show;
   $('#iApply').textContent = `Actualizar ${real.length.toLocaleString('es-AR')} precios`;
   renderPlan();
@@ -669,7 +688,7 @@ function renderPlan(){
     $('#iTbl').innerHTML = `<thead><tr><th>Código</th><th>Descripción en la planilla</th><th style="text-align:right">Precio</th></tr></thead><tbody>${PLAN.miss.slice(0, 500).map(m => `<tr><td class="num">${esc(m.code)}</td><td>${esc(m.desc)}</td><td class="num" style="text-align:right">${esc(m.raw)}</td></tr>`).join('') || '<tr><td colspan="3" class="mini">Todos los códigos se encontraron.</td></tr>'}</tbody>`;
     return;
   }
-  let L = PLAN.real; if (v === 'big') L = L.filter(l => Math.abs(l.neu / (l.old || 1) - 1) > .3);
+  let L = v === 'big' ? PLAN.bigL : PLAN.real;
   $('#iTbl').innerHTML = `<thead><tr><th>Producto</th><th style="text-align:right">Antes</th><th style="text-align:right">Ahora</th><th style="text-align:right">Variación</th></tr></thead><tbody>${L.slice(0, 800).map(l => {
     const pct = l.old ? (l.neu / l.old - 1) * 100 : 0;
     return `<tr><td class="nm"><b>${esc(l.r.nombre)}${l.label ? ' · ' + esc(l.label) : ''}${l.prop ? ' <span class="tag">proporcional</span>' : ''}</b><small>${esc(l.r.marca)} · cód. ${esc(l.r.codigo)}</small></td><td class="num" style="text-align:right">${money(l.old)}</td><td class="num" style="text-align:right"><b>${money(l.neu)}</b></td><td class="num ${pct > 0 ? 'up' : 'down'}" style="text-align:right">${pct > 0 ? '+' : ''}${pct.toFixed(1)}%</td></tr>`; }).join('') || '<tr><td colspan="4" class="mini">No hay precios para cambiar.</td></tr>'}</tbody>`;
@@ -690,8 +709,8 @@ function bulkTargets(){
 const roundTo = (v, step) => Math.max(step, Math.round(v / step) * step);
 function bulkApplyTo(r, pct, step){
   const f = 1 + pct / 100, o = JSON.parse(JSON.stringify(r));
-  if (o.precio_usd != null && o.precio_usd !== '') o.precio_usd = Math.round(o.precio_usd * f * 100) / 100; else o.precio = roundTo(o.precio * f, step);
-  if (o.variantes) o.variantes.forEach(v => { if (v.usd != null) v.usd = Math.round(v.usd * f * 100) / 100; else v.p = roundTo(v.p * f, step); });
+  if (o.precio_usd != null && o.precio_usd !== '') o.precio_usd = r4(o.precio_usd * f); else o.precio = roundTo(o.precio * f, step);
+  if (o.variantes) o.variantes.forEach(v => { if (v.usd != null) v.usd = r4(v.usd * f); else v.p = roundTo(v.p * f, step); });
   return o;
 }
 function renderBulk(){
@@ -738,7 +757,7 @@ $('#rows').addEventListener('change', e => {
   const f = e.target.dataset.f; if (!f) return;
   const r = JSON.parse(JSON.stringify(cur(id))), v = e.target.value.trim();
   if (f === 'precio'){ const n = num(v); if (!(n >= 0)){ toast('Precio inválido', true); e.target.value = r.precio; return; } r.precio = Math.round(n); }
-  if (f === 'precio_usd'){ if (v === ''){ r.precio = effP(r); r.precio_usd = null; } else { const n = num(v); if (!(n > 0)){ toast('Precio en USD inválido', true); return; } r.precio_usd = Math.round(n * 100) / 100; } }
+  if (f === 'precio_usd'){ if (v === ''){ r.precio = effP(r); r.precio_usd = null; } else { const n = num(v); if (!(n > 0)){ toast('Precio en USD inválido', true); return; } r.precio_usd = r4(n); } }
   markDirty(r); refreshRow(id);
 });
 $('#selAll').addEventListener('change', e => { filtered.slice(0, shown).forEach(r => e.target.checked ? sel.add(r.id) : sel.delete(r.id)); renderRows(); updateBars(); });
@@ -769,7 +788,7 @@ $('#dForm').addEventListener('submit', async e => {
   e.preventDefault();
   const n = $('#dN').value.trim(); if (!n){ toast('Falta el nombre', true); return; }
   Object.assign(edit, { nombre:n, marca:$('#dB').value.trim(), rubro:$('#dC').value, subrubro:$('#dS').value.trim(), codigo:$('#dK').value.trim(), unidad:$('#dUn').value, visible:$('#dV').checked, orden: num($('#dR').value) || 0 });
-  const u = $('#dU').value.trim(); edit.precio_usd = u === '' ? null : Math.round(num(u) * 100) / 100;
+  const u = $('#dU').value.trim(); edit.precio_usd = u === '' ? null : r4(num(u));
   edit.precio = u === '' ? Math.round(num($('#dP').value) || 0) : effP(edit);
   if (edit.variantes){ edit.variantes = edit.variantes.filter(v => v.l.trim()); if (!edit.variantes.length) edit.variantes = null; else edit.precio = Math.min(...edit.variantes.map(effV)); }
   if (!edit.id){ let base = slug((edit.marca ? edit.marca + '-' : '') + n) || 'producto', id = base, k = 2; while (BYID.has(id)) id = base + '-' + k++; edit.id = id; }
@@ -785,7 +804,7 @@ const drop = $('#drop');
 drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) readFile(f); });
 $('#file').addEventListener('change', e => { const f = e.target.files[0]; if (f) readFile(f); e.target.value = ''; });
 $('#iSheet').addEventListener('change', loadSheet);
-['#iCode','#iPrice','#iKey','#iBrand','#iCur','#iKind','#iDesc','#iIva','#iProp','#iShow'].forEach(s => $(s).addEventListener('change', plan));
+['#iCode','#iPrice','#iKey','#iBrand','#iCur','#iMon','#iKind','#iDesc','#iIva','#iProp','#iShow','#iKeepUsd','#iHold'].forEach(s => $(s).addEventListener('change', plan));
 $('#iView').addEventListener('change', renderPlan);
 $('#iApply').addEventListener('click', async () => {
   const b = $('#iApply'); b.disabled = true; b.textContent = 'Guardando…';
