@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-d5LLPmyg7kfFjTlEr1w+fO2J/ZZVwY3Rus+H+0hcBS4='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-NxgfNnN40pRrRpTKCc0H+B+oZX9z9qrhKuUQfJ2pjj0='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1095,8 +1095,8 @@ function phStyle(p, inset){
     return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${col*20}% ${row*20}%`;
   }
   if (p && p.i && SAFE_SRC.test(p.i)){
-    const src = p.i.startsWith('https://') ? p.i : CONFIG.photoBase + p.i;
-    return `background-image:url("${src}");background-size:contain;background-position:center`;
+    const src = /^(https:\/\/|fotos\/)/.test(p.i) ? p.i : CONFIG.photoBase + p.i;
+    return `background-image:url('${src}');background-size:contain;background-position:center`;
   }
   return '';
 }
@@ -1162,6 +1162,9 @@ async function load(){
     try { P = await fromDB(); } catch { P = []; }
   }
   if (!P.length) P = await (await fetch('products.json')).json();
+  /* fotos nuevas que se suben a la web (fotos.json); una foto cargada desde el panel tiene prioridad */
+  let FOTOS = {}; try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch {}
+  P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f; });
   P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c].join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
   cart = cart.filter(l => { const p = BY.get(l.id); return p && (p.v ? l.v < p.v.length : l.v === 0); });
 }

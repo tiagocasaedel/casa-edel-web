@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-witkRoWPp2mtXaRPjCi8oq4goaJN0P1+igmfnmRgAys='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-7fIvIdKia7NlMdH8wnWK3M5fSQhUgm7+k7aesT/nOaw='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -440,6 +440,8 @@ const DB = {
 
 /* ---------- state ---------- */
 let R = [], BYID = new Map(), BYCODE = new Map(), ATLAS = {}, DOLAR = 0;
+let FOTOS = {};
+const fotoOf = r => { const f = r && FOTOS[r.id]; return typeof f === 'string' && !/supabase\.co/.test(r.foto || '') ? f : (r && r.foto); };
 const dirty = new Map();       // id -> edited row copy
 const sel = new Set();
 let shown = 60, filtered = [];
@@ -457,8 +459,8 @@ function phStyle(foto){
   const a = ATLAS[foto];
   if (a){ const [s, c] = a; return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${(c%6)*20}% ${Math.floor(c/6)*20}%`; }
   if (!foto || !(SAFE_SRC.test(foto) || /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(foto))) return '';
-  const src = /^(https:|data:)/.test(foto) ? foto : 'https://raw.githubusercontent.com/TiagoJobson25/fotos-casa-edel/main/' + foto;
-  return `background-image:url("${src}");background-size:contain;background-position:center`;
+  const src = /^(https:|data:|fotos\/)/.test(foto) ? foto : 'https://raw.githubusercontent.com/TiagoJobson25/fotos-casa-edel/main/' + foto;
+  return `background-image:url('${src}');background-size:contain;background-position:center`;
 }
 const thumb = foto => `<span class="th">${phStyle(foto) ? `<span class="ph" style="${phStyle(foto)}"></span>` : ''}</span>`;
 const cur = id => dirty.get(id) || BYID.get(id);
@@ -499,7 +501,7 @@ function rowHTML(r0){
   const r = cur(r0.id), isU = r.precio_usd != null && r.precio_usd !== '', hasV = r.variantes && r.variantes.length > 1;
   return `<tr data-id="${esc(r.id)}" class="${dirty.has(r.id) ? 'dirty' : ''} ${sel.has(r.id) ? 'sel' : ''}">
     <td><input type="checkbox" data-sel aria-label="Seleccionar" ${sel.has(r.id) ? 'checked' : ''}></td>
-    <td>${thumb(r.foto)}</td>
+    <td>${thumb(fotoOf(r))}</td>
     <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}${hasV ? `<span class="tag">${r.variantes.length} presentaciones</span>` : ''}</b><small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo].filter(Boolean).join(' · '))}</small></td>
     <td class="c-rub mini">${esc(r.rubro)}</td>
     <td class="c-pr" style="text-align:right">${hasV ? `<span class="num">${r.variantes.map(v => money(effV(v))).slice(0,2).join(' / ')}</span>` : `<input class="pin num" data-f="precio" inputmode="decimal" value="${isU ? effP(r) : r.precio}" ${isU ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos">`}</td>
@@ -552,7 +554,7 @@ function openEdit(id){
   $('#dMeta').textContent = id ? `Identificador: ${id}` : '';
   renderEditPhoto(); renderVariants(); $('#dlg').showModal();
 }
-function renderEditPhoto(){ $('#dPh').innerHTML = phStyle(edit.foto) ? `<span class="ph" style="${phStyle(edit.foto)}"></span>` : ''; }
+function renderEditPhoto(){ $('#dPh').innerHTML = phStyle(fotoOf(edit)) ? `<span class="ph" style="${phStyle(fotoOf(edit))}"></span>` : ''; }
 function renderVariants(){
   const v = edit.variantes || [];
   $('#vNone').hidden = v.length > 0;
@@ -898,6 +900,7 @@ async function start(){
   armIdle();
   $('#loginView').hidden = true; $('#app').hidden = false; $('#demoNote').hidden = !DEMO; $('#who').textContent = u.email;
   try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
+  try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch { FOTOS = {}; }
   DOLAR = await DB.dolar(); $('#dolar').value = DOLAR;
   try { R = await DB.all(); } catch (err) { toast('No pude leer los productos: ' + (err.message || err), true); R = []; }
   if (!R.length && !DEMO){ try { $('#seedN').textContent = (await (await fetch('products.json')).json()).length.toLocaleString('es-AR'); } catch {} $('#seed').hidden = false; }
