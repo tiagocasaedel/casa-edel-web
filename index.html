@@ -724,10 +724,9 @@ section.t-navy .cable::after{background:var(--navy)}
 .intro{position:fixed;inset:0;z-index:200;background:#f6f4ef;display:grid;place-items:center;cursor:pointer;
   clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
 .intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
-.intro video{width:min(100vw,1280px);height:auto;display:block;transition:transform 800ms var(--ease-in-out)}
-.cx{position:absolute;left:0;top:0;width:0;height:6px;opacity:0;pointer-events:none;z-index:1;border-radius:0 4px 4px 0;background:#4b4b5f;box-shadow:0 2px 3px rgba(20,26,56,.18)}
-.cx i{position:absolute;inset:0;border-radius:inherit;background:#ec4a2c;box-shadow:0 0 10px 2px rgba(236,74,44,.55);transform-origin:left center;transform:scaleX(var(--red,0))}
-@media (max-width:700px){.intro video{width:108vw;max-width:none;margin-inline:-4vw}}
+.intro video{width:100vw;height:100vh;height:100dvh;object-fit:cover;display:block;transition:transform 800ms var(--ease-in-out)}
+
+@media (max-width:700px){.intro video{width:160vw;max-width:none;height:auto;margin-inline:-30vw}}
 .intro.out video{transform:translateY(-40px) scale(.96)}
 .intro-skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:transparent;color:#50566a;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px}
 @media (hover:hover) and (pointer:fine){.intro-skip:hover{background:#ece8e0}}
@@ -736,8 +735,7 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
 </style>
 
 <div class="intro" id="intro" aria-hidden="true">
-  <div class="cx" id="cx"><i></i></div>
-  <video id="introV" muted playsinline preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
+    <video id="introV" muted playsinline preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
   <button class="intro-skip" type="button" id="introSkip" tabindex="-1">Saltar</button>
 </div>
 <script>
@@ -760,20 +758,6 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
   setTimeout(function(){ if (!done && (v.readyState < 2 || v.paused)) close(); }, 3500);
   el.addEventListener('click', close);
   addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close(); });
-  /* the cable that comes in from the left keeps going to the edge of the screen, in step with the video */
-  var cx = document.getElementById('cx'), CY = .906;
-  function tick(){
-    if (done) return;
-    var r = v.getBoundingClientRect(), t = v.currentTime || 0, th = Math.max(3, r.height * .0126);
-    cx.style.width = Math.max(0, r.left + 2) + 'px';
-    cx.style.top = (r.top + r.height * CY - th / 2) + 'px';
-    cx.style.height = th + 'px';
-    var on = t > .28 && t < 5.65 ? 1 : 0, fade = t > 5.45 ? Math.max(0, 1 - (t - 5.45) / .2) : 1;
-    cx.style.opacity = on * fade;
-    cx.style.setProperty('--red', Math.min(1, Math.max(0, (t - .72) / .28)).toFixed(3));
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
   var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 1200); });
   setTimeout(close, 8500);
 })();
