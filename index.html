@@ -736,10 +736,11 @@ section.t-navy .cable::after{background:var(--navy)}
 
 
 /* ===== intro ===== */
-.intro{position:fixed;inset:0;z-index:200;background:#f5f3ef;cursor:pointer;overflow:hidden;
-  clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
-.intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
-.intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.intro{position:fixed;inset:0;z-index:200;background:var(--ground);cursor:pointer;overflow:hidden;transition:opacity 500ms ease 450ms}
+.intro.out{opacity:0;pointer-events:none}
+.intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 600ms var(--ease-out),transform 900ms var(--ease-out),filter 600ms ease}
+.intro.out video{opacity:0;transform:scale(.92) translateY(-3%);filter:blur(4px)}
+.intro.out .intro-skip{opacity:0;transition:opacity 200ms ease}
 .intro-skip{position:absolute;z-index:2;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:rgba(245,243,239,.85);color:#3c4258;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 16px;border-radius:999px}
 html.intro-on{overflow:hidden}
 html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:paused}
@@ -764,7 +765,7 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
     try { sessionStorage.setItem('ce-intro', '1'); } catch(e){}
     el.classList.add('out');
     document.documentElement.classList.remove('intro-on');
-    setTimeout(function(){ el.remove(); }, 900);
+    setTimeout(function(){ el.remove(); }, 1100);
   }
   v.addEventListener('ended', close);
   var srcs = v.querySelectorAll('source'); srcs[srcs.length - 1].addEventListener('error', function(){ setTimeout(close, 600); });
@@ -772,6 +773,7 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
   el.addEventListener('click', close);
   addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close(); });
   v.load(); var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 800); });
+  v.addEventListener('timeupdate', function(){ if (v.duration && v.currentTime > v.duration - .15) close(); });
   setTimeout(close, 8500);
 })();
 </script>
