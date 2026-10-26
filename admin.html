@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-3VlIaNDYQMpqTBmNPXIl9JF6yzZ6Gmed87IhblZxTZc='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-0tAEp8f7kubuui9Hz/ydlEGKiUr7eZERg9Nx6Jtzo00='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -188,7 +188,7 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
 
 <div id="app" hidden>
 <header>
-  <div class="demo" id="newNote" hidden><b id="newN"></b> <span id="newList" class="mini"></span> <button class="btn sm go" type="button" id="newAdd" style="margin-left:8px">Agregar a la web</button> <button class="btn sm" type="button" id="newLater">Ahora no</button></div>
+  <div class="demo" id="newNote" hidden><b id="newN"></b> <span id="newList" class="mini"></span> <button class="btn sm go" type="button" id="newAdd" style="margin-left:8px">Aplicar en la web</button> <button class="btn sm" type="button" id="newLater">Ahora no</button></div>
   <div class="demo" id="mfaNote" hidden>Protegé el panel: activá la verificación en dos pasos para que nadie pueda entrar solo con la contraseña. <button class="btn sm" type="button" id="mfaStart" style="margin-left:8px">Activar</button></div>
   <div class="demo" id="demoNote" hidden>Modo prueba: los cambios quedan solo en este navegador. Cuando conectemos la base de datos, se guardan de verdad y la web los muestra al instante.</div>
   <div class="wrap">
@@ -913,16 +913,37 @@ async function start(){
 let NEW = [];
 async function offerNew(){
   let src = []; try { src = await (await fetch('nuevos.json', { cache:'no-cache' })).json(); } catch {}
-  const ok = r => r && typeof r.id === 'string' && /^[a-z0-9-]{1,120}$/.test(r.id) && typeof r.nombre === 'string' && r.nombre.length <= 300 && Number(r.precio) >= 0;
-  NEW = (Array.isArray(src) ? src : []).filter(r => ok(r) && !BYID.has(r.id)).map(r => ({ id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio))||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 }));
+  const idOk = r => r && typeof r.id === 'string' && /^[a-z0-9-]{1,120}$/.test(r.id);
+  const SETS = ['visible','precio','precio_usd','nombre','marca'];
+  NEW = [];
+  for (const r of (Array.isArray(src) ? src : [])){
+    if (!idOk(r)) continue;
+    const have = BYID.get(r.id);
+    if (!have){
+      if (typeof r.nombre !== 'string' || !r.nombre || r.nombre.length > 300 || !(Number(r.precio) >= 0)) continue;
+      const row = { id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio))||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 };
+      if (row.precio_usd != null && DOLAR > 0) row.precio = Math.round(row.precio_usd * DOLAR);
+      NEW.push({ row, txt: row.nombre + ' (nuevo)', why: 'Producto nuevo' });
+    } else if (r.set && typeof r.set === 'object'){
+      const row = JSON.parse(JSON.stringify(have)); let ch = [];
+      for (const k of SETS) if (k in r.set){
+        let v = r.set[k]; if (k === 'precio_usd') v = v == null ? null : r4(Number(v)); if (k === 'precio') v = Math.round(Number(v)) || 0; if (k === 'visible') v = !!v;
+        if (String(row[k] ?? '') !== String(v ?? '')) { row[k] = v; ch.push(k); }
+      }
+      if (!ch.length) continue;
+      if (ch.includes('precio_usd') && row.precio_usd != null && DOLAR > 0) row.precio = Math.round(row.precio_usd * DOLAR);
+      const what = ch.includes('visible') && !row.visible ? 'se oculta' : ch.includes('precio_usd') ? 'pasa a dólares' : 'cambia';
+      NEW.push({ row, txt: `${row.nombre} (${what})`, why: r.motivo ? String(r.motivo).slice(0,120) : 'Cambio preparado' });
+    }
+  }
   $('#newNote').hidden = !NEW.length; if (!NEW.length) return;
-  $('#newN').textContent = NEW.length === 1 ? 'Hay 1 producto nuevo preparado:' : `Hay ${NEW.length} productos nuevos preparados:`;
-  $('#newList').textContent = NEW.slice(0, 5).map(r => r.nombre).join(' · ') + (NEW.length > 5 ? ` y ${NEW.length - 5} más` : '');
+  $('#newN').textContent = NEW.length === 1 ? 'Hay 1 cambio preparado:' : `Hay ${NEW.length} cambios preparados:`;
+  $('#newList').textContent = NEW.slice(0, 6).map(x => x.txt).join(' · ') + (NEW.length > 6 ? ` y ${NEW.length - 6} más` : '');
 }
 $('#newLater').addEventListener('click', () => { $('#newNote').hidden = true; });
 $('#newAdd').addEventListener('click', async () => {
   const b = $('#newAdd'); b.disabled = true;
-  try { const rows = NEW.filter(r => !BYID.has(r.id)); await commit(rows, 'Producto nuevo'); index(); fillSelects(); applyFilters(); $('#newNote').hidden = true; toast(rows.length === 1 ? "Producto agregado" : `${rows.length} productos agregados`); }
+  try { const groups = {}; NEW.forEach(x => (groups[x.why] ||= []).push(x.row)); let n = 0; for (const [why, rows] of Object.entries(groups)) n += await commit(rows, why); const rows = { length: n }; index(); fillSelects(); applyFilters(); $('#newNote').hidden = true; toast(rows.length === 1 ? "Listo, 1 cambio guardado" : `Listo, ${rows.length} cambios guardados`); }
   catch (err) { toast('No se pudo agregar: ' + (err.message || err), true); }
   b.disabled = false;
 });

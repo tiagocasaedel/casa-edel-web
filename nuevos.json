@@ -8,6 +8,18 @@
   "unidad": "u",
   "codigo": "NK-ELEC-00009-BL",
   "precio": 118469,
-  "visible": true
+  "precio_usd": 75.9416,
+  "visible": true,
+  "set": {
+   "precio_usd": 75.9416
+  },
+  "motivo": "Producto en dólares"
+ },
+ {
+  "id": "sdn---tubo-led-t8-18w-120cm-1-pta-l-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Ya no se vende"
  }
 ]
