@@ -721,12 +721,12 @@ section.t-navy .cable::after{background:var(--navy)}
 @media (prefers-reduced-motion:reduce){.tick-in{animation:none}}
 
 /* ===== intro ===== */
-.intro{position:fixed;inset:0;z-index:200;background:#f6f4ef;display:grid;place-items:center;cursor:pointer;
+.intro{position:fixed;inset:0;z-index:200;background:#f5f3ef;display:grid;place-items:center;cursor:pointer;
   clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
 .intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
-.intro video{width:100vw;height:100vh;height:100dvh;object-fit:cover;display:block;transition:transform 800ms var(--ease-in-out)}
+.intro video{width:min(90vw,1000px);height:auto;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);transition:transform 800ms var(--ease-in-out)}
 
-@media (max-width:700px){.intro video{width:160vw;max-width:none;height:auto;margin-inline:-30vw}}
+@media (max-width:700px){.intro video{width:130vw;max-width:none;margin-inline:-15vw}}
 .intro.out video{transform:translateY(-40px) scale(.96)}
 .intro-skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:transparent;color:#50566a;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px}
 @media (hover:hover) and (pointer:fine){.intro-skip:hover{background:#ece8e0}}
