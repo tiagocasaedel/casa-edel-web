@@ -719,8 +719,47 @@ section.t-navy .steps li:nth-child(3) .t::before{background:#fff}
 section.t-navy .steps .t::before{background:#ffd9a8;box-shadow:0 0 0 4px rgba(255,217,168,.25)}
 section.t-navy .cable::after{background:var(--navy)}
 @media (prefers-reduced-motion:reduce){.tick-in{animation:none}}
+
+/* ===== intro ===== */
+.intro{position:fixed;inset:0;z-index:200;background:#f6f4ef;display:grid;place-items:center;cursor:pointer;
+  clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
+.intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
+.intro video{width:min(92vw,980px);height:auto;display:block;transition:transform 800ms var(--ease-in-out)}
+.intro.out video{transform:translateY(-40px) scale(.96)}
+.intro-skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:transparent;color:#50566a;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px}
+@media (hover:hover) and (pointer:fine){.intro-skip:hover{background:#ece8e0}}
+html.intro-on{overflow:hidden}
+html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:paused}
 </style>
 
+<div class="intro" id="intro" aria-hidden="true">
+  <video id="introV" muted playsinline autoplay preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
+  <button class="intro-skip" type="button" id="introSkip" tabindex="-1">Saltar</button>
+</div>
+<script>
+/* intro: once per visit, never when the person asked for less motion */
+(function(){
+  var el = document.getElementById('intro'), seen = false;
+  try { seen = sessionStorage.getItem('ce-intro') === '1'; } catch(e){}
+  if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.remove(); return; }
+  document.documentElement.classList.add('intro-on');
+  var v = document.getElementById('introV'), done = false;
+  function close(){
+    if (done) return; done = true;
+    try { sessionStorage.setItem('ce-intro', '1'); } catch(e){}
+    el.classList.add('out');
+    document.documentElement.classList.remove('intro-on');
+    setTimeout(function(){ el.remove(); }, 900);
+  }
+  v.addEventListener('ended', close);
+  var srcs = v.querySelectorAll('source'); srcs[srcs.length - 1].addEventListener('error', function(){ setTimeout(close, 900); });
+  setTimeout(function(){ if (!done && (v.readyState < 2 || v.paused)) close(); }, 2500);
+  el.addEventListener('click', close);
+  addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close(); });
+  var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 1200); });
+  setTimeout(close, 6500);
+})();
+</script>
 <div class="band" aria-hidden="true"></div>
 <header class="top" id="top">
   <div class="wrap top-row">
