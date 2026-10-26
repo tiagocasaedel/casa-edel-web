@@ -2,17 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-qiRvLN76UlHgRKRiT96Cjf6GNQPgFT9YxGTKxvCXpCA='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="referrer" content="no-referrer">
+<script>/* the panel never runs inside someone else's frame on the real site */ if (window.top !== window.self && /github\.io$/.test(location.hostname)) window.top.location = window.self.location.href;</script>
 <style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(fonts/archivo.woff2) format('woff2')}
 :root{
   --ground:#faf6ee; --ground-2:#f1eadd; --paper:#fffdf8; --ink:#1d2340; --ink-soft:#545b6e; --edge:#d8cfbf;
   --accent:#b8382c; --accent-deep:#8c261d; --navy:#26346e; --tile:#efebe3; --ok:#2f6b3a; --ok-bg:#e3efe0; --warn-bg:#f6e7e2;
-  --font:"Rubik", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --font:"Archivo", "Segoe UI", system-ui, sans-serif;
   --ease-out:cubic-bezier(.23,1,.32,1);
   color-scheme:light;
 }
@@ -175,10 +176,19 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
     <p class="err" id="lgErr" hidden></p>
     <button class="btn go" type="submit">Entrar</button>
   </form>
+  <form class="login" id="mfaForm" hidden>
+    <img src="img/logo-casaedel.png?v=2" alt="Casa Edel" width="541" height="143">
+    <div><h2>Código de verificación</h2><p class="hint" style="margin:0">Abrí la app de autenticación del celular y escribí el código de 6 números de Casa Edel.</p></div>
+    <label class="lab">Código<input class="field num" id="mfaCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required></label>
+    <p class="err" id="mfaErr" hidden></p>
+    <button class="btn go" type="submit">Verificar</button>
+    <button class="btn" type="button" id="mfaOut">Salir</button>
+  </form>
 </section>
 
 <div id="app" hidden>
 <header>
+  <div class="demo" id="mfaNote" hidden>Protegé el panel: activá la verificación en dos pasos para que nadie pueda entrar solo con la contraseña. <button class="btn sm" type="button" id="mfaStart" style="margin-left:8px">Activar</button></div>
   <div class="demo" id="demoNote" hidden>Modo prueba: los cambios quedan solo en este navegador. Cuando conectemos la base de datos, se guardan de verdad y la web los muestra al instante.</div>
   <div class="wrap">
     <div class="hrow">
@@ -341,12 +351,24 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
   </div>
   <div class="foot"><span class="mini" id="dMeta"></span><div class="row"><button class="btn" type="button" data-close>Cancelar</button><button class="btn go" type="submit" id="dSave">Guardar</button></div></div>
 </form></dialog>
+<dialog id="enroll" aria-labelledby="enT"><form class="dlg" id="enrollForm" method="dialog">
+  <header><h2 id="enT">Verificación en dos pasos</h2><button class="btn sm" type="button" data-close>Cerrar</button></header>
+  <ol class="hint" style="margin:0;padding-left:20px;display:grid;gap:6px">
+    <li>Instalá en tu celular <b>Google Authenticator</b> o <b>Microsoft Authenticator</b> (gratis).</li>
+    <li>En la app tocá <b>+</b> y escaneá este código.</li>
+    <li>Escribí abajo el número de 6 cifras que aparece.</li>
+  </ol>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><img id="enQr" alt="Código QR para la app de autenticación" width="180" height="180" style="background:#fff;border-radius:12px;padding:8px"><p class="mini" style="max-width:32ch">Si no podés escanearlo, cargá esta clave a mano:<br><code id="enSecret" style="word-break:break-all;font-size:.9rem"></code></p></div>
+  <label class="lab">Código de 6 números<input class="field num" id="enCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required></label>
+  <p class="err" id="enErr" hidden></p>
+  <div class="foot"><span class="mini">Guardá el celular: desde ahora el panel te va a pedir este código cada vez que entres.</span><button class="btn go" type="submit">Activar</button></div>
+</form></dialog>
 <datalist id="brandsDL"></datalist><datalist id="subsDL"></datalist>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="config.js" onerror="void 0"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="config.js"></script>
+<script src="vendor/supabase.js"></script>
+<script src="vendor/xlsx.full.min.js"></script>
 <script>
 /* Casa Edel · panel. With config.js (supabaseUrl + supabaseKey) it works on the real database;
    without it, it runs in "modo prueba" on products.json and keeps changes in this browser. */
@@ -426,11 +448,12 @@ function index(){
   const put = (k, hit) => { k = codeKey(k); if (!k) return; (BYCODE.get(k) || BYCODE.set(k, []).get(k)).push(hit); };
   R.forEach(r => { if (r.variantes && r.variantes.length) r.variantes.forEach((v,i) => put(v.k, {r, vi:i})); else put(r.codigo, {r, vi:-1}); });
 }
+const SAFE_SRC = /^(https:\/\/[a-z0-9.-]+\/[A-Za-z0-9_\-.\/%~+]*|[A-Za-z0-9_\-.\/%~+]+)$/;
 function phStyle(foto){
   const a = ATLAS[foto];
   if (a){ const [s, c] = a; return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${(c%6)*20}% ${Math.floor(c/6)*20}%`; }
-  if (!foto) return '';
-  const src = /^(https?:|data:)/.test(foto) ? foto : 'https://raw.githubusercontent.com/TiagoJobson25/fotos-casa-edel/main/' + foto;
+  if (!foto || !(SAFE_SRC.test(foto) || /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(foto))) return '';
+  const src = /^(https:|data:)/.test(foto) ? foto : 'https://raw.githubusercontent.com/TiagoJobson25/fotos-casa-edel/main/' + foto;
   return `background-image:url("${src}");background-size:contain;background-position:center`;
 }
 const thumb = foto => `<span class="th">${phStyle(foto) ? `<span class="ph" style="${phStyle(foto)}"></span>` : ''}</span>`;
@@ -529,7 +552,7 @@ function renderEditPhoto(){ $('#dPh').innerHTML = phStyle(edit.foto) ? `<span cl
 function renderVariants(){
   const v = edit.variantes || [];
   $('#vNone').hidden = v.length > 0;
-  $('#vRows').innerHTML = v.map((x,i) => `<tr data-vi="${i}"><td><input class="field" data-vf="l" value="${esc(x.l)}" placeholder="Ej.: Rollo x 100 m" aria-label="Presentación"></td><td style="width:120px"><input class="field num" data-vf="p" type="number" value="${x.usd != null ? '' : x.p}" placeholder="$" aria-label="Precio en pesos"></td><td style="width:100px"><input class="field num" data-vf="usd" type="number" step="0.01" value="${x.usd ?? ''}" placeholder="USD" aria-label="Precio en dólares"></td><td style="width:130px"><input class="field" data-vf="k" value="${esc(x.k)}" placeholder="Código" aria-label="Código"></td><td style="width:44px"><button class="btn sm" type="button" data-vdel aria-label="Quitar">×</button></td></tr>`).join('');
+  $('#vRows').innerHTML = v.map((x,i) => `<tr data-vi="${i}"><td><input class="field" data-vf="l" value="${esc(x.l)}" placeholder="Ej.: Rollo x 100 m" aria-label="Presentación"></td><td style="width:120px"><input class="field num" data-vf="p" type="number" value="${esc(x.usd != null ? '' : x.p)}" placeholder="$" aria-label="Precio en pesos"></td><td style="width:100px"><input class="field num" data-vf="usd" type="number" step="0.01" value="${esc(x.usd ?? '')}" placeholder="USD" aria-label="Precio en dólares"></td><td style="width:130px"><input class="field" data-vf="k" value="${esc(x.k)}" placeholder="Código" aria-label="Código"></td><td style="width:44px"><button class="btn sm" type="button" data-vdel aria-label="Quitar">×</button></td></tr>`).join('');
 }
 function slug(s){ return norm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80); }
 async function processPhoto(file){
@@ -552,24 +575,36 @@ async function processPhoto(file){
 
 /* ---------- import ---------- */
 let WB = null, SHEET = [], HEAD = 0, PLAN = null;
+/* spreadsheets are parsed in a worker with a time limit: a broken or crafted file cannot touch the logged-in page */
 function readFile(f){
+  if (f.size > 15 * 1024 * 1024){ toast('El archivo es muy grande (máximo 15 MB)', true); return; }
+  if (!/\.(xlsx|xls|csv|ods)$/i.test(f.name)){ toast('Subí un Excel (.xlsx, .xls) o un CSV', true); return; }
   const fr = new FileReader();
   fr.onload = () => {
-    try { WB = XLSX.read(fr.result, { type:'array' }); } catch { toast('No pude leer ese archivo', true); return; }
-    $('#impFile').textContent = `Archivo: ${f.name}`;
-    $('#iSheet').innerHTML = WB.SheetNames.map(n => `<option>${esc(n)}</option>`).join('');
-    loadSheet(); $('#impCfg').hidden = false;
+    const w = new Worker('vendor/xlsx-worker.js');
+    const kill = setTimeout(() => { w.terminate(); toast('El archivo tardó demasiado en leerse', true); }, 20000);
+    w.onmessage = e => {
+      clearTimeout(kill); w.terminate();
+      if (e.data.error || !e.data.names.length){ toast('No pude leer ese archivo', true); return; }
+      WB = e.data;
+      $('#impFile').textContent = `Archivo: ${f.name}`;
+      $('#iSheet').innerHTML = WB.names.map(n => `<option>${esc(n)}</option>`).join('');
+      loadSheet(); $('#impCfg').hidden = false;
+    };
+    w.onerror = () => { clearTimeout(kill); w.terminate(); toast('No pude leer ese archivo', true); };
+    w.postMessage(fr.result, [fr.result]);
   };
   fr.readAsArrayBuffer(f);
 }
+const colName = i => { let s = ''; i++; while (i){ const m = (i - 1) % 26; s = String.fromCharCode(65 + m) + s; i = Math.floor((i - 1) / 26); } return s; };
 function loadSheet(){
-  SHEET = XLSX.utils.sheet_to_json(WB.Sheets[$('#iSheet').value], { header:1, raw:true, defval:'' });
+  SHEET = WB.sheets[$('#iSheet').value] || [];
   HEAD = 0; let best = -1;
   SHEET.slice(0, 25).forEach((row, i) => { const t = row.map(c => norm(c)); const sc = (t.some(c => /cod|sku|art(ic|\.)|ref/.test(c)) ? 1 : 0) + (t.some(c => /precio|lista|importe|unit|valor|p\.? ?vta/.test(c)) ? 1 : 0); if (sc > best){ best = sc; HEAD = i; } });
   if (best <= 0) HEAD = -1;
   const width = Math.max(...SHEET.slice(0, 50).map(r => r.length), 1);
   const head = HEAD > -1 ? SHEET[HEAD] : [];
-  const opts = Array.from({ length: width }, (_, i) => `<option value="${i}">${esc(XLSX.utils.encode_col(i))}${head[i] ? ' · ' + esc(String(head[i]).slice(0, 28)) : ''}</option>`).join('');
+  const opts = Array.from({ length: width }, (_, i) => `<option value="${i}">${esc(colName(i))}${head[i] ? ' · ' + esc(String(head[i]).slice(0, 28)) : ''}</option>`).join('');
   $('#iCode').innerHTML = opts; $('#iPrice').innerHTML = opts;
   const hn = head.map(norm);
   let ci = hn.findIndex(c => /^cod|codigo|sku|cod\.|art/.test(c)); if (ci < 0) ci = 0;
@@ -693,7 +728,7 @@ document.addEventListener('click', async e => {
   const tr = t.closest('#rows tr'), id = tr && tr.dataset.id;
   if (t.hasAttribute('data-vis') && id){ const r = JSON.parse(JSON.stringify(cur(id))); r.visible = !r.visible; markDirty(r); refreshRow(id); return; }
   if (t.hasAttribute('data-edit') && id){ openEdit(id); return; }
-  if (t.hasAttribute('data-close')){ $('#dlg').close(); return; }
+  if (t.hasAttribute('data-close')){ t.closest('dialog').close(); return; }
   if (t.hasAttribute('data-vdel')){ edit.variantes.splice(+t.closest('tr').dataset.vi, 1); if (!edit.variantes.length) edit.variantes = null; renderVariants(); return; }
   if (t.dataset.selvis){ sel.forEach(i => { const r = JSON.parse(JSON.stringify(cur(i))); r.visible = t.dataset.selvis === '1'; markDirty(r); }); renderRows(); return; }
 });
@@ -785,14 +820,63 @@ $('#seedBtn').addEventListener('click', async () => {
 $('#loginForm').addEventListener('submit', async e => {
   e.preventDefault(); $('#lgErr').hidden = true;
   try { await DB.login($('#lgMail').value.trim(), $('#lgPass').value); start(); }
-  catch (err) { $('#lgErr').textContent = /invalid/i.test(err.message) ? 'Mail o contraseña incorrectos.' : err.message; $('#lgErr').hidden = false; }
+  catch (err) { $('#lgErr').textContent = /rate|too many/i.test(err.message) ? 'Demasiados intentos. Esperá unos minutos.' : 'Mail o contraseña incorrectos.'; $('#lgErr').hidden = false; $('#lgPass').value = ''; }
 });
 $('#logout').addEventListener('click', async () => { await DB.logout(); location.reload(); });
+$('#mfaOut').addEventListener('click', async () => { await DB.logout(); location.reload(); });
+$('#mfaForm').addEventListener('submit', async e => {
+  e.preventDefault(); $('#mfaErr').hidden = true;
+  try {
+    const { data } = await sb.auth.mfa.listFactors();
+    const f = data && data.totp && data.totp[0]; if (!f) throw new Error('No hay un celular vinculado.');
+    await verifyCode(f.id, $('#mfaCode').value.trim()); $('#mfaCode').value = ''; start();
+  } catch (err) { $('#mfaErr').textContent = /invalid|expired/i.test(err.message) ? 'Código incorrecto o vencido. Probá con el que aparece ahora.' : err.message; $('#mfaErr').hidden = false; }
+});
+$('#mfaStart').addEventListener('click', startEnroll);
+$('#enrollForm').addEventListener('submit', async e => {
+  e.preventDefault(); $('#enErr').hidden = true;
+  try { await verifyCode(enrollId, $('#enCode').value.trim()); $('#enroll').close(); $('#mfaNote').hidden = true; toast('Verificación en dos pasos activada'); }
+  catch (err) { $('#enErr').textContent = 'Código incorrecto. Esperá el siguiente número y probá de nuevo.'; $('#enErr').hidden = false; }
+});
 addEventListener('beforeunload', e => { if (dirty.size){ e.preventDefault(); e.returnValue = ''; } });
+
+/* ---------- second step (TOTP) and idle logout ---------- */
+async function mfaState(){
+  if (DEMO) return 'ok';
+  const { data, error } = await sb.auth.mfa.getAuthenticatorAssuranceLevel();
+  if (error) return 'ok';
+  if (data.nextLevel === 'aal2' && data.currentLevel !== 'aal2') return 'need';
+  return data.currentLevel === 'aal2' ? 'ok' : 'none';
+}
+async function verifyCode(factorId, code){
+  const { error } = await sb.auth.mfa.challengeAndVerify({ factorId, code });
+  if (error) throw error;
+}
+let enrollId = null;
+async function startEnroll(){
+  $('#enErr').hidden = true; $('#enCode').value = '';
+  const { data: list } = await sb.auth.mfa.listFactors();
+  for (const f of (list && list.all) || []) if (f.status !== 'verified') await sb.auth.mfa.unenroll({ factorId: f.id });
+  const { data, error } = await sb.auth.mfa.enroll({ factorType: 'totp', friendlyName: 'Panel Casa Edel ' + new Date().toISOString().slice(0, 10) });
+  if (error){ toast('No se pudo iniciar: ' + error.message, true); return; }
+  enrollId = data.id; $('#enQr').src = data.totp.qr_code; $('#enSecret').textContent = data.totp.secret;
+  $('#enroll').showModal(); $('#enCode').focus();
+}
+let idleT;
+function armIdle(){
+  if (DEMO) return;
+  clearTimeout(idleT);
+  idleT = setTimeout(async () => { if (dirty.size) { armIdle(); return; } await DB.logout(); location.reload(); }, 30 * 60 * 1000);
+}
+['pointerdown','keydown','scroll'].forEach(ev => addEventListener(ev, () => armIdle(), { passive: true }));
 
 async function start(){
   const u = await DB.user();
-  if (!u){ $('#loginView').hidden = false; $('#app').hidden = true; return; }
+  if (!u){ $('#loginView').hidden = false; $('#loginForm').hidden = false; $('#mfaForm').hidden = true; $('#app').hidden = true; return; }
+  const m = await mfaState();
+  if (m === 'need'){ $('#loginView').hidden = false; $('#loginForm').hidden = true; $('#mfaForm').hidden = false; $('#app').hidden = true; $('#mfaCode').focus(); return; }
+  $('#mfaNote').hidden = m !== 'none';
+  armIdle();
   $('#loginView').hidden = true; $('#app').hidden = false; $('#demoNote').hidden = !DEMO; $('#who').textContent = u.email;
   try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
   DOLAR = await DB.dolar(); $('#dolar').value = DOLAR;

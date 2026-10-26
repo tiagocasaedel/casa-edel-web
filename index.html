@@ -1,13 +1,16 @@
+<!doctype html>
+<html lang="es">
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-d5LLPmyg7kfFjTlEr1w+fO2J/ZZVwY3Rus+H+0hcBS4='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Catálogo de materiales eléctricos de Casa Edel con precios. Armá tu pedido y envialo por WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script>/* never inside someone else's frame on the real site */ if (window.top !== window.self && /github\.io$/.test(location.hostname)) window.top.location = window.self.location.href;</script>
 <meta name="theme-color" content="#f6f4ef">
 <style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(fonts/archivo.woff2) format('woff2')}
 /* Layout: the counter of Casa Edel, in the colours of the central's sign (red and navy), softened over a warm white.
    Every product sits on the same light tile at the same size; the order becomes a "nota de pedido" sent by WhatsApp. */
 :root{
@@ -1009,7 +1012,7 @@ html.intro-on .car{animation-play-state:paused}
     <div class="row">
       <p class="motto">La casa amiga del gremio</p>
       <nav class="foot-nav" aria-label="Secciones del pie"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a href="#como-pedir">Cómo pedir</a><a href="#contacto">Contacto</a></nav>
-      <p>Precios sujetos a confirmación de stock al responder tu pedido. Las fotos son ilustrativas: un mismo modelo puede mostrarse en otra medida o color. <a href="admin.html" style="color:inherit;opacity:.6">Administración</a></p>
+      <p>Precios sujetos a confirmación de stock al responder tu pedido. Las fotos son ilustrativas: un mismo modelo puede mostrarse en otra medida o color. Privacidad: esta web no usa cookies ni rastreadores; tu pedido se guarda solo en tu navegador hasta que lo enviás por WhatsApp. <a href="admin.html" style="color:inherit;opacity:.6">Administración</a></p>
     </div>
   </div>
 </footer>
@@ -1077,16 +1080,22 @@ const state = { q:'', rubro:'', sub:'', brand:'', sort:'top', shown:0 };
 let list = [];
 let cart = store.get('ce-cart', []);   // [{id, v, q}]
 let who = store.get('ce-who', {name:'', mode:'Retiro en el local', note:''});
+/* what comes back from this browser's storage is checked before use */
+cart = (Array.isArray(cart) ? cart : []).filter(l => l && typeof l.id === 'string' && l.id.length < 200 && Number.isInteger(l.v) && l.v >= 0 && l.v < 100 && Number.isFinite(l.q) && l.q > 0 && l.q <= 99999).map(l => ({ id: l.id, v: l.v, q: Math.round(l.q) }));
+if (!who || typeof who !== 'object') who = {};
+who = { name: String(who.name || '').slice(0, 80), note: String(who.note || '').slice(0, 500), mode: who.mode === 'Envío a domicilio' ? 'Envío a domicilio' : 'Retiro en el local' };
 
 /* ---------- images ---------- */
+/* photo paths come from the database: only plain https or relative paths, nothing that could break out of the style attribute */
+const SAFE_SRC = /^(https:\/\/[a-z0-9.-]+\/[A-Za-z0-9_\-.\/%~+]*|[A-Za-z0-9_\-.\/%~+]+)$/;
 function phStyle(p, inset){
   const a = p && ATLAS[p.i];
   if (a){
     const [s, c] = a, col = c % 6, row = Math.floor(c / 6);
     return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${col*20}% ${row*20}%`;
   }
-  if (p && p.i){
-    const src = p.i.startsWith('http') ? p.i : CONFIG.photoBase + p.i;
+  if (p && p.i && SAFE_SRC.test(p.i)){
+    const src = p.i.startsWith('https://') ? p.i : CONFIG.photoBase + p.i;
     return `background-image:url("${src}");background-size:contain;background-position:center`;
   }
   return '';
@@ -1154,7 +1163,7 @@ async function load(){
   }
   if (!P.length) P = await (await fetch('products.json')).json();
   P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c].join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
-  cart = cart.filter(l => BY.has(l.id));
+  cart = cart.filter(l => { const p = BY.get(l.id); return p && (p.v ? l.v < p.v.length : l.v === 0); });
 }
 
 /* ---------- hero mosaic & rubros ---------- */
@@ -1458,7 +1467,8 @@ function unitOf(p, v){ const lab = p.v ? p.v[v].l : ''; return (/metro/i.test(la
 function priceOf(p, v){ return p.v ? p.v[v].p : p.p; }
 function add(id, v=0, q=1, silent){
   const p = BY.get(id); if (!p) return;
-  const l = inCart(id, v); if (l) l.q += q; else cart.push({id, v, q});
+  q = Math.min(99999, Math.max(1, Math.round(q) || 1));
+  const l = inCart(id, v); if (l) l.q = Math.min(99999, l.q + q); else cart.push({id, v, q});
   save(); updateCount(true); refreshCard(id);
   if (!silent) toast(`Agregado: ${p.n}${p.v ? ' · '+p.v[v].l : ''}`);
 }
@@ -1509,11 +1519,11 @@ function renderCart(){
   <p class="fine">El vendedor te confirma stock y precio final antes de cerrar.</p>
   <div class="promo"><b>¿Buscás más promociones?</b><span>Por cantidad, por obra o pagando en efectivo hay más descuentos. <a href="${waLink('Hola Casa Edel! Quería consultar por promociones.')}" target="_blank" rel="noopener">Consultanos por WhatsApp</a>.</span></div>
   <div class="form">
-    <label for="who">Tu nombre (opcional)<input id="who" autocomplete="name" value="${esc(who.name)}" placeholder="Ej.: Juan, electricista"></label>
+    <label for="who">Tu nombre (opcional)<input id="who" maxlength="80" autocomplete="name" value="${esc(who.name)}" placeholder="Ej.: Juan, electricista"></label>
     <div><span class="vh" id="modeL">Entrega</span><div class="seg" role="radiogroup" aria-labelledby="modeL">
       <button type="button" role="radio" aria-checked="${who.mode==='Retiro en el local'}" data-mode="Retiro en el local">Retiro en el local</button>
       <button type="button" role="radio" aria-checked="${who.mode==='Envío a domicilio'}" data-mode="Envío a domicilio">Envío</button></div></div>
-    <label for="whoNote">Nota para el vendedor (opcional)<textarea id="whoNote" rows="2" placeholder="Dirección de entrega, horario, factura A…">${esc(who.note)}</textarea></label>
+    <label for="whoNote">Nota para el vendedor (opcional)<textarea id="whoNote" rows="2" maxlength="500" placeholder="Dirección de entrega, horario, factura A…">${esc(who.note)}</textarea></label>
   </div>`;
   foot.innerHTML = `<a class="btn btn-wa" id="send" href="${waLink(orderText())}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>Enviar pedido por WhatsApp</a><div id="sentNote" hidden></div>`;
 }
@@ -1616,8 +1626,8 @@ document.addEventListener('click', e => {
   if (d.brand !== undefined){ state.brand = (state.brand === d.brand && d.brand) ? '' : d.brand; state.sub=''; renderCatalog(); document.getElementById('catT').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); return; }
   if (d.crumb){ $('#pd').close(); state.rubro=d.crumb; state.sub=''; state.q=''; $('#q').value=''; renderCatalog(); goCatalog(); return; }
   if (d.opt !== undefined){ pdSel = Number(d.opt); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
-  if (d.pdq){ const inp=$('#pdQty'); pdQty = Math.max(1,(parseInt(inp.value)||1)+Number(d.pdq)); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
-  if (d.pdadd){ const q = Math.max(1, parseInt($('#pdQty').value)||1); add(d.pdadd, pdSel, q); $('#pd').close(); return; }
+  if (d.pdq){ const inp=$('#pdQty'); pdQty = Math.min(99999, Math.max(1,(parseInt(inp.value)||1)+Number(d.pdq))); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
+  if (d.pdadd){ const q = Math.min(99999, Math.max(1, parseInt($('#pdQty').value)||1)); add(d.pdadd, pdSel, q); $('#pd').close(); return; }
   if (d.cinc !== undefined){ const l=cart[d.cinc]; setQty(l.id,l.v,l.q+1); return; }
   if (d.cdec !== undefined){ const l=cart[d.cdec]; setQty(l.id,l.v,l.q-1); return; }
   if (d.crm !== undefined){ const l=cart[d.crm]; setQty(l.id,l.v,0); return; }
@@ -1631,8 +1641,8 @@ document.addEventListener('input', e => {
   if (e.target.id === 'whoNote'){ who.note = e.target.value; save(); refreshSend(); }
 });
 document.addEventListener('change', e => {
-  if (e.target.dataset.cq !== undefined){ const l = cart[e.target.dataset.cq]; setQty(l.id, l.v, Math.max(0, parseInt(e.target.value)||0)); }
-  if (e.target.id === 'pdQty'){ pdQty = Math.max(1, parseInt(e.target.value)||1); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); }
+  if (e.target.dataset.cq !== undefined){ const l = cart[e.target.dataset.cq]; if (l) setQty(l.id, l.v, Math.min(99999, Math.max(0, parseInt(e.target.value)||0))); }
+  if (e.target.id === 'pdQty'){ pdQty = Math.min(99999, Math.max(1, parseInt(e.target.value)||1)); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); }
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape'){ setMega(false); closePanel(); } });
 ['pd','cart','menu'].forEach(id => {
