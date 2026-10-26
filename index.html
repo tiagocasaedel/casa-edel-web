@@ -273,7 +273,20 @@ header.top.scrolled{background:var(--paper)}
   .s-prod-copy p{font-size:1rem}
 }
 
-.s-prod .fl button{background:var(--paper)!important}
+.s-orbit{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#fbf8f1 0%,#efe8da 70%,#e7dfcd 100%)}
+.orbit{position:absolute;inset:0}
+.orb{position:absolute;left:50%;top:50%;border:0;padding:0;background:transparent;cursor:pointer;container-type:size;will-change:transform;transition:filter 200ms ease}
+.orb .ph{--k:100;background-repeat:no-repeat}
+.orb{mix-blend-mode:multiply}
+@media (hover:hover) and (pointer:fine){.orb:hover{filter:drop-shadow(0 10px 18px rgba(20,26,56,.18)) brightness(1.03)}}
+.orbit-copy{position:absolute;z-index:60;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,38%);text-align:center;display:grid;justify-items:center;gap:12px;pointer-events:none}
+.orbit-copy > *{pointer-events:auto}
+.orbit-copy::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(251,248,241,.96),rgba(251,248,241,.85) 60%,rgba(251,248,241,0))}
+.orbit-copy h2{margin:0;font-stretch:125%;font-weight:800;letter-spacing:-.04em;line-height:.92;font-size:clamp(1.7rem,1rem + 2.4vw,3.2rem);color:var(--navy)}
+.orbit-copy p{margin:0;font-size:1.0625rem;line-height:1.4;color:var(--ink);max-width:32ch}
+.slide.on .orbit-copy > *{animation:wordIn 800ms var(--ease-out) both}
+.slide.on .orbit-copy > :nth-child(2){animation-delay:90ms}.slide.on .orbit-copy > :nth-child(3){animation-delay:180ms}
+@media (max-width:700px){.orbit-copy{width:68%}.orbit-copy p{font-size:.9375rem}.orbit-copy h2{font-size:1.75rem}}
 .s-vent{position:absolute;inset:0;display:block;overflow:hidden;background:#f3f2f0;color:inherit;text-decoration:none}
 .s-vent .kb{inset:0}
 .s-vent .kb img{object-position:left center;transform-origin:left center;animation-name:kenburnsL}
@@ -720,48 +733,9 @@ section.t-navy .steps .t::before{background:#ffd9a8;box-shadow:0 0 0 4px rgba(25
 section.t-navy .cable::after{background:var(--navy)}
 @media (prefers-reduced-motion:reduce){.tick-in{animation:none}}
 
-/* ===== intro ===== */
-.intro{position:fixed;inset:0;z-index:200;background:#f5f3ef;display:grid;place-items:center;cursor:pointer;
-  clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
-.intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
-.intro video{width:min(90vw,1000px);height:auto;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);transition:transform 800ms var(--ease-in-out)}
 
-@media (max-width:700px){.intro video{width:130vw;max-width:none;margin-inline:-15vw}}
-.intro.out video{transform:translateY(-40px) scale(.96)}
-.intro-skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:transparent;color:#50566a;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px}
-@media (hover:hover) and (pointer:fine){.intro-skip:hover{background:#ece8e0}}
-html.intro-on{overflow:hidden}
-html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:paused}
 </style>
 
-<div class="intro" id="intro" aria-hidden="true">
-    <video id="introV" muted playsinline preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
-  <button class="intro-skip" type="button" id="introSkip" tabindex="-1">Saltar</button>
-</div>
-<script>
-/* intro: once per visit, never when the person asked for less motion */
-(function(){
-  var el = document.getElementById('intro'), seen = false;
-  try { seen = sessionStorage.getItem('ce-intro') === '1'; } catch(e){}
-  if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.remove(); return; }
-  document.documentElement.classList.add('intro-on');
-  var v = document.getElementById('introV'), done = false;
-  function close(){
-    if (done) return; done = true;
-    try { sessionStorage.setItem('ce-intro', '1'); } catch(e){}
-    el.classList.add('out');
-    document.documentElement.classList.remove('intro-on');
-    setTimeout(function(){ el.remove(); }, 900);
-  }
-  v.addEventListener('ended', close);
-  var srcs = v.querySelectorAll('source'); srcs[srcs.length - 1].addEventListener('error', function(){ setTimeout(close, 900); });
-  setTimeout(function(){ if (!done && (v.readyState < 2 || v.paused)) close(); }, 3500);
-  el.addEventListener('click', close);
-  addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close(); });
-  var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 1200); });
-  setTimeout(close, 8500);
-})();
-</script>
 <div class="band" aria-hidden="true"></div>
 <header class="top" id="top">
   <div class="wrap top-row">
@@ -836,13 +810,13 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
           </div>
         </div>
         <div class="slide" data-i="4" aria-roledescription="diapositiva" aria-label="5 de 5" aria-hidden="true">
-          <div class="s-prod">
-            <div class="s-prod-copy">
-              <h2>Pedí tu material eléctrico</h2>
-              <p>Más de <b class="num" id="factN">2.200</b> artículos con precio. Armá el pedido y mandalo por WhatsApp.</p>
+          <div class="s-orbit">
+            <div class="orbit" id="stage" aria-label="Productos destacados"></div>
+            <div class="orbit-copy">
+              <h2>Todo para tu instalación</h2>
+              <p>Más de <b class="num" id="factN">2.800</b> artículos con precio. Armá el pedido y mandalo por WhatsApp.</p>
               <a class="btn btn-go" href="#catalogo" data-goto tabindex="-1">Ver productos <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            <div class="stage" id="stage" aria-label="Productos destacados"></div>
           </div>
         </div>
         <button class="car-nav prev" type="button" data-car="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
@@ -1120,24 +1094,42 @@ function topWithPhoto(arr, n, distinct){
   }
   return out;
 }
-const STAGE_DESK = [
-  {l:2,t:10,w:20,d:1},{l:24,t:2,w:16,d:.6},{l:42,t:14,w:19,d:1.3},{l:63,t:4,w:15,d:.7},{l:80,t:16,w:17,d:1.5},
-  {l:8,t:56,w:15,d:.8},{l:27,t:50,w:17,d:1.4},{l:47,t:60,w:14,d:.5},{l:63,t:48,w:18,d:1.1},{l:84,t:62,w:13,d:1.7}];
-const STAGE_MOB = [
-  {l:3,t:6,w:30,d:1},{l:35,t:0,w:30,d:.6},{l:67,t:8,w:30,d:1.3},{l:3,t:52,w:30,d:.8},{l:35,t:46,w:30,d:1.1},{l:67,t:54,w:30,d:.7}];
+/* products slide: a slow ring of products around the message, the nearer ones larger */
+const ORB = { items: [], a: 0, raf: 0, last: 0 };
 function renderStage(){
   const wide = matchMedia('(min-width:701px)').matches;
-  const pos = wide ? STAGE_DESK : STAGE_MOB;
-  const picks = topWithPhoto(P, pos.length, true);
-  $('#stage').innerHTML = picks.map((p,i) => {
-    const q = pos[i];
-    return `<div class="fl" data-depth="${q.d}" style="left:${q.l}%;top:${q.t}%;width:${q.w}%">
-      <div class="bob" style="--dur:${6+i*1.3}s;--dl:-${i*1.7}s;--r0:${i%2?1.5:-1.5}deg;--r1:${i%2?-1.5:1.5}deg">
-        <button type="button" data-open="${esc(p.id)}" aria-label="${esc(p.n)}" style="background:${field(i)};--in:${200+i*110}ms"><span class="ph" style="${phStyle(p)}"></span><span class="price-tag num">${money(p.v && p.v.some(v=>/metro/i.test(v.l)) ? p.v.find(v=>/metro/i.test(v.l)).p : p.p)}</span></button>
-        <span class="lbl">${esc(p.n)}</span>
-      </div></div>`;
-  }).join('');
+  const n = wide ? 14 : 10, seen = new Set(), picks = [];
+  for (const p of P.filter(p => ATLAS[p.i] && p.r).sort((a,b) => a.r - b.r)){ if (seen.has(p.s) || seen.has(p.i)) continue; seen.add(p.s); seen.add(p.i); picks.push(p); if (picks.length === n) break; }
+  ORB.items = [];
+  $('#stage').innerHTML = picks.map((p,i) => `<button type="button" class="orb" data-open="${esc(p.id)}" aria-label="${esc(p.n)}" tabindex="-1"><span class="ph" style="${phStyle(p)}"></span></button>`).join('');
+  document.querySelectorAll('#stage .orb').forEach((el,i,all) => ORB.items.push({ el, off: i / all.length * Math.PI * 2, wob: Math.random() * Math.PI * 2 }));
+  placeOrbit(0);
 }
+function placeOrbit(dt){
+  const st = $('#stage'); if (!st) return;
+  const W = st.clientWidth, H = st.clientHeight, wide = W > H * 1.3;
+  const rx = W * (wide ? .41 : .42), ry = H * (wide ? .4 : .41), base = Math.min(W, H) * (wide ? .27 : .26);
+  ORB.a += dt * .00012;
+  ORB.items.forEach(o => {
+    const t = ORB.a + o.off, x = Math.cos(t) * rx, y = Math.sin(t) * ry, depth = (Math.sin(t) + 1) / 2;
+    const sc = .62 + depth * .55, bob = Math.sin(ORB.a * 9 + o.wob) * 6, rot = Math.cos(t + o.wob) * 8;
+    o.el.style.width = o.el.style.height = base + 'px';
+    o.el.style.transform = `translate3d(${(x - base/2).toFixed(1)}px,${(y - base/2 + bob).toFixed(1)}px,0) scale(${sc.toFixed(3)}) rotate(${rot.toFixed(1)}deg)`;
+    o.el.style.zIndex = Math.round(depth * 50);
+    o.el.style.opacity = (.55 + depth * .45).toFixed(2);
+  });
+}
+(function orbitLoop(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function frame(now){
+    const dt = ORB.last ? Math.min(64, now - ORB.last) : 16; ORB.last = now;
+    const on = document.querySelector('#car .slide.on .s-orbit');
+    if (on && !reduce && !document.hidden) placeOrbit(dt);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  addEventListener('resize', () => placeOrbit(0));
+})();
 /* the banner follows the mouse: each tile moves by its depth, eased toward the pointer */
 (function parallax(){
   const banner = document.querySelector('#car');
