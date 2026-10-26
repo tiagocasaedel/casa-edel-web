@@ -725,6 +725,12 @@ section.t-navy .cable::after{background:var(--navy)}
   clip-path:inset(0 0 0 0);transition:clip-path 800ms var(--ease-in-out),opacity 300ms ease 600ms}
 .intro.out{clip-path:inset(0 0 100% 0);opacity:0;pointer-events:none}
 .intro video{width:min(92vw,980px);height:auto;display:block;transition:transform 800ms var(--ease-in-out)}
+.bolt{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.bolt polyline{stroke:#e5372c;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(229,55,44,.8));stroke-dashoffset:var(--len);opacity:0}
+.bolt.go polyline{opacity:1;animation:boltDraw 300ms cubic-bezier(.23,1,.32,1) forwards}
+.bolt.full polyline{animation:none;stroke-dashoffset:0}
+.bolt.fade polyline{opacity:0;transition:opacity 220ms ease}
+@keyframes boltDraw{to{stroke-dashoffset:0}}
 .intro.out video{transform:translateY(-40px) scale(.96)}
 .intro-skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));border:0;background:transparent;color:#50566a;font:inherit;font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px}
 @media (hover:hover) and (pointer:fine){.intro-skip:hover{background:#ece8e0}}
@@ -733,7 +739,8 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
 </style>
 
 <div class="intro" id="intro" aria-hidden="true">
-  <video id="introV" muted playsinline autoplay preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
+  <svg class="bolt" id="bolt" aria-hidden="true"><polyline id="boltL" fill="none"/><polyline id="boltR" fill="none"/></svg>
+  <video id="introV" muted playsinline preload="auto"><source src="img/intro.mp4" type="video/mp4"><source src="img/intro.webm" type="video/webm"></video>
   <button class="intro-skip" type="button" id="introSkip" tabindex="-1">Saltar</button>
 </div>
 <script>
@@ -753,10 +760,23 @@ html.intro-on .car,html.intro-on header.top .top-row > *{animation-play-state:pa
   }
   v.addEventListener('ended', close);
   var srcs = v.querySelectorAll('source'); srcs[srcs.length - 1].addEventListener('error', function(){ setTimeout(close, 900); });
-  setTimeout(function(){ if (!done && (v.readyState < 2 || v.paused)) close(); }, 2500);
+  setTimeout(function(){ if (!done && (v.readyState < 2 || v.paused)) close(); }, 3000);
   el.addEventListener('click', close);
   addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close(); });
-  var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 1200); });
+  /* the bolt runs edge to edge of the screen, then the logo video picks up right after its own bolt */
+  var bolt = document.getElementById('bolt'), L = document.getElementById('boltL'), R = document.getElementById('boltR');
+  function zig(){
+    var W = innerWidth, r = v.getBoundingClientRect(), y = r.top + r.height * .531, n = Math.max(10, Math.round(W / 70)), step = W / 2 / n, ptsL = [], ptsR = [];
+    for (var i = 0; i <= n; i++){ var j = i === 0 ? 0 : (Math.random() - .5) * 26; ptsL.push((W/2 - i*step).toFixed(1) + ',' + (y + j).toFixed(1)); ptsR.push((W/2 + i*step).toFixed(1) + ',' + (y + (i === 0 ? 0 : (Math.random() - .5) * 26)).toFixed(1)); }
+    bolt.setAttribute('viewBox', '0 0 ' + W + ' ' + innerHeight); L.setAttribute('points', ptsL.join(' ')); R.setAttribute('points', ptsR.join(' '));
+    [L, R].forEach(function(p){ var len = p.getTotalLength ? p.getTotalLength() : W; p.style.strokeDasharray = len; p.style.setProperty('--len', len); });
+  }
+  function start(){
+    zig(); bolt.classList.add('go');
+    var k = 0, t = setInterval(function(){ if (++k > 3) return clearInterval(t); zig(); bolt.classList.remove('go'); void bolt.getBoundingClientRect(); bolt.classList.add('go', 'full'); }, 140);
+    setTimeout(function(){ bolt.classList.add('fade'); var p = v.play && v.play(); if (p && p.catch) p.catch(function(){ setTimeout(close, 1200); }); }, 560);
+  }
+  if (v.readyState >= 1) start(); else { v.addEventListener('loadedmetadata', start, { once: true }); setTimeout(function(){ if (!bolt.classList.contains('go')) start(); }, 900); }
   setTimeout(close, 6500);
 })();
 </script>
