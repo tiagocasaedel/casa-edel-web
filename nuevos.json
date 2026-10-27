@@ -3183,12 +3183,20 @@
 "subrubro": "Bulonería y Fijaciones",
 "items": [
 [
+"pastoriza---abrazaderas-media-omega-516",
+"5/16\""
+],
+[
 "pastoriza---abrazaderas-media-omega-58",
 "5/8\""
 ],
 [
 "pastoriza---abrazaderas-media-omega-34",
 "3/4\""
+],
+[
+"pastoriza---abrazaderas-media-omega-78",
+"7/8\""
 ],
 [
 "pastoriza---abrazaderas-media-omega-1",
@@ -5021,24 +5029,6 @@
 [
 "kalop---caja-capsulada-embutir-azul-vacia-32a",
 "32A"
-]
-]
-}
-},
-{
-"id": "pastoriza-abrazaderas-media-omega-gx",
-"group": {
-"nombre": "Abrazaderas Media Omega",
-"rubro": "Cajas y Gabinetes",
-"subrubro": "Cajas Plásticas",
-"items": [
-[
-"pastoriza---abrazaderas-media-omega-516",
-"5/16\""
-],
-[
-"pastoriza---abrazaderas-media-omega-78",
-"7/8\""
 ]
 ]
 }
@@ -7742,59 +7732,31 @@
 {
 "id": "candil-lampara-led-velita-8w-e27-g",
 "group": {
-"nombre": "Lámpara LED Velita 8W E27",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"candil---lampara-led-velita-8w-e27-calida",
-"Cálida"
-],
-[
-"candil---lampara-led-velita-8w-e27-fria",
-"Fría"
-]
-]
-}
-},
-{
-"id": "candil-lampara-led-velita-8w-e14-g",
-"group": {
-"nombre": "Lámpara LED Velita 8W E14",
+"nombre": "Lámpara LED Velita",
 "rubro": "Iluminación",
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
 "candil---lampara-led-velita-8w-e14-calida",
-"Cálida"
+"8W E14 Cálida"
 ],
 [
 "candil---lampara-led-velita-8w-e14-fria",
-"Fría"
+"8W E14 Fría"
+],
+[
+"candil---lampara-led-velita-8w-e27-calida",
+"8W E27 Cálida"
+],
+[
+"candil---lampara-led-velita-8w-e27-fria",
+"8W E27 Fría"
 ]
 ]
 }
 },
 {
 "id": "interelec-lampara-led-velita-7w-e27-g",
-"group": {
-"nombre": "Lámpara LED Velita 7W E27",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"interelec---lampara-led-velita-7w-e27-calida",
-"Cálida"
-],
-[
-"interelec---lampara-led-velita-7w-e27-fria",
-"Fría"
-]
-]
-}
-},
-{
-"id": "interelec-lampara-led-velita-g",
 "group": {
 "nombre": "Lámpara LED Velita",
 "rubro": "Iluminación",
@@ -7815,6 +7777,14 @@
 [
 "interelec---lampara-led-velita-7w-e14-fria",
 "7W E14 Fría"
+],
+[
+"interelec---lampara-led-velita-7w-e27-calida",
+"7W E27 Cálida"
+],
+[
+"interelec---lampara-led-velita-7w-e27-fria",
+"7W E27 Fría"
 ]
 ]
 }
@@ -7892,17 +7862,33 @@
 {
 "id": "interelec-lampara-led-high-power-e40-fria-g",
 "group": {
-"nombre": "Lámpara LED High Power E40 Fría",
+"nombre": "Lámpara LED High Power",
 "rubro": "Iluminación",
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
+"interelec---lampara-led-high-power-20w-e27-fria",
+"20W E27 Fría"
+],
+[
+"interelec---lampara-led-high-power-30w-e27-fria",
+"30W E27 Fría"
+],
+[
+"interelec---lamp-led-high-power-40w-e27e40-fria",
+"40W E27/E40 Fría"
+],
+[
+"interelec---lamp-led-high-power-50w-e27e40-fria",
+"50W E27/E40 Fría"
+],
+[
 "interelec---lamp-led-high-power-80w-e40-fria",
-"80W"
+"80W E40 Fría"
 ],
 [
 "interelec---lamp-led-high-power-100w-e40-fria",
-"100W"
+"100W E40 Fría"
 ]
 ]
 }
@@ -7937,42 +7923,6 @@
 [
 "hyundai---lampara-led-high-power-120w-e27-luz-fria",
 "120W"
-]
-]
-}
-},
-{
-"id": "interelec-lampara-led-high-power-e27-e40-fria-g",
-"group": {
-"nombre": "Lámpara LED High Power E27/E40 Fría",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"interelec---lamp-led-high-power-40w-e27e40-fria",
-"40W"
-],
-[
-"interelec---lamp-led-high-power-50w-e27e40-fria",
-"50W"
-]
-]
-}
-},
-{
-"id": "interelec-lampara-led-high-power-e27-fria-g",
-"group": {
-"nombre": "Lámpara LED High Power E27 Fría",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"interelec---lampara-led-high-power-20w-e27-fria",
-"20W"
-],
-[
-"interelec---lampara-led-high-power-30w-e27-fria",
-"30W"
 ]
 ]
 }
@@ -11291,5 +11241,40 @@
 "visible": false
 },
 "motivo": "Repetida: queda la de Santa Maria 001RE"
+},
+{
+"id": "pastoriza-abrazaderas-media-omega-gx",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "interelec-lampara-led-high-power-e27-e40-fria-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "interelec-lampara-led-high-power-e27-fria-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "interelec-lampara-led-velita-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "candil-lampara-led-velita-8w-e14-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
 }
 ]
