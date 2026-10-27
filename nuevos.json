@@ -21,5 +21,187 @@
    "visible": false
   },
   "motivo": "Ya no se vende"
+ },
+ {
+  "id": "fusse---terminal-laton-p-macho-64-x-8-s-tapa",
+  "set": {
+   "nombre": "Terminal Latón para Macho 6,4 x 8 sin Traba"
+  },
+  "motivo": "Nombre corregido"
+ },
+ {
+  "id": "fusse---terminal-laton-p-macho-5-x-8-s-tapa",
+  "set": {
+   "nombre": "Terminal Latón para Macho 5 x 8 sin Traba"
+  },
+  "motivo": "Nombre corregido"
+ },
+ {
+  "id": "alic---zocalo-lampara-gu10-ccable",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---tubo-led-t8-18w-120cm-luz-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-style-4w-e27-clara-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-style-4w-e14-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-style-4w-dim-e27-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-eco-7w-e27-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-eco-7w-e27-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-eco-7w-e14-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-eco-5w-e27-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-velita-eco-5w-e14-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-led-style-velita-e27-4w-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-led-forza-high-power-75w-e40-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-led-forza-high-power-55w-e40-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-led-forza-high-power-150w-e40-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-led-forza-high-power-125w-e40-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-halogena-perfume-24w-e14-cal",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-halogena-perfume-15w-e14-cal",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-gota-eco-led-5w-e27-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lampara-gota-eco-led-5w-e27-luz-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-filam-led-gota-style-4w-e27-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-filam-led-gota-style-4w-e27-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-filam-led-gota-style-4w-e27-cal-dimm",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---lamp-filam-st64-style-8w-dimm-calida",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "alic---dicroica-gu10-eco-led-7w-luz-fria",
+  "set": {
+   "visible": false
+  },
+  "motivo": "Marca Alic: ya no se trabaja"
  }
 ]

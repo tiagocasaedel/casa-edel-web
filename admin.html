@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-0tAEp8f7kubuui9Hz/ydlEGKiUr7eZERg9Nx6Jtzo00='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-LWUB9r8xQcOQebssl7gech30v6pI6qu5A26W4w0AG84='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -120,6 +120,7 @@ h2{margin:0 0 4px;font-size:1.25rem;font-weight:600;letter-spacing:-.01em}
 .bar .field{height:36px;width:84px;background:rgba(255,255,255,.1);border-color:transparent;color:#fff}
 .bar b{font-weight:600}
 #selBar{bottom:84px}
+.btn.danger{color:#b3261e;border-color:#e6b4ae}.btn.danger:hover{background:#b3261e;color:#fff}
 
 /* dollar & bulk */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -322,6 +323,7 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
 <div class="bar" id="selBar" role="region" aria-label="Seleccionados"><span><b id="selN">0</b> seleccionados</span>
   <input class="field num" id="selPct" type="number" step="0.5" placeholder="%" aria-label="Porcentaje"><button class="btn sm" type="button" id="selPctGo">Aumentar %</button>
   <button class="btn sm" type="button" data-selvis="0">Ocultar</button><button class="btn sm" type="button" data-selvis="1">Mostrar</button>
+  <button class="btn sm danger" type="button" id="selDel">Eliminar</button>
   <button class="btn sm" type="button" id="selClear">Quitar selección</button></div>
 </div>
 
@@ -353,7 +355,7 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
     <table class="vt"><tbody id="vRows"></tbody></table>
     <p class="mini" id="vNone">Sin presentaciones: se vende con el precio de arriba.</p>
   </div>
-  <div class="foot"><span class="mini" id="dMeta"></span><div class="row"><button class="btn" type="button" data-close>Cancelar</button><button class="btn go" type="submit" id="dSave">Guardar</button></div></div>
+  <div class="foot"><span class="mini" id="dMeta"></span><div class="row"><button class="btn danger" type="button" id="dDel">Eliminar</button><button class="btn" type="button" data-close>Cancelar</button><button class="btn go" type="submit" id="dSave">Guardar</button></div></div>
 </form></dialog>
 <dialog id="enroll" aria-labelledby="enT"><form class="dlg" id="enrollForm" method="dialog">
   <header><h2 id="enT">Verificación en dos pasos</h2><button class="btn sm" type="button" data-close>Cerrar</button></header>
@@ -553,7 +555,7 @@ function openEdit(id){
   $('#dN').value = edit.nombre; $('#dB').value = edit.marca; $('#dC').value = edit.rubro; $('#dS').value = edit.subrubro; $('#dK').value = edit.codigo;
   $('#dP').value = edit.precio_usd != null ? '' : edit.precio; $('#dU').value = edit.precio_usd ?? ''; $('#dUn').value = edit.unidad; $('#dR').value = edit.orden || ''; $('#dV').checked = !!edit.visible;
   $('#dMeta').textContent = id ? `Identificador: ${id}` : '';
-  renderEditPhoto(); renderVariants(); $('#dlg').showModal();
+  $('#dDel').hidden = !id; renderEditPhoto(); renderVariants(); $('#dlg').showModal();
 }
 function renderEditPhoto(){ $('#dPh').innerHTML = phStyle(fotoOf(edit)) ? `<span class="ph" style="${phStyle(fotoOf(edit))}"></span>` : ''; }
 function renderVariants(){
@@ -765,6 +767,23 @@ $('#rows').addEventListener('change', e => {
 });
 $('#selAll').addEventListener('change', e => { filtered.slice(0, shown).forEach(r => e.target.checked ? sel.add(r.id) : sel.delete(r.id)); renderRows(); updateBars(); });
 $('#selClear').addEventListener('click', () => { sel.clear(); renderRows(); updateBars(); });
+/* eliminar de verdad (no se puede deshacer; queda anotado en el Historial) */
+async function deleteProducts(ids){
+  ids = ids.filter(id => BYID.has(id)); if (!ids.length) return false;
+  const names = ids.map(id => BYID.get(id).nombre);
+  const msg = ids.length === 1 ? `¿Eliminar "${names[0]}"?\n\nSe borra de la web y del panel. No se puede deshacer (si solo querés que no se vea, usá Ocultar).`
+    : `¿Eliminar ${ids.length} productos?\n\n${names.slice(0, 8).join('\n')}${ids.length > 8 ? `\n… y ${ids.length - 8} más` : ''}\n\nSe borran de la web y del panel. No se puede deshacer (si solo querés que no se vean, usá Ocultar).`;
+  if (!confirm(msg)) return false;
+  try {
+    await DB.remove(ids);
+    await DB.log(ids.map(id => ({ producto:id, detalle:{ motivo:'Producto eliminado', nombre:BYID.get(id).nombre, marca:BYID.get(id).marca, codigo:BYID.get(id).codigo } })));
+    const gone = new Set(ids); R = R.filter(r => !gone.has(r.id)); ids.forEach(id => { dirty.delete(id); sel.delete(id); });
+    index(); fillSelects(); applyFilters(); updateBars();
+    toast(ids.length === 1 ? 'Producto eliminado' : `${ids.length} productos eliminados`); return true;
+  } catch (err) { toast('No se pudo eliminar: ' + (err.message || err), true); return false; }
+}
+$('#selDel').addEventListener('click', () => deleteProducts([...sel]));
+$('#dDel').addEventListener('click', async () => { if (edit && edit.id && !edit._new && await deleteProducts([edit.id])) $('#dlg').close(); });
 $('#selPctGo').addEventListener('click', () => { const p = num($('#selPct').value); if (!p){ toast('Escribí un porcentaje', true); return; } sel.forEach(i => markDirty(bulkApplyTo(cur(i), p, 1))); renderRows(); toast(`${sel.size} precios ajustados ${p > 0 ? '+' : ''}${p}%. Tocá Guardar.`); });
 $('#saveAll').addEventListener('click', async () => {
   const b = $('#saveAll'); b.disabled = true;

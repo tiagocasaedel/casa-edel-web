@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-NxgfNnN40pRrRpTKCc0H+B+oZX9z9qrhKuUQfJ2pjj0='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-z+IMpsGsWMsmFxg1nTXjuRGAHku+eAbdl/JD2s4UNdY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1062,7 +1062,7 @@ const CONFIG = {
 };
 const RUBRO_ORDER = ['Cables','Llaves de Luz y Tomas','Iluminación','Protecciones y Maniobra','Caños y Canalización','Cajas y Gabinetes','Bornes y Terminales','Fichas y Prolongadores','Herramientas y Ferretería','Energía y Puesta a Tierra','Tecnología y Seguridad','Climatización y Hogar'];
 const FIELDS = ['var(--tile)'];
-const BRAND_LOGO = {'Bulit':'bulit','Crossmaster':'crossmaster','Gamasonic':'gamasonic','Gurina':'gurina','MIG':'mig','Demasled':'demasled','Jadever':'jadever','Alic':'alic','Indular':'indular','H Intercom':'hintercom','King':'king','Bael':'bael','Practiled':'practiled','Percanplast':'percanplast','Novalucce':'novalucce','NCB':'ncb','Nevar':'nevar','Probattery':'probattery','Exultt':'exultt','Kalop':'kalop','RBC':'rbc','Genrod':'genrod','Sica':'sica','Schneider':'schneider','Jeluz':'jeluz','Cambre':'cambre','Teclastar':'teclastar','Fonseca':'fonseca','Interelec':'interelec','Argenplas':'argenplas','BAW':'baw','Candil':'candil','3M':'3m','San Justo':'sanjusto','Macroled':'macroled','Zoloda':'zoloda'};
+const BRAND_LOGO = {'Bulit':'bulit','Crossmaster':'crossmaster','Gamasonic':'gamasonic','Gurina':'gurina','MIG':'mig','Demasled':'demasled','Jadever':'jadever','Indular':'indular','H Intercom':'hintercom','King':'king','Bael':'bael','Practiled':'practiled','Percanplast':'percanplast','Novalucce':'novalucce','NCB':'ncb','Nevar':'nevar','Probattery':'probattery','Exultt':'exultt','Kalop':'kalop','RBC':'rbc','Genrod':'genrod','Sica':'sica','Schneider':'schneider','Jeluz':'jeluz','Cambre':'cambre','Teclastar':'teclastar','Fonseca':'fonseca','Interelec':'interelec','Argenplas':'argenplas','BAW':'baw','Candil':'candil','3M':'3m','San Justo':'sanjusto','Macroled':'macroled','Zoloda':'zoloda'};
 const brandMark = (b, cls='') => BRAND_LOGO[b] ? `<img class="${cls}" src="img/logos/${BRAND_LOGO[b]}.png" alt="${esc(b)}" loading="lazy">` : `<span class="bname ${cls}">${esc(b||'Otras marcas')}</span>`;
 const CELL = 280, SHEET = 1680;
 
@@ -1237,7 +1237,7 @@ function placeOrbit(dt){
 function renderMarquee(){
   const items = [['genrod','Genrod'],['sica','Sica'],['schneider','Schneider Electric'],['jeluz','Jeluz'],['cambre','Cambre'],['teclastar','Teclastar'],
     ['fonseca','Fonseca'],['interelec','Interelec'],['argenplas','Argenplas'],['baw','BAW'],['candil','Candil'],['sistelectric','Sistelectric'],
-    ['3m','3M'],['sanjusto','San Justo'],['macroled','Macroled'],['kalop','Kalop'],['exultt','Exultt'],['rbc','RBC Sitel'],['jadever','Jadever'],['king','King'],['bael','Bael'],['alic','Alic'],['indular','Indular'],['hintercom','H Intercom'],['practiled','Practiled'],['novalucce','Novalucce'],['probattery','Probattery'],['zoloda','Zoloda'],['bulit','Bulit'],['crossmaster','Crossmaster']].map(x => ['logo', ...x]);
+    ['3m','3M'],['sanjusto','San Justo'],['macroled','Macroled'],['kalop','Kalop'],['exultt','Exultt'],['rbc','RBC Sitel'],['jadever','Jadever'],['king','King'],['bael','Bael'],['indular','Indular'],['hintercom','H Intercom'],['practiled','Practiled'],['novalucce','Novalucce'],['probattery','Probattery'],['zoloda','Zoloda'],['bulit','Bulit'],['crossmaster','Crossmaster']].map(x => ['logo', ...x]);
   const row = items.map(i => i[0]==='logo' ? `<span class="it"><img src="img/logos/${i[1]}.png" alt="${esc(i[2])}" height="46"></span>` : `<span class="it"><span>${esc(i[1])}</span></span>`).join('');
   $('#track').innerHTML = row + row.replace(/<span class="it">/g,'<span class="it" aria-hidden="true">').replace(/alt="[^"]*"/g,'alt=""');
 }
