@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-rZVuRRfGQas3eELqe1yhz7V8qqd72Q7jTZXn8azL/eQ='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-39akZsTODlVgdfTGOOdG/0DBVRFdoKXF6X5YAzAwPiI='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1490,7 +1490,7 @@ function refreshCard(id){
 
 /* ---------- cart ---------- */
 function save(){ store.set('ce-cart', cart); store.set('ce-who', who); }
-function unitOf(p, v){ const lab = p.v ? p.v[v].l : ''; return (/metro/i.test(lab) || (!p.v && p.u==='m')) ? 'm' : 'u'; }
+function unitOf(p, v){ const lab = p.v ? p.v[v].l : ''; return (/metro/i.test(lab) || (p.u==='m' && !/rollo|unidad/i.test(lab))) ? 'm' : 'u'; }
 function priceOf(p, v){ return p.v ? p.v[v].p : p.p; }
 function add(id, v=0, q=1, silent){
   const p = BY.get(id); if (!p) return;

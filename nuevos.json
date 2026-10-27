@@ -1184,57 +1184,337 @@
 }
 },
 {
-"id": "indusil-cable-siliconado-1x4-g",
+"id": "argenplas-cable-subterraneo-5-conductores-g",
 "group": {
-"nombre": "Cable Siliconado 1x4",
+"nombre": "Cable Subterráneo 5 conductores",
 "rubro": "Cables",
 "subrubro": "Cables Subterráneos y Especiales",
 "items": [
 [
-"indusil---cable-siliconado-1x4-blanco",
-"Blanco"
+"argenplas---cable-subterraneo-de-5x150mm",
+"5x1,50 mm"
 ],
 [
-"indusil---cable-siliconado-1x4-celeste",
-"Celeste"
+"argenplas---cable-subterraneo-de-5x250mm",
+"5x2,50 mm"
 ],
 [
-"indusil---cable-siliconado-1x4-negro",
-"Negro"
+"argenplas---cable-subterraneo-de-5x4mm",
+"5x4 mm"
 ],
 [
-"indusil---cable-siliconado-1x4-rojo",
-"Rojo"
+"argenplas---cable-subterraneo-de-5x6mm",
+"5x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x10mm",
+"5x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x16mm",
+"5x16 mm"
 ]
 ]
 }
 },
 {
-"id": "indusil-cable-siliconado-1x2-50-g",
+"id": "argenplas-cable-subterraneo-4-conductores-g",
 "group": {
-"nombre": "Cable Siliconado 1x2,50",
+"nombre": "Cable Subterráneo 4 conductores",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-4x150mm",
+"4x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x250mm",
+"4x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x4mm",
+"4x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x6mm",
+"4x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x10mm",
+"4x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x16mm",
+"4x16 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-3-conductores-g",
+"group": {
+"nombre": "Cable Subterráneo 3 conductores",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-3x150mm",
+"3x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x250mm",
+"3x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x4mm",
+"3x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x6mm",
+"3x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x10mm",
+"3x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x16mm",
+"3x16 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x2516mm",
+"3x25+16MM"
+],
+[
+"argenplas---cable-subterraneo-de-3x3516mm",
+"3x35+16MM"
+],
+[
+"argenplas---cable-subterraneo-de-3x5025mm",
+"3x50+25MM"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-2-conductores-g",
+"group": {
+"nombre": "Cable Subterráneo 2 conductores",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-2x150mm",
+"2x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x250mm",
+"2x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x4mm",
+"2x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x6mm",
+"2x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x10mm",
+"2x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x16mm",
+"2x16 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-unipolar-g",
+"group": {
+"nombre": "Cable Subterráneo Unipolar",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-1x25mm",
+"1x25 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x35mm",
+"1x35 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x50mm",
+"1x50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x70mm",
+"1x70 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x95mm",
+"1x95 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x120mm",
+"1x120 mm"
+]
+]
+}
+},
+{
+"id": "indusil-cable-siliconado-unipolar-g",
+"group": {
+"nombre": "Cable Siliconado Unipolar",
 "rubro": "Cables",
 "subrubro": "Cables Subterráneos y Especiales",
 "items": [
 [
 "indusil---cable-siliconado-1x250-blanco",
-"Blanco"
+"1x2,50 mm · Blanco"
 ],
 [
 "indusil---cable-siliconado-1x250-celeste",
-"Celeste"
+"1x2,50 mm · Celeste"
 ],
 [
 "indusil---cable-siliconado-1x250-negro",
-"Negro"
+"1x2,50 mm · Negro"
 ],
 [
 "indusil---cable-siliconado-1x250-rojo",
-"Rojo"
+"1x2,50 mm · Rojo"
 ],
 [
 "indusil---cable-siliconado-1x250-va",
-"Verde/Amarillo"
+"1x2,50 mm · Verde/Amarillo"
+],
+[
+"indusil---cable-siliconado-1x4-blanco",
+"1x4 mm · Blanco"
+],
+[
+"indusil---cable-siliconado-1x4-celeste",
+"1x4 mm · Celeste"
+],
+[
+"indusil---cable-siliconado-1x4-negro",
+"1x4 mm · Negro"
+],
+[
+"indusil---cable-siliconado-1x4-rojo",
+"1x4 mm · Rojo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-preensamblado-g",
+"group": {
+"nombre": "Cable Preensamblado 4 conductores",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"fonseca---cable-preensamblado-4x6mm",
+"4x6 mm"
+],
+[
+"fonseca---cable-preensamblado-4x10mm",
+"4x10 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-preensamblado-2-conductores-g",
+"group": {
+"nombre": "Cable Preensamblado 2 conductores",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-preensamblado-2x4mm",
+"2x4 mm"
+],
+[
+"argenplas---cable-preensamblado-2x6mm",
+"2x6 mm"
+],
+[
+"argenplas---cable-preensamblado-2x16mm",
+"2x16 mm Aluminio"
+],
+[
+"argenplas---cable-preensamblado-2x25mm",
+"2x25 mm Aluminio"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-para-soldadura-g",
+"group": {
+"nombre": "Cable para Soldadura Unipolar",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-psoldadura-1x16mm-negro",
+"1x16 mm · Negro"
+],
+[
+"argenplas---cable-psoldadura-1x16mm-rojo",
+"1x16 mm · Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x25mm-negro",
+"1x25 mm · Negro"
+],
+[
+"argenplas---cable-psoldadura-1x25mm-rojo",
+"1x25 mm · Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x35mm-negro",
+"1x35 mm · Negro"
+],
+[
+"argenplas---cable-psoldadura-1x35mm-rojo",
+"1x35 mm · Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x50mm-negro",
+"1x50 mm · Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-cobre-desnudo-g",
+"group": {
+"nombre": "Cable Cobre Desnudo Unipolar",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-cobre-desnudo-1x16mm",
+"1x16 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x25mm",
+"1x25 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x35mm",
+"1x35 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x50mm",
+"1x50 mm"
 ]
 ]
 }
@@ -1242,239 +1522,333 @@
 {
 "id": "argenplas-cable-alma-acero-2x0-50-mm-g",
 "group": {
-"nombre": "Cable Alma Acero 2x0,50 mm",
+"nombre": "Cable Alma Acero",
 "rubro": "Cables",
 "subrubro": "Cables Subterráneos y Especiales",
 "items": [
 [
 "argenplas-cable-alma-acero-2x050mm-blanco",
-"Blanco"
+"2x0,50 mm · Blanco"
 ],
 [
 "argenplas--cable-alma-acero-2x050mm-negro",
-"Negro"
+"2x0,50 mm · Negro"
 ]
 ]
 }
 },
 {
-"id": "argenplas-cable-tpr-3x2-50-mm-g",
+"id": "argenplas-cable-tpr-7-conductores-g",
 "group": {
-"nombre": "Cable TPR 3x2,50 mm",
+"nombre": "Cable TPR 7 conductores",
 "rubro": "Cables",
 "subrubro": "Cables TPR y Paralelos",
 "items": [
 [
-"argenplas---cable-tpr-3x250mm-blanco",
-"Blanco"
+"argenplas---cable-tpr-7x1mm-negro",
+"7x1 mm · Negro"
 ],
 [
-"argenplas---cable-tpr-3x250mm",
-"Estándar"
+"argenplas---cable-tpr-7x150mm",
+"7x1,50 mm · Estándar"
+],
+[
+"argenplas-cable-tpr-7x2-50-mm-precio-por-metro",
+"7x2,50 mm · Estándar · Por metro (corte a medida)"
+],
+[
+"argenplas---cable-tpr-7x250mm",
+"7x2,50 mm · Estándar · Rollo x 100 m"
 ]
 ]
 }
 },
 {
-"id": "argenplas-cable-tpr-3x1-50-mm-g",
+"id": "argenplas-cable-tpr-5-conductores-g",
 "group": {
-"nombre": "Cable TPR 3x1,50 mm",
+"nombre": "Cable TPR 5 conductores",
 "rubro": "Cables",
 "subrubro": "Cables TPR y Paralelos",
 "items": [
 [
-"argenplas---cable-tpr-3x150mm-amarillo",
-"Amarillo"
+"argenplas---cable-tpr-5x1-mm-negro",
+"5x1 mm · Negro"
 ],
 [
-"argenplas---cable-tpr-3x150mm-blanco",
-"Blanco"
+"argenplas---cable-tpr-5x150mm-negro",
+"5x1,50 mm · Negro"
 ],
 [
-"argenplas---cable-tpr-3x150mm",
-"Estándar"
+"argenplas---cable-tpr-5x250mm",
+"5x2,50 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-5x4mm",
+"5x4 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-5x6mm",
+"5x6 mm · Estándar"
 ]
 ]
 }
 },
 {
-"id": "argenplas-cable-tpr-3x1-mm-g",
+"id": "argenplas-cable-tpr-4-conductores-g",
 "group": {
-"nombre": "Cable TPR 3x1 mm",
+"nombre": "Cable TPR 4 conductores",
 "rubro": "Cables",
 "subrubro": "Cables TPR y Paralelos",
 "items": [
 [
-"argenplas---cable-tpr-3x1mm-blanco",
-"Blanco"
+"argenplas---cable-tpr-4x1mm",
+"4x1 mm"
+],
+[
+"argenplas---cable-tpr-4x150mm",
+"4x1,50 mm"
+],
+[
+"argenplas---cable-tpr-4x250mm",
+"4x2,50 mm"
+],
+[
+"argenplas---cable-tpr-4x4mm",
+"4x4 mm"
+],
+[
+"argenplas---cable-tpr-4x6mm",
+"4x6 mm"
+],
+[
+"argenplas---cable-tpr-4x10mm",
+"4x10 mm · Por metro (corte a medida)"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-3-conductores-g",
+"group": {
+"nombre": "Cable TPR 3 conductores",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-3x075mm-negro",
+"3x0,75 mm · Negro"
 ],
 [
 "argenplas---cable-tpr-3x1mm",
-"Estándar"
+"3x1 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-3x1mm-blanco",
+"3x1 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-3x150mm",
+"3x1,50 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-3x150mm-amarillo",
+"3x1,50 mm · Amarillo"
+],
+[
+"argenplas---cable-tpr-3x150mm-blanco",
+"3x1,50 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-3x250mm",
+"3x2,50 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-3x250mm-blanco",
+"3x2,50 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-3x4mm",
+"3x4 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-3x6mm",
+"3x6 mm · Estándar"
 ]
 ]
 }
 },
 {
-"id": "argenplas-cable-tpr-2x2-50-mm-g",
+"id": "argenplas-cable-tpr-2-conductores-g",
 "group": {
-"nombre": "Cable TPR 2x2,50 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-tpr-2x250mm-blanco",
-"Blanco"
-],
-[
-"argenplas---cable-tpr-2x250mm",
-"Estándar"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-tpr-2x1-50-mm-g",
-"group": {
-"nombre": "Cable TPR 2x1,50 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-tpr-2x150mm-blanco",
-"Blanco"
-],
-[
-"argenplas---cable-tpr-2x150mm",
-"Estándar"
-],
-[
-"argenplas---cable-tpr-2x150mm-naranja",
-"Naranja"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-tpr-2x1-mm-g",
-"group": {
-"nombre": "Cable TPR 2x1 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-tpr-2x1mm-blanco",
-"Blanco"
-],
-[
-"argenplas---cable-tpr-2x1mm",
-"Estándar"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-tpr-2x0-50-mm-g",
-"group": {
-"nombre": "Cable TPR 2x0,50 mm",
+"nombre": "Cable TPR 2 conductores",
 "rubro": "Cables",
 "subrubro": "Cables TPR y Paralelos",
 "items": [
 [
 "argenplas---cable-tpr-2x050mm-blanco",
-"Blanco"
+"2x0,50 mm · Blanco"
 ],
 [
 "argenplas---cable-tpr-2x050mm-negro",
-"Negro"
+"2x0,50 mm · Negro"
+],
+[
+"argenplas---cable-tpr-2x075mm-negro",
+"2x0,75 mm · Negro"
+],
+[
+"argenplas---cable-tpr-2x1mm",
+"2x1 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-2x1mm-blanco",
+"2x1 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-2x150mm",
+"2x1,50 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-2x150mm-blanco",
+"2x1,50 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-2x150mm-naranja",
+"2x1,50 mm · Naranja"
+],
+[
+"argenplas---cable-tpr-2x250mm",
+"2x2,50 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-2x250mm-blanco",
+"2x2,50 mm · Blanco"
+],
+[
+"argenplas---cable-tpr-2x4mm",
+"2x4 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-2x6mm",
+"2x6 mm · Estándar"
+],
+[
+"argenplas---cable-tpr-2x10mm",
+"2x10 mm · Estándar"
 ]
 ]
 }
 },
 {
-"id": "argenplas-cable-paralelo-2x1-50-mm-g",
+"id": "argenplas-cable-paralelo-g",
 "group": {
-"nombre": "Cable Paralelo 2x1,50 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-paralelo-blanco-2x150mm",
-"Blanco"
-],
-[
-"argenplas---cable-paral-cristal-2x150mm",
-"Cristal"
-],
-[
-"argenplas---cable-paralelo-negro-2x150mm",
-"Negro"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-paralelo-2x1-mm-g",
-"group": {
-"nombre": "Cable Paralelo 2x1 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-paralelo-blanco-2x1mm",
-"Blanco"
-],
-[
-"argenplas---cable-paral-cristal-2x1mm",
-"Cristal"
-],
-[
-"argenplas---cable-paralelo-negro-2x1mm",
-"Negro"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-paralelo-2x0-75-mm-g",
-"group": {
-"nombre": "Cable Paralelo 2x0,75 mm",
-"rubro": "Cables",
-"subrubro": "Cables TPR y Paralelos",
-"items": [
-[
-"argenplas---cable-paralelo-blanco-2x075mm",
-"Blanco"
-],
-[
-"argenplas---cable-paral-cristal-2x075mm",
-"Cristal"
-],
-[
-"argenplas---cable-paralelo-negro-2x075mm",
-"Negro"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-paralelo-2x0-50-mm-g",
-"group": {
-"nombre": "Cable Paralelo 2x0,50 mm",
+"nombre": "Cable Paralelo",
 "rubro": "Cables",
 "subrubro": "Cables TPR y Paralelos",
 "items": [
 [
 "argenplas---cable-paralelo-blanco-2x050mm",
-"Blanco"
+"2x0,50 mm · Blanco"
 ],
 [
 "argenplas---cable-paral-cristal-2x050mm",
-"Cristal"
+"2x0,50 mm · Cristal"
 ],
 [
 "argenplas---cable-paralelo-negro-2x050mm",
-"Negro"
+"2x0,50 mm · Negro"
+],
+[
+"argenplas---cable-paralelo-blanco-2x075mm",
+"2x0,75 mm · Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x075mm",
+"2x0,75 mm · Cristal"
+],
+[
+"argenplas---cable-paralelo-marron-2x075mm",
+"2x0,75 mm · Marrón · Por metro (corte a medida)"
+],
+[
+"argenplas---cable-paralelo-negro-2x075mm",
+"2x0,75 mm · Negro"
+],
+[
+"argenplas---cable-paralelo-blanco-2x1mm",
+"2x1 mm · Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x1mm",
+"2x1 mm · Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x1mm",
+"2x1 mm · Negro"
+],
+[
+"argenplas---cable-paralelo-blanco-2x150mm",
+"2x1,50 mm · Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x150mm",
+"2x1,50 mm · Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x150mm",
+"2x1,50 mm · Negro"
+],
+[
+"argenplas---cable-paralelo-blanco-2x250mm",
+"2x2,50 mm · Blanco"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-envainado-chato-g",
+"group": {
+"nombre": "Cable Envainado Chato",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-env-chato-2x050mm",
+"2x0,50 mm"
+],
+[
+"argenplas---cable-env-chato-2x075mm",
+"2x0,75 mm"
+],
+[
+"argenplas---cable-env-chato-2x1mm",
+"2x1 mm"
+],
+[
+"argenplas---cable-env-chato-2x150mm",
+"2x1,50 mm"
+],
+[
+"argenplas---cable-env-chato-2x4mm",
+"2x4 mm · Por metro (corte a medida)"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-bicolor-para-bafle-g",
+"group": {
+"nombre": "Cable Bicolor para Bafle",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas-cable-bicolor-p-bafle-2x050mm",
+"2x0,50 mm"
+],
+[
+"argenplas---cable-bicolor-p-bafle-2x1mm",
+"2x1 mm"
 ]
 ]
 }
@@ -5788,158 +6162,6 @@
 }
 },
 {
-"id": "argenplas-cable-subterraneo-g",
-"group": {
-"nombre": "Cable Subterráneo",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-subterraneo-de-1x25mm",
-"1x25 mm"
-],
-[
-"argenplas---cable-subterraneo-de-1x35mm",
-"1x35 mm"
-],
-[
-"argenplas---cable-subterraneo-de-1x50mm",
-"1x50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-1x70mm",
-"1x70 mm"
-],
-[
-"argenplas---cable-subterraneo-de-1x95mm",
-"1x95 mm"
-],
-[
-"argenplas---cable-subterraneo-de-1x120mm",
-"1x120 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x150mm",
-"2x1,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x250mm",
-"2x2,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x4mm",
-"2x4 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x6mm",
-"2x6 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x10mm",
-"2x10 mm"
-],
-[
-"argenplas---cable-subterraneo-de-2x16mm",
-"2x16 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x150mm",
-"3x1,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x250mm",
-"3x2,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x4mm",
-"3x4 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x6mm",
-"3x6 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x10mm",
-"3x10 mm"
-],
-[
-"argenplas---cable-subterraneo-de-3x16mm",
-"3x16 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x150mm",
-"4x1,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x250mm",
-"4x2,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x4mm",
-"4x4 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x6mm",
-"4x6 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x10mm",
-"4x10 mm"
-],
-[
-"argenplas---cable-subterraneo-de-4x16mm",
-"4x16 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x150mm",
-"5x1,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x250mm",
-"5x2,50 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x4mm",
-"5x4 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x6mm",
-"5x6 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x10mm",
-"5x10 mm"
-],
-[
-"argenplas---cable-subterraneo-de-5x16mm",
-"5x16 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-subterraneo-de-g",
-"group": {
-"nombre": "Cable Subterráneo de +",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-subterraneo-de-3x2516mm",
-"3x25 16MM"
-],
-[
-"argenplas---cable-subterraneo-de-3x3516mm",
-"3x35 16MM"
-],
-[
-"argenplas---cable-subterraneo-de-3x5025mm",
-"3x50 25MM"
-]
-]
-}
-},
-{
 "id": "argenplas-cable-subterraneo-comando-g",
 "group": {
 "nombre": "Cable Subterráneo Comando",
@@ -5958,98 +6180,6 @@
 }
 },
 {
-"id": "fonseca-cable-preensamblado-g",
-"group": {
-"nombre": "Cable Preensamblado",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"fonseca---cable-preensamblado-4x6mm",
-"4x6 mm"
-],
-[
-"fonseca---cable-preensamblado-4x10mm",
-"4x10 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-preensamblado-g",
-"group": {
-"nombre": "Cable Preensamblado",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-preensamblado-2x4mm",
-"2x4 mm"
-],
-[
-"argenplas---cable-preensamblado-2x6mm",
-"2x6 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-preensamblado-aluminio-por-metro-g",
-"group": {
-"nombre": "Cable Preensamblado Aluminio (por metro)",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-preensamblado-2x16mm",
-"2x16 mm"
-],
-[
-"argenplas---cable-preensamblado-2x25mm",
-"2x25 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-para-soldadura-g",
-"group": {
-"nombre": "Cable para Soldadura",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-psoldadura-1x16mm-negro",
-"1x16 mm Negro"
-],
-[
-"argenplas---cable-psoldadura-1x16mm-rojo",
-"1x16 mm Rojo"
-],
-[
-"argenplas---cable-psoldadura-1x25mm-negro",
-"1x25 mm Negro"
-],
-[
-"argenplas---cable-psoldadura-1x25mm-rojo",
-"1x25 mm Rojo"
-],
-[
-"argenplas---cable-psoldadura-1x35mm-negro",
-"1x35 mm Negro"
-],
-[
-"argenplas---cable-psoldadura-1x35mm-rojo",
-"1x35 mm Rojo"
-],
-[
-"argenplas---cable-psoldadura-1x50mm-negro",
-"1x50 mm Negro"
-]
-]
-}
-},
-{
 "id": "argenplas-cable-concentrico-1-g",
 "group": {
 "nombre": "Cable Concéntrico 1",
@@ -6063,32 +6193,6 @@
 [
 "argenplas---cable-concentrico-1-x-6-6mm-x-metro",
 "6 + 6 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-cobre-desnudo-g",
-"group": {
-"nombre": "Cable Cobre Desnudo",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas---cable-cobre-desnudo-1x16mm",
-"1x16 mm"
-],
-[
-"argenplas---cable-cobre-desnudo-1x25mm",
-"1x25 mm"
-],
-[
-"argenplas---cable-cobre-desnudo-1x35mm",
-"1x35 mm"
-],
-[
-"argenplas---cable-cobre-desnudo-1x50mm",
-"1x50 mm"
 ]
 ]
 }
@@ -10678,6 +10782,125 @@
 ]
 ]
 }
+},
+{
+"id": "indusil-cable-siliconado-1x4-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "indusil-cable-siliconado-1x2-50-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-3x2-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-3x1-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-3x1-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-2x2-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-2x1-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-2x1-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-tpr-2x0-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-paralelo-2x1-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-paralelo-2x1-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-paralelo-2x0-75-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-paralelo-2x0-50-mm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-subterraneo-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-subterraneo-de-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-preensamblado-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "argenplas-cable-preensamblado-aluminio-por-metro-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
 },
 {
 "id": "sica-interruptor-termomagnetico-din-4x50a-g",
