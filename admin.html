@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-NaT/56NwMPVm8QaRooQ/qySX6xaHZmJQ7RIrl+YYdBE='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-W22GNTqVYEti6ohwRZ2CbZ1aD/39hbpkWPmSdw0ifak='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -933,7 +933,7 @@ let NEW = [];
 async function offerNew(){
   let src = []; try { src = await (await fetch('nuevos.json', { cache:'no-cache' })).json(); } catch {}
   const idOk = r => r && typeof r.id === 'string' && /^[a-z0-9-]{1,120}$/.test(r.id);
-  const SETS = ['visible','precio','precio_usd','nombre','marca'];
+  const SETS = ['visible','precio','precio_usd','nombre','marca','orden','orden_cat'];
   NEW = [];
   for (const r of (Array.isArray(src) ? src : [])){
     if (!idOk(r)) continue;
@@ -973,7 +973,7 @@ async function offerNew(){
     } else if (r.set && typeof r.set === 'object'){
       const row = JSON.parse(JSON.stringify(have)); let ch = [];
       for (const k of SETS) if (k in r.set){
-        let v = r.set[k]; if (k === 'precio_usd') v = v == null ? null : r4(Number(v)); if (k === 'precio') v = Math.round(Number(v)) || 0; if (k === 'visible') v = !!v;
+        let v = r.set[k]; if (k === 'precio_usd') v = v == null ? null : r4(Number(v)); if (k === 'precio') v = Math.round(Number(v)) || 0; if (k === 'visible') v = !!v; if (k === 'orden') v = Math.max(0, Math.round(Number(v)) || 0); if (k === 'orden_cat') v = v == null ? null : Number(v);
         if (String(row[k] ?? '') !== String(v ?? '')) { row[k] = v; ch.push(k); }
       }
       if (!ch.length) continue;
