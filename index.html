@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-80CGciK1O3JFTKfYwJOqGmFQmrkMikK77j/jHxKZw5k='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-78Gfe7l6cfefxXcokmDKBll0P+Ac0d+LX2sfiRNXQvY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1718,7 +1718,7 @@ function renderPD(p){
   <div class="body">
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
-    <p class="meta">${esc(p.b)}${code ? ' · código ' + esc(code) : ''}</p>
+    <p class="meta">${[esc(p.b), code ? 'código ' + esc(code) : ''].filter(Boolean).join(' · ')}</p>
     <div class="pricebox"><div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP && !p.v.some(v => /metro/i.test(v.l)) ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
     ${opts}
     ${saveTxt}
