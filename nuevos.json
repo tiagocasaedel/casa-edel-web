@@ -296,6 +296,1666 @@
 }
 },
 {
+"id": "sica-disyuntor-diferencial-bipolar-g",
+"group": {
+"nombre": "Disyuntor Diferencial Bipolar",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Disyuntores Diferenciales",
+"items": [
+[
+"sica---id-disyuntor-de-2x25a-iram-ce",
+"25A"
+],
+[
+"sica---id-disyuntor-de-2x40a-iram-ce",
+"40A"
+]
+]
+}
+},
+{
+"id": "jeluz-disyuntor-diferencial-bipolar-g",
+"group": {
+"nombre": "Disyuntor Diferencial Bipolar",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Disyuntores Diferenciales",
+"items": [
+[
+"jeluz---id-disyuntor-de-2x25a-iram-ce",
+"25A · 30mA"
+],
+[
+"jeluz---id-disyuntor-de-2x40a-iram-ce",
+"40A · 30mA"
+],
+[
+"jeluz---id-disyuntor-de-2x40a-100ma-iram-ce",
+"40A · 100mA"
+]
+]
+}
+},
+{
+"id": "schneider-disyuntor-diferencial-tetrapolar-e9-g",
+"group": {
+"nombre": "Disyuntor Diferencial Tetrapolar E9",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Disyuntores Diferenciales",
+"items": [
+[
+"schneider---disyuntor-e9-4x40a-30ma",
+"40A"
+],
+[
+"schneider---disyuntor-e9-4x63a-30ma",
+"63A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-tetrapolar-ik60n-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar IK60N",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-ik60n-4x16a-c-6ka",
+"16A"
+],
+[
+"schneider---interrupt-termomag-ik60n-4x20a",
+"20A"
+],
+[
+"schneider---interrupt-termomag-ik60n-4x25a-c-6ka",
+"25A"
+],
+[
+"schneider---interrupt-termomag-ik60n-4x32a-c-6ka",
+"32A"
+],
+[
+"schneider---interrupt-termomag-ik60n-4x50a-c",
+"50A"
+],
+[
+"schneider---interrupt-termomag-ik60n-4x63a",
+"63A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-bipolar-ik60n-g",
+"group": {
+"nombre": "Interruptor Termomagnético Bipolar IK60N",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-ik60n-2x6a-c",
+"6A"
+],
+[
+"schneider---interrupt-termomag-ik60n-2x10a-c",
+"10A"
+],
+[
+"schneider---interrupt-termomag-ik60n-2x16a-c",
+"16A"
+],
+[
+"schneider---interrupt-termomag-ik60n-2x32a-c",
+"32A"
+],
+[
+"schneider---interrupt-termomag-ik60n-2x40a-c",
+"40A"
+],
+[
+"schneider---interrupt-termomag-ik60n-2x50a-c",
+"50A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-tetrapolar-gopact-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar Gopact",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-gopact-4x80a-30ka",
+"80A"
+],
+[
+"schneider---interrupt-termomag-gopact-4x100a-30ka",
+"100A"
+],
+[
+"schneider---interrupt-termomag-gopact-4x125a-30ka",
+"125A"
+],
+[
+"schneider---interrupt-termomag-gopact-4x160a-36ka",
+"160A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-tetrapolar-e9-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar E9 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-e9-4x06a-45ka",
+"6A"
+],
+[
+"schneider---interrupt-termomag-e9-4x10a-45ka",
+"10A"
+],
+[
+"schneider---interrupt-termomag-e9-4x16a-45ka",
+"16A"
+],
+[
+"schneider---interrupt-termomag-e9-4x20a-45ka",
+"20A"
+],
+[
+"schneider---interrupt-termomag-e9-4x25a-45ka",
+"25A"
+],
+[
+"schneider---interrupt-termomag-e9-4x32a-45ka",
+"32A"
+],
+[
+"schneider---interrupt-termomag-e9-4x40a-45ka",
+"40A"
+],
+[
+"schneider---interrupt-termomag-e9-4x50a-45ka",
+"50A"
+],
+[
+"schneider---interrupt-termomag-e9-4x63a-45ka",
+"63A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-tripolar-e9-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tripolar E9 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-e9-3x06a-45ka",
+"6A"
+],
+[
+"schneider---interrupt-termomag-e9-3x10a-45ka",
+"10A"
+],
+[
+"schneider---interrupt-termomag-e9-3x16a-45ka",
+"16A"
+],
+[
+"schneider---interrupt-termomag-e9-3x20a-45ka",
+"20A"
+],
+[
+"schneider---interrupt-termomag-e9-3x25a-45ka",
+"25A"
+],
+[
+"schneider---interrupt-termomag-e9-3x32a-45ka",
+"32A"
+],
+[
+"schneider---interrupt-termomag-e9-3x40a-45ka",
+"40A"
+],
+[
+"schneider---interrupt-termomag-e9-3x50a-45ka",
+"50A"
+],
+[
+"schneider---interrupt-termomag-e9-3x63a-45ka",
+"63A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-bipolar-e9-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Bipolar E9 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-e9-2x06a-45ka",
+"6A"
+],
+[
+"schneider---interrupt-termomag-e9-2x10a-45ka",
+"10A"
+],
+[
+"schneider---interrupt-termomag-e9-2x16a-45ka",
+"16A"
+],
+[
+"schneider---interrupt-termomag-e9-2x20a-45ka",
+"20A"
+],
+[
+"schneider---interrupt-termomag-e9-2x25a-45ka",
+"25A"
+],
+[
+"schneider---interrupt-termomag-e9-2x32a-45ka",
+"32A"
+],
+[
+"schneider---interrupt-termomag-e9-2x40a-45ka",
+"40A"
+],
+[
+"schneider---interrupt-termomag-e9-2x50a-45ka",
+"50A"
+],
+[
+"schneider---interrupt-termomag-e9-2x63a-45ka",
+"63A"
+]
+]
+}
+},
+{
+"id": "schneider-interruptor-termomagnetico-unipolar-e9-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Unipolar E9 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"schneider---interrupt-termomag-e9-1x06a-45ka",
+"6A"
+],
+[
+"schneider---interrupt-termomag-e9-1x10a-45ka",
+"10A"
+],
+[
+"schneider---interrupt-termomag-e9-1x16a-45ka",
+"16A"
+],
+[
+"schneider---interrupt-termomag-e9-1x20a-45ka",
+"20A"
+],
+[
+"schneider---interrupt-termomag-e9-1x25a-45ka",
+"25A"
+],
+[
+"schneider---interrupt-termomag-e9-1x32a-45ka",
+"32A"
+],
+[
+"schneider---interrupt-termomag-e9-1x40a-45ka",
+"40A"
+]
+]
+}
+},
+{
+"id": "jeluz-interruptor-termomagnetico-tetrapolar-din-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"jeluz---interruptor-termomag-din-4x10a-45ka",
+"10A"
+],
+[
+"jeluz---interruptor-termomag-din-4x16a-45ka",
+"16A"
+],
+[
+"jeluz---interruptor-termomag-din-4x20a-45ka",
+"20A"
+],
+[
+"jeluz---interruptor-termomag-din-4x25a-45ka",
+"25A"
+],
+[
+"jeluz---interruptor-termomag-din-4x32a-45ka",
+"32A"
+],
+[
+"jeluz---interruptor-termomag-din-4x40a-45ka",
+"40A"
+],
+[
+"jeluz---interruptor-termomag-din-4x50a-45ka",
+"50A"
+],
+[
+"jeluz---interruptor-termomag-din-4x63a-45ka",
+"63A"
+],
+[
+"jeluz---interruptor-termomag-din-4x80a-6ka",
+"80A"
+],
+[
+"jeluz---interruptor-termomag-din-4x100a-6ka",
+"100A"
+],
+[
+"jeluz---interruptor-termomag-din-4x125a-6ka",
+"125A"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-tetrapolar-din-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-4x16a-45ka",
+"16A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x20a-3ka",
+"20A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-4x20a-45ka",
+"20A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x25a-45ka",
+"25A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x32a-45ka",
+"32A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x40a-3ka",
+"40A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-4x40a-45ka",
+"40A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x50a-3ka",
+"50A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-4x50a-45ka",
+"50A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-4x63a-3ka",
+"63A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-4x80a-3ka",
+"80A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-4x100a-10ka",
+"100A · 10kA"
+]
+]
+}
+},
+{
+"id": "general-electric-interruptor-termomagnetico-tetrapolar-din-dg-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tetrapolar DIN DG+ 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"ge---interruptor-termomag-din-4x10a-45ka-dg",
+"10A"
+],
+[
+"ge---interruptor-termomag-din-4x16a-45ka-dg",
+"16A"
+],
+[
+"ge---interruptor-termomag-din-4x20a-45ka-dg",
+"20A"
+],
+[
+"ge---interruptor-termomag-din-4x25a-45ka-dg",
+"25A"
+],
+[
+"ge---interruptor-termomag-din-4x32a-45ka-dg",
+"32A"
+],
+[
+"ge---interruptor-termomag-din-4x40a-45ka-dg",
+"40A"
+],
+[
+"ge---interruptor-termomag-din-4x50a-45ka-dg",
+"50A"
+],
+[
+"ge---interruptor-termomag-din-4x63a-45ka-dg",
+"63A"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-tripolar-din-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tripolar DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-3x05a-3ka",
+"5A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x10a-3ka",
+"10A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x15a-3ka",
+"15A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x20a-3ka",
+"20A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x25a-3ka",
+"25A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x32a-3ka",
+"32A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x32a-45ka",
+"32A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-3x40a-3ka",
+"40A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x50a-3ka",
+"50A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x63a-3ka",
+"63A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-3x80a-10ka",
+"80A · 10kA"
+],
+[
+"sica---interruptor-termomag-din-3x100a-10ka",
+"100A · 10kA"
+]
+]
+}
+},
+{
+"id": "jeluz-interruptor-termomagnetico-tripolar-din-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tripolar DIN 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"jeluz---interruptor-termomag-din-3x10a-45ka",
+"10A"
+],
+[
+"jeluz---interruptor-termomag-din-3x16a-45ka",
+"16A"
+],
+[
+"jeluz---interruptor-termomag-din-3x20a-45ka",
+"20A"
+],
+[
+"jeluz---interruptor-termomag-din-3x25a-45ka",
+"25A"
+],
+[
+"jeluz---interruptor-termomag-din-3x40a-45ka",
+"40A"
+],
+[
+"jeluz---interruptor-termomag-din-3x50a-45ka",
+"50A"
+],
+[
+"jeluz---interruptor-termomag-din-3x63a-45ka",
+"63A"
+]
+]
+}
+},
+{
+"id": "general-electric-interruptor-termomagnetico-tripolar-din-dg-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Tripolar DIN DG+ 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"ge---interruptor-termomag-din-3x06a-45ka-dg",
+"6A"
+],
+[
+"ge---interruptor-termomag-din-3x10a-45ka-dg",
+"10A"
+],
+[
+"ge---interruptor-termomag-din-3x16a-45ka-dg",
+"16A"
+],
+[
+"ge---interruptor-termomag-din-3x20a-45ka-dg",
+"20A"
+],
+[
+"ge---interruptor-termomag-din-3x25a-45ka-dg",
+"25A"
+],
+[
+"ge---interruptor-termomag-din-3x32a-45ka-dg",
+"32A"
+],
+[
+"ge---interruptor-termomag-din-3x40a-45ka-dg",
+"40A"
+]
+]
+}
+},
+{
+"id": "general-electric-interruptor-termomagnetico-bipolar-din-dg-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Bipolar DIN DG+ 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"ge---interruptor-termomag-din-2x06a-45ka-dg",
+"6A"
+],
+[
+"ge---interruptor-termomag-din-2x10a-45ka-dg",
+"10A"
+],
+[
+"ge---interruptor-termomag-din-2x16a-45ka-dg",
+"16A"
+],
+[
+"ge---interruptor-termomag-din-2x20a-45ka-dg",
+"20A"
+],
+[
+"ge---interruptor-termomag-din-2x25a-45ka-dg",
+"25A"
+],
+[
+"ge---interruptor-termomag-din-2x32a-45ka-dg",
+"32A"
+],
+[
+"ge---interruptor-termomag-din-2x40a-45ka-dg",
+"40A"
+],
+[
+"ge---interruptor-termomag-din-2x50a-45ka-dg",
+"50A"
+],
+[
+"ge---interruptor-termomag-din-2x63a-45ka-dg",
+"63A"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-bipolar-din-g",
+"group": {
+"nombre": "Interruptor Termomagnético Bipolar DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-2x05a-3ka",
+"5A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-2x10a-45ka",
+"10A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x16a-45ka",
+"16A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x20a-45ka",
+"20A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x25a-45ka",
+"25A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x32a-45ka",
+"32A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x40a-45ka",
+"40A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-2x50a-3ka",
+"50A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-2x63a-3ka",
+"63A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-2x63a-45ka",
+"63A · 4,5kA"
+]
+]
+}
+},
+{
+"id": "jeluz-interruptor-termomagnetico-bipolar-din-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Bipolar DIN 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"jeluz---interruptor-termomag-din-2x10a-45ka",
+"10A"
+],
+[
+"jeluz---interruptor-termomag-din-2x16a-45ka",
+"16A"
+],
+[
+"jeluz---interruptor-termomag-din-2x20a-45ka",
+"20A"
+],
+[
+"jeluz---interruptor-termomag-din-2x25a-45ka",
+"25A"
+],
+[
+"jeluz---interruptor-termomag-din-2x32a-45ka",
+"32A"
+],
+[
+"jeluz---interruptor-termomag-din-2x40a-45ka",
+"40A"
+],
+[
+"jeluz---interruptor-termomag-din-2x50a-45ka",
+"50A"
+],
+[
+"jeluz---interruptor-termomag-din-2x63a-45ka",
+"63A"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-unipolar-din-g",
+"group": {
+"nombre": "Interruptor Termomagnético Unipolar DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-1x02a-3ka",
+"2A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x05a-3ka",
+"5A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x10a-3ka",
+"10A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x10a-45ka",
+"10A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-1x15a-3ka",
+"15A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x16a-45ka",
+"16A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-1x20a-3ka",
+"20A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x20a-45ka",
+"20A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-1x25a-3ka",
+"25A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x25a-45ka",
+"25A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-1x32a-3ka",
+"32A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x32a-45ka",
+"32A · 4,5kA"
+],
+[
+"sica---interruptor-termomag-din-1x40a-3ka",
+"40A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x50a-3ka",
+"50A · 3kA"
+],
+[
+"sica---interruptor-termomag-din-1x63a-3ka",
+"63A · 3kA"
+]
+]
+}
+},
+{
+"id": "general-electric-interruptor-termomagnetico-unipolar-din-dg-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Unipolar DIN DG+ 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"ge---interruptor-termomag-din-1x06a-45ka-dg",
+"6A"
+],
+[
+"ge---interruptor-termomag-din-1x10a-45ka-dg",
+"10A"
+],
+[
+"ge---interruptor-termomag-din-1x16a-45ka-dg",
+"16A"
+],
+[
+"ge---interruptor-termomag-din-1x20a-45ka-dg",
+"20A"
+],
+[
+"ge---interruptor-termomag-din-1x25a-45ka-dg",
+"25A"
+],
+[
+"ge---interruptor-termomag-din-1x32a-45ka-dg",
+"32A"
+],
+[
+"ge---interruptor-termomag-din-1x40a-45ka-dg",
+"40A"
+]
+]
+}
+},
+{
+"id": "jeluz-interruptor-termomagnetico-unipolar-din-4-5ka-g",
+"group": {
+"nombre": "Interruptor Termomagnético Unipolar DIN 4,5kA",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"jeluz---interruptor-termomag-din-1x10a-45ka",
+"10A"
+],
+[
+"jeluz---interruptor-termomag-din-1x16a-45ka",
+"16A"
+],
+[
+"jeluz---interruptor-termomag-din-1x20a-45ka",
+"20A"
+],
+[
+"jeluz---interruptor-termomag-din-1x25a-45ka",
+"25A"
+]
+]
+}
+},
+{
+"id": "indusil-cable-siliconado-1x4-g",
+"group": {
+"nombre": "Cable Siliconado 1x4",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"indusil---cable-siliconado-1x4-blanco",
+"Blanco"
+],
+[
+"indusil---cable-siliconado-1x4-celeste",
+"Celeste"
+],
+[
+"indusil---cable-siliconado-1x4-negro",
+"Negro"
+],
+[
+"indusil---cable-siliconado-1x4-rojo",
+"Rojo"
+]
+]
+}
+},
+{
+"id": "indusil-cable-siliconado-1x2-50-g",
+"group": {
+"nombre": "Cable Siliconado 1x2,50",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"indusil---cable-siliconado-1x250-blanco",
+"Blanco"
+],
+[
+"indusil---cable-siliconado-1x250-celeste",
+"Celeste"
+],
+[
+"indusil---cable-siliconado-1x250-negro",
+"Negro"
+],
+[
+"indusil---cable-siliconado-1x250-rojo",
+"Rojo"
+],
+[
+"indusil---cable-siliconado-1x250-va",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-alma-acero-2x0-50-mm-g",
+"group": {
+"nombre": "Cable Alma Acero 2x0,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas-cable-alma-acero-2x050mm-blanco",
+"Blanco"
+],
+[
+"argenplas--cable-alma-acero-2x050mm-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-3x2-50-mm-g",
+"group": {
+"nombre": "Cable TPR 3x2,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-3x250mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-3x250mm",
+"Estándar"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-3x1-50-mm-g",
+"group": {
+"nombre": "Cable TPR 3x1,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-3x150mm-amarillo",
+"Amarillo"
+],
+[
+"argenplas---cable-tpr-3x150mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-3x150mm",
+"Estándar"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-3x1-mm-g",
+"group": {
+"nombre": "Cable TPR 3x1 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-3x1mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-3x1mm",
+"Estándar"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-2x2-50-mm-g",
+"group": {
+"nombre": "Cable TPR 2x2,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-2x250mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-2x250mm",
+"Estándar"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-2x1-50-mm-g",
+"group": {
+"nombre": "Cable TPR 2x1,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-2x150mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-2x150mm",
+"Estándar"
+],
+[
+"argenplas---cable-tpr-2x150mm-naranja",
+"Naranja"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-2x1-mm-g",
+"group": {
+"nombre": "Cable TPR 2x1 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-2x1mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-2x1mm",
+"Estándar"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-tpr-2x0-50-mm-g",
+"group": {
+"nombre": "Cable TPR 2x0,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-tpr-2x050mm-blanco",
+"Blanco"
+],
+[
+"argenplas---cable-tpr-2x050mm-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-paralelo-2x1-50-mm-g",
+"group": {
+"nombre": "Cable Paralelo 2x1,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-paralelo-blanco-2x150mm",
+"Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x150mm",
+"Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x150mm",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-paralelo-2x1-mm-g",
+"group": {
+"nombre": "Cable Paralelo 2x1 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-paralelo-blanco-2x1mm",
+"Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x1mm",
+"Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x1mm",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-paralelo-2x0-75-mm-g",
+"group": {
+"nombre": "Cable Paralelo 2x0,75 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-paralelo-blanco-2x075mm",
+"Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x075mm",
+"Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x075mm",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-paralelo-2x0-50-mm-g",
+"group": {
+"nombre": "Cable Paralelo 2x0,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables TPR y Paralelos",
+"items": [
+[
+"argenplas---cable-paralelo-blanco-2x050mm",
+"Blanco"
+],
+[
+"argenplas---cable-paral-cristal-2x050mm",
+"Cristal"
+],
+[
+"argenplas---cable-paralelo-negro-2x050mm",
+"Negro"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x6-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x6 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x6mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x6mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x6mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x6mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x6mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x6mm-veramar",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x4-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x4 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x4mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x4mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x4mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x4mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x4mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x4mm-veramar",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x35-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x35 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x35mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x35mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x35mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x35mm-rojo",
+"Rojo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x25-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x25 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x25mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x25mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x25mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x25mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x25mm-veramar",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x2-50-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x2,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x250mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x250mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x250mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x250mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x250mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x250mm-veramar",
+"Verde/Amarillo"
+],
+[
+"fonseca---cable-unip-1x250mm-violeta",
+"Violeta"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x16-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x16 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x16mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x16mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x16mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x16mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x16mm-veramar",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x10-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x10 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x10mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x10mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x10mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x10mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x10mm-veramar",
+"Verde/Amarillo"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x1-50-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x1,50 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x150mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x150mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x150mm-gris",
+"Gris"
+],
+[
+"fonseca---cable-unip-1x150mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x150mm-naranja",
+"Naranja"
+],
+[
+"fonseca---cable-unip-1x150mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x150mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x150mm-veramar",
+"Verde/Amarillo"
+],
+[
+"fonseca---cable-unip-1x150mm-violeta",
+"Violeta"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x1-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x1 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x1mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x1mm-celeste",
+"Celeste"
+],
+[
+"fonseca---cable-unip-1x1mm-marron",
+"Marrón"
+],
+[
+"fonseca---cable-unip-1x1mm-naranja",
+"Naranja"
+],
+[
+"fonseca---cable-unip-1x1mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x1mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x1mm-violeta",
+"Violeta"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-unipolar-1x0-75-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x0,75 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x075mm-blanco",
+"Blanco"
+],
+[
+"fonseca---cable-unip-1x075mm-negro",
+"Negro"
+],
+[
+"fonseca---cable-unip-1x075mm-rojo",
+"Rojo"
+],
+[
+"fonseca---cable-unip-1x075mm-violeta",
+"Violeta"
+]
+]
+}
+},
+{
+"id": "furukawa-cable-utp-g",
+"group": {
+"nombre": "Cable UTP",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"furukawa---cable-utp-cat5-exterior",
+"CAT5 · Exterior"
+],
+[
+"furukawa---cable-utp-cat5-inter",
+"CAT5 · Interior"
+],
+[
+"furukawa---cable-utp-cat6-exterior",
+"CAT6 · Exterior"
+],
+[
+"furukawa---cable-utp-cat6-interior",
+"CAT6 · Interior"
+]
+]
+}
+},
+{
+"id": "glc-cable-utp-g",
+"group": {
+"nombre": "Cable UTP",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"glc---cable-utp-cat5-exterior-c-portante",
+"CAT5 · Exterior con Portante"
+],
+[
+"glc---cable-utp-cat5-interior",
+"CAT5 · Interior"
+],
+[
+"glc---cable-utp-cat6-exterior",
+"CAT6 · Exterior"
+],
+[
+"glc---cable-utp-cat6-interior",
+"CAT6 · Interior"
+]
+]
+}
+},
+{
+"id": "genrod-cano-corrugado-pvc-g",
+"group": {
+"nombre": "Caño Corrugado PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---cano-corrugado-20mm-34-pvc-x-rollo",
+"20 mm 3/4\""
+],
+[
+"genrod---cano-corrugado-22mm-78-pvc-x-rollo",
+"22 mm 7/8\""
+],
+[
+"genrod---cano-corrugado-25mm-1-pvc-x-rollo",
+"25 mm 1\""
+],
+[
+"genrod---cano-corrugado-32mm-1-14-pvc-x-rollo",
+"32 mm 1 1/4\""
+],
+[
+"genrod---cano-corrugado-40mm-1-12-pvc-rollo",
+"40 mm 1 1/2\""
+],
+[
+"genrod---cano-corrugado-50mm-2-pvc-x-rollo",
+"50 mm 2\""
+]
+]
+}
+},
+{
+"id": "flexitub-cano-flexible-metalico-con-pvc-g",
+"group": {
+"nombre": "Caño Flexible Metálico con PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"flexitub-cano-flexible-metal-1-2-con-pvc-precio-por-metro",
+"1/2\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-12-cpvc",
+"1/2\" · Rollo x 25 m"
+],
+[
+"flexitub-cano-flexible-metal-5-8-con-pvc-precio-por-metro",
+"5/8\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-58-cpvc",
+"5/8\" · Rollo x 25 m"
+],
+[
+"flexitub-cano-flexible-metal-3-4-pvc-precio-por-metro",
+"3/4\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-34-pvc",
+"3/4\" · Rollo x 25 m"
+],
+[
+"flexitub-cano-flexible-metal-7-8-pvc-precio-por-metro",
+"7/8\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-78-pvc",
+"7/8\" · Rollo x 25 m"
+],
+[
+"flexitub-cano-flexible-metal-1-pvc-precio-por-metro",
+"1\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-1-pvc",
+"1\" · Rollo x 25 m"
+],
+[
+"flexitub---cano-flexible-metal-1-12-pvc",
+"1 1/2\" · Por metro (corte a medida)"
+],
+[
+"flexitub---cano-flexible-metal-2-pvc",
+"2\" · Por metro (corte a medida)"
+]
+]
+}
+},
+{
 "id": "metaplast-automatico-flotante-tanque-sumergible-cable-g",
 "group": {
 "nombre": "Automático Flotante Tanque Sumergible Cable",
@@ -2791,168 +4451,6 @@
 [
 "baw---contactor-bipolar-25a-220v-1-mod-din",
 "220V"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-4x50a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 4x50A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-4x50a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-4x50a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-4x40a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 4x40A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-4x40a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-4x40a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-4x20a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 4x20A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-4x20a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-4x20a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-3x32a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 3x32A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-3x32a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-3x32a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-2x63a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 2x63A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-2x63a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-2x63a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-1x32a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 1x32A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-1x32a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-1x32a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-1x25a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 1x25A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-1x25a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-1x25a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-1x20a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 1x20A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-1x20a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-1x20a-45ka",
-"4,5kA"
-]
-]
-}
-},
-{
-"id": "sica-interruptor-termomagnetico-din-1x10a-g",
-"group": {
-"nombre": "Interruptor Termomagnético DIN 1x10A",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Térmicas",
-"items": [
-[
-"sica---interruptor-termomag-din-1x10a-3ka",
-"3kA"
-],
-[
-"sica---interruptor-termomag-din-1x10a-45ka",
-"4,5kA"
 ]
 ]
 }
@@ -9180,6 +10678,69 @@
 ]
 ]
 }
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x50a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x40a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x20a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-3x32a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-2x63a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x32a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x25a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x20a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x10a-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
 },
 {
 "id": "teclastar-proyector-led-50w-luz-5500lm-g",

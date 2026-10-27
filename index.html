@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-57HipyeICdmfOKYDyiXLUXofM26Y840ws54uW7hvqqs='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-rZVuRRfGQas3eELqe1yhz7V8qqd72Q7jTZXn8azL/eQ='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -538,7 +538,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .vchip:active{transform:scale(.96)}
 .vchip[aria-checked="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground);box-shadow:0 8px 20px rgba(29,35,64,.22)}
 .vchip[aria-checked="true"] small{color:rgba(250,246,238,.75)}
-.vchip.off{opacity:.45;border-style:dashed}
+.vchip.off{opacity:.62;border-style:dashed}
 .vchip .dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
 .vchip.sz{border-radius:12px;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 13px;min-width:86px}
 .save{background:var(--field-2);color:#1b2238;padding:10px 14px;border-radius:14px;font-size:.9375rem;margin:0}
@@ -1568,6 +1568,26 @@ const cap = t => t.charAt(0).toUpperCase() + t.slice(1).toLowerCase();
 function dimsOf(p){
   if (p._dims !== undefined) return p._dims;
   if (!p.v || p.v.length < 2) return (p._dims = null);
+  /* options written as "Rojo · Rollo x 100 m" or "25A · 4,5kA": one selector per part */
+  const parts = p.v.map(v => v.l.split(' · '));
+  if (parts.every(x => x.length > 1 && x.length === parts[0].length)){
+    const n = parts[0].length, D = [], rows = parts.map(() => ({}));
+    for (let j = 0; j < n; j++){
+      const col = parts.map(x => x[j]), k = 'p' + j;
+      parts.forEach((x, i) => rows[i][k] = x[j]);
+      const name = col.every(x => /rollo|metro/i.test(x)) ? 'Presentación'
+        : col.every(x => COLOR_RE.test(' ' + x + ' ') || /est[aá]ndar|cristal|\//i.test(x)) ? 'Color'
+        : col.every(x => TEMP_RE.test(' ' + x + ' ')) ? 'Luz'
+        : col.every(x => /^\d+([.,]\d+)?\s*A$/i.test(x)) ? 'Amperaje'
+        : col.every(x => /kA$|est[aá]ndar/i.test(x)) ? 'Poder de corte'
+        : col.every(x => /mA$/i.test(x)) ? 'Sensibilidad'
+        : col.every(x => /^CAT/i.test(x)) ? 'Categoría'
+        : col.every(x => /interior|exterior/i.test(x)) ? 'Uso'
+        : /\d/.test(col[0]) ? 'Medida' : 'Opción';
+      if (new Set(col).size > 1) D.push({ k, name, color: name === 'Color', temp: name === 'Luz' });
+    }
+    if (D.length) return (p._dims = { rows, D });
+  }
   const rows = p.v.map(v => {
     let l = ' ' + v.l + ' ', t = '', c = '';
     const ab = l.match(/\s(CA|FR)(?=\s)/); if (ab){ t = ab[1] === 'CA' ? 'Cálida' : 'Fría'; l = l.replace(ab[0], ' '); }
@@ -1589,6 +1609,10 @@ function dimsOf(p){
   return (p._dims = { rows, D });
 }
 function swatch(d, val){
+  if ((d.k === 'c' || d.color) && val.includes('/')){ const [x, y] = val.split('/').map(w => swatch({ k:'c' }, w.trim()).match(/background:([^"]+)/)); if (x && y) return `<span class="dot" style="background:linear-gradient(135deg,${x[1]} 50%,${y[1]} 50%)"></span>`; }
+  if (d.color && /cristal/i.test(val)) return `<span class="dot" style="background:${SW.tran}"></span>`;
+  if (d.color) return swatch({ k:'c' }, val);
+  if (d.temp) return swatch({ k:'t' }, val);
   if (d.k === 'c'){ const k = val.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').slice(0,4); const bg = SW[k] || SW[k.slice(0,3)]; return bg ? `<span class="dot" style="background:${bg}"></span>` : ''; }
   if (d.k === 't'){ const bg = TSW[val.normalize('NFD').charAt(0).toLowerCase()]; return bg ? `<span class="dot" style="background:${bg}"></span>` : ''; }
   return '';
@@ -1618,9 +1642,11 @@ function renderPD(p){
   const body0 = $('#pd .body'), keepScroll = body0 && pdLast.id === p.id ? body0.scrollTop : 0;
   let saveTxt = '';
   if (p.v){
-    const roll = p.v.find(v => perMeter(v.l, v.p)), cut = p.v.find(v => /metro/i.test(v.l));
+    const pre = p.v[pdSel].l.includes(' · ') ? p.v[pdSel].l.split(' · ').slice(0, -1).join(' · ') : '';
+    const same = p.v.filter(v => !pre || v.l.startsWith(pre + ' · '));
+    const roll = same.find(v => perMeter(v.l, v.p)), cut = same.find(v => /metro/i.test(v.l));
     if (roll && cut){ const pm = perMeter(roll.l, roll.p); const pct = Math.round((1 - pm / cut.p) * 100);
-      if (pct > 0) saveTxt = `<p class="save">En ${esc(roll.l.toLowerCase())} el metro te sale <b class="num">${money(pm)}</b>: ${pct}% menos que cortado.</p>`; }
+      if (pct > 0) saveTxt = `<p class="save">En ${esc(roll.l.split(' · ').pop().toLowerCase())} el metro te sale <b class="num">${money(pm)}</b>: ${pct}% menos que cortado.</p>`; }
   }
   const code = p.v ? p.v[pdSel].k : p.k;
   const img = phV(p, pdSel), dm = dimsOf(p);
@@ -1633,9 +1659,10 @@ function renderPD(p){
         const i = dm.rows.findIndex(r => r[d.k] === val && dm.D.every(o => o.k === d.k || r[o.k] === cur[o.k]));
         const any = dm.rows.findIndex(r => r[d.k] === val);
         const on = cur[d.k] === val, off = i < 0;
-        const pv = single ? p.v[any].p : null;
-        const pm = single ? perMeter(p.v[any].l, p.v[any].p) : null;
-        return `<button class="vchip${single && /\d/.test(val) ? ' sz' : ''}${off ? ' off' : ''}" type="button" role="radio" aria-checked="${on}" data-dim="${d.k}" data-val="${esc(val)}">${swatch(d, val)}<span>${esc(val)}</span>${pv != null ? `<small class="num">${money(pv)}${pm ? ' · ' + money(pm) + '/m' : ''}</small>` : ''}</button>`;
+        const last = d === dm.D[dm.D.length - 1], at = single ? any : (last && i > -1 ? i : -1);
+        const pv = at > -1 ? p.v[at].p : null;
+        const pm = at > -1 ? perMeter(p.v[at].l, p.v[at].p) : null;
+        return `<button class="vchip${pv != null ? ' sz' : ''}${off ? ' off' : ''}" type="button" role="radio" aria-checked="${on}" data-dim="${d.k}" data-val="${esc(val)}">${swatch(d, val)}<span>${esc(val)}</span>${pv != null ? `<small class="num">${money(pv)}${pm ? ' · ' + money(pm) + '/m' : ''}</small>` : ''}</button>`;
       }).join('');
       return `<div class="dim" role="radiogroup" aria-label="${d.name}"><h3>${d.name}${vals.length > 2 ? ` <span>${vals.length} opciones</span>` : ''}</h3><div class="vchips">${chips}</div></div>`;
     }).join('');
@@ -1647,7 +1674,7 @@ function renderPD(p){
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
     <p class="meta">${esc(p.b)}${code ? ' · código ' + esc(code) : ''}</p>
-    <div class="pricebox"><div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
+    <div class="pricebox"><div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP && !p.v.some(v => /metro/i.test(v.l)) ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
     ${opts}
     ${saveTxt}
     <p class="ask">¿Necesitás saber si hay stock o una medida que no ves? <a target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Consulto por: ' + p.n + (p.v ? ' ' + p.v[pdSel].l : '') + (p.b ? ' – ' + p.b : '') + (code ? ' (cód. ' + code + ')' : ''))}">Consultá disponibilidad</a></p>
