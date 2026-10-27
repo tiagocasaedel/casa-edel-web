@@ -11034,5 +11034,49 @@
 "visible": false
 },
 "motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "fonseca-cable-unipolar-1x50-mm-g",
+"group": {
+"nombre": "Cable Unipolar 1x50 mm",
+"rubro": "Cables",
+"subrubro": "Cables Unipolares",
+"items": [
+[
+"fonseca---cable-unip-1x50mm-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "py-tarugo-espiga-para-pared-hueca-g",
+"group": {
+"nombre": "Tarugo Espiga para Pared Hueca",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "",
+"items": [
+[
+"py---tarugo-espiga-p-pared-hueca-6-x100",
+"6 mm",
+"unidad"
+],
+[
+"py---tarugo-espiga-p-pared-hueca-8-x50",
+"8 mm",
+"unidad"
+],
+[
+"py---tarugo-espiga-p-pared-hueca-10-x25u",
+"10 mm",
+"unidad"
+],
+[
+"py---tarugo-espiga-p-pared-hueca-12-x20u",
+"12 mm",
+"unidad"
+]
+]
+}
 }
 ]

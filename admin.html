@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-EFGIqkiNSIDeTqvGCcOi6DGcp+yP4NmtPVjYO59cKFY='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-NaT/56NwMPVm8QaRooQ/qySX6xaHZmJQ7RIrl+YYdBE='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -940,14 +940,17 @@ async function offerNew(){
     const have = BYID.get(r.id);
     if (r.group && Array.isArray(r.group.items)){
       /* juntar varios productos en uno con presentaciones (medidas); los sueltos quedan ocultos */
-      const parts = r.group.items.map(([id, l]) => [BYID.get(id), String(l).slice(0,80)]).filter(([x]) => x);
+      const parts = r.group.items.map(([id, l, only]) => [BYID.get(id), String(l).slice(0,80), only]).filter(([x]) => x);
       if (!parts.length) continue;
       const base = have || parts[0][0];
       const row = Object.assign(JSON.parse(JSON.stringify(base)), { id:r.id, nombre:String(r.group.nombre).slice(0,300), rubro:r.group.rubro||base.rubro, subrubro:r.group.subrubro||base.subrubro, visible:true, codigo:'', precio_usd:null });
       /* a member that already has presentations (rollo / metro) brings each one: "Rojo · Rollo x 100 m" */
-      row.variantes = parts.flatMap(([x, l]) => x.variantes && x.variantes.length
-        ? x.variantes.map(v => ({ l: (l + ' · ' + v.l).slice(0, 120), p: Number(v.p)||0, usd: v.usd != null && v.usd !== '' ? v.usd : null, k: v.k || x.codigo || '', i: fotoOf(x) || '', m: x.id }))
-        : [{ l, p: Number(x.precio)||0, usd: x.precio_usd != null ? x.precio_usd : null, k: x.codigo || '', i: fotoOf(x) || '', m: x.id }]);
+      row.variantes = parts.flatMap(([x, l, only]) => {
+        let vs = x.variantes && x.variantes.length ? x.variantes : null;
+        if (vs && only){ const f = vs.filter(v => new RegExp(only, 'i').test(v.l)); if (f.length === 1) return [{ l, p: Number(f[0].p)||0, usd: f[0].usd != null && f[0].usd !== '' ? f[0].usd : null, k: f[0].k || x.codigo || '', i: fotoOf(x) || '', m: x.id }]; }
+        return vs
+        ? vs.map(v => ({ l: (l + ' · ' + v.l).slice(0, 120), p: Number(v.p)||0, usd: v.usd != null && v.usd !== '' ? v.usd : null, k: v.k || x.codigo || '', i: fotoOf(x) || '', m: x.id }))
+        : [{ l, p: Number(x.precio)||0, usd: x.precio_usd != null ? x.precio_usd : null, k: x.codigo || '', i: fotoOf(x) || '', m: x.id }]; });
       if (row.variantes.length > 60) continue;
       const ords = parts.map(([x]) => Number(x.orden)||0).filter(n => n > 0);
       row.orden = ords.length ? Math.min(...ords) : 0;
