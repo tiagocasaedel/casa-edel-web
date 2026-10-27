@@ -7591,22 +7591,6 @@
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
-"novalucce---lampara-led-gota-2w-e27-amarillo",
-"2W E27 Amarillo"
-],
-[
-"novalucce---lampara-led-gota-2w-e27-azul",
-"2W E27 Azul"
-],
-[
-"novalucce---lampara-led-gota-2w-e27-rojo",
-"2W E27 Rojo"
-],
-[
-"novalucce---lampara-led-gota-2w-e27-verde",
-"2W E27 Verde"
-],
-[
 "novalucce---lampara-led-gota-5w-e27-calida",
 "5W E27 Cálida"
 ],
@@ -11783,10 +11767,6 @@
 "9W 60 cm (1 Punta) Luz Fría"
 ],
 [
-"interelec---tubo-led-t8-18w-120cm-1-pta-l-azul",
-"18W 120 cm (1 Punta) Luz Azul"
-],
-[
 "interelec---tubo-led-t8-18w-120cm-1-pta-l-fria",
 "18W 120 cm (1 Punta) Luz Fría"
 ],
@@ -11835,28 +11815,12 @@
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
-"candil---lamp-dicro-led-gu10-45w-35-amarilla",
-"4,5W 35° Amarilla"
-],
-[
-"candil---lamp-dicro-led-gu10-45w-35-azul",
-"4,5W 35° Azul"
-],
-[
 "candil---lamp-dicro-led-gu10-45w-35-calida",
 "4,5W 35° Cálida"
 ],
 [
 "candil---lamp-dicro-led-gu10-45w-35-fria",
 "4,5W 35° Fría"
-],
-[
-"candil---lamp-dicro-led-gu10-45w-35-roja",
-"4,5W 35° Roja"
-],
-[
-"candil---lamp-dicro-led-gu10-45w-35-verde",
-"4,5W 35° Verde"
 ],
 [
 "candil---lamp-dicro-led-gu10-7w-100-calida",
@@ -12497,6 +12461,58 @@
 [
 "ferretera---arandela-zincada-chata-38-cu",
 "3/8\""
+]
+]
+}
+},
+{
+"id": "candil-lampara-dicro-led-gu10-color-g",
+"group": {
+"nombre": "Lámpara Dicro LED GU10 4,5W 35° de Color",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lamp-dicro-led-gu10-45w-35-amarilla",
+"Amarilla"
+],
+[
+"candil---lamp-dicro-led-gu10-45w-35-azul",
+"Azul"
+],
+[
+"candil---lamp-dicro-led-gu10-45w-35-roja",
+"Roja"
+],
+[
+"candil---lamp-dicro-led-gu10-45w-35-verde",
+"Verde"
+]
+]
+}
+},
+{
+"id": "novalucce-lampara-led-gota-color-g",
+"group": {
+"nombre": "Lámpara LED Gota 2W E27 de Color",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"novalucce---lampara-led-gota-2w-e27-amarillo",
+"Amarillo"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-azul",
+"Azul"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-rojo",
+"Rojo"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-verde",
+"Verde"
 ]
 ]
 }
