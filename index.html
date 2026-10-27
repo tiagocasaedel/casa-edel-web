@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-39akZsTODlVgdfTGOOdG/0DBVRFdoKXF6X5YAzAwPiI='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-1dWXs9/pE7bgiZBUgYVVIYjbfW67TN97Y4bLvcT6MFE='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1175,6 +1175,14 @@ async function fromDB(){
     return p;
   }).filter(p => p.p > 0);
 }
+const POLOS = { unipolar:1, bipolar:2, tripolar:3, tetrapolar:4 };
+/* "Bipolar" products also answer to 2x…: 2x25, 2x25a */
+function poleAlias(p){
+  const m = p.n.match(/\b(unipolar|bipolar|tripolar|tetrapolar)\b/i); if (!m) return '';
+  const n = POLOS[m[1].toLowerCase()], out = [n + 'x'];
+  (p.v || []).forEach(v => { const a = v.l.match(/(\d+)\s*A\b/); if (a) out.push(`${n}x${a[1]}`, `${n}x${a[1]}a`, `${n}x${a[1].padStart(2,'0')}`); });
+  return out.join(' ');
+}
 async function load(){
   try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
   if (CONFIG.sheetCsv){
@@ -1189,7 +1197,7 @@ async function load(){
   P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f;
     if (p.v) p.v.forEach(v => { const g = v.m && FOTOS[v.m]; if (typeof g === 'string' && !/supabase\.co/.test(v.i || '')) v.i = g; });
     if (!p.i && p.v) p.i = (p.v.find(v => v.i) || {}).i || ''; });
-  P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c].concat(p.v ? p.v.flatMap(v => [v.l, v.k]) : []).join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
+    P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c,poleAlias(p)].concat(p.v ? p.v.flatMap(v => [v.l, v.k]) : []).join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
   cart = cart.filter(l => { const p = BY.get(l.id); return p && (p.v ? l.v < p.v.length : l.v === 0); });
 }
 
@@ -1626,6 +1634,9 @@ function pickDim(p, k, val){
 function openProduct(id){
   const p = BY.get(id); if (!p) return;
   pdSel = p.v ? Math.max(0, p.v.findIndex(v => /rollo/i.test(v.l))) : 0; pdQty = 1;
+  /* came from a search like "2x25": open on that amperage */
+  const qm = ($('#q').value || '').match(/(\d)\s*x\s*0*(\d+)/i);
+  if (p.v && qm){ const i = p.v.findIndex(v => new RegExp('^' + qm[2] + '\\s*A\\b', 'i').test(v.l)); if (i > -1 && poleAlias(p).startsWith(qm[1] + 'x')) pdSel = i; }
   pdLast = { id:'', img:'', price:0 };
   renderPD(p);
   const d = $('#pd'); if (!d.open) d.showModal();
