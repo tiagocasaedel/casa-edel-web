@@ -516,7 +516,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
 .pd .tile{position:relative;min-height:440px;container-type:size;overflow:hidden}
 .pd .tile::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(255,255,255,.18));pointer-events:none}
-.pd .ph{--k:78;background-repeat:no-repeat;mix-blend-mode:multiply}
+.pd .ph{inset:9%;width:auto;height:auto;margin:0;background-repeat:no-repeat;mix-blend-mode:multiply}
 .pd .ph.swap{animation:phIn 420ms var(--ease-out) both}
 @keyframes phIn{from{opacity:0;transform:scale(.94) translateY(10px)}}
 .pd .chips-ct{position:absolute;left:18px;top:18px;display:flex;gap:6px;flex-wrap:wrap;z-index:1}
