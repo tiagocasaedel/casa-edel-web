@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-6HkkPDK9Ev7dD/SDMM004PcMmhndcxYvf8ve7J/8TnM='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-BccF8kAyIOOLIlrm5EcJnusG7P24mZNaJ3Ytp6rF1jA='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -944,8 +944,10 @@ async function offerNew(){
       if (!parts.length) continue;
       const base = have || parts[0][0];
       const row = Object.assign(JSON.parse(JSON.stringify(base)), { id:r.id, nombre:String(r.group.nombre).slice(0,300), rubro:r.group.rubro||base.rubro, subrubro:r.group.subrubro||base.subrubro, visible:true, codigo:'', precio_usd:null });
-      row.variantes = parts.map(([x, l]) => { const v = x.variantes && x.variantes[0]; return { l, p: Number(x.precio)||0, usd: x.precio_usd != null ? x.precio_usd : null, k: x.codigo || (v && v.k) || '' }; });
-      row.orden = Math.max(...parts.map(([x]) => Number(x.orden)||0));
+      row.variantes = parts.map(([x, l]) => { const v = x.variantes && x.variantes[0]; return { l, p: Number(x.precio)||0, usd: x.precio_usd != null ? x.precio_usd : null, k: x.codigo || (v && v.k) || '', i: fotoOf(x) || '', m: x.id }; });
+      const ords = parts.map(([x]) => Number(x.orden)||0).filter(n => n > 0);
+      row.orden = ords.length ? Math.min(...ords) : 0;
+      if (!fotoOf(row)) row.foto = (row.variantes.find(v => v.i) || {}).i || '';
       row.precio = Math.min(...row.variantes.map(effV));
       const same = have && JSON.stringify(have.variantes) === JSON.stringify(row.variantes) && have.nombre === row.nombre && have.visible;
       const hide = parts.filter(([x]) => x.visible && x.id !== r.id).map(([x]) => Object.assign(JSON.parse(JSON.stringify(x)), { visible:false }));

@@ -1,298 +1,9046 @@
 [
- {
-  "id": "noak-ventilador-de-techo-retractil-4-palas-con-control-blanco",
-  "nombre": "Ventilador de Techo Retráctil 4 Palas con Control Blanco",
-  "marca": "Noak",
-  "rubro": "Climatización y Hogar",
-  "subrubro": "Ventilación y Extractores",
-  "unidad": "u",
-  "codigo": "NK-ELEC-00009-BL",
-  "precio": 118469,
-  "precio_usd": 75.9416,
-  "visible": true,
-  "set": {
-   "precio_usd": 75.9416
-  },
-  "motivo": "Producto en dólares"
- },
- {
-  "id": "sdn---tubo-led-t8-18w-120cm-1-pta-l-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Ya no se vende"
- },
- {
-  "id": "fusse---terminal-laton-p-macho-64-x-8-s-tapa",
-  "set": {
-   "nombre": "Terminal Latón para Macho 6,4 x 8 sin Traba"
-  },
-  "motivo": "Nombre corregido"
- },
- {
-  "id": "fusse---terminal-laton-p-macho-5-x-8-s-tapa",
-  "set": {
-   "nombre": "Terminal Latón para Macho 5 x 8 sin Traba"
-  },
-  "motivo": "Nombre corregido"
- },
- {
-  "id": "alic---zocalo-lampara-gu10-ccable",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---tubo-led-t8-18w-120cm-luz-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-style-4w-e27-clara-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-style-4w-e14-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-style-4w-dim-e27-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-eco-7w-e27-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-eco-7w-e27-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-eco-7w-e14-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-eco-5w-e27-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-velita-eco-5w-e14-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-led-style-velita-e27-4w-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-led-forza-high-power-75w-e40-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-led-forza-high-power-55w-e40-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-led-forza-high-power-150w-e40-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-led-forza-high-power-125w-e40-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-halogena-perfume-24w-e14-cal",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-halogena-perfume-15w-e14-cal",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-gota-eco-led-5w-e27-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lampara-gota-eco-led-5w-e27-luz-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-filam-led-gota-style-4w-e27-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-filam-led-gota-style-4w-e27-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-filam-led-gota-style-4w-e27-cal-dimm",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---lamp-filam-st64-style-8w-dimm-calida",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "alic---dicroica-gu10-eco-led-7w-luz-fria",
-  "set": {
-   "visible": false
-  },
-  "motivo": "Marca Alic: ya no se trabaja"
- },
- {
-  "id": "indular---ecco-led-1-tubos-120cm",
-  "set": {
-   "nombre": "Ecco LED 1 Tubos 120 cm sin Louver"
-  },
-  "motivo": "Nombre corregido"
- },
- {
-  "id": "indular---ecco-led-2-tubos-120cm-blanco",
-  "set": {
-   "nombre": "Ecco LED 2 Tubos 120 cm Blanco sin Louver"
-  },
-  "motivo": "Nombre corregido"
- },
- {
-  "id": "indular---ecco-led-2-tubos-120cm-negro",
-  "set": {
-   "nombre": "Ecco LED 2 Tubos 120 cm Negro sin Louver"
-  },
-  "motivo": "Nombre corregido"
- },
- {
-  "id": "gabexel---caja-derivacion-metalica",
-  "group": {
-   "nombre": "Caja Derivación Metálica",
-   "rubro": "Cajas y Gabinetes",
-   "subrubro": "Gabinetes y Tableros",
-   "items": [
-    [
-     "gabexel---caja-derivacion-metalica-100x100x75",
-     "100 x 100 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-100x100x100",
-     "100 x 100 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-150x150x75",
-     "150 x 150 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-150x150x100",
-     "150 x 150 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-200x150x75",
-     "200 x 150 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-200x200x75",
-     "200 x 200 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-200x200x100",
-     "200 x 200 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-250x250x75",
-     "250 x 250 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-250x250x100",
-     "250 x 250 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-300x150x100",
-     "300 x 150 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-300x200x75",
-     "300 x 200 x 75 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-300x200x100",
-     "300 x 200 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-300x300x100",
-     "300 x 300 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-400x400x100",
-     "400 x 400 x 100 mm"
-    ],
-    [
-     "gabexel---caja-derivacion-metalica-500x500x100",
-     "500 x 500 x 100 mm"
-    ]
-   ]
-  }
- }
+{
+"id": "noak-ventilador-de-techo-retractil-4-palas-con-control-blanco",
+"nombre": "Ventilador de Techo Retráctil 4 Palas con Control Blanco",
+"marca": "Noak",
+"rubro": "Climatización y Hogar",
+"subrubro": "Ventilación y Extractores",
+"unidad": "u",
+"codigo": "NK-ELEC-00009-BL",
+"precio": 118469,
+"precio_usd": 75.9416,
+"visible": true,
+"set": {
+"precio_usd": 75.9416
+},
+"motivo": "Producto en dólares"
+},
+{
+"id": "sdn---tubo-led-t8-18w-120cm-1-pta-l-fria",
+"set": {
+"visible": false
+},
+"motivo": "Ya no se vende"
+},
+{
+"id": "fusse---terminal-laton-p-macho-64-x-8-s-tapa",
+"set": {
+"nombre": "Terminal Latón para Macho 6,4 x 8 sin Traba"
+},
+"motivo": "Nombre corregido"
+},
+{
+"id": "fusse---terminal-laton-p-macho-5-x-8-s-tapa",
+"set": {
+"nombre": "Terminal Latón para Macho 5 x 8 sin Traba"
+},
+"motivo": "Nombre corregido"
+},
+{
+"id": "alic---zocalo-lampara-gu10-ccable",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---tubo-led-t8-18w-120cm-luz-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-style-4w-e27-clara-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-style-4w-e14-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-style-4w-dim-e27-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-eco-7w-e27-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-eco-7w-e27-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-eco-7w-e14-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-eco-5w-e27-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-velita-eco-5w-e14-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-led-style-velita-e27-4w-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-led-forza-high-power-75w-e40-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-led-forza-high-power-55w-e40-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-led-forza-high-power-150w-e40-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-led-forza-high-power-125w-e40-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-halogena-perfume-24w-e14-cal",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-halogena-perfume-15w-e14-cal",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-gota-eco-led-5w-e27-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lampara-gota-eco-led-5w-e27-luz-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-filam-led-gota-style-4w-e27-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-filam-led-gota-style-4w-e27-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-filam-led-gota-style-4w-e27-cal-dimm",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---lamp-filam-st64-style-8w-dimm-calida",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "alic---dicroica-gu10-eco-led-7w-luz-fria",
+"set": {
+"visible": false
+},
+"motivo": "Marca Alic: ya no se trabaja"
+},
+{
+"id": "indular---ecco-led-1-tubos-120cm",
+"set": {
+"nombre": "Ecco LED 1 Tubos 120 cm sin Louver"
+},
+"motivo": "Nombre corregido"
+},
+{
+"id": "indular---ecco-led-2-tubos-120cm-blanco",
+"set": {
+"nombre": "Ecco LED 2 Tubos 120 cm Blanco sin Louver"
+},
+"motivo": "Nombre corregido"
+},
+{
+"id": "indular---ecco-led-2-tubos-120cm-negro",
+"set": {
+"nombre": "Ecco LED 2 Tubos 120 cm Negro sin Louver"
+},
+"motivo": "Nombre corregido"
+},
+{
+"id": "gabexel---caja-derivacion-metalica",
+"group": {
+"nombre": "Caja Derivación Metálica",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Gabinetes y Tableros",
+"items": [
+[
+"gabexel---caja-derivacion-metalica-100x100x75",
+"100 x 100 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-100x100x100",
+"100 x 100 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-150x150x75",
+"150 x 150 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-150x150x100",
+"150 x 150 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-200x150x75",
+"200 x 150 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-200x200x75",
+"200 x 200 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-200x200x100",
+"200 x 200 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-250x250x75",
+"250 x 250 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-250x250x100",
+"250 x 250 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-300x150x100",
+"300 x 150 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-300x200x75",
+"300 x 200 x 75 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-300x200x100",
+"300 x 200 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-300x300x100",
+"300 x 300 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-400x400x100",
+"400 x 400 x 100 mm"
+],
+[
+"gabexel---caja-derivacion-metalica-500x500x100",
+"500 x 500 x 100 mm"
+]
+]
+}
+},
+{
+"id": "metaplast-automatico-flotante-tanque-sumergible-cable-g",
+"group": {
+"nombre": "Automático Flotante Tanque Sumergible Cable",
+"rubro": "Climatización y Hogar",
+"subrubro": "Agua y Calefacción",
+"items": [
+[
+"metaplast---automat-flot-tanque-sumerg-cable-15m",
+"1,5 m"
+],
+[
+"metaplast---automat-flot-tanque-sumerg-cable-5m",
+"5 m"
+],
+[
+"metaplast---automat-flot-tanque-sumerg-cable-10m",
+"10 m"
+]
+]
+}
+},
+{
+"id": "selene-ventilador-4-palas-1-20-m-g",
+"group": {
+"nombre": "Ventilador 4 Palas 1,20 m",
+"rubro": "Climatización y Hogar",
+"subrubro": "Ventilación y Extractores",
+"items": [
+[
+"selene---ventilador-4-palas-120-mts-blanco",
+"Blanco"
+],
+[
+"selene---ventilador-4-palas-120-mts-marron",
+"Marrón"
+],
+[
+"selene---ventilador-4-palas-120-mts-negro",
+"Negro"
+],
+[
+"selene---ventilador-4-palas-120-mts-platil",
+"Platil"
+]
+]
+}
+},
+{
+"id": "hydra-extractor-de-bano-4-100-mm-embutir-g",
+"group": {
+"nombre": "Extractor de Baño 4\" 100 mm Embutir",
+"rubro": "Climatización y Hogar",
+"subrubro": "Ventilación y Extractores",
+"items": [
+[
+"hydra---extractor-de-bano-4-100mm-emb-blanco",
+"Blanco"
+],
+[
+"hydra---extractor-de-bano-4-100mm-emb-grafito",
+"Grafito"
+]
+]
+}
+},
+{
+"id": "metalce-morseto-tomacable-para-jabalina-g",
+"group": {
+"nombre": "Morseto Tomacable para Jabalina",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Puesta a Tierra y Línea Aérea",
+"items": [
+[
+"metalce---morseto-tomacable-p-jab-38-t-1",
+"3/8 T-1"
+],
+[
+"metalce---morseto-tomacable-p-jab-12-t-2",
+"1/2 T-2"
+],
+[
+"metalce---morseto-tomacable-p-jab-58-t-22",
+"5/8 T-22"
+],
+[
+"metalce---morseto-tomacable-p-jab-34-t-3",
+"3/4 T-3"
+]
+]
+}
+},
+{
+"id": "metalce-barra-ac-cobre-5-8-x-morseto-t22-g",
+"group": {
+"nombre": "Barra AC/Cobre 5/8 x + Morseto T22",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Puesta a Tierra y Línea Aérea",
+"items": [
+[
+"metalce---barra-accobre-58-x-15-m-morseto-t22",
+"1,5 M"
+],
+[
+"metalce---barra-accobre-58-x-20-m-morseto-t22",
+"2,0 M"
+],
+[
+"metalce---barra-accobre-58-x-30-m-morseto-t22",
+"3,0 M"
+]
+]
+}
+},
+{
+"id": "metalce-barra-ac-cobre-1-2-x-morseto-t2-g",
+"group": {
+"nombre": "Barra AC/Cobre 1/2 x + Morseto T2",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Puesta a Tierra y Línea Aérea",
+"items": [
+[
+"metalce---barra-accobre-12-x-15-m-morseto-t2",
+"1,5 M"
+],
+[
+"metalce---barra-accobre-12-x-20-m-morseto-t2",
+"2,0 M"
+]
+]
+}
+},
+{
+"id": "multicap-capacitor-elecond-400-vca-g",
+"group": {
+"nombre": "Capacitor Elecond 400 VCA",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Capacitores",
+"items": [
+[
+"multicap---capacitor-elecond-10-uf-400-vca",
+"1,0 µF"
+],
+[
+"multicap---capacitor-elecond-15-uf-400-vca",
+"1,5 µF"
+],
+[
+"multicap---capacitor-elecond-20-uf-400-vca",
+"2,0 µF"
+],
+[
+"multicap---capacitor-elecond-25-uf-400-vca",
+"2,5 µF"
+]
+]
+}
+},
+{
+"id": "multicap-capacitor-eco-con-faston-400vca-g",
+"group": {
+"nombre": "Capacitor Eco con Faston 400VCA",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Capacitores",
+"items": [
+[
+"multicap---capacitor-eco-con-faston-60-uf-400vca",
+"6,0 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-80-uf-400vca",
+"8,0 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-100-uf-400vca",
+"10,0 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-125-uf-400vca",
+"12,5 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-14-uf-400vca",
+"14 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-16-uf-400vca",
+"16 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-20-uf-400vca",
+"20 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-25-uf-400vca",
+"25 µF"
+]
+]
+}
+},
+{
+"id": "multicap-capacitor-eco-con-faston-400-vca-g",
+"group": {
+"nombre": "Capacitor Eco con Faston 400 VCA",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Capacitores",
+"items": [
+[
+"multicap---capacitor-eco-con-faston-30-uf-400-vca",
+"30 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-32-uf-400-vca",
+"32 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-35-uf-400-vca",
+"35 µF"
+],
+[
+"multicap---capacitor-eco-con-faston-40-uf-400-vca",
+"40 µF"
+]
+]
+}
+},
+{
+"id": "multicap-capacitor-con-fast-on-400-vca-g",
+"group": {
+"nombre": "Capacitor con Fast-ON 400 VCA",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Capacitores",
+"items": [
+[
+"multicap---capacitor-con-fast-on-15-uf-400-vca",
+"1,5 µF"
+],
+[
+"multicap---capacitor-con-fast-on-20-uf-400-vca",
+"2,0 µF"
+],
+[
+"multicap---capacitor-con-fast-on-25-uf-400-vca",
+"2,5 µF"
+],
+[
+"multicap---capacitor-con-fast-on-40-uf-400-vca",
+"4,0 µF"
+],
+[
+"multicap---capacitor-con-fast-on-45-uf-400-vca",
+"45 µF"
+]
+]
+}
+},
+{
+"id": "candil-fuente-para-cinta-led-g",
+"group": {
+"nombre": "Fuente para Cinta LED",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Fuentes y Transformadores",
+"items": [
+[
+"candil---fuente-para-cinta-led-12v-25w-2-a",
+"12V 25W 2 A"
+],
+[
+"candil---fuente-para-cinta-led-12v-40w-33-a",
+"12V 40W 3,3 A"
+],
+[
+"candil---fuente-para-cinta-led-12v-60w-5-a",
+"12V 60W 5 A"
+],
+[
+"candil---fuente-para-cinta-led-12v-100w-85-a",
+"12V 100W 8,5 A"
+],
+[
+"candil---fuente-para-cinta-led-12v-120w-10-a",
+"12V 120W 10 A"
+],
+[
+"candil---fuente-para-cinta-led-12v-150w-125-a",
+"12V 150W 12,5 A"
+],
+[
+"candil---fuente-para-cinta-led-24v-72w-3-a",
+"24V 72W 3 A"
+]
+]
+}
+},
+{
+"id": "interelec-driver-fuente-para-plafon-panel-led-g",
+"group": {
+"nombre": "Driver Fuente para Plafón-Panel LED",
+"rubro": "Energía y Puesta a Tierra",
+"subrubro": "Fuentes y Transformadores",
+"items": [
+[
+"interelec---driver-fuente-p-plafon-panel-led-6w",
+"6W"
+],
+[
+"interelec---driver-fuente-p-plafon-panel-led-12w",
+"12W"
+],
+[
+"interelec---driver-fuente-p-plafon-panel-led-18w",
+"18W"
+],
+[
+"interelec---driver-fuente-p-plafon-panel-led-24w",
+"24W"
+],
+[
+"interelec---driver-fuente-p-plafon-panel-led-40w",
+"40W"
+],
+[
+"interelec---driver-fuente-p-plafon-panel-led-48w",
+"48W"
+]
+]
+}
+},
+{
+"id": "mavi-clips-para-bateria-de-aislado-g",
+"group": {
+"nombre": "Clips para Batería de Aislado",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Pilas y Cargadores",
+"items": [
+[
+"mavi---clips-para-bateria-de-10-amp-aislado",
+"10 Amp."
+],
+[
+"mavi---clips-para-bateria-de-20-amp-aislado",
+"20 Amp."
+],
+[
+"mavi---clips-para-bateria-de-25-amp-aislado",
+"25 Amp."
+],
+[
+"mavi---clips-para-bateria-de-50-amp-aislado",
+"50 Amp."
+],
+[
+"mavi---clips-para-bateria-de-120-amp-aislado",
+"120 Amp."
+],
+[
+"mavi---clips-para-bateria-de-200-amp-aislado",
+"200 Amp."
+]
+]
+}
+},
+{
+"id": "mavi-clips-para-bateria-g",
+"group": {
+"nombre": "Clips para Batería",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Pilas y Cargadores",
+"items": [
+[
+"mavi---clips-para-bateria-de-10-amp",
+"10 Amp."
+],
+[
+"mavi---clips-para-bateria-de-20-amp",
+"20 Amp."
+],
+[
+"mavi---clips-para-bateria-de-25-amp",
+"25 Amp."
+],
+[
+"mavi---clips-para-bateria-de-50-amp",
+"50 Amp."
+],
+[
+"mavi---clips-para-bateria-de-120-amp",
+"120 Amp."
+],
+[
+"mavi---clips-para-bateria-de-200-amp",
+"200 Amp."
+]
+]
+}
+},
+{
+"id": "mavi-clips-cocodrilo-aislado-g",
+"group": {
+"nombre": "Clips Cocodrilo Aislado",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Pilas y Cargadores",
+"items": [
+[
+"mavi---clips-cocodrilo-aislado-negro",
+"Negro"
+],
+[
+"mavi---clips-cocodrilo-aislado-rojo",
+"Rojo"
+]
+]
+}
+},
+{
+"id": "teclastar-sensor-de-movil-infrarrojo-300w-g",
+"group": {
+"nombre": "Sensor de Móvil Infrarrojo 300W",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Seguridad y Alarmas",
+"items": [
+[
+"teclastar--sensor-de-mov-infrar-300w-blanco",
+"Blanco"
+],
+[
+"teclastar--sensor-de-mov-infrar-300w-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "kalop-fotocontrol-220v-g",
+"group": {
+"nombre": "Fotocontrol 220V.",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Seguridad y Alarmas",
+"items": [
+[
+"kalop---fotocontrol-1200w-220v",
+"1200W"
+],
+[
+"kalop---fotocontrol-1600w-220v",
+"1600W"
+]
+]
+}
+},
+{
+"id": "wd-40-wd40-aceite-lubricante-multiuso-g",
+"group": {
+"nombre": "WD40 Aceite Lubricante Multiuso",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"wd40-aceite-lubricante-multiuso-155g",
+"155 g"
+],
+[
+"wd40-aceite-lubricante-multiuso-311g",
+"311 g"
+]
+]
+}
+},
+{
+"id": "tacsa-termocontraible-negro-g",
+"group": {
+"nombre": "Termocontraible Negro",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"tacsa---termocontraible-24mm-332-negro",
+"2,4 mm 3/32\""
+],
+[
+"tacsa---termocontraible-32mm-18-negro",
+"3,2 mm 1/8\""
+],
+[
+"tacsa---termocontraible-48mm-316-negro",
+"4,8 mm 3/16"
+],
+[
+"tacsa---termocontraible-64mm-14-negro",
+"6,4 mm 1/4\""
+],
+[
+"tacsa---termocontraible-8mm-516-negro",
+"8 mm 5/16"
+],
+[
+"tacsa---termocontraible-95mm-38-negro",
+"9,5 mm 3/8\""
+],
+[
+"tacsa---termocontraible-127mm-12-negro",
+"12,7 mm 1/2\""
+],
+[
+"tacsa---termocontraible-19mm-34-negro",
+"19 mm 3/4\""
+]
+]
+}
+},
+{
+"id": "tacsa-cinta-autosoldable-19-mm-x-0-76-mm-g",
+"group": {
+"nombre": "Cinta Autosoldable 19 mm x 0,76 mm",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"tacsa---cinta-autosoldable-19mmx457mx076mm",
+"4,57 m x"
+],
+[
+"tacsa---cinta-autosoldable-19mmx914x076mm",
+"9,14 m x"
+]
+]
+}
+},
+{
+"id": "interelec-cinta-aisladora-vini-tape-negro-g",
+"group": {
+"nombre": "Cinta Aisladora Vini Tape Negro",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"interelec---cinta-aisladora-vini-tape-10-mts-negro",
+"10 m"
+],
+[
+"interelec---cinta-aisladora-vini-tape-20-mts-negro",
+"20 m"
+]
+]
+}
+},
+{
+"id": "tacsa-cinta-aisladora-profesional-g",
+"group": {
+"nombre": "Cinta Aisladora Profesional",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"tacsa---cinta-aisladora-profesional-10-mts-blanca",
+"10 m Blanca"
+],
+[
+"tacsa---cinta-aisladora-profesional-10-mts-celeste",
+"10 m Celeste"
+],
+[
+"tacsa---cinta-aisladora-profesional-10-mts-gris",
+"10 m Gris"
+],
+[
+"tacsa---cinta-aisladora-profesional-10-mts-marron",
+"10 m Marrón"
+],
+[
+"tacsa---cinta-aisladora-profesional-10-mts-negra",
+"10 m Negra"
+],
+[
+"tacsa---cinta-aisladora-profesional-10-mts-roja",
+"10 m Roja"
+],
+[
+"tacsa---cinta-aisladora-profesional-20-mts-blanca",
+"20 m Blanca"
+],
+[
+"tacsa---cinta-aisladora-profesional-20-mts-negra",
+"20 m Negra"
+]
+]
+}
+},
+{
+"id": "python-cinta-aisladora-g",
+"group": {
+"nombre": "Cinta Aisladora",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"python---cinta-aisladora-10-metros",
+"10 Metros"
+],
+[
+"python---cinta-aisladora-20-metros",
+"20 Metros"
+]
+]
+}
+},
+{
+"id": "richi-cinta-aisladora-20-m-g",
+"group": {
+"nombre": "Cinta Aisladora 20 m",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"richi---cinta-aisladora-20mts-blanca",
+"Blanca"
+],
+[
+"richi---cinta-aisladora-20mts-negra",
+"Negra"
+]
+]
+}
+},
+{
+"id": "3m-cinta-aisladora-3m-industrial-175-negra-g",
+"group": {
+"nombre": "Cinta Aisladora 3M Industrial \"175\" Negra",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cintas y Adhesivos",
+"items": [
+[
+"cinta-3m-aisladora-indust-175-10mts-negra",
+"10 m"
+],
+[
+"cinta-3m-aisladora-indust-175-20mts-negra",
+"20 m"
+]
+]
+}
+},
+{
+"id": "truss-tornillo-para-mecha-con-tanque-8-g",
+"group": {
+"nombre": "Tornillo para Mecha con Tanque 8",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"truss---tornillo-p-mecha-c-tanque-8-x-12-cu",
+"1/2"
+],
+[
+"truss---tornillo-p-mecha-c-tanque-8-x-916-cu",
+"9/16"
+]
+]
+}
+},
+{
+"id": "py-tarugo-comun-g",
+"group": {
+"nombre": "Tarugo Común",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"py---tarugo-comun-6-cu",
+"6"
+],
+[
+"py---tarugo-comun-8-cu",
+"8"
+],
+[
+"py---tarugo-comun-10-cu",
+"10"
+],
+[
+"py---tarugo-comun-12-cu",
+"12"
+]
+]
+}
+},
+{
+"id": "tacsa-precinto-nylon-g",
+"group": {
+"nombre": "Precinto Nylon",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"tacsa---precinto-nylon-100-x-25-mm-x-100u-ng",
+"100 x 2,5 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-150-x-36-mm-x-100u-ng",
+"150 x 3,6 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-200-x-46-mm-x-100u-bl",
+"200 x 4,6 mm (X 100U) Blanco"
+],
+[
+"tacsa---precinto-nylon-200-x-46-mm-x-100u-ng",
+"200 x 4,6 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-250-x-46-mm-x-100u-ng",
+"250 x 4,6 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-300-x-46-mm-x-100u-ng",
+"300 x 4,6 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-300-x-76-mm-x-100u-ng",
+"300 x 7,6 mm (X 100U) Negro"
+],
+[
+"tacsa---precinto-nylon-350-x-46-mm-x-100u-bl",
+"350 x 4,6 mm (X 100U) Blanco"
+],
+[
+"tacsa---precinto-nylon-350-x-46-mm-x-100u-ng",
+"350 x 4,6 mm (X 100U) Negro"
+]
+]
+}
+},
+{
+"id": "alpine-precinto-numerado-250-mm-g",
+"group": {
+"nombre": "Precinto Numerado 250 mm",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"alpine---precinto-numerado-rojo-250mm-cu",
+"Rojo"
+],
+[
+"alpine---precinto-numerado-verde-250mm-cu",
+"Verde"
+]
+]
+}
+},
+{
+"id": "py-piton-con-tope-cerrado-n-g",
+"group": {
+"nombre": "Piton con Tope Cerrado",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"py---piton-con-tope-cerrado-no-6-cu",
+"6"
+],
+[
+"py---piton-con-tope-cerrado-no-8-cu",
+"8"
+]
+]
+}
+},
+{
+"id": "py-piton-con-tope-abierto-n-g",
+"group": {
+"nombre": "Piton con Tope Abierto",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"py---piton-con-tope-abierto-no-6-cu",
+"6"
+],
+[
+"py---piton-con-tope-abierto-no-8-cu",
+"8"
+]
+]
+}
+},
+{
+"id": "py-grampyta-cable-redondo-negro-x50-unidades-g",
+"group": {
+"nombre": "Grampyta Cable Redondo Negro x50 unidades",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"py---grampyta-6-cable-redo-negro-x50",
+"6"
+],
+[
+"py---grampyta-8-cable-redo-negro-x50",
+"8"
+]
+]
+}
+},
+{
+"id": "viyilant-cinta-helicoidal-g",
+"group": {
+"nombre": "Cinta Helicoidal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"viyilant---cinta-helicoidal-12mm-x-metro",
+"12 mm"
+],
+[
+"viyilant---cinta-helicoidal-15mm-x-metro",
+"15 mm"
+],
+[
+"viyilant---cinta-helicoidal-19mm-x-metro",
+"19 mm"
+],
+[
+"viyilant---cinta-helicoidal-24mm-x-metro",
+"24 mm"
+]
+]
+}
+},
+{
+"id": "olmar-abrazaderas-media-omega-g",
+"group": {
+"nombre": "Abrazaderas Media Omega",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"olmar---abrazaderas-media-omega-14",
+"1/4"
+],
+[
+"olmar---abrazaderas-media-omega-12",
+"1/2"
+],
+[
+"olmar---abrazaderas-media-omega-58",
+"5/8"
+],
+[
+"olmar---abrazaderas-media-omega-78",
+"7/8"
+]
+]
+}
+},
+{
+"id": "pastoriza-abrazaderas-media-omega-g",
+"group": {
+"nombre": "Abrazaderas Media Omega",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"pastoriza---abrazaderas-media-omega-58",
+"5/8\""
+],
+[
+"pastoriza---abrazaderas-media-omega-34",
+"3/4\""
+],
+[
+"pastoriza---abrazaderas-media-omega-1",
+"1\""
+]
+]
+}
+},
+{
+"id": "ag-abrazadera-grampa-omega-liviana-g",
+"group": {
+"nombre": "Abrazadera Grampa Omega Liviana",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"ag---abraz-grampa-omega-liv-1-14",
+"1 1/4"
+],
+[
+"ag---abraz-grampa-omega-liv-1-12",
+"1 1/2"
+],
+[
+"ag---abraz-grampa-omega-liv-2",
+"2\""
+]
+]
+}
+},
+{
+"id": "ag-abrazadera-grampa-omega-g",
+"group": {
+"nombre": "Abrazadera Grampa Omega",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"ag---abraz-grampa-omega-58",
+"5/8\""
+],
+[
+"ag---abraz-grampa-omega-34",
+"3/4\""
+],
+[
+"ag---abraz-grampa-omega-78",
+"7/8\""
+]
+]
+}
+},
+{
+"id": "ag-abrazadera-grampa-media-omega-g",
+"group": {
+"nombre": "Abrazadera Grampa Media Omega",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"ag---abraz-grampa-media-omega-14",
+"1/4\""
+],
+[
+"ag---abraz-grampa-media-omega-516",
+"5/16\""
+],
+[
+"ag---abraz-grampa-media-omega-38",
+"3/8\""
+],
+[
+"ag---abraz-grampa-media-omega-12",
+"1/2\""
+],
+[
+"ag---abraz-grampa-media-omega-58",
+"5/8\""
+],
+[
+"ag---abraz-grampa-media-omega-34",
+"3/4\""
+],
+[
+"ag---abraz-grampa-media-omega-78",
+"7/8\""
+],
+[
+"ag---abraz-grampa-media-omega-1-14",
+"1 1/4\""
+],
+[
+"ag---abraz-grampa-media-omega-1",
+"1\""
+]
+]
+}
+},
+{
+"id": "candil-cabezal-tacho-ar111-cinema-g",
+"group": {
+"nombre": "Cabezal Tacho AR111 \"Cinema\"",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"candil---cabezal-tacho-ar111-cinema-blanco",
+"Blanco"
+],
+[
+"candil---cabezal-tacho-ar111-cinema-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "gardex-varilla-roscada-1-m-g",
+"group": {
+"nombre": "Varilla Roscada 1 m",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"gardex---varilla-roscada-1-mts-14",
+"1/4\""
+],
+[
+"gardex---varilla-roscada-1-mts-516",
+"5/16\""
+],
+[
+"gardex---varilla-roscada-1-mts-38",
+"3/8\""
+]
+]
+}
+},
+{
+"id": "bulit-disco-diamantado-segmentado-s400-g",
+"group": {
+"nombre": "Disco Diamantado Segmentado S400",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"bulit---disco-diamantado-segmentado-115mm-s400",
+"115 mm"
+],
+[
+"bulit---disco-diamantado-segmentado-180mm-s400",
+"180 mm"
+]
+]
+}
+},
+{
+"id": "jadever-destornillador-aislado-punta-plana-g",
+"group": {
+"nombre": "Destornillador Aislado Punta Plana",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"jadever---destornillador-aislado-punta-plana-4x100",
+"4x100"
+],
+[
+"jadever---destornillador-aisla-punta-plana-65x150",
+"6,5x150"
+]
+]
+}
+},
+{
+"id": "jadever-destornillador-aislado-philips-g",
+"group": {
+"nombre": "Destornillador Aislado Philips",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"jadever---destornillador-aislado-philips-0x75",
+"0x75"
+],
+[
+"jadever---destornillador-aislado-philips-2x100",
+"2x100"
+],
+[
+"jadever---destornillador-aislado-philips-3x150",
+"3x150"
+]
+]
+}
+},
+{
+"id": "exultt-cinta-pasacable-con-alma-de-acero-g",
+"group": {
+"nombre": "Cinta Pasacable con Alma de Acero",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"exultt---cinta-pasacable-con-alma-de-acero-7-mts",
+"7 m"
+],
+[
+"exultt---cinta-pasacable-con-alma-de-acero-10-mts",
+"10 m"
+],
+[
+"exultt---cinta-pasacable-con-alma-de-acero-15-mts",
+"15 m"
+],
+[
+"exultt---cinta-pasacable-con-alma-de-acero-20-mts",
+"20 m"
+]
+]
+}
+},
+{
+"id": "genrod-caja-plastica-exterior-din-tapa-fume-g",
+"group": {
+"nombre": "Caja Plástica Exterior DIN Tapa Fume",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---caja-plastica-exterior-4-din-tapa-fume",
+"4"
+],
+[
+"genrod---caja-plastica-exterior-8-din-tapa-fume",
+"8"
+],
+[
+"genrod---caja-plastica-exterior-12-din-tapa-fume",
+"12"
+],
+[
+"genrod---caja-plastica-exterior-16-din-tapa-fume",
+"16"
+],
+[
+"genrod---caja-plastica-exterior-24-din-tapa-fume",
+"24"
+],
+[
+"genrod---caja-plastica-exterior-36-din-tapa-fume",
+"36"
+],
+[
+"genrod---caja-plastica-exterior-48-din-tapa-fume",
+"48"
+]
+]
+}
+},
+{
+"id": "genrod-caja-plastica-embutir-din-tapa-fume-g",
+"group": {
+"nombre": "Caja Plástica Embutir DIN Tapa Fume",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---caja-plastica-embutir-4-din-tapa-fume",
+"4"
+],
+[
+"genrod---caja-plastica-embutir-8-din-tapa-fume",
+"8"
+],
+[
+"genrod---caja-plastica-embutir-12-din-tapa-fume",
+"12"
+],
+[
+"genrod---caja-plastica-embutir-16-din-tapa-fume",
+"16"
+],
+[
+"genrod---caja-plastica-embutir-24-din-tapa-fume",
+"24"
+],
+[
+"genrod---caja-plastica-embutir-36-din-tapa-fume",
+"36"
+],
+[
+"genrod---caja-plastica-embutir-48-din-tapa-fume",
+"48"
+]
+]
+}
+},
+{
+"id": "kalop-base-prolongador-4-tomas-con-term-sin-cable-g",
+"group": {
+"nombre": "Base Prolongador 4 Tomas con Term.sin Cable",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Zapatillas y Prolongadores",
+"items": [
+[
+"kalop---base-prolong-4-tomas-ctermsin-cable-bla",
+"Blanco"
+],
+[
+"kalop---base-prolong-4-tomas-ctermsin-cable-neg",
+"Negro"
+]
+]
+}
+},
+{
+"id": "zelta-alicate-corte-oblicuo-g",
+"group": {
+"nombre": "Alicate Corte Oblicuo",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"alicate-4-5-corte-oblicuo-zelta-t5938",
+"4,5\""
+],
+[
+"zelta---alicate-6-corte-oblicuo",
+"6\""
+],
+[
+"alicate-8-corte-oblicuo-zelta-t5959",
+"8\""
+]
+]
+}
+},
+{
+"id": "richi-prolongador-zapatilla-5-tomas-con-termica-multinorma-g",
+"group": {
+"nombre": "Prolongador Zapatilla 5 Tomas con Térmica Multinorma",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Zapatillas y Prolongadores",
+"items": [
+[
+"richi---prolongzapat-5-tomas-cter-150-mts-mult",
+"1,50 m"
+],
+[
+"richi---prolongzapat-5-tomas-cterm-25-mt-multi",
+"2,5 m"
+],
+[
+"richi---prolongzapat-5-tomas-cter-5-mts-multi",
+"5 m"
+]
+]
+}
+},
+{
+"id": "kalop-prolongador-zapatilla-blanco-g",
+"group": {
+"nombre": "Prolongador Zapatilla Blanco",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Zapatillas y Prolongadores",
+"items": [
+[
+"kalop---prolongzapat-4-tomas-cterm-15m-blanc",
+"4 Tomas con Térmica 1,5 m"
+],
+[
+"kalop---prolongzapat-4-tomas-cterm-25m-blanco",
+"4 Tomas con Térmica 2,5 m"
+],
+[
+"kalop---prolongzapat-6-tomas-cterm-15m-blanco",
+"6 Tomas con Térmica 1,5 m"
+]
+]
+}
+},
+{
+"id": "richi-ficha-macho-salida-lateral-3-patas-chatas-marfil-g",
+"group": {
+"nombre": "Ficha Macho Salida Lateral 3 Patas Chatas Marfil",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"richi---ficha-macho-sal-lat-3-p-ch-10a-marfil",
+"10A"
+],
+[
+"richi---ficha-macho-sal-lat-3-p-ch-20a-marfil",
+"20A"
+]
+]
+}
+},
+{
+"id": "richi-ficha-macho-salida-lateral-2-pernos-chatos-g",
+"group": {
+"nombre": "Ficha Macho Salida Lateral 2 Pernos Chatos",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"richi---ficha-macho-sal-lat-2-pernos-ch-marfil",
+"Marfil"
+],
+[
+"richi---ficha-macho-sal-lat-2-pernos-ch-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "richi-ficha-macho-para-prolongador-3-patas-chatas-10a-g",
+"group": {
+"nombre": "Ficha Macho para Prolongador 3 Patas Chatas 10A",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"richi---ficha-macho-pprolong-3-p-ch-10a-gris",
+"Gris"
+],
+[
+"richi---ficha-macho-pprolong-3-p-ch-10a-marfil",
+"Marfil"
+]
+]
+}
+},
+{
+"id": "kalop-ficha-macho-3-patas-chatas-k3-g",
+"group": {
+"nombre": "Ficha Macho 3 Patas Chatas K3",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"kalop---ficha-macho-3pch-k3-blanca",
+"Blanca"
+],
+[
+"kalop---ficha-macho-3pch-k3-negra",
+"Negra"
+]
+]
+}
+},
+{
+"id": "mig-ficha-macho-3-patas-chatas-g",
+"group": {
+"nombre": "Ficha Macho 3 Patas Chatas",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"mig---ficha-macho-3p-ch-10a-alto-consumo-blanca",
+"10A Alto Consumo Blanca"
+],
+[
+"mig---ficha-macho-3p-ch-20a-alto-consumo-bco",
+"20A Alto Consumo Blanco"
+]
+]
+}
+},
+{
+"id": "mig-ficha-macho-2p-10a-g",
+"group": {
+"nombre": "Ficha Macho 2P 10A",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"mig---ficha-macho-2p-10a-blanco",
+"Blanco"
+],
+[
+"mig---ficha-macho-2p-10a-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "kalop-ficha-hembra-3-patas-chatas-kh-g",
+"group": {
+"nombre": "Ficha Hembra 3 Patas Chatas KH",
+"rubro": "Fichas y Prolongadores",
+"subrubro": "Fichas y Tomas",
+"items": [
+[
+"kalop---ficha-hembra-3pch-kh-blanco",
+"Blanco"
+],
+[
+"kalop---ficha-hembra-3pch-kh-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "zoloda-separador-de-borne-64x52-mm-espesor-amarillo-g",
+"group": {
+"nombre": "Separador de Borne 64x52 mm Espesor Amarillo",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"zoloda---separador-borne-6452mm-espes1mm-amarill",
+"1 mm"
+],
+[
+"zoloda---separador-borne-6452mm-espes2mm-amarill",
+"2 mm"
+]
+]
+}
+},
+{
+"id": "zoloda-puente-10-elementos-g",
+"group": {
+"nombre": "Puente 10 Elementos",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"zoloda---puente-10-elementos-p-bpn-25",
+"BPN-2,5"
+],
+[
+"zoloda---puente-10-elementos-p-bpn-04",
+"BPN-04"
+],
+[
+"zoloda---puente-10-elementos-p-bpn-06",
+"BPN-06"
+],
+[
+"zoloda---puente-10-elementos-p-bpn-10",
+"BPN-10"
+],
+[
+"zoloda---puente-10-elementos-p-bpn-16",
+"BPN-16"
+],
+[
+"zoloda---puente-10-elementos-p-bpn-35",
+"BPN-35"
+]
+]
+}
+},
+{
+"id": "tea-capuchon-protector-para-bornes-g",
+"group": {
+"nombre": "Capuchón Protector para Bornes",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"tea---capuchon-protector-para-bornes-60-a",
+"60 A."
+],
+[
+"tea---capuchon-protector-para-bornes-100-a",
+"100 A."
+],
+[
+"tea---capuchon-protector-para-bornes-200-a",
+"200 A."
+]
+]
+}
+},
+{
+"id": "tea-bornera-divisible-12-puentes-380-v-g",
+"group": {
+"nombre": "Bornera Divisible 12 Puentes 380 V.",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"tea---bornera-divisible-12-puentes-15-a-380-v",
+"15 A."
+],
+[
+"tea---bornera-divisible-12-puentes-25-a-380-v",
+"25 A."
+],
+[
+"tea---bornera-divisible-12-puentes-35-a-380-v",
+"35 A."
+],
+[
+"tea---bornera-divisible-12-puentes-50-a-380-v",
+"50 A."
+]
+]
+}
+},
+{
+"id": "zoloda-bornera-bpn-g",
+"group": {
+"nombre": "Bornera BPN",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"zoloda---bornera-bpn-azul-25mm",
+"Azul 2,5 mm"
+],
+[
+"zoloda---bornera-bpn-azul-4mm",
+"Azul 4 mm"
+],
+[
+"zoloda---bornera-bpn-azul-6mm",
+"Azul 6 mm"
+],
+[
+"zoloda---bornera-bpn-gris-25mm2",
+"Gris 2,5MM²"
+],
+[
+"zoloda---bornera-bpn-gris-4mm2",
+"Gris 4MM²"
+],
+[
+"zoloda---bornera-bpn-gris-6mm2",
+"Gris 6MM²"
+],
+[
+"zoloda---bornera-bpn-gris-10mm",
+"Gris 10 mm"
+],
+[
+"zoloda---bornera-bpn-verde-4mm",
+"Verde 4 mm"
+],
+[
+"zoloda---bornera-bpn-verde-6mm",
+"Verde 6 mm"
+]
+]
+}
+},
+{
+"id": "elent-barra-distribuidor-unipolar-din-125a-g",
+"group": {
+"nombre": "Barra Distribuidor Unipolar DIN 125A",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"elent---barra-distribuidor-unipolar-din-125a-negro",
+"Negro"
+],
+[
+"elent---barra-distribuidor-unipolar-din-125a-rojo",
+"Rojo"
+],
+[
+"elent---barra-distribuidor-unipolar-din-125a-verde",
+"Verde"
+]
+]
+}
+},
+{
+"id": "fusse-union-cobre-estanada-g",
+"group": {
+"nombre": "Unión Cobre Estañada",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---union-cobre-estanada-15-mm2",
+"1,5 MM2"
+],
+[
+"fusse---union-cobre-estanada-25-mm2-zcc-2-5",
+"2,5 MM2"
+],
+[
+"fusse---union-cobre-estanada-4-mm2",
+"4 MM2"
+],
+[
+"fusse---union-cobre-estanada-6-mm2",
+"6 MM2"
+],
+[
+"fusse---union-cobre-estanada-10-mm2",
+"10 MM2"
+],
+[
+"fusse---union-cobre-estanada-16-mm2",
+"16 MM2"
+],
+[
+"fusse---union-cobre-estanada-25-mm2-zcc-25",
+"25 MM2"
+],
+[
+"fusse---union-cobre-estanada-35-mm2",
+"35 MM2"
+],
+[
+"fusse---union-cobre-estanada-50-mm2",
+"50 MM2"
+],
+[
+"fusse---union-cobre-estanada-70-mm2",
+"70 MM2"
+]
+]
+}
+},
+{
+"id": "gabexel-terminal-tif-para-cable-g",
+"group": {
+"nombre": "Terminal TIF para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"gabexel---terminal-tif-p-cable-25-negro",
+"25 Negro"
+],
+[
+"gabexel---terminal-tif-p-cable-35-rojo",
+"35 Rojo"
+],
+[
+"gabexel---terminal-tif-p-cable-50-azul",
+"50 Azul"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-tif-para-cable-g",
+"group": {
+"nombre": "Terminal TIF para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-tif-p-cable-050mm-blanco",
+"0,50 mm Blanco"
+],
+[
+"fusse---terminal-tif-p-cable-075mm-azul",
+"0,75 mm Azul"
+],
+[
+"fusse---terminal-tif-p-cable-35mm-rojo",
+"35 mm Rojo"
+]
+]
+}
+},
+{
+"id": "zoloda-terminal-tif-doble-para-cable-g",
+"group": {
+"nombre": "Terminal TIF Doble para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"zoloda---terminal-tif-doble-pcable-25mm-gris",
+"2,5 mm Gris"
+],
+[
+"zoloda---terminal-tif-doble-pcable-4mm-naranja",
+"4 mm Naranja"
+],
+[
+"zoloda---terminal-tif-doble-pcable-6mm-verde",
+"6 mm Verde"
+],
+[
+"zoloda---terminal-tif-doble-pcable-10mm-marron",
+"10 mm Marrón"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-union-g",
+"group": {
+"nombre": "Terminal Preaislado Unión",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-union",
+"Amarillo"
+],
+[
+"fusse---terminal-preaislado-azul-union",
+"Azul"
+],
+[
+"fusse---terminal-preaislado-rojo-union",
+"Rojo"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-pin-g",
+"group": {
+"nombre": "Terminal Preaislado Pin",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-pin-10mm",
+"Amarillo 10 mm"
+],
+[
+"fusse---terminal-preaislado-azul-pin-67mm",
+"Azul 6,7 mm"
+],
+[
+"fusse---terminal-preaislado-azul-pin-100mm",
+"Azul 10,0 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-pin-67mm",
+"Rojo 6,7 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-pin-100mm",
+"Rojo 10,0 mm"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-pala-hembra-g",
+"group": {
+"nombre": "Terminal Preaislado Pala Hembra",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-pala-hba-63",
+"Amarillo 6,3"
+],
+[
+"fusse---terminal-preaislado-azul-pala-hembra-63mm",
+"Azul 6,3 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-pala-hba-52mm",
+"Rojo 5,2 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-pala-hba-63mm",
+"Rojo 6,3 mm"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-ojal-g",
+"group": {
+"nombre": "Terminal Preaislado Ojal",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-ojal-5mm",
+"Amarillo 5 mm"
+],
+[
+"fusse---terminal-preaislado-amarillo-ojal-6mm",
+"Amarillo 6 mm"
+],
+[
+"fusse---terminal-preaislado-amarillo-ojal-8mm",
+"Amarillo 8 mm"
+],
+[
+"fusse---terminal-preaislado-azul-ojal-5mm",
+"Azul 5 mm"
+],
+[
+"fusse---terminal-preaislado-azul-ojal-6mm",
+"Azul 6 mm"
+],
+[
+"fusse---terminal-preaislado-azul-ojal-8mm",
+"Azul 8 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-ojal-5mm",
+"Rojo 5 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-ojal-6mm",
+"Rojo 6 mm"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-horquilla-g",
+"group": {
+"nombre": "Terminal Preaislado Horquilla",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-horquilla-4mm",
+"Amarillo 4 mm"
+],
+[
+"fusse---terminal-preaislado-amarillo-horquilla-5mm",
+"Amarillo 5 mm"
+],
+[
+"fusse---terminal-preaislado-amarillo-horquilla-6mm",
+"Amarillo 6 mm"
+],
+[
+"fusse---terminal-preaislado-azul-horquilla-4mm",
+"Azul 4 mm"
+],
+[
+"fusse---terminal-preaislado-azul-horquilla-5mm",
+"Azul 5 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-horquilla-3mm",
+"Rojo 3 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-horquilla-4mm",
+"Rojo 4 mm"
+],
+[
+"fusse---terminal-preaislado-rojo-horquilla-5mm",
+"Rojo 5 mm"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-preaislado-mac-6-3-mm-g",
+"group": {
+"nombre": "Terminal Preaislado Mac 6,3 mm",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-preaislado-amarillo-mac-63mm",
+"Amarillo"
+],
+[
+"fusse---terminal-preaislado-azul-mac-63mm",
+"Azul"
+]
+]
+}
+},
+{
+"id": "san-justo-terminal-para-prensacable-g",
+"group": {
+"nombre": "Terminal para Prensacable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"san-justo---terminal-pprensacable-blanco",
+"Blanco"
+],
+[
+"san-justo---terminal-pprensacable-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-laton-con-ojal-g",
+"group": {
+"nombre": "Terminal Latón con Ojal",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-laton-con-ojal-30mm",
+"3,0 mm"
+],
+[
+"fusse---terminal-laton-con-ojal-42mm",
+"4,2 mm"
+],
+[
+"fusse---terminal-laton-con-ojal-65mm",
+"6,5 mm"
+],
+[
+"fusse---terminal-laton-con-ojal-99mm",
+"9,9 mm"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-cobre-g",
+"group": {
+"nombre": "Terminal Cobre",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-cobre-15-2-p-tornillo-532",
+"1,5-2 para Tornillo 5/32"
+],
+[
+"fusse---terminal-cobre-25-2-p-tornillo-316",
+"2,5-2 para Tornillo 3/16"
+],
+[
+"fusse---terminal-cobre-4-2-p-tornillo-316",
+"4-2 para Tornillo 3/16"
+],
+[
+"fusse---terminal-cobre-6-1-p-tornillo-316",
+"6-1 para Tornillo 3/16"
+],
+[
+"fusse---terminal-cobre-6-2-p-tornillo-14",
+"6-2 para Tornillo 1/4"
+],
+[
+"fusse---terminal-cobre-10-1-p-tornillo-316",
+"10-1 para Tornillo 3/16"
+],
+[
+"fusse---terminal-cobre-10-2-p-tornillo-14",
+"10-2 para Tornillo 1/4"
+],
+[
+"fusse---terminal-cobre-10-3-p-tornillo-516",
+"10-3 para Tornillo 5/16"
+],
+[
+"fusse---terminal-cobre-16-1-p-tornillo-14",
+"16-1 para Tornillo 1/4"
+],
+[
+"fusse---terminal-cobre-16-2-p-tornillo-516",
+"16-2 para Tornillo 5/16"
+],
+[
+"fusse---terminal-cobre-16-3-p-tornillo-38",
+"16-3 para Tornillo 3/8"
+],
+[
+"fusse---terminal-cobre-25-2-p-tornillo-516",
+"25-2 para Tornillo 5/16"
+],
+[
+"fusse---terminal-cobre-25-3-p-tornillo-38",
+"25-3 para Tornillo 3/8"
+],
+[
+"fusse---terminal-cobre-25-4-p-tornillo-12",
+"25-4 para Tornillo 1/2"
+],
+[
+"fusse---terminal-cobre-35-2-p-tornillo-516",
+"35-2 para Tornillo 5/16"
+],
+[
+"fusse---terminal-cobre-35-3-p-tornillo-38",
+"35-3 para Tornillo 3/8"
+],
+[
+"fusse---terminal-cobre-35-4-p-tornillo-12",
+"35-4 para Tornillo 1/2"
+],
+[
+"fusse---terminal-cobre-50-2-p-tornillo-38",
+"50-2 para Tornillo 3/8"
+],
+[
+"fusse---terminal-cobre-50-3-p-tornillo-12",
+"50-3 para Tornillo 1/2"
+],
+[
+"fusse---terminal-cobre-70-2-p-tornillo-12",
+"70-2 para Tornillo 1/2"
+],
+[
+"fusse---terminal-cobre-70-3-p-tornillo-58",
+"70-3 para Tornillo 5/8"
+],
+[
+"fusse---terminal-cobre-95-2-p-tornillo-12",
+"95-2 para Tornillo 1/2"
+],
+[
+"fusse---terminal-cobre-95-3-p-tornillo-58",
+"95-3 para Tornillo 5/8"
+],
+[
+"fusse---terminal-cobre-150-2-p-tornillo-58",
+"150-2 para Tornillo 5/8"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-cobre-horquilla-g",
+"group": {
+"nombre": "Terminal Cobre Horquilla",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-cobre-15-2-p-torn-532-horq",
+"1,5-2 para Tornillo 5/32"
+],
+[
+"fusse---terminal-cobre-25-2-p-torn-316-horq",
+"2,5-2 para Tornillo 3/16"
+]
+]
+}
+},
+{
+"id": "conextube-prensacable-rosca-electrica-nylon-g",
+"group": {
+"nombre": "Prensacable Rosca Eléctrica Nylon",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"conextube---prensacable-relect-nylon-12",
+"1/2''"
+],
+[
+"conextube---prensacable-relect-nylon-58",
+"5/8''"
+],
+[
+"conextube---prensacable-relect-nylon-34",
+"3/4''"
+],
+[
+"conextube---prensacable-relect-nylon-78",
+"7/8''"
+],
+[
+"conextube---prensacable-relect-nylon-1-14",
+"1 1/4''"
+],
+[
+"conextube---prensacable-relect-nylon-1-12",
+"1 1/2''"
+]
+]
+}
+},
+{
+"id": "san-justo-prensacable-plastico-g",
+"group": {
+"nombre": "Prensacable Plástico",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"san-justo---prensacable-plastico-blanco",
+"Blanco"
+],
+[
+"san-justo---prensacable-plastico-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "fusse-empalme-aislador-nro-g",
+"group": {
+"nombre": "Empalme Aislador",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---empalme-aislador-nro-1-gris",
+"1 Gris"
+],
+[
+"fusse---empalme-aislador-nro-2-azul",
+"2 Azul"
+],
+[
+"fusse---empalme-aislador-nro-3-naranja",
+"3 Naranja"
+],
+[
+"fusse---empalme-aislador-nro-4-amarillo",
+"4 Amarillo"
+]
+]
+}
+},
+{
+"id": "gc-conector-largo-aluminio-g",
+"group": {
+"nombre": "Conector Largo Aluminio",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"gc---conector-largo-aluminio-34",
+"3/4\""
+],
+[
+"gc---conector-largo-aluminio-78",
+"7/8\""
+]
+]
+}
+},
+{
+"id": "demasled-conector-empalme-tipo-wago-g",
+"group": {
+"nombre": "Conector Empalme Tipo Wago",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"demasled---conector-empalme-tipo-wago-2-polos",
+"2 Polos"
+],
+[
+"demasled---conector-empalme-tipo-wago-3-polos",
+"3 Polos"
+],
+[
+"demasled---conector-empalme-tipo-wago-4-polos",
+"4 Polos"
+],
+[
+"demasled---conector-empalme-tipo-wago-5-polos",
+"5 Polos"
+]
+]
+}
+},
+{
+"id": "baw-conector-empalme-wago-1-2-5mm-con-salida-g",
+"group": {
+"nombre": "Conector Empalme Wago 1-2,5MM con Salida",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"baw---conector-emp-wago-2-polos-1-25mm-csalida",
+"2 Polos"
+],
+[
+"baw---conector-emp-wago-3-polos-1-25mm-csalida",
+"3 Polos"
+],
+[
+"baw---conector-emp-wago-4-polos-1-25mm-csalida",
+"4 Polos"
+]
+]
+}
+},
+{
+"id": "industrias-sur-conector-de-empalme-rapido-g",
+"group": {
+"nombre": "Conector de Empalme Rápido",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"indsur---conector-de-empalme-rapido-1mm-rojo",
+"1 mm Rojo"
+],
+[
+"indsur---conector-de-empalme-rapido-15mm-azul",
+"1,5 mm Azul"
+],
+[
+"indsur---conector-de-empalme-rapido-25mm-amarilo",
+"2,5 mm Amarillo"
+]
+]
+}
+},
+{
+"id": "demasled-conector-empalme-wago-1-2-5mm-con-salida-g",
+"group": {
+"nombre": "Conector Empalme Wago 1-2,5MM con Salida",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"demasled---cone-emp-wago-2-polos-1-25mm-csalida",
+"2 Polos"
+],
+[
+"demasled---cone-emp-wago-3-polos-1-25mm-csalida",
+"3 Polos"
+]
+]
+}
+},
+{
+"id": "baw-con-empalme-wago-1-2-5mm-sin-salida-g",
+"group": {
+"nombre": "Con. Empalme Wago 1-2,5MM sin Salida",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"baw---con-empalme-wago-2-polos-1-25mm-ssalida",
+"2 Polos"
+],
+[
+"baw---con-empalme-wago-3-polos-1-25mm-ssalida",
+"3 Polos"
+],
+[
+"baw---con-empalme-wago-4-polos-1-25mm-ssalida",
+"4 Polos"
+],
+[
+"baw---con-empalme-wago-5-polos-1-25mm-ssalida",
+"5 Polos"
+]
+]
+}
+},
+{
+"id": "baw-piloto-monobloque-rojo-led-g",
+"group": {
+"nombre": "Piloto Monobloque Rojo LED",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Comando y Señalización",
+"items": [
+[
+"baw---piloto-monobloque-rojo-led-230110v",
+"230/110V"
+],
+[
+"baw---piloto-monobloque-rojo-led-24v",
+"24V"
+],
+[
+"baw---piloto-monobloque-rojo-led-220v",
+"220V"
+]
+]
+}
+},
+{
+"id": "genrod-soporte-regulable-riel-portaelementos-x2-unidades-g",
+"group": {
+"nombre": "Soporte Regulable Riel Portaelementos x2 unidades",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"genrod---soporte-reg-riel-portael-100-a-130mm-x2",
+"100 a 130 mm"
+],
+[
+"genrod---soporte-reg-riel-portael-115-a-160mm-x2",
+"115 a 160 mm"
+]
+]
+}
+},
+{
+"id": "metalce-fusible-tipo-neozed-g",
+"group": {
+"nombre": "Fusible Tipo Neozed",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"metalce---fusible-tipo-neozed-de-10-a",
+"10 A."
+],
+[
+"metalce---fusible-tipo-neozed-de-25-a",
+"25 A."
+],
+[
+"metalce---fusible-tipo-neozed-de-35-a",
+"35 A"
+],
+[
+"metalce---fusible-tipo-neozed-de-50-a",
+"50 A."
+],
+[
+"metalce---fusible-tipo-neozed-de-63-a",
+"63 A."
+]
+]
+}
+},
+{
+"id": "sica-fusible-nh00-g",
+"group": {
+"nombre": "Fusible NH00",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"sica---fusible-nh00---50a",
+"50A."
+],
+[
+"sica---fusible-nh00---63a",
+"63A."
+],
+[
+"sica---fusible-nh00---80a",
+"80A."
+]
+]
+}
+},
+{
+"id": "tea-fusible-cilindrico-vidrio-6x30-g",
+"group": {
+"nombre": "Fusible Cilíndrico Vidrio Ø6x30",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"tea---fusible-cilindrico-vidrio-6x30-1amp",
+"1AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-6x30-2amp",
+"2AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-6x30-4amp",
+"4AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-6x30-6amp",
+"6AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-6x30-10amp",
+"10AMP"
+]
+]
+}
+},
+{
+"id": "tea-fusible-cilindrico-vidrio-5x20-g",
+"group": {
+"nombre": "Fusible Cilíndrico Vidrio Ø5x20",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"tea---fusible-cilindrico-vidrio-5x20-1amp",
+"1AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-5x20-2amp",
+"2AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-5x20-4amp",
+"4AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-5x20-6amp",
+"6AMP"
+],
+[
+"tea---fusible-cilindrico-vidrio-5x20-10amp",
+"10AMP"
+]
+]
+}
+},
+{
+"id": "thomelec-fusible-cilindrico-ceramica-10x38-g",
+"group": {
+"nombre": "Fusible Cilíndrico Cerámica Ø10x38",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-2a",
+"2A"
+],
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-4a",
+"4A"
+],
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-6a",
+"6A"
+],
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-10a",
+"10A"
+],
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-16ap",
+"16AP"
+],
+[
+"thomelec---fusible-cilindrico-ceramica-10x38-25ap",
+"25AP"
+]
+]
+}
+},
+{
+"id": "baw-fusible-cilindrico-ceramica-gl-10x38-g",
+"group": {
+"nombre": "Fusible Cilíndrico Cerámica GL Ø10x38",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Fusibles y Bases",
+"items": [
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-1amp",
+"1AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-2amp",
+"2AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-4amp",
+"4AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-6amp",
+"6AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-10amp",
+"10AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-16amp",
+"16AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-20amp",
+"20AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-25amp",
+"25AMP"
+],
+[
+"baw---fusible-cilindrico-ceramica-gl-10x38-32amp",
+"32AMP"
+]
+]
+}
+},
+{
+"id": "sica-contactor-tripolar-g",
+"group": {
+"nombre": "Contactor Tripolar",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Contactores y Relés",
+"items": [
+[
+"sica---contactor-tripolar-12a-bobina-24v",
+"12A Bobina 24V"
+],
+[
+"sica---contactor-tripolar-12a-bobina-220v",
+"12A Bobina 220V"
+],
+[
+"sica---contactor-tripolar-18a-bobina-24v",
+"18A Bobina 24V"
+],
+[
+"sica---contactor-tripolar-18a-bobina-220v",
+"18A Bobina 220V"
+]
+]
+}
+},
+{
+"id": "baw-contactor-bipolar-25a-1-modulo-din-g",
+"group": {
+"nombre": "Contactor Bipolar 25A. 1 Módulo DIN",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Contactores y Relés",
+"items": [
+[
+"baw---contactor-bipolar-25a-24v-1-mod-din",
+"24V"
+],
+[
+"baw---contactor-bipolar-25a-220v-1-mod-din",
+"220V"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x50a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 4x50A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-4x50a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-4x50a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x40a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 4x40A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-4x40a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-4x40a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-4x20a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 4x20A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-4x20a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-4x20a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-3x32a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 3x32A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-3x32a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-3x32a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-2x63a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 2x63A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-2x63a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-2x63a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x32a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 1x32A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-1x32a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-1x32a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x25a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 1x25A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-1x25a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-1x25a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x20a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 1x20A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-1x20a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-1x20a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "sica-interruptor-termomagnetico-din-1x10a-g",
+"group": {
+"nombre": "Interruptor Termomagnético DIN 1x10A",
+"rubro": "Protecciones y Maniobra",
+"subrubro": "Térmicas",
+"items": [
+[
+"sica---interruptor-termomag-din-1x10a-3ka",
+"3kA"
+],
+[
+"sica---interruptor-termomag-din-1x10a-45ka",
+"4,5kA"
+]
+]
+}
+},
+{
+"id": "genrod-soporte-regulable-para-contrafrente-x2-unidades-g",
+"group": {
+"nombre": "Soporte Regulable para Contrafrente x2 unidades",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Gabinetes y Tableros",
+"items": [
+[
+"genrod---soporte-reg-pcontrafrente-150mm-x2",
+"150 mm"
+],
+[
+"genrod---soporte-reg-pcontrafrente-225mm-x2",
+"225 mm"
+],
+[
+"genrod---soporte-reg-pcontrafrente-300mm-x2",
+"300 mm"
+]
+]
+}
+},
+{
+"id": "genrod-gabinete-estanco-s9000-din-g",
+"group": {
+"nombre": "Gabinete Estanco S9000 DIN",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Gabinetes y Tableros",
+"items": [
+[
+"genrod---gab-estanco-s9000-300x200x100-10-din",
+"300x200x100 10"
+],
+[
+"genrod---gab-estanco-s9000-300x300x100-20-din",
+"300x300x100 20"
+],
+[
+"genrod---gab-estanco-s9000-300x450x100-30-din",
+"300x450x100 30"
+]
+]
+}
+},
+{
+"id": "genrod-caja-estanca-plastica-tapa-transparente-g",
+"group": {
+"nombre": "Caja Estanca Plástica Tapa Transparente",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Gabinetes y Tableros",
+"items": [
+[
+"genrod---caja-estanca-plast-165x210x80-tapa-transp",
+"165x210x80"
+],
+[
+"genrod---caja-estanca-plast-165x210x110-tapa-trans",
+"165x210x110"
+]
+]
+}
+},
+{
+"id": "genrod-tapa-ciega-multiuso-pvc-g",
+"group": {
+"nombre": "Tapa Ciega Multiuso PVC",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---tapa-ciega-multiuso-12x18-mm-pvc",
+"12x18 mm"
+],
+[
+"genrod---tapa-ciega-multiuso-18x20-cm-pvc",
+"18x20 cm"
+],
+[
+"genrod---tapa-ciega-multiuso-20x27-cm-pvc",
+"20x27 cm"
+],
+[
+"genrod---tapa-ciega-multiuso-20x34-cm-pvc",
+"20x34 cm"
+],
+[
+"genrod---tapa-ciega-multiuso-28x33-cm-pvc",
+"28x33 cm"
+],
+[
+"genrod---tapa-ciega-multiuso-28x45-cm-pvc",
+"28x45 cm"
+]
+]
+}
+},
+{
+"id": "cambre-caja-exterior-siglo-xxii-modulos-ip40-g",
+"group": {
+"nombre": "Caja Exterior Siglo XXII Módulos - IP40",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"cambre---caja-ext-siglo-xxii-2-mod---ip40",
+"2"
+],
+[
+"cambre---caja-ext-siglo-xxii-4-mod---ip40",
+"4"
+]
+]
+}
+},
+{
+"id": "genrod-caja-exterior-din-sin-tapa-g",
+"group": {
+"nombre": "Caja Exterior DIN sin Tapa",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---caja-ext-1-bip-2-din-sin-tapa",
+"1 Bip / 2"
+],
+[
+"genrod---caja-ext-2-bip-4-din-sin-tapa",
+"2 Bip / 4"
+],
+[
+"genrod---caja-ext-4-bip-8-din-sin-tapa",
+"4 Bip / 8"
+]
+]
+}
+},
+{
+"id": "genrod-caja-exterior-din-con-tapa-fume-g",
+"group": {
+"nombre": "Caja Exterior DIN con Tapa Fume",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---caja-ext-1-bip-2-din-con-tapa-fume",
+"1 Bip / 2"
+],
+[
+"genrod---caja-ext-2-bip-4-din-con-tapa-fume",
+"2 Bip / 4"
+],
+[
+"genrod---caja-ext-4-bip-8-din-con-tapa-fume",
+"4 Bip / 8"
+]
+]
+}
+},
+{
+"id": "genrod-caja-estanca-plastica-g",
+"group": {
+"nombre": "Caja Estanca Plástica",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"genrod---caja-estanca-plast-90x90x55---10x10x5",
+"90x90x55 - 10x10x5"
+],
+[
+"genrod---caja-estanca-plast-90x90x75---10x10x7",
+"90x90x75 - 10x10x7"
+],
+[
+"genrod---caja-estanca-plast-115x115x65---10x10x6",
+"115x115x65 - 10x10x6"
+],
+[
+"genrod---caja-estanca-plast-115x115x80---10x10x8",
+"115x115x80 - 10x10x8"
+],
+[
+"genrod---caja-estanca-plast-115x115x110---10x10x10",
+"115x115x110 - 10x10x10"
+],
+[
+"genrod---caja-estanca-plast-115x165x65---10x15x7",
+"115x165x65 - 10x15x7"
+],
+[
+"genrod---caja-estanca-plast-115x165x80---10x15x8",
+"115x165x80 - 10x15x8"
+],
+[
+"genrod---caja-estanca-plast-165x165x80---15x15x8",
+"165x165x80 - 15x15x8"
+],
+[
+"genrod---caja-estanca-plast-165x165x110---15x15x10",
+"165x165x110 - 15x15x10"
+],
+[
+"genrod---caja-estanca-plast-165x210x65---15x20x6",
+"165x210x65 - 15x20x6"
+],
+[
+"genrod---caja-estanca-plast-165x210x80---15x20x8",
+"165x210x80 - 15x20x8"
+],
+[
+"genrod---caja-estanca-plast-165x210x110---15x20x10",
+"165x210x110 - 15x20x10"
+],
+[
+"genrod---caja-estanca-plast-210x210x110---20x20x10",
+"210x210x110 - 20x20x10"
+],
+[
+"genrod---caja-estanca-plast-210x210x135---20x20x13",
+"210x210x135 - 20x20x13"
+],
+[
+"genrod---caja-estanca-plast-210x210x165---20x20x15",
+"210x210x165 - 20x20x15"
+],
+[
+"genrod---caja-estanca-plast-210x310x110---20x30x10",
+"210x310x110 - 20x30x10"
+],
+[
+"genrod---caja-estanca-plast-210x310x135---20x30x13",
+"210x310x135 - 20x30x13"
+],
+[
+"genrod---caja-estanca-plast-210x310x165---20x30x15",
+"210x310x165 - 20x30x15"
+]
+]
+}
+},
+{
+"id": "kalop-caja-capsulada-exterior-azul-vacia-g",
+"group": {
+"nombre": "Caja Capsulada Exterior Azul Vacía",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"kalop---caja-capsulada-ext-azul-vacia-16a",
+"16A."
+],
+[
+"kalop---caja-capsulada-ext-azul-vacia-32a",
+"32A."
+]
+]
+}
+},
+{
+"id": "kalop-caja-capsulada-embutir-azul-vacia-g",
+"group": {
+"nombre": "Caja Capsulada Embutir Azul Vacía",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"kalop---caja-capsulada-embutir-azul-vacia-16a",
+"16A"
+],
+[
+"kalop---caja-capsulada-embutir-azul-vacia-32a",
+"32A"
+]
+]
+}
+},
+{
+"id": "pastoriza-abrazaderas-media-omega-gx",
+"group": {
+"nombre": "Abrazaderas Media Omega",
+"rubro": "Cajas y Gabinetes",
+"subrubro": "Cajas Plásticas",
+"items": [
+[
+"pastoriza---abrazaderas-media-omega-516",
+"5/16\""
+],
+[
+"pastoriza---abrazaderas-media-omega-78",
+"7/8\""
+]
+]
+}
+},
+{
+"id": "elece-tapa-bandeja-3-m-g",
+"group": {
+"nombre": "Tapa Bandeja 3 m",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---tapa-bandeja-050mm",
+"050 mm x"
+],
+[
+"elece---tapa-bandeja-100mm",
+"100 mm x"
+],
+[
+"elece---tapa-bandeja-150mm",
+"150 mm x"
+]
+]
+}
+},
+{
+"id": "elece-soporte-trapecio-doble-varilla-g",
+"group": {
+"nombre": "Soporte Trapecio Doble Varilla",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---soporte-trapecio-doble-varilla-100mm",
+"100 mm"
+],
+[
+"elece---soporte-trapecio-doble-varilla-150mm",
+"150 mm"
+],
+[
+"elece---soporte-trapecio-doble-varilla-200mm",
+"200 mm"
+],
+[
+"elece---soporte-trapecio-doble-varilla-250mm",
+"250 mm"
+],
+[
+"elece---soporte-trapecio-doble-varilla-300mm",
+"300 mm"
+],
+[
+"elece---soporte-trapecio-doble-varilla-450mm",
+"450 mm"
+]
+]
+}
+},
+{
+"id": "elece-soporte-simple-bandeja-g",
+"group": {
+"nombre": "Soporte Simple Bandeja",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---soporte-simple-bandeja-050mm",
+"050 mm"
+],
+[
+"elece---soporte-simple-bandeja-100mm",
+"100 mm"
+],
+[
+"elece---soporte-simple-bandeja-150mm",
+"150 mm"
+],
+[
+"elece---soporte-simple-bandeja-200mm",
+"200 mm"
+]
+]
+}
+},
+{
+"id": "elece-mensula-pared-reforzada-g",
+"group": {
+"nombre": "Ménsula Pared Reforzada",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---mensula-pared-reforzada-130mm",
+"130 mm"
+],
+[
+"elece---mensula-pared-reforzada-180mm",
+"180 mm"
+],
+[
+"elece---mensula-pared-reforzada-230mm",
+"230 mm"
+],
+[
+"elece---mensula-pared-reforzada-330mm",
+"330 mm"
+],
+[
+"elece---mensula-pared-reforzada-480mm",
+"480 mm"
+],
+[
+"elece---mensula-pared-reforzada-630mm",
+"630 mm"
+]
+]
+}
+},
+{
+"id": "elece-grampa-suspension-estribo-bandeja-g",
+"group": {
+"nombre": "Grampa Suspensión Estribo Bandeja",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---grampa-suspension-estribo-bandeja-050mm",
+"050 mm"
+],
+[
+"elece---grampa-suspension-estribo-bandeja-100mm",
+"100 mm"
+],
+[
+"elece---grampa-suspension-estribo-bandeja-150mm",
+"150 mm"
+],
+[
+"elece---grampa-suspension-estribo-bandeja-200mm",
+"200 mm"
+],
+[
+"elece---grampa-suspension-estribo-bandeja-250mm",
+"250 mm"
+],
+[
+"elece---grampa-suspension-estribo-bandeja-300mm",
+"300 mm"
+]
+]
+}
+},
+{
+"id": "elece-curva-plana-90-bandeja-g",
+"group": {
+"nombre": "Curva Plana 90º Bandeja",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---curva-plana-90o-bandeja-050mm",
+"050 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-100mm",
+"100 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-150mm",
+"150 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-200mm",
+"200 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-250mm",
+"250 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-300mm",
+"300 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-450mm",
+"450 mm"
+],
+[
+"elece---curva-plana-90o-bandeja-600mm",
+"600 mm"
+]
+]
+}
+},
+{
+"id": "elece-curva-articulada-g",
+"group": {
+"nombre": "Curva Articulada",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---curva-articulada-100mm",
+"100 mm"
+],
+[
+"elece---curva-articulada-150mm",
+"150 mm"
+]
+]
+}
+},
+{
+"id": "elece-bandeja-perforada-3-m-g",
+"group": {
+"nombre": "Bandeja Perforada 3 m",
+"rubro": "Caños y Canalización",
+"subrubro": "Bandejas Portacables",
+"items": [
+[
+"elece---bandeja-perf-050x50-mm",
+"050x50 mm x"
+],
+[
+"elece---bandeja-perf-100x50-mm",
+"100x50 mm x"
+],
+[
+"elece---bandeja-perf-150x50-mm",
+"150x50 mm x"
+],
+[
+"elece---bandeja-perf-200x50-mm",
+"200x50 mm x"
+]
+]
+}
+},
+{
+"id": "zoloda-rinconero-curva-interna-blanco-g",
+"group": {
+"nombre": "Rinconero/Curva Interna Blanco",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---rinconerocurva-interna-20x10-blanco",
+"20x10"
+],
+[
+"zoloda---rinconerocurva-interna-27x30-blanco",
+"27x30"
+]
+]
+}
+},
+{
+"id": "zoloda-extremo-final-blanco-g",
+"group": {
+"nombre": "Extremo Final Blanco",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---extremo-final-20x10-blanco",
+"20x10"
+],
+[
+"zoloda---extremo-final-100x50-blanco",
+"100x50"
+]
+]
+}
+},
+{
+"id": "zoloda-esquinero-exterior-g",
+"group": {
+"nombre": "Esquinero Exterior",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---esquinero-exterior-20x10-blanco",
+"20x10 Blanco"
+],
+[
+"zoloda---esquinero-exterior-27x30-blanco",
+"27x30 Blanco"
+],
+[
+"zoloda---esquinero-exterior-100x50",
+"100x50"
+]
+]
+}
+},
+{
+"id": "schneider-dexon-curva-plana-g",
+"group": {
+"nombre": "Dexon Curva Plana",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"schneider---dexon-curva-plana-20x12",
+"20x12"
+],
+[
+"schneider---dexon-curva-plana-100x45",
+"100x45"
+]
+]
+}
+},
+{
+"id": "schneider-dexon-canal-con-adhesivo-g",
+"group": {
+"nombre": "Dexon Canal con Adhesivo",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"schneider---dexon-canal-10x10-cadhesivo",
+"10x10"
+],
+[
+"schneider---dexon-canal-13x7-cadhesivo",
+"13x7"
+],
+[
+"schneider---dexon-canal-20x12-cadhesivo",
+"20x12"
+],
+[
+"schneider---dexon-canal-32x12-cadhesivo",
+"32x12"
+]
+]
+}
+},
+{
+"id": "zoloda-curva-plana-g",
+"group": {
+"nombre": "Curva Plana",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---curva-plana-14x7-blanco",
+"14x7 Blanco"
+],
+[
+"zoloda---curva-plana-18x21-blanco",
+"18x21 Blanco"
+],
+[
+"zoloda---curva-plana-100x50",
+"100x50"
+]
+]
+}
+},
+{
+"id": "zoloda-canal-blanco-g",
+"group": {
+"nombre": "Canal Blanco",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---canal-40x40-blanco",
+"40x40"
+],
+[
+"zoloda---canal-60x40-blanco",
+"60x40"
+],
+[
+"zoloda---canal-60x60-blanco",
+"60x60"
+],
+[
+"zoloda---canal-80x60-blanco",
+"80x60"
+],
+[
+"zoloda---canal-100x50-blanco",
+"100x50"
+]
+]
+}
+},
+{
+"id": "zoloda-canal-ranurado-g",
+"group": {
+"nombre": "Canal Ranurado",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---canal-30x30-ranurado",
+"30x30"
+],
+[
+"zoloda---canal-40x40-ranurado",
+"40x40"
+]
+]
+}
+},
+{
+"id": "kalop-canal-20x10-adhesivo-g",
+"group": {
+"nombre": "Canal 20x10 Adhesivo",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"kalop---canal-20x10-marron-adhesivo",
+"Marrón"
+],
+[
+"kalop---canal-20x10-negro-adhesivo",
+"Negro"
+]
+]
+}
+},
+{
+"id": "zoloda-canal-blanco-con-adh-g",
+"group": {
+"nombre": "Canal Blanco con Adh",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"zoloda---canal-14x7-blanco-cadh",
+"14x7"
+],
+[
+"zoloda---canal-18x21-blanco-cadh",
+"18x21"
+],
+[
+"zoloda---canal-20x10-blanco-cadh",
+"20x10"
+]
+]
+}
+},
+{
+"id": "genrod-canal-blanco-con-adh-g",
+"group": {
+"nombre": "Canal Blanco con Adh",
+"rubro": "Caños y Canalización",
+"subrubro": "Cablecanal y Pisocanal",
+"items": [
+[
+"genrod---canal-14x7-blanco-cadh",
+"14x7"
+],
+[
+"genrod---canal-20x10-blanco-cadh",
+"20x10"
+]
+]
+}
+},
+{
+"id": "san-justo-tuerca-hexagonal-de-hierro-para-cano-g",
+"group": {
+"nombre": "Tuerca Hexagonal de Hierro para Caño",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"san-justo---tuerca-hexag-de-hierro-para-cano-38",
+"3/8\""
+],
+[
+"san-justo---tuerca-hexag-de-hierro-para-cano-58",
+"5/8\""
+]
+]
+}
+},
+{
+"id": "tramontina-tapon-para-caja-multiple-g",
+"group": {
+"nombre": "Tapón para Caja Múltiple",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"tramontina---tapon-p-caja-multiple-12",
+"1/2 \""
+],
+[
+"tramontina---tapon-p-caja-multiple-34",
+"3/4 \""
+],
+[
+"tramontina---tapon-p-caja-multiple-1",
+"1 \""
+]
+]
+}
+},
+{
+"id": "percanplast-pipeta-nylon-gris-g",
+"group": {
+"nombre": "Pipeta Nylon Gris",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"percan-plast---pipeta-nylon-34-20mm-gris",
+"3/4 \" 20 mm"
+],
+[
+"percan-plast---pipeta-nylon-78-22mm-gris",
+"7/8\" 22 mm"
+],
+[
+"percan-plast---pipeta-nylon-1-25mm-gris",
+"1\" 25 mm"
+]
+]
+}
+},
+{
+"id": "genrod-nera-grampa-con-clip-para-negro-g",
+"group": {
+"nombre": "Nera Grampa con Clip para Negro",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---nera-grampa-c-clip-p-20mm---34-neg",
+"20 mm - 3/4\""
+],
+[
+"genrod---nera-grampa-c-clip-p-25mm---1-negro",
+"25 mm - 1\""
+]
+]
+}
+},
+{
+"id": "genrod-nera-cano-pvc-x-metro-negro-g",
+"group": {
+"nombre": "Nera Caño PVC X Metro Negro",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---nera-cano-20mm---34-pvc-x-metro-negro",
+"20 mm - 3/4\""
+],
+[
+"genrod---nera-cano-22mm---78-pvc-x-metro-negro",
+"22 mm - 7/8\""
+]
+]
+}
+},
+{
+"id": "genrod-grampa-con-clip-g",
+"group": {
+"nombre": "Grampa con Clip",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---grampa-c-clip-p-20mm---34",
+"20 mm - 3/4\""
+],
+[
+"genrod---grampa-c-clip-p-22mm---78",
+"22 mm - 7/8\""
+],
+[
+"genrod---grampa-c-clip-p-25mm---1",
+"25 mm - 1\""
+],
+[
+"genrod---grampa-c-clip-p-32mm---1-14",
+"32 mm - 1 1/4\""
+],
+[
+"genrod---grampa-c-clip-p-40mm---1-12",
+"40 mm - 1 1/2\""
+],
+[
+"genrod---grampa-c-clip-p-50mm---2",
+"50 mm - 2\""
+]
+]
+}
+},
+{
+"id": "gc-curva-galvanizada-sin-rosca-g",
+"group": {
+"nombre": "Curva Galvanizada sin Rosca",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"gc---curva-galvanizada-sin-rosca-34",
+"3/4\""
+],
+[
+"gc---curva-galvanizada-sin-rosca-78",
+"7/8\""
+],
+[
+"gc---curva-galvanizada-sin-rosca-1",
+"1\""
+]
+]
+}
+},
+{
+"id": "genrod-curva-pvc-g",
+"group": {
+"nombre": "Curva PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---curva-20mm---34-pvc-cu",
+"20 mm - 3/4\""
+],
+[
+"genrod---curva-22mm---78-pvc-cu",
+"22 mm - 7/8\""
+],
+[
+"genrod---curva-25mm---1-pvc-cu",
+"25 mm - 1\""
+],
+[
+"genrod---curva-32mm---1-14-pvc-cu",
+"32 mm - 1 1/4\""
+],
+[
+"genrod---curva-40mm---1-12-pvc-cu",
+"40 mm - 1 1/2\""
+],
+[
+"genrod---curva-50mm---2-pvc-cu",
+"50 mm - 2\""
+]
+]
+}
+},
+{
+"id": "genrod-cupla-union-iram-pvc-g",
+"group": {
+"nombre": "Cupla Unión IRAM PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---cupla-union-20mm---34-iram-pvc",
+"20 mm - 3/4\""
+],
+[
+"genrod---cupla-union-22mm---78-iram-pvc",
+"22 mm - 7/8\""
+],
+[
+"genrod---cupla-union-25mm---1-iram-pvc",
+"25 mm - 1\""
+],
+[
+"genrod---cupla-union-32mm---1-14-iram-pvc",
+"32 mm - 1 1/4\""
+],
+[
+"genrod---cupla-union-40mm---1-12-iram-pvc",
+"40 mm - 1 1/2\""
+],
+[
+"genrod---cupla-union-50mm---2-iram-pvc",
+"50 mm - 2\""
+]
+]
+}
+},
+{
+"id": "gc-cupla-enchufable-g",
+"group": {
+"nombre": "Cupla Enchufable",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"gc---cupla-enchufable-34",
+"3/4\""
+],
+[
+"gc---cupla-enchufable-1",
+"1\""
+]
+]
+}
+},
+{
+"id": "rueda-y-nunez-cupla-de-hierro-sin-rosca-g",
+"group": {
+"nombre": "Cupla de Hierro sin Rosca",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"rueda-y-nunez---cupla-de-hierro-sin-rosca-de-34",
+"3/4\""
+],
+[
+"rueda-y-nunez---cupla-de-hierro-sin-rosca-de-78",
+"7/8\""
+],
+[
+"rueda-y-nunez---cupla-de-hierro-sin-rosca-de-1-14",
+"1 1/4"
+],
+[
+"rueda-y-nunez---cupla-de-hierro-sin-rosca-de-1-12",
+"1 1/2"
+],
+[
+"rueda-y-nunez---cupla-de-hierro-sin-rosca-de-2",
+"2\""
+]
+]
+}
+},
+{
+"id": "flexitub-conector-aluminio-con-tuerca-g",
+"group": {
+"nombre": "Conector Aluminio con Tuerca",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"flexitub---conector-aluminio-con-tuerca-12",
+"1/2 \""
+],
+[
+"flexitub---conector-aluminio-con-tuerca-58",
+"5/8 \""
+],
+[
+"flexitub---conector-aluminio-con-tuerca-34",
+"3/4 \""
+],
+[
+"flexitub---conector-aluminio-con-tuerca-78",
+"7/8\""
+],
+[
+"flexitub---conector-aluminio-con-tuerca-1",
+"1\""
+],
+[
+"flexitub---conector-aluminio-con-tuerca-1-12",
+"1\" 1/2\""
+]
+]
+}
+},
+{
+"id": "genrod-conector-iram-pvc-g",
+"group": {
+"nombre": "Conector IRAM PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---conector-20mm---34-iram-pvc",
+"20 mm - 3/4\""
+],
+[
+"genrod---conector-22mm---78-iram-pvc",
+"22 mm - 7/8\""
+],
+[
+"genrod---conector-25mm---1-iram-pvc",
+"25 mm - 1\""
+],
+[
+"genrod---conector-32mm---1-14-iram-pvc",
+"32 mm - 1 1/4\""
+],
+[
+"genrod---conector-40mm---1-12-iram-pvc",
+"40 mm - 1 1/2\""
+],
+[
+"genrod---conector-50mm---2-iram-pvc",
+"50 mm - 2\""
+]
+]
+}
+},
+{
+"id": "pastoriza-cano-hierro-semi-pesado-g",
+"group": {
+"nombre": "Caño Hierro Semi Pesado",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"pastoriza---cano-hierro-34-semi-pesado-x-metro",
+"3/4\""
+],
+[
+"pastoriza---cano-hierro-78-semi-pesado-x-metro",
+"7/8\""
+],
+[
+"pastoriza---cano-hierro-1-semi-pesado-x-metro",
+"1\""
+]
+]
+}
+},
+{
+"id": "gc-cano-galvanizado-electrico-g",
+"group": {
+"nombre": "Caño Galvanizado Eléctrico",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"gc---cano-galvanizado-electrico-34",
+"3/4\""
+],
+[
+"gc---cano-galvanizado-electrico-78",
+"7/8\""
+],
+[
+"gc---cano-galvanizado-electrico-1",
+"1\""
+]
+]
+}
+},
+{
+"id": "genrod-cano-extra-pesado-pvc-g",
+"group": {
+"nombre": "Caño Extra Pesado PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---cano-extrapesado-20mm-34-pvc",
+"20 mm 3/4\""
+],
+[
+"genrod---cano-extrapesado-22mm-78-pvc",
+"22 mm 7/8\""
+]
+]
+}
+},
+{
+"id": "genrod-cano-pvc-g",
+"group": {
+"nombre": "Caño PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"genrod---cano-20mm---34-pvc-x-metro",
+"20 mm - 3/4\""
+],
+[
+"genrod---cano-22mm---78-pvc-x-metro",
+"22 mm - 7/8\""
+],
+[
+"genrod---cano-25mm---1-pvc-x-metro",
+"25 mm - 1\""
+],
+[
+"genrod---cano-32mm---1-14-pvc-x-metro",
+"32 mm - 1 1/4\""
+],
+[
+"genrod---cano-40mm---1-12-pvc-x-metro",
+"40 mm - 1 1/2\""
+],
+[
+"genrod---cano-50mm---2-pvc-x-metro",
+"50 mm - 2\""
+]
+]
+}
+},
+{
+"id": "tecnocom-cano-pvc-g",
+"group": {
+"nombre": "Caño PVC",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"tecnocom---cano-20mm---34-pvc-x-metro",
+"20 mm - 3/4\""
+],
+[
+"tecnocom---cano-22mm---78-pvc-x-metro",
+"22 mm - 7/8\""
+]
+]
+}
+},
+{
+"id": "gc-caja-10x5-aluminio-4-roscas-sin-tapa-g",
+"group": {
+"nombre": "Caja 10x5 Aluminio 4 Roscas sin Tapa",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"gc---caja-10x5-alum-4-ros-12-pcano-34-stapa",
+"1/2\" para Caño 3/4\""
+],
+[
+"gc---caja-10x5-alum-4-ros-34-pcano-1-stapa",
+"3/4\" para Caño 1\""
+]
+]
+}
+},
+{
+"id": "gc-abrazadera-grampa-chaveta-para-cano-g",
+"group": {
+"nombre": "Abrazadera Grampa Chaveta para Caño",
+"rubro": "Caños y Canalización",
+"subrubro": "Caños y Accesorios",
+"items": [
+[
+"gc---abraz-grampa-chaveta-p-cano-34",
+"3/4\""
+],
+[
+"gc---abraz-grampa-chaveta-p-cano-78",
+"7/8\""
+],
+[
+"gc---abraz-grampa-chaveta-p-cano-2",
+"2\""
+]
+]
+}
+},
+{
+"id": "argenplas-cable-portero-pares-con-neutro-g",
+"group": {
+"nombre": "Cable Portero Pares con Neutro",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"argenplas---cable-portero-3-pares-c-neutro-x-m",
+"3"
+],
+[
+"argenplas---cable-portero-4-pares-c-neutro-x-m",
+"4"
+],
+[
+"argenplas---cable-portero-8-pares-c-neutro",
+"8"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-pares-755-telefonico-con-pantalla-g",
+"group": {
+"nombre": "Cable Pares 755 Telefónico con Pantalla",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"argenplas---cable-2-pares-755-telef-cpant-x-m",
+"2"
+],
+[
+"argenplas---cable-3-pares-755-telef-cpant-x-m",
+"3"
+],
+[
+"argenplas---cable-4-pares-755-telef-cpant-x-m",
+"4"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-pares-782-telefonico-subterraneo-g",
+"group": {
+"nombre": "Cable Pares 782 Telefónico Subterráneo",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"argenplas---cable-2-pares-782-telef-subte",
+"2"
+],
+[
+"argenplas---cable-3-pares-782-telef-subte",
+"3"
+]
+]
+}
+},
+{
+"id": "hydra-cable-velador-armado-perno-chato-1-5-m-g",
+"group": {
+"nombre": "Cable Velador Armado Perno Chato 1,5 m",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"hydra---cable-velador-arm-perno-chato-15m-blanco",
+"Blanco"
+],
+[
+"hydra---cable-velador-arm-perno-chato-15m-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-g",
+"group": {
+"nombre": "Cable Subterráneo",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-1x25mm",
+"1x25 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x35mm",
+"1x35 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x50mm",
+"1x50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x70mm",
+"1x70 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x95mm",
+"1x95 mm"
+],
+[
+"argenplas---cable-subterraneo-de-1x120mm",
+"1x120 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x150mm",
+"2x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x250mm",
+"2x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x4mm",
+"2x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x6mm",
+"2x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x10mm",
+"2x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-2x16mm",
+"2x16 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x150mm",
+"3x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x250mm",
+"3x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x4mm",
+"3x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x6mm",
+"3x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x10mm",
+"3x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-3x16mm",
+"3x16 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x150mm",
+"4x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x250mm",
+"4x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x4mm",
+"4x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x6mm",
+"4x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x10mm",
+"4x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-4x16mm",
+"4x16 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x150mm",
+"5x1,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x250mm",
+"5x2,50 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x4mm",
+"5x4 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x6mm",
+"5x6 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x10mm",
+"5x10 mm"
+],
+[
+"argenplas---cable-subterraneo-de-5x16mm",
+"5x16 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-de-g",
+"group": {
+"nombre": "Cable Subterráneo de +",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subterraneo-de-3x2516mm",
+"3x25 16MM"
+],
+[
+"argenplas---cable-subterraneo-de-3x3516mm",
+"3x35 16MM"
+],
+[
+"argenplas---cable-subterraneo-de-3x5025mm",
+"3x50 25MM"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-subterraneo-comando-g",
+"group": {
+"nombre": "Cable Subterráneo Comando",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-subte-comando-12x150mm",
+"12x1,50 mm"
+],
+[
+"argenplas---cable-subte-comando-19x150mm",
+"19x1,50 mm"
+]
+]
+}
+},
+{
+"id": "fonseca-cable-preensamblado-g",
+"group": {
+"nombre": "Cable Preensamblado",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"fonseca---cable-preensamblado-4x6mm",
+"4x6 mm"
+],
+[
+"fonseca---cable-preensamblado-4x10mm",
+"4x10 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-preensamblado-g",
+"group": {
+"nombre": "Cable Preensamblado",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-preensamblado-2x4mm",
+"2x4 mm"
+],
+[
+"argenplas---cable-preensamblado-2x6mm",
+"2x6 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-preensamblado-aluminio-por-metro-g",
+"group": {
+"nombre": "Cable Preensamblado Aluminio (por metro)",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-preensamblado-2x16mm",
+"2x16 mm"
+],
+[
+"argenplas---cable-preensamblado-2x25mm",
+"2x25 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-para-soldadura-g",
+"group": {
+"nombre": "Cable para Soldadura",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-psoldadura-1x16mm-negro",
+"1x16 mm Negro"
+],
+[
+"argenplas---cable-psoldadura-1x16mm-rojo",
+"1x16 mm Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x25mm-negro",
+"1x25 mm Negro"
+],
+[
+"argenplas---cable-psoldadura-1x25mm-rojo",
+"1x25 mm Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x35mm-negro",
+"1x35 mm Negro"
+],
+[
+"argenplas---cable-psoldadura-1x35mm-rojo",
+"1x35 mm Rojo"
+],
+[
+"argenplas---cable-psoldadura-1x50mm-negro",
+"1x50 mm Negro"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-concentrico-1-g",
+"group": {
+"nombre": "Cable Concéntrico 1",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-concentrico-1-x-4-4mm-x-metr",
+"4 + 4 mm"
+],
+[
+"argenplas---cable-concentrico-1-x-6-6mm-x-metro",
+"6 + 6 mm"
+]
+]
+}
+},
+{
+"id": "argenplas-cable-cobre-desnudo-g",
+"group": {
+"nombre": "Cable Cobre Desnudo",
+"rubro": "Cables",
+"subrubro": "Cables Subterráneos y Especiales",
+"items": [
+[
+"argenplas---cable-cobre-desnudo-1x16mm",
+"1x16 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x25mm",
+"1x25 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x35mm",
+"1x35 mm"
+],
+[
+"argenplas---cable-cobre-desnudo-1x50mm",
+"1x50 mm"
+]
+]
+}
+},
+{
+"id": "percanplast-receptaculo-recto-e27-g",
+"group": {
+"nombre": "Receptáculo Recto E27",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"percan-plast---receptaculo-recto-e27-blanco",
+"Blanco"
+],
+[
+"percan-plast---receptaculo-recto-e27-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "percanplast-receptaculo-curvo-e27-g",
+"group": {
+"nombre": "Receptáculo Curvo E27",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"percan-plast---recepetaculo-curvo-e27-blanco",
+"Blanco"
+],
+[
+"percan-plast--receptaculo-curvo-e27-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "teclastar-modulo-2-tomas-usb-usb-c-5-2v-g",
+"group": {
+"nombre": "Módulo 2 Tomas USB + USB C 5,2V",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"teclastar---pq-mod2-toma-usb-usb-c-52v-arena",
+"Arena"
+],
+[
+"teclastar---pq-mod2-toma-usb-usb-c-52v-blanco",
+"Blanco"
+],
+[
+"teclastar---pq-mod2-toma-usb-usb-c-52v-gris",
+"Gris"
+]
+]
+}
+},
+{
+"id": "percanplast-perilla-velador-g",
+"group": {
+"nombre": "Perilla Velador",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"percan-plast---perilla-velador-blanca",
+"Blanca"
+],
+[
+"percan-plast---perilla-velador-negra",
+"Negra"
+]
+]
+}
+},
+{
+"id": "lucciola-marco-adaptador-panel-g",
+"group": {
+"nombre": "Marco Adaptador Panel",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"lucciola---marco-adaptador-panel-120x30",
+"120x30"
+],
+[
+"lucciola---marco-adaptador-panel-605x605",
+"605x605"
+]
+]
+}
+},
+{
+"id": "san-justo-floron-para-spot-exterior-110-mm-g",
+"group": {
+"nombre": "Florón para Spot Exterior Ø110 mm",
+"rubro": "Iluminación",
+"subrubro": "Repuestos y Accesorios",
+"items": [
+[
+"san-justo---floron-pspot-exterior-110mm-blanco",
+"Blanco"
+],
+[
+"san-justo---floron-pspot-exterior-110mm-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-cabezal-tacho-ar111-g",
+"group": {
+"nombre": "Cabezal Tacho AR111",
+"rubro": "Iluminación",
+"subrubro": "Apliques y Faroles",
+"items": [
+[
+"san-justo---cabezal-tacho-ar111-acero",
+"Acero"
+],
+[
+"san-justo---cabezal-tacho-ar111-blanco",
+"Blanco"
+],
+[
+"san-justo---cabezal-tacho-ar111-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "mig-tecla-perilla-torpedo-velador-g",
+"group": {
+"nombre": "Tecla Perilla Torpedo Velador",
+"rubro": "Iluminación",
+"subrubro": "Veladores y Linternas",
+"items": [
+[
+"mig---tecla-perilla-torpedo-velador-blanco",
+"Blanco"
+],
+[
+"mig---tecla-perilla-torpedo-velador-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "gamasonic-luz-de-emergencia-g",
+"group": {
+"nombre": "Luz de Emergencia",
+"rubro": "Iluminación",
+"subrubro": "Veladores y Linternas",
+"items": [
+[
+"gamasonic---luz-de-emergencia-30-leds-6hs",
+"30 LEDS 6HS"
+],
+[
+"gamasonic---luz-de-emergencia-90-leds-10hs",
+"90 LEDS 10HS"
+]
+]
+}
+},
+{
+"id": "probattery-luz-de-emergencia-g",
+"group": {
+"nombre": "Luz de Emergencia",
+"rubro": "Iluminación",
+"subrubro": "Veladores y Linternas",
+"items": [
+[
+"probattery---luz-de-emergencia-30-leds-8hs",
+"30 LEDS 8HS"
+],
+[
+"probattery---luz-de-emergencia-60-leds-10hs",
+"60 LEDS 10HS"
+]
+]
+}
+},
+{
+"id": "porcelectric-portalampara-porcelana-edison-e27-g",
+"group": {
+"nombre": "Portalámpara Porcelana Edison E27",
+"rubro": "Iluminación",
+"subrubro": "Portalámparas y Zócalos",
+"items": [
+[
+"porcelectric---portalam-porcel-edison-e27-38",
+"3/8"
+],
+[
+"porcelectric---portalam-porcel-edison-e27-58",
+"5/8\""
+]
+]
+}
+},
+{
+"id": "kekel-portalampara-3-piezas-g",
+"group": {
+"nombre": "Portalámpara 3 Piezas",
+"rubro": "Iluminación",
+"subrubro": "Portalámparas y Zócalos",
+"items": [
+[
+"kekel---portalampara-3-piezas-blanco",
+"Blanco"
+],
+[
+"kekel---portalampara-3-piezas-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "aurelia-tira-neon-led-12v-14-4w-g",
+"group": {
+"nombre": "Tira Neon LED 12V 14,4W",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"aurelia---tira-neon-led-12v-144w-bcalido",
+"B.Cálido"
+],
+[
+"aurelia---tira-neon-led-12v-144w-bfrio",
+"B.Frío"
+],
+[
+"aurelia---tira-neon-led-12v-144w-celeste",
+"Celeste"
+],
+[
+"aurelia---tira-neon-led-12v-144w-naranja",
+"Naranja"
+],
+[
+"aurelia---tira-neon-led-12v-144w-neutro",
+"Neutro"
+],
+[
+"aurelia---tira-neon-led-12v-144w-rojo",
+"Rojo"
+],
+[
+"aurelia---tira-neon-led-12v-144w-verde",
+"Verde"
+],
+[
+"aurelia---tira-neon-led-12v-144w-violeta",
+"Violeta"
+]
+]
+}
+},
+{
+"id": "ncb-tira-led-cob-exterior-220v-g",
+"group": {
+"nombre": "Tira LED COB Exterior 220V",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"ncb---tira-led-cob-exterior-calida-220v",
+"Cálida"
+],
+[
+"ncb---tira-led-cob-exterior-frio-220v",
+"Frío"
+]
+]
+}
+},
+{
+"id": "san-justo-liston-chato-para-1-tubo-led-g",
+"group": {
+"nombre": "Listón Chato para 1 Tubo LED",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"san-justo---liston-chato-p-1-tubo-led-60cm",
+"60 cm"
+],
+[
+"san-justo---liston-chato-p-1-tubo-led-120cm",
+"120 cm"
+]
+]
+}
+},
+{
+"id": "interelec-liston-bajo-alacena-g",
+"group": {
+"nombre": "Listón Bajo Alacena",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"interelec---liston-bajo-alac-5w-30cm-calida",
+"5W 30 cm Cálida"
+],
+[
+"interelec---liston-bajo-alac-5w-30cm-fria",
+"5W 30 cm Fría"
+],
+[
+"interelec---liston-bajo-alac-9w-60cm-calid",
+"9W 60 cm Cálida"
+],
+[
+"interelec---liston-bajo-alac-9w-60cm-fria",
+"9W 60 cm Fría"
+],
+[
+"interelec---liston-bajo-alac-12w-90cm-calido",
+"12W 90 cm Cálido"
+],
+[
+"interelec---liston-bajo-alac-12w-90cm-fria",
+"12W 90 cm Fría"
+],
+[
+"interelec---liston-bajo-alac-18w-120cm-calido",
+"18W 120 cm Cálido"
+],
+[
+"interelec---liston-bajo-alac-18w-120cm-frio",
+"18W 120 cm Frío"
+]
+]
+}
+},
+{
+"id": "candil-liston-bajo-alacena-con-tecla-g",
+"group": {
+"nombre": "Listón Bajo Alacena con Tecla",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"candil---liston-bajo-alac-5w-315mm-frio-ctecla",
+"5W 315 mm Frío"
+],
+[
+"candil---liston-bajo-alac-5w-315mm-neutra-ctecla",
+"5W 315 mm Neutra"
+],
+[
+"candil---liston-bajo-alac-9w-575mm-fria-ctecla",
+"9W 575 mm Fría"
+],
+[
+"candil---liston-bajo-alac-9w-575mm-neutra-ctecla",
+"9W 575 mm Neutra"
+],
+[
+"candil---liston-bajo-alac-18w-1175mm-fria-ctecla",
+"18W 1175 mm Fría"
+],
+[
+"candil---liston-bajo-alac-18w-1175mm-neutra-cteca",
+"18W 1175 mm Neutra"
+]
+]
+}
+},
+{
+"id": "indular-linea-ecco-juego-suspension-g",
+"group": {
+"nombre": "Línea Ecco Juego Suspensión",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"indular---linea-ecco-juego-suspension-1-mts",
+"1 m"
+],
+[
+"indular---linea-ecco-juego-suspension-2-mts",
+"2 m"
+]
+]
+}
+},
+{
+"id": "teclastar-proyector-led-50w-luz-5500lm-g",
+"group": {
+"nombre": "Proyector LED 50W Luz 5500lm",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"teclastar---proyector-led-50w-luz-calida-5500lm",
+"Cálida"
+],
+[
+"teclastar---proyector-led-50w-luz-fria-5500lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "teclastar-proyector-led-30w-luz-3300lm-g",
+"group": {
+"nombre": "Proyector LED 30W Luz 3300lm",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"teclastar---proyector-led-30w-luz-calida-3300lm",
+"Cálida"
+],
+[
+"teclastar---proyector-led-30w-luz-fria-3300lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "teclastar-proyector-led-20w-luz-2200lm-g",
+"group": {
+"nombre": "Proyector LED 20W Luz 2200lm",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"teclastar---proyector-led-20w-luz-calida-2200lm",
+"Cálida"
+],
+[
+"teclastar---proyector-led-20w-luz-fria-2200lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "bael-luminaria-ufo-de-colgar-90-6000k-g",
+"group": {
+"nombre": "Luminaria Ufo de Colgar 90° 6000K",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"bael---luminaria-ufo-de-colgar-90-150w-6000k",
+"150W"
+],
+[
+"bael---luminaria-ufo-de-colgar-90-200w-6000k",
+"200W"
+]
+]
+}
+},
+{
+"id": "mca-linea-betta-eco-pantalla-policarbonato-e40-g",
+"group": {
+"nombre": "Línea Betta Eco Pantalla Policarbonato E40",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"mca---linea-betta-eco-pantalla-policarb-45cm-e40",
+"45 cm"
+],
+[
+"mca---linea-betta-eco-pantalla-policarb-55cm-e40",
+"55 cm"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-semiembutir-movil-redondo-para-dicro-g",
+"group": {
+"nombre": "Spot Semiembutir Móvil Redondo para Dicro",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-semiemb-mov-red-p-dicro-blanco",
+"Blanco"
+],
+[
+"san-justo---spot-semiemb-mov-red-p-dicro-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-semiembutir-movil-redondo-para-ar111-g",
+"group": {
+"nombre": "Spot Semiembutir Móvil Redondo para AR111",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-semiemb-mov-red-p-ar111-blanco",
+"Blanco"
+],
+[
+"san-justo---spot-semiemb-mov-red-p-ar111-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-embutir-redondo-movil-policarbonato-dicro-g",
+"group": {
+"nombre": "Spot Embutir Redondo Móvil Policarbonato Dicro",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-emb-red-mov-polic-dicro-acero",
+"Acero"
+],
+[
+"san-justo---spot-emb-red-mov-polic-dicro-blanco",
+"Blanco"
+],
+[
+"san-justo---spot-emb-red-mov-polic-dicro-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-embutir-redondo-movil-policarbonato-ar111-g",
+"group": {
+"nombre": "Spot Embutir Redondo Móvil Policarbonato AR111",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-emb-red-mov-polic-ar111-blanc",
+"Blanco"
+],
+[
+"san-justo---spot-emb-red-mov-polic-ar111-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-embutir-redondo-movil-metal-para-dicro-g",
+"group": {
+"nombre": "Spot Embutir Redondo Móvil Metal para Dicro",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-emb-red-mov-metal-pdicro-blan",
+"Blanco"
+],
+[
+"san-justo---spot-emb-red-mov-metal-pdicro-negr",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-embutir-redondo-fijo-para-dicro-g",
+"group": {
+"nombre": "Spot Embutir Redondo Fijo para Dicro",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-emb-red-fijo-p-dicro-acero",
+"Acero"
+],
+[
+"san-justo---spot-emb-red-fijo-p-dicro-blanco",
+"Blanco"
+],
+[
+"san-justo---spot-emb-red-fijo-p-dicro-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "candil-spot-embutir-redondo-werner-para-gu10-g",
+"group": {
+"nombre": "Spot Embutir Redondo \"Werner\" para GU10",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"candil---spot-emb-red-werner-pgu10-blanco",
+"Blanco"
+],
+[
+"candil---spot-emb-red-werner-pgu10-platil",
+"Platil"
+]
+]
+}
+},
+{
+"id": "candil-spot-embutir-redondo-fidel-gu10-techo-g",
+"group": {
+"nombre": "Spot Embutir Redondo \"Fidel\" GU10 Techo",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"candil---spot-emb-red-fidel-gu10-techo-acero",
+"Acero"
+],
+[
+"candil---spot-emb-red-fidel-gu10-techo-blanco",
+"Blanco"
+],
+[
+"candil---spot-emb-red-fidel-gu10-techo-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-spot-embutir-cuadrado-movil-policarbonato-dicro-g",
+"group": {
+"nombre": "Spot Embutir Cuadrado Móvil Policarbonato Dicro",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---spot-emb-cuad-mov-polic-dicro-blanc",
+"Blanco"
+],
+[
+"san-justo---spot-emb-cuad-mov-polic-dicro-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "san-justo-cabezal-tubo-1-luz-gu10-50x120-g",
+"group": {
+"nombre": "Cabezal Tubo 1 Luz GU10 Ø50x120",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"san-justo---cabezal-tubo-1-luz-gu10-blanco-50x120",
+"Blanco"
+],
+[
+"san-justo---cabezal-tubo-1-luz-gu10-negro-50x120",
+"Negro"
+]
+]
+}
+},
+{
+"id": "nevar-adaptador-spot-riel-1-via-g",
+"group": {
+"nombre": "Adaptador Spot Riel 1 Vía",
+"rubro": "Iluminación",
+"subrubro": "Colgantes y Spots",
+"items": [
+[
+"iniciat-nuevas---adapta-spot-riel-1-via-blanco",
+"Blanco"
+],
+[
+"iniciat-nuevas---adapta-spot-riel-1-via-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "canellas-tortuga-ovalada-e27-g",
+"group": {
+"nombre": "Tortuga Ovalada E27",
+"rubro": "Iluminación",
+"subrubro": "Apliques y Faroles",
+"items": [
+[
+"canellas---tortuga-ovalada-e27-blanca",
+"Blanca"
+],
+[
+"canellas---tortuga-ovalada-e27-negra",
+"Negra"
+]
+]
+}
+},
+{
+"id": "san-justo-cabezal-dicro-con-zocalo-gu10-g",
+"group": {
+"nombre": "Cabezal Dicro con Zócalo GU10",
+"rubro": "Iluminación",
+"subrubro": "Apliques y Faroles",
+"items": [
+[
+"san-justo---cabezal-dicro-czocalo-gu10-acero",
+"Acero"
+],
+[
+"san-justo---cabezal-dicro-czocalo-gu10-blanco",
+"Blanco"
+],
+[
+"san-justo---cabezal-dicro-czocalo-gu10-negro",
+"Negro"
+],
+[
+"san-justo---cabezal-dicro-czocalo-gu10-plata",
+"Plata"
+]
+]
+}
+},
+{
+"id": "san-justo-cabezal-conico-ar111-g",
+"group": {
+"nombre": "Cabezal Cónico AR111",
+"rubro": "Iluminación",
+"subrubro": "Apliques y Faroles",
+"items": [
+[
+"san-justo---cabezal-conico-ar111-blanco",
+"Blanco"
+],
+[
+"san-justo---cabezal-conico-ar111-negro",
+"Negro"
+]
+]
+}
+},
+{
+"id": "lucciola-plafon-led-exterior-redondo-g",
+"group": {
+"nombre": "Plafón LED Exterior Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"lucciola---plafon-led-ext-red-6w-12cm-bla-neutro",
+"6W 12 cm Blanco Neutro"
+],
+[
+"lucciola---plafon-led-ext-red-6w-12cm-niquel-cal",
+"6W 12 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-red-6w-12cm-niquel-neu",
+"6W 12 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-red-12w-17cm-bla-neutro",
+"12W 17 cm Blanco Neutro"
+],
+[
+"lucciola---plafon-led-ext-red-12w-17cm-niquel-cal",
+"12W 17 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-red-12w-17cm-niquel-neu",
+"12W 17 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-red-18w-22cm-bla-neutro",
+"18W 22 cm Blanco Neutro"
+],
+[
+"lucciola---plafon-led-ext-red-18w-22cm-niquel-cal",
+"18W 22 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-red-18w-22cm-niquel-neu",
+"18W 22 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-red-24w-30cm-blanco-neu",
+"24W 30 cm Blanco Neutra"
+],
+[
+"lucciola---plafon-led-ext-red-24w-30cm-niquel-neu",
+"24W 30 cm Níquel Neutra"
+]
+]
+}
+},
+{
+"id": "interelec-plafon-led-exterior-redondo-g",
+"group": {
+"nombre": "Plafón LED Exterior Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"interelec---plafon-led-ext-red-6w-12cm-bla-calida",
+"6W 12 cm Blanco Cálida"
+],
+[
+"interelec---plafon-led-ext-red-6w-12cm-bla-fria",
+"6W 12 cm Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-red-12w-17cm-bla-calido",
+"12W 17 cm Blanco Cálido"
+],
+[
+"interelec---plafon-led-ext-red-12w-blanco-fria",
+"12W Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-red-18w-22cm-bla-calida",
+"18W 22 cm Blanco Cálida"
+],
+[
+"interelec---plafon-led-ext-red-18w-22cm-bl-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-red-18w-22cm-negro-frio",
+"18W 22 cm Negro Frío"
+],
+[
+"interelec---plafon-led-ext-red-24w-30cm-bla-calida",
+"24W 30 cm Blanco Cálida"
+],
+[
+"interelec---plafon-led-ext-red-24w-30cm-bla-fria",
+"24W 30 cm Blanco Fría"
+]
+]
+}
+},
+{
+"id": "candil-plafon-led-exterior-redondo-g",
+"group": {
+"nombre": "Plafón LED Exterior Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"candil---plafon-led-ext-red-18w-22cm-bla-calida",
+"18W 22 cm Blanco Cálida"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-bla-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-blanco-neutro",
+"18W 22 cm Blanco Neutro"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-neg-calida",
+"18W 22 cm Negro Cálida"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-neg-fria",
+"18W 22 cm Negro Fría"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-negro-neutro",
+"18W 22 cm Negro Neutro"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-platil-cali",
+"18W 22 cm Platil Cálida"
+],
+[
+"candil---plafon-led-ext-red-18w-22cm-platil-fria",
+"18W 22 cm Platil Fría"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-bl-cal",
+"28W / 24W 30 cm Blanco Cálida"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-bl-frio",
+"28W / 24W 30 cm Blanco Frío"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-bl-neu",
+"28W / 24W 30 cm Blanco Neutra"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-neg-fri",
+"28W / 24W 30 cm Negro Fría"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-neg-neu",
+"28W / 24W 30 cm Negro Neutra"
+],
+[
+"candil---plafon-led-ext-red-28w-24w-30cm-pla-fri",
+"28W / 24W 30 cm Plata Frío"
+]
+]
+}
+},
+{
+"id": "macroled-plafon-led-exterior-redondo-g",
+"group": {
+"nombre": "Plafón LED Exterior Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"macroled---plafon-led-ext-red-12w-17cm-niquel-cal",
+"12W 17 cm Níquel Cálida"
+],
+[
+"macroled---plafon-led-ext-red-18w-22cm-bl-calido",
+"18W 22 cm Blanco Cálido"
+],
+[
+"macroled---plafon-led-ext-red-18w-22cm-bl-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"macroled---plafon-led-ext-red-18w-22cm-blan-neutro",
+"18W 22 cm Blanco Neutro"
+],
+[
+"macroled---plafon-led-ext-red-18w-22cm-ng-fria",
+"18W 22 cm Negro Fría"
+],
+[
+"macroled---plafon-led-ext-red-18w-22cm-niquel-cal",
+"18W 22 cm Níquel Cálida"
+],
+[
+"macroled---plafon-led-ext-red-24w-30cm-bl-frio",
+"24W 30 cm Blanco Frío"
+],
+[
+"macroled---plafon-led-ext-red-24w-30cm-bl-neutra",
+"24W 30 cm Blanco Neutra"
+],
+[
+"macroled---plafon-led-ext-red-24w-30cm-niquel-cal",
+"24W 30 cm Níquel Cálida"
+],
+[
+"macroled---plafon-led-ext-red-24w-30cm-nique-frio",
+"24W 30 cm Níquel Frío"
+]
+]
+}
+},
+{
+"id": "lucciola-plafon-led-exterior-cuadrado-g",
+"group": {
+"nombre": "Plafón LED Exterior Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"lucciola---plafon-led-ext-cuad-6w-12cm-niquel-cali",
+"6W 12 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-cuad-6w-12cm-niquel-neu",
+"6W 12 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-cuad-12w-17cm-bla-neutro",
+"12W 17 cm Blanco Neutro"
+],
+[
+"lucciola---plafon-led-ext-cuad-12w-17cm-niquel-cal",
+"12W 17 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-cuad-12w-17cm-niquel-neu",
+"12W 17 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-cuad-18w-22cm-bla-calido",
+"18W 22 cm Blanco Cálido"
+],
+[
+"lucciola---plafon-led-ext-cuad-18w-22cm-blanco-neu",
+"18W 22 cm Blanco Neutra"
+],
+[
+"lucciola---plafon-led-ext-cuad-18w-22cm-niquel-cal",
+"18W 22 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-cuad-18w-22cm-niquel-neu",
+"18W 22 cm Níquel Neutra"
+],
+[
+"lucciola---plafon-led-ext-cuad-24w-30cm-blanco-cal",
+"24W 30 cm Blanco Cálida"
+],
+[
+"lucciola---plafon-led-ext-cuad-24w-30cm-bla-neutro",
+"24W 30 cm Blanco Neutro"
+],
+[
+"lucciola---plafon-led-ext-cuad-24w-30cm-niquel-cal",
+"24W 30 cm Níquel Cálida"
+],
+[
+"lucciola---plafon-led-ext-cuad-24w-30cm-niquel-neu",
+"24W 30 cm Níquel Neutra"
+]
+]
+}
+},
+{
+"id": "interelec-plafon-led-exterior-cuadrado-g",
+"group": {
+"nombre": "Plafón LED Exterior Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"interelec---plafon-led-ext-cuad-6w-12cm-bl-calido",
+"6W 12 cm Blanco Cálido"
+],
+[
+"interelec---plafon-led-ext-cuad-6w-12cm-bl-fria",
+"6W 12 cm Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-cuad-12w-blanco-cali",
+"12W Blanco Cálida"
+],
+[
+"interelec---plafon-led-ext-cuad-12w-blanco-fria",
+"12W Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-cuad-18w-22cm-bl-cali",
+"18W 22 cm Blanco Cálida"
+],
+[
+"interelec---plafon-led-ext-cuad-18w-22cm-bl-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"interelec---plafon-led-ext-cuad-24w-30cm-bl-calido",
+"24W 30 cm Blanco Cálido"
+],
+[
+"interelec---plafon-led-ext-cuad-24w-30cm-bla-frio",
+"24W 30 cm Blanco Frío"
+]
+]
+}
+},
+{
+"id": "candil-plafon-led-exterior-cuadrado-g",
+"group": {
+"nombre": "Plafón LED Exterior Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"candil---plafon-led-ext-cuad-12w-17cm-blanco-calid",
+"12W 17 cm Blanco Cálida"
+],
+[
+"candil---plafon-led-ext-cuad-12w-17cm-blanco-fria",
+"12W 17 cm Blanco Fría"
+],
+[
+"candil---plafon-led-ext-cuad-12w-17cm-blanco-neutr",
+"12W 17 cm Blanco Neutra"
+],
+[
+"candil---plafon-led-ext-cuad-12w-17cm-negro-neutro",
+"12W 17 cm Negro Neutro"
+],
+[
+"candil---plafon-led-ext-cuad-12w-17cm-platil-fria",
+"12W 17 cm Platil Fría"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-blanco-calid",
+"18W 22 cm Blanco Cálida"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-blanco-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-blanco-neutr",
+"18W 22 cm Blanco Neutra"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-negro-calid",
+"18W 22 cm Negro Cálida"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-negro-fria",
+"18W 22 cm Negro Fría"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-negro-neutro",
+"18W 22 cm Negro Neutro"
+],
+[
+"candil---plafon-led-ext-cuad-18w-22cm-platil-fri",
+"18W 22 cm Platil Fría"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-bl-cal",
+"28W / 24W 30 cm Blanco Cálida"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-bl-fri",
+"28W / 24W 30 cm Blanco Fría"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-bl-neu",
+"28W / 24W 30 cm Blanco Neutra"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-neg-ca",
+"28W / 24W 30 cm Negro CA"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-neg-fr",
+"28W / 24W 30 cm Negro FR"
+],
+[
+"candil---plafon-led-ext-cuad-28w-24w-30cm-pl-fri",
+"28W / 24W 30 cm Plata Fría"
+]
+]
+}
+},
+{
+"id": "macroled-plafon-led-exterior-cuadrado-g",
+"group": {
+"nombre": "Plafón LED Exterior Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"macroled---plafon-led-ext-cuad-12w-17cm-bl-fria",
+"12W 17 cm Blanco Fría"
+],
+[
+"macroled---plafon-led-ext-cuad-18w-22cm-bl-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"macroled---plafon-led-ext-cuad-18w-22cm-niquel-cal",
+"18W 22 cm Níquel Cálida"
+],
+[
+"macroled---plafon-led-ext-cuad-24w-22cm-bl-fria",
+"24W 22 cm Blanco Fría"
+],
+[
+"macroled---plafon-led-ext-cuad-24w-30cm-niquel-cal",
+"24W 30 cm Níquel Cálida"
+]
+]
+}
+},
+{
+"id": "interelec-panel-led-embutir-redondo-g",
+"group": {
+"nombre": "Panel LED Embutir Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"interelec---panel-led-emb-red-6w-12cm-calida",
+"6W 12 cm Cálida"
+],
+[
+"interelec---panel-led-emb-red-6w-12cm-fria",
+"6W 12 cm Fría"
+],
+[
+"interelec---panel-led-emb-red-12w-17cm-bla-calida",
+"12W 17 cm Blanco Cálida"
+],
+[
+"interelec---panel-led-emb-red-12w-17cm-bla-fria",
+"12W 17 cm Blanco Fría"
+],
+[
+"interelec---panel-led-emb-red-12w-17cm-silver-cal",
+"12W 17 cm Silver Cálida"
+],
+[
+"interelec---panel-led-emb-red-18w-22cm-calida",
+"18W 22 cm Cálida"
+],
+[
+"interelec---panel-led-emb-red-18w-blanco-frio",
+"18W Blanco Frío"
+],
+[
+"interelec---panel-led-emb-red-24w-30cm-bla-fria",
+"24W 30 cm Blanco Fría"
+],
+[
+"interelec---panel-led-emb-red-24w-30cm-calida",
+"24W 30 cm Cálida"
+]
+]
+}
+},
+{
+"id": "practiled-panel-led-embutir-redondo-g",
+"group": {
+"nombre": "Panel LED Embutir Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"practiled---panel-led-emb-red-6w-12cm-blanc-calid",
+"6W 12 cm Blanco Cálida"
+],
+[
+"practiled---panel-led-emb-red-6w-12cm-blanc-frio",
+"6W 12 cm Blanco Frío"
+],
+[
+"practiled---panel-led-emb-red-12w-17cm-blan-frio",
+"12W 17 cm Blanco Frío"
+],
+[
+"practiled---panel-led-emb-red-18w-22cm-blanc-frio",
+"18W 22 cm Blanco Frío"
+],
+[
+"practiled---panel-led-emb-red-24w-30cm-blan-frio",
+"24W 30 cm Blanco Frío"
+]
+]
+}
+},
+{
+"id": "lucciola-panel-led-embutir-redondo-g",
+"group": {
+"nombre": "Panel LED Embutir Redondo",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"lucciola---panel-led-emb-red-12w-17cm-bla-calido",
+"12W 17 cm Blanco Cálido"
+],
+[
+"lucciola---panel-led-emb-red-12w-17cm-bla-neutra",
+"12W 17 cm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-red-12w-17cm-niquel-cali",
+"12W 17 cm Níquel Cálida"
+],
+[
+"lucciola---panel-led-emb-red-12w-17cm-niquel-neu",
+"12W 17 cm Níquel Neutra"
+],
+[
+"lucciola---panel-led-emb-red-18w-22cm-bla-fria",
+"18W 22 cm Blanco Fría"
+],
+[
+"lucciola---panel-led-emb-red-18w-22cm-bla-neutra",
+"18W 22 cm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-red-18w-22cm-niquel-neu",
+"18W 22 cm Níquel Neutra"
+],
+[
+"lucciola---panel-led-emb-red-24w-30cm-bla-calida",
+"24W 30 cm Blanco Cálida"
+],
+[
+"lucciola---panel-led-emb-red-24w-30cm-bla-neutra",
+"24W 30 cm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-red-24w-30cm-negro-frio",
+"24W 30 cm Negro Frío"
+]
+]
+}
+},
+{
+"id": "lucciola-panel-led-embutir-cuadrado-g",
+"group": {
+"nombre": "Panel LED Embutir Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"lucciola---panel-led-emb-cuad-6w-12cm-bla-calido",
+"6W 12 cm Blanco Cálido"
+],
+[
+"lucciola---panel-led-emb-cuad-6w-12cm-bla-neu",
+"6W 12 cm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-cuad-6w-12cm-niquel-neu",
+"6W 12 cm Níquel Neutra"
+],
+[
+"lucciola---panel-led-emb-cuad-12w-17cm-bla-neutro",
+"12W 17 cm Blanco Neutro"
+],
+[
+"lucciola---panel-led-emb-cuad-12w-17cm-niquel-neu",
+"12W 17 cm Níquel Neutra"
+],
+[
+"lucciola---panel-led-emb-cuad-18w-22cm-bla-cal",
+"18W 22 cm Blanco Cálida"
+],
+[
+"lucciola---panel-led-emb-cuad-18w-22cm-bla-frio",
+"18W 22 cm Blanco Frío"
+],
+[
+"lucciola---panel-led-emb-cuad-18w-22cm-bla-neu",
+"18W 22 cm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-cuad-18w-22cm-niquel-cal",
+"18W 22 cm Níquel Cálida"
+],
+[
+"lucciola---panel-led-emb-cuad-18w-22cm-niquel-neu",
+"18W 22 cm Níquel Neutra"
+],
+[
+"lucciola---panel-led-emb-cuad-24w-30cm-bla-frio",
+"24W 30 cm Blanco Frío"
+],
+[
+"lucciola---panel-led-emb-cuad-24w-30cm-bla-neutro",
+"24W 30 cm Blanco Neutro"
+],
+[
+"lucciola---panel-led-emb-cuad-24w-30cm-niquel-cal",
+"24W 30 cm Níquel Cálida"
+],
+[
+"lucciola---panel-led-emb-cuad-24w-30cm-niquel-neu",
+"24W 30 cm Níquel Neutra"
+]
+]
+}
+},
+{
+"id": "interelec-panel-led-embutir-cuadrado-g",
+"group": {
+"nombre": "Panel LED Embutir Cuadrado",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"interelec---panel-led-emb-cuad-6w-12cm-luz-calida",
+"6W 12 cm Luz Cálida"
+],
+[
+"interelec---panel-led-emb-cuad-6w-12cm-luz-fria",
+"6W 12 cm Luz Fría"
+],
+[
+"interelec---panel-led-emb-cuad-12w-17cm-bla-calida",
+"12W 17 cm Blanco Cálida"
+],
+[
+"interelec---panel-led-emb-cuad-12w-17cm-bla-fria",
+"12W 17 cm Blanco Fría"
+],
+[
+"interelec---panel-led-emb-cuad-18w-22cm-bla-frio",
+"18W 22 cm Blanco Frío"
+],
+[
+"interelec---panel-led-emb-cuad-18w-22cm-calida",
+"18W 22 cm Cálida"
+],
+[
+"interelec---panel-led-emb-cuad-24w-30cm-calido",
+"24W 30 cm Cálido"
+],
+[
+"interelec---panel-led-emb-cuad-24w-30cm-fria",
+"24W 30 cm Fría"
+]
+]
+}
+},
+{
+"id": "practiled-panel-led-embutir-cuadrado-blanco-frio-g",
+"group": {
+"nombre": "Panel LED Embutir Cuadrado Blanco Frío",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"practiled---panel-led-emb-cuad-6w-12cm-blan-frio",
+"6W 12 cm"
+],
+[
+"practiled---panel-led-emb-cuad-12w-17cm-blanc-frio",
+"12W 17 cm"
+],
+[
+"practiled---panel-led-emb-cuad-18w-22cm-blanc-frio",
+"18W 22 cm"
+],
+[
+"practiled---panel-led-emb-cuad-24w-30cm-blanc-frio",
+"24W 30 cm"
+]
+]
+}
+},
+{
+"id": "lucciola-panel-led-embutir-60x60-45w-4320lm-blanco-g",
+"group": {
+"nombre": "Panel LED Embutir 60x60 45W 4320lm Blanco",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"lucciola---panel-led-emb-60x60-45w-4320lm-bla-frio",
+"Frío"
+],
+[
+"lucciola---panel-led-emb-60x60-45w-4320lm-bla-neu",
+"Neutra"
+]
+]
+}
+},
+{
+"id": "interelec-panel-led-embutir-120-x-30-cm-g",
+"group": {
+"nombre": "Panel LED Embutir 120 x 30 cm",
+"rubro": "Iluminación",
+"subrubro": "Plafones y Paneles",
+"items": [
+[
+"interelec---panel-led-emb-120-x-30cm-40w-luz-fria",
+"40W Luz Fría"
+],
+[
+"interelec---panel-led-emb-120-x-30cm-48w-luz-fria",
+"48W Luz Fría"
+],
+[
+"interelec---panel-led-emb-120-x-30cm-48w-neutra",
+"48W Neutra"
+]
+]
+}
+},
+{
+"id": "interelec-tubo-led-t8-1-punta-luz-fria-g",
+"group": {
+"nombre": "Tubo LED T8 (1 Punta) Luz Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---tubo-led-t8-9w-60cm-1-pta-l-fria",
+"9W 60 cm"
+],
+[
+"interelec---tubo-led-t8-18w-120cm-1-pta-l-fria",
+"18W 120 cm"
+],
+[
+"interelec---tubo-led-t8-24w-150cm-1-pta-l-fria",
+"24W 150 cm"
+]
+]
+}
+},
+{
+"id": "interelec-tubo-led-t8-2-puntas-luz-fria-g",
+"group": {
+"nombre": "Tubo LED T8 (2 Puntas) Luz Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---tubo-led-t8-14w-90cm-2-ptas-l-fria",
+"14W 90 cm"
+],
+[
+"interelec---tubo-led-t8-18w-120cm-2-ptas-l-fria",
+"18W 120 cm"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-velita-8w-e27-g",
+"group": {
+"nombre": "Lámpara LED Velita 8W E27",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lampara-led-velita-8w-e27-calida",
+"Cálida"
+],
+[
+"candil---lampara-led-velita-8w-e27-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-velita-8w-e14-g",
+"group": {
+"nombre": "Lámpara LED Velita 8W E14",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lampara-led-velita-8w-e14-calida",
+"Cálida"
+],
+[
+"candil---lampara-led-velita-8w-e14-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-velita-7w-e27-g",
+"group": {
+"nombre": "Lámpara LED Velita 7W E27",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-led-velita-7w-e27-calida",
+"Cálida"
+],
+[
+"interelec---lampara-led-velita-7w-e27-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-velita-g",
+"group": {
+"nombre": "Lámpara LED Velita",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-velita-5w-e14-calida",
+"5W E14 Cálida"
+],
+[
+"interelec---lampara-led-velita-5w-e14-fria",
+"5W E14 Fría"
+],
+[
+"interelec---lampara-led-velita-7w-e14-calida",
+"7W E14 Cálida"
+],
+[
+"interelec---lampara-led-velita-7w-e14-fria",
+"7W E14 Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-r7s-10w-luz-g",
+"group": {
+"nombre": "Lámpara LED R7S 10W Luz",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-led-r7s-10w-luz-calida",
+"Cálida"
+],
+[
+"interelec---lampara-led-r7s-10w-luz-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-perfume-g",
+"group": {
+"nombre": "Lámpara LED Perfume",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-perfume-1w-e14-calida",
+"1W E14 Cálida"
+],
+[
+"interelec---lamp-led-perfume-2w-e14-luz-calida",
+"2W E14 Luz Cálida"
+],
+[
+"interelec---lamp-led-perfume-2w-e14-luz-fria",
+"2W E14 Luz Fría"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-high-power-e27-g",
+"group": {
+"nombre": "Lámpara LED High Power E27",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lamp-led-high-power-e27-30w-calida",
+"30W Cálida"
+],
+[
+"candil---lamp-led-high-power-e27-30w-fria",
+"30W Fría"
+],
+[
+"candil---lamp-led-high-power-e27-40w-calida",
+"40W Cálida"
+],
+[
+"candil---lamp-led-high-power-e27-60w-calida",
+"60W Cálida"
+],
+[
+"candil---lamp-led-high-power-e27-65w-fria",
+"65W Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-high-power-e40-fria-g",
+"group": {
+"nombre": "Lámpara LED High Power E40 Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-high-power-80w-e40-fria",
+"80W"
+],
+[
+"interelec---lamp-led-high-power-100w-e40-fria",
+"100W"
+]
+]
+}
+},
+{
+"id": "h-intercom-lampara-led-high-power-e27-luz-fria-g",
+"group": {
+"nombre": "Lámpara LED High Power E27 Luz Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"hyundai---lampara-led-high-power-20w-e27-luz-fria",
+"20W"
+],
+[
+"hyundai---lampara-led-high-power-40w-e27-luz-fria",
+"40W"
+],
+[
+"hyundai---lampara-led-high-power-50w-e27-luz-fria",
+"50W"
+],
+[
+"hyundai---lampara-led-high-power-80w-e27-luz-fria",
+"80W"
+],
+[
+"hyundai---lampara-led-high-power-100w-e27-luz-fria",
+"100W"
+],
+[
+"hyundai---lampara-led-high-power-120w-e27-luz-fria",
+"120W"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-high-power-e27-e40-fria-g",
+"group": {
+"nombre": "Lámpara LED High Power E27/E40 Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-high-power-40w-e27e40-fria",
+"40W"
+],
+[
+"interelec---lamp-led-high-power-50w-e27e40-fria",
+"50W"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-high-power-e27-fria-g",
+"group": {
+"nombre": "Lámpara LED High Power E27 Fría",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-led-high-power-20w-e27-fria",
+"20W"
+],
+[
+"interelec---lampara-led-high-power-30w-e27-fria",
+"30W"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-gota-8w-e14-g",
+"group": {
+"nombre": "Lámpara LED Gota 8W E14",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lampara-led-gota-8w-e14-calida",
+"Cálida"
+],
+[
+"candil---lampara-led-gota-8w-e14-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-gota-g",
+"group": {
+"nombre": "Lámpara LED Gota",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-led-gota-5w-e27-calida",
+"5W E27 Cálida"
+],
+[
+"interelec---lampara-led-gota-5w-e27-fria",
+"5W E27 Fría"
+],
+[
+"interelec---lampara-led-gota-7w-e27-calida",
+"7W E27 Cálida"
+],
+[
+"interelec---lampara-led-gota-7w-e27-fria",
+"7W E27 Fría"
+]
+]
+}
+},
+{
+"id": "king-lampara-led-gota-6w-e27-g",
+"group": {
+"nombre": "Lámpara LED Gota 6W E27",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"king---lampara-led-gota-6w-e27-calida",
+"Cálida"
+],
+[
+"king---lampara-led-gota-6w-e27-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "novalucce-lampara-led-gota-g",
+"group": {
+"nombre": "Lámpara LED Gota",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"novalucce---lampara-led-gota-2w-e27-amarillo",
+"2W E27 Amarillo"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-azul",
+"2W E27 Azul"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-rojo",
+"2W E27 Rojo"
+],
+[
+"novalucce---lampara-led-gota-2w-e27-verde",
+"2W E27 Verde"
+],
+[
+"novalucce---lampara-led-gota-5w-e27-calida",
+"5W E27 Cálida"
+],
+[
+"novalucce---lampara-led-gota-6w-e27-calida",
+"6W E27 Cálida"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-ar111-gu10-15w-luz-g",
+"group": {
+"nombre": "Lámpara LED AR111 GU10 15W Luz",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-ar111-gu10-15w-luz-calida",
+"Cálida"
+],
+[
+"interelec---lamp-led-ar111-gu10-15w-luz-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-led-ar111-gu10-15w-dimmer-g",
+"group": {
+"nombre": "Lámpara LED AR111 GU10 15W Dimmer",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-led-ar111-gu10-15w-dimer-calida",
+"Cálida"
+],
+[
+"interelec---lamp-led-ar111-gu10-15w-dimer-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-ar111-gu10-12w-g",
+"group": {
+"nombre": "Lámpara LED AR111 GU10 12W",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lamp-led-ar111-gu10-12w-calida",
+"Cálida"
+],
+[
+"candil---lamp-led-ar111-gu10-12w-fria",
+"Fría"
+],
+[
+"candil---lamp-led-ar111-gu10-12w-neutra",
+"Neutra"
+]
+]
+}
+},
+{
+"id": "candil-lampara-led-ar111-gu10-12w-dimmer-g",
+"group": {
+"nombre": "Lámpara LED AR111 GU10 12W Dimmer",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lamp-led-ar111-gu10-12w-dimer-calida",
+"Cálida"
+],
+[
+"candil---lamp-led-ar111-gu10-12w-dimer-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "h-intercom-lampara-led-a60-750lm-g",
+"group": {
+"nombre": "Lámpara LED A60 750lm",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"hyundai---lampara-led-a60-9w-e27-calida-750lm",
+"9W E27 Cálida"
+],
+[
+"hyundai---lampara-led-a60-11w-e27-fria-750lm",
+"11W E27 Fría"
+]
+]
+}
+},
+{
+"id": "king-lampara-led-a60-9-5w-e27-950lm-g",
+"group": {
+"nombre": "Lámpara LED A60 9,5W E27 950lm",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"king---lampara-led-a60-95w-e27-calida-950lm",
+"Cálida"
+],
+[
+"king---lampara-led-a60-95w-e27-fria-950lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "king-lampara-led-a60-6-5w-e27-690lm-g",
+"group": {
+"nombre": "Lámpara LED A60 6,5W E27 690lm",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"king---lampara-led-a60-65w-e27-calida-690lm",
+"Cálida"
+],
+[
+"king---lampara-led-a60-65w-e27-fria-690lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "macroled-lampara-led-a60-e27-luz-neutra-g",
+"group": {
+"nombre": "Lámpara LED A60 E27 Luz Neutra",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"macroled---lampara-led-a60-10w-e27-luz-neutra",
+"10W"
+],
+[
+"macroled---lampara-led-a60-12w-e27-luz-neutra",
+"12W"
+],
+[
+"macroled---lampara-led-a60-15w-e27-luz-neutra",
+"15W"
+]
+]
+}
+},
+{
+"id": "king-lampara-led-a60-11-5w-e27-1100lm-g",
+"group": {
+"nombre": "Lámpara LED A60 11,5W E27 1100lm",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"king---lampara-led-a60-115w-e27-calida-1100lm",
+"Cálida"
+],
+[
+"king---lampara-led-a60-115w-e27-fria-1100lm",
+"Fría"
+]
+]
+}
+},
+{
+"id": "mp-lamp-lampara-incandescente-gota-clara-e27-g",
+"group": {
+"nombre": "Lámpara Incandescente Gota Clara E27",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"mp-lamp---lamp-incandescente-gota-clara-5w-e27",
+"5W"
+],
+[
+"mp-lamp---lamp-incandescente-gota-clara-10w-e27",
+"10W"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-halogena-perfume-e14-calida-g",
+"group": {
+"nombre": "Lámpara Halógena Perfume E14 Cálida",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-halogena-perfume-15w-e14-cal",
+"15W"
+],
+[
+"interelec---lamp-halogena-perfume-25w-e14-cal",
+"25W"
+]
+]
+}
+},
+{
+"id": "macroled-lampara-filamento-led-a60-clara-e27-2700k-g",
+"group": {
+"nombre": "Lámpara Filamento LED A60 Clara E27 2700K",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"macroled---lamp-filam-led-a60-clara-6w-e27-2700k",
+"6W"
+],
+[
+"macroled---lamp-filam-led-a60-clara-8w-e27-2700k",
+"8W"
+]
+]
+}
+},
+{
+"id": "macroled-lampara-dicro-led-gu10-7w-g",
+"group": {
+"nombre": "Lámpara Dicro LED GU10 7W",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"macroled---lamp-dicro-led-gu10-7w-38-calida",
+"38° Cálida"
+],
+[
+"macroled---lamp-dicro-led-gu10-7w-38-fria",
+"38° Fría"
+],
+[
+"macroled---lamp-dicro-led-gu10-7w-38-neutra",
+"38° Neutra"
+],
+[
+"macroled---lamp-dicro-led-gu10-7w-bl-calid",
+"Blanco Cálida"
+]
+]
+}
+},
+{
+"id": "king-lampara-dicro-led-gu10-7w-38-g",
+"group": {
+"nombre": "Lámpara Dicro LED GU10 7W 38°",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"king---lamp-dicro-led-gu10-7w-38-calida",
+"Cálida"
+],
+[
+"king---lamp-dicro-led-gu10-7w-38-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-dicro-led-gu10-g",
+"group": {
+"nombre": "Lámpara Dicro LED GU10",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-dicro-led-gu10-5w-110-calida",
+"5W 110° Cálida"
+],
+[
+"interelec---lamp-dicro-led-gu10-6w-110-calida",
+"6W 110° Cálida"
+],
+[
+"interelec---lamp-dicro-led-gu10-6w-110-fria",
+"6W 110° Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-dicro-led-e27-5w-36-g",
+"group": {
+"nombre": "Lámpara Dicro LED E27 5W 36°",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lamp-dicro-led-e27-5w-36-calida",
+"Cálida"
+],
+[
+"interelec---lamp-dicro-led-e27-5w-36-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "candil-lampara-dicro-led-dimmer-gu10-7w-g",
+"group": {
+"nombre": "Lámpara Dicro LED Dimmer GU10 7W",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lamp-dicro-led-dimer-gu10-7w-35-calida",
+"35° Cálida"
+],
+[
+"candil---lamp-dicro-led-dimer-gu10-7w-35-fria",
+"35° Fría"
+],
+[
+"candil---lamp-dicro-led-dimer-gu10-7w-100-calid",
+"100° Cálida"
+],
+[
+"candil---lamp-dicro-led-dimer-gu10-7w-100-fria",
+"100° Fría"
+]
+]
+}
+},
+{
+"id": "sica-lampara-dicro-6w-6-led-gu5-3-12v-luz-g",
+"group": {
+"nombre": "Lámpara Dicro 6W 6 LED GU5.3 12V Luz",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"sica---lampara-dicro-6w-6-led-gu53-12v-luz-calid",
+"Cálida"
+],
+[
+"sica---lampara-dicro-6w-6-led-gu53-12v-luz-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-bipin-led-dimmer-g",
+"group": {
+"nombre": "Lámpara Bipin LED Dimmer",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-bipin-led-dimmer-5w-g9-calida",
+"5W G9 Cálida"
+],
+[
+"interelec---lampara-bipin-led-dimmer-6w-g9-fria",
+"6W G9 Fría"
+]
+]
+}
+},
+{
+"id": "interelec-lampara-bipin-led-g",
+"group": {
+"nombre": "Lámpara Bipin LED",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"interelec---lampara-bipin-led-3w-g9-calida",
+"3W G9 Cálida"
+],
+[
+"interelec---lampara-bipin-led-3w-g9-fria",
+"3W G9 Fría"
+],
+[
+"interelec---lampara-bipin-led-45w-g9-calida",
+"4,5W G9 Cálida"
+],
+[
+"interelec---lampara-bipin-led-45w-g9-fria",
+"4,5W G9 Fría"
+],
+[
+"interelec---lampara-bipin-led-6w-g9-calida",
+"6W G9 Cálida"
+],
+[
+"interelec---lampara-bipin-led-6w-g9-fria",
+"6W G9 Fría"
+],
+[
+"interelec---lampara-bipin-led-9w-g9-calida",
+"9W G9 Cálida"
+],
+[
+"interelec---lampara-bipin-led-9w-g9-fria",
+"9W G9 Fría"
+]
+]
+}
+},
+{
+"id": "candil-lampara-bipin-led-g",
+"group": {
+"nombre": "Lámpara Bipin LED",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"candil---lampara-bipin-led-5w-g9-calida",
+"5W G9 Cálida"
+],
+[
+"candil---lampara-bipin-led-5w-g9-fria",
+"5W G9 Fría"
+],
+[
+"candil---lampara-bipin-led-8w-g9-calida",
+"8W G9 Cálida"
+],
+[
+"candil---lampara-bipin-led-8w-g9-fria",
+"8W G9 Fría"
+]
+]
+}
+},
+{
+"id": "macroled-lampara-bipin-led-12w-g9-g",
+"group": {
+"nombre": "Lámpara Bipin LED 12W G9",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"macroled---lampara-bipin-led-12w-g9-calida",
+"Cálida"
+],
+[
+"macroled---lampara-bipin-led-12w-g9-fria",
+"Fría"
+]
+]
+}
+},
+{
+"id": "jadever-candado-de-hierro-4-llaves-g",
+"group": {
+"nombre": "Candado de Hierro + 4 Llaves",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"candado-de-hierro-40-mm-4-llaves-jadever-t6109",
+"40 mm"
+],
+[
+"candado-de-hierro-60-mm-4-llaves-jadever-t0856",
+"60 mm"
+]
+]
+}
+},
+{
+"id": "jadever-pinza-punta-larga-aislada-para-1000v-g",
+"group": {
+"nombre": "Pinza Punta Larga Aislada para 1000V",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"pinza-6-punta-larga-aislada-para-1000v-jadever-t8734",
+"6\""
+],
+[
+"pinza-8-punta-larga-aislada-para-1000v-jadever-t0898",
+"8\""
+]
+]
+}
+},
+{
+"id": "crossmaster-alicate-corte-diagonal-g",
+"group": {
+"nombre": "Alicate Corte Diagonal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"alicate-6-corte-diagonal-cross-t5944",
+"6\""
+],
+[
+"alicate-7-corte-diagonal-cross-t5952",
+"7\""
+]
+]
+}
+},
+{
+"id": "lusqtoff-alicate-corte-diagonal-g",
+"group": {
+"nombre": "Alicate Corte Diagonal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"alicate-7-corte-diagonal-lusqtoff-t5950",
+"7\""
+],
+[
+"alicate-8-corte-diagonal-lusqtoff-t5958",
+"8\""
+]
+]
+}
+},
+{
+"id": "bulit-alicate-profesional-g",
+"group": {
+"nombre": "Alicate Profesional",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"alicate-profesional-6-1000v-serie-1000-bulit-t5961",
+"6\" 1000V Serie 1000"
+],
+[
+"alicate-profesional-6-serie-700-bulit-t5963",
+"6\" Serie 700"
+],
+[
+"alicate-profesional-7-serie-700-bulit-t5965",
+"7\" Serie 700"
+]
+]
+}
+},
+{
+"id": "jadever-amoladora-angular-115-mm-20v-cargador-2-baterias-4ah-g",
+"group": {
+"nombre": "Amoladora Angular 115 mm 20V + Cargador + 2 Baterías 4AH",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"amolad-angu-950w-115-mm-20v-car-2bat-4ah-jadever-t5972",
+"950W"
+],
+[
+"amolad-angu-1150w-115-mm-20v-car-2bat-4ah-jadever-t5971",
+"1150W"
+]
+]
+}
+},
+{
+"id": "lusqtoff-amoladora-angular-g",
+"group": {
+"nombre": "Amoladora Angular",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"amoladora-angular-850w-115-mm-lusqtoff-t5984",
+"850W 115 mm"
+],
+[
+"amoladora-angular-1010w-125-mm-lusqtoff-t5979",
+"1010W 125 mm"
+],
+[
+"amoladora-angular-2200w-180-mm-lusqtoff-t5981",
+"2200W 180 mm"
+]
+]
+}
+},
+{
+"id": "jadever-bolso-de-trabajo-para-herramientas-g",
+"group": {
+"nombre": "Bolso de Trabajo para Herramientas",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"bolso-de-trabajo-para-herramientas-13-33-cm-jadever-t6024",
+"13\" 33 cm"
+],
+[
+"bolso-de-trabajo-para-herramiientas-16-41cm-jadever-t6028",
+"16\" 41 cm"
+],
+[
+"bolso-de-trabajo-para-herramenitas-19-48-cm-jadever-t6022",
+"19\" 48 cm"
+]
+]
+}
+},
+{
+"id": "jadever-caja-herramientas-g",
+"group": {
+"nombre": "Caja Herramientas",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"caja-herramientas-13-330x170x140-jadever-t6060",
+"13\" 330x170x140"
+],
+[
+"caja-herramientas-16-405x215x205-jadever-t6061",
+"16\" 405x215x205"
+],
+[
+"caja-herramientas-19-480x280x260-jadever-t6065",
+"19\" 480x280x260"
+]
+]
+}
+},
+{
+"id": "biassoni-caja-herramientas-reforzada-g",
+"group": {
+"nombre": "Caja Herramientas Reforzada",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"caja-herramientas-reforzada-410x230x205-biassoni-t6071",
+"410x230x205"
+],
+[
+"caja-herramientas-reforzada-507x254x260-biassoni-t6074",
+"507x254x260"
+],
+[
+"caja-herramientas-reforzada-535x275x247-biassoni-t6075",
+"535x275x247"
+],
+[
+"caja-herramientas-reforzada-572x300x295-biassoni-t6076",
+"572x300x295"
+]
+]
+}
+},
+{
+"id": "lusqtoff-caja-para-herramientas-g",
+"group": {
+"nombre": "Caja para Herramientas",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"caja-para-herramientas-48-cm-lusqtoff-t6080",
+"48 cm"
+],
+[
+"caja-para-herramientas-56-cm-lusqtoff-t6081",
+"56 cm"
+]
+]
+}
+},
+{
+"id": "pado-candado-bronce-doble-traba-g",
+"group": {
+"nombre": "Candado Bronce Doble Traba",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"candado-bronce-30-mm-doble-traba-pado-t6091",
+"30 mm"
+],
+[
+"candado-bronce-40-mm-doble-traba-pado-t6093",
+"40 mm"
+],
+[
+"candado-bronce-50-mm-doble-traba-pado-t6094",
+"50 mm"
+]
+]
+}
+},
+{
+"id": "castle-candado-bronce-comun-g",
+"group": {
+"nombre": "Candado Bronce Común",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"candado-bronce-comun-20-mm-castle-t6097",
+"20 mm"
+],
+[
+"candado-bronce-comun-25-mm-castle-t6099",
+"25 mm"
+],
+[
+"candado-bronce-comun-30-mm-castle-t6100",
+"30 mm"
+],
+[
+"candado-bronce-comun-40-mm-castle-t6101",
+"40 mm"
+],
+[
+"candado-bronce-comun-50-mm-castle-t6103",
+"50 mm"
+],
+[
+"candado-bronce-comun-60-mm-castle-t6106",
+"60 mm"
+]
+]
+}
+},
+{
+"id": "ximetal-carretel-estano-1-6-mm-250-g-g",
+"group": {
+"nombre": "Carretel Estaño 1,6 mm 250 g",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Soldadura",
+"items": [
+[
+"carretel-estano-1-6-mm-40-250-g-ximetal-t6114",
+"40%"
+],
+[
+"carretel-estano-1-6-mm-50-250-g-ximetal-t6115",
+"50%"
+],
+[
+"carretel-estano-1-6-mm-60-250-g-ximetal-t6116",
+"60%"
+]
+]
+}
+},
+{
+"id": "gardex-cepillo-de-acero-para-copa-tuerca-14-mm-g",
+"group": {
+"nombre": "Cepillo de Acero para Copa Tuerca 14 mm",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Bulonería y Fijaciones",
+"items": [
+[
+"cepillo-de-acero-para-copa-75-mm-tuerca-14-mm-gardex-t6131",
+"75 mm"
+],
+[
+"cepillo-de-acero-para-copa-100-mm-tuerca-14-mm-gardex-t6130",
+"100 mm"
+]
+]
+}
+},
+{
+"id": "biassoni-cincel-punta-plana-con-encastre-g",
+"group": {
+"nombre": "Cincel Punta Plana con Encastre",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"cincel-punta-plana-con-encastre-20x250-mm-biassoni-t6142",
+"20x250 mm"
+],
+[
+"cincel-punta-plana-con-encastre-40x250-mm-biassoni-t6143",
+"40x250 mm"
+]
+]
+}
+},
+{
+"id": "comsid-cinta-clasica-g",
+"group": {
+"nombre": "Cinta Clásica",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cinta-6-mm-negro-sin-blanco-clasica-comsid-t6156",
+"6 mm Negro sobre Blanco"
+],
+[
+"cinta-18-mm-negro-sin-amarillo-clasica-comsid-t6146",
+"18 mm Negro sobre Amarillo"
+],
+[
+"cinta-18-mm-negro-sin-blanco-clasica-comsid-t6148",
+"18 mm Negro sobre Blanco"
+],
+[
+"cinta-18-mm-negro-sin-transparente-clasica-comsid-t6151",
+"18 mm Negro sobre Transparente"
+],
+[
+"cinta-36-mm-negro-sin-blanco-clasica-comsid-t6155",
+"36 mm Negro sobre Blanco"
+]
+]
+}
+},
+{
+"id": "evel-cinta-metrica-g",
+"group": {
+"nombre": "Cinta Métrica",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"cinta-metrica-5-metros-evel-t6165",
+"5 Metros"
+],
+[
+"cinta-metrica-10-metros-evel-t6160",
+"10 Metros"
+]
+]
+}
+},
+{
+"id": "jadever-cinta-metrica-g",
+"group": {
+"nombre": "Cinta Métrica",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"cinta-metrica-3-metros-jadever-t6163",
+"3 Metros"
+],
+[
+"cinta-metrica-5-metros-jadever-t6166",
+"5 Metros"
+]
+]
+}
+},
+{
+"id": "cantamessa-cinta-pasacable-alma-acero-g",
+"group": {
+"nombre": "Cinta Pasacable Alma Acero",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cinta-pasacable-alma-acero-7-m-cantamessa-t6178",
+"7 m"
+],
+[
+"cinta-pasacable-alma-acero-10-m-cantamessa-t6168",
+"10 m"
+],
+[
+"cinta-pasacable-alma-acero-15-m-cantamessa-t6172",
+"15 m"
+],
+[
+"cinta-pasacable-alma-acero-20-m-cantamessa-t6174",
+"20 m"
+],
+[
+"cinta-pasacable-alma-acero-25-m-cantamessa-t6175",
+"25 m"
+],
+[
+"cinta-pasacable-alma-acero-30-m-cantamessa-t6176",
+"30 m"
+]
+]
+}
+},
+{
+"id": "viyilant-cinta-pasacable-helicoidal-metro-g",
+"group": {
+"nombre": "Cinta Pasacable Helicoidal Metro",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"cinta-pasacable-helicoidal-4-mm-10-metro-viyilant-t6185",
+"4 mm 10"
+],
+[
+"cinta-pasacable-helicoidal-4-mm-15-metro-viyilant-t6187",
+"4 mm 15"
+],
+[
+"cinta-pasacable-helicoidal-4-mm-20-metro-viyilant-t6190",
+"4 mm 20"
+],
+[
+"cinta-pasacable-helicoidal-5-mm-10-metro-viyilant-t6192",
+"5 mm 10"
+],
+[
+"cinta-pasacable-helicoidal-5-mm-15-metro-viyilant-t6193",
+"5 mm 15"
+],
+[
+"cinta-pasacable-helicoidal-5-mm-20-metro-viyilant-t6195",
+"5 mm 20"
+]
+]
+}
+},
+{
+"id": "viyilant-cinta-pasacable-nylon-g",
+"group": {
+"nombre": "Cinta Pasacable Nylon",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"cinta-pasacable-nylon-7-metros-viyilant-t6198",
+"7 Metros"
+],
+[
+"cinta-pasacable-nylon-10-metros-viyilant-t6196",
+"10 Metros"
+],
+[
+"cinta-pasacable-nylon-15-metros-viyilant-t6197",
+"15 Metros"
+]
+]
+}
+},
+{
+"id": "viyilant-cinta-pasacable-plastico-g",
+"group": {
+"nombre": "Cinta Pasacable Plástico",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"cinta-pasacable-plastico-7-metros-viyilant-t6206",
+"7 Metros"
+],
+[
+"cinta-pasacable-plastico-10-metros-viyilant-t6201",
+"10 Metros"
+],
+[
+"cinta-pasacable-plastico-15-metros-viyilant-t6204",
+"15 Metros"
+]
+]
+}
+},
+{
+"id": "kalop-cinta-pasacables-helicoidal-x-naranja-g",
+"group": {
+"nombre": "Cinta Pasacables Helicoidal X Naranja",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cinta-pasacables-helicoidal-x-10-m-naranja-kalop-t6211",
+"10 m"
+],
+[
+"cinta-pasacables-helicoidal-x-20-m-naranja-kalop-t6212",
+"20 m"
+]
+]
+}
+},
+{
+"id": "brother-cinta-rotulado-g",
+"group": {
+"nombre": "Cinta Rotulado",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cinta-rotulado-blanco-sin-negro-12-mm-brother-t6222",
+"Blanco sobre Negro 12 mm"
+],
+[
+"cinta-rotulado-negro-sin-amarillo-12-mm-brother-t6224",
+"Negro sobre Amarillo 12 mm"
+],
+[
+"cinta-rotulad-negro-sin-amarillo-24-mm-brother-t6219",
+"Negro sobre Amarillo 24 mm"
+],
+[
+"cinta-rotulado-negro-sobre-blanco-9-mm-brother-t6233",
+"Negro Sobre Blanco 9 mm"
+],
+[
+"cinta-rotulado-negro-sin-blanco-12-mm-brother-t6225",
+"Negro sobre Blanco 12 mm"
+],
+[
+"cinta-rotulado-negro-sin-blanco-18-mm-brother-t6229",
+"Negro sobre Blanco 18 mm"
+],
+[
+"cinta-rotulado-negro-sin-transp-12-mm-brother-t6231",
+"Negro sobre Transparente 12 mm"
+]
+]
+}
+},
+{
+"id": "biassoni-cortafierro-redondo-g",
+"group": {
+"nombre": "Cortafierro Redondo",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cortafierro-redondo-250-mm-biassoni-t6245",
+"250 mm"
+],
+[
+"cortafierro-redondo-300-mm-biassoni-t6249",
+"300 mm"
+],
+[
+"cortafierro-redondo-350-mm-biassoni-t6251",
+"350 mm"
+]
+]
+}
+},
+{
+"id": "ja-cutter-trincheta-18-mm-cartucho-para-repuestos-g",
+"group": {
+"nombre": "Cutter Trincheta 18 mm Cartucho para Repuestos",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"cutter-trincheta-18-mm-cartucho-para-2-repuestos-ja-t6256",
+"2"
+],
+[
+"cutter-trincheta-18-mm-cartucho-para-3-repuestos-ja-t6261",
+"3"
+]
+]
+}
+},
+{
+"id": "lusqtoff-destornillador-aislado-g",
+"group": {
+"nombre": "Destornillador Aislado",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"destornillador-aislado-ph1-5x75mm-lusqtoff-t6273",
+"PH1-5x75MM"
+],
+[
+"destornillador-aislado-ph1-6x100mm-lusqtoff-t6275",
+"PH1-6x100MM"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-aislado-philips-s800-g",
+"group": {
+"nombre": "Destornillador Aislado Philips S800",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"destornillador-aislado-philips-0x75-s800-bulit-t6279",
+"0x75"
+],
+[
+"destornillador-aislado-philips-1x75-s800-bulit-t6282",
+"1x75"
+],
+[
+"destornillador-aislado-philips-2x100-s800-bulit-t6287",
+"2x100"
+],
+[
+"destornillador-aislado-philips-2x150-s800-bulit-t6288",
+"2x150"
+],
+[
+"destornillador-aislado-philips-3x125-s800-bulit-t6289",
+"3x125"
+]
+]
+}
+},
+{
+"id": "lusqtoff-destornillador-aislado-plano-g",
+"group": {
+"nombre": "Destornillador Aislado Plano",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"destornillador-aislado-plano-5-5x125-mm-lusqtoff-t6294",
+"5,5x125 mm"
+],
+[
+"destornillador-aislado-plano-6x150-mm-lusqtoff-t6296",
+"6x150 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-destornillador-aislado-punta-philips-g",
+"group": {
+"nombre": "Destornillador Aislado Punta Philips",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"destornillador-aislado-punta-philips-3x75-cross-t6299",
+"3x75"
+],
+[
+"destornillador-aislado-punta-philips-4-5x0-cross-t6300",
+"4,5x0"
+],
+[
+"destornillador-aislado-punta-philips-6x100-cross-t6301",
+"6x100"
+]
+]
+}
+},
+{
+"id": "crossmaster-destornillador-aislado-punta-plana-g",
+"group": {
+"nombre": "Destornillador Aislado Punta Plana",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"destornillador-aislado-punta-plana-2-5x75-cross-t6302",
+"2,5x75"
+],
+[
+"destornillador-aislado-punta-plana-4x100-cross-t6305",
+"4x100"
+],
+[
+"destornillador-aislado-punta-plana-5-5x125-cross-t6306",
+"5,5x125"
+],
+[
+"destornillador-aislado-punta-plana-6-5x150-cross-t6309",
+"6,5x150"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-cromo-phillips-s800-g",
+"group": {
+"nombre": "Destornillador Cromo Phillips S800",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"destornillador-cromo-phillips-0x50-s800-bulit-t6314",
+"0x50"
+],
+[
+"destornillador-cromo-phillips-0x75-s800-bulit-t6316",
+"0x75"
+],
+[
+"destornillador-cromo-phillips-1x50-s800-bulit-t6318",
+"1x50"
+],
+[
+"destornillador-cromo-phillips-2x100-s800-bulit-t6320",
+"2x100"
+],
+[
+"destornillador-cromo-phillips-2x125-s800-bulit-t6322",
+"2x125"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-cromo-tork-s800-g",
+"group": {
+"nombre": "Destornillador Cromo Tork S800",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"destornillador-cromo-tork-6x75-s800-bulit-t6331",
+"6x75"
+],
+[
+"destornillador-cromo-tork-7x75-s800-bulit-t6332",
+"7x75"
+],
+[
+"destornillador-cromo-tork-8x75-s800-bulit-t6333",
+"8x75"
+],
+[
+"destornillador-cromo-tork-9x75-s800-bulit-t6334",
+"9x75"
+],
+[
+"destornillador-cromo-tork-20x100-s800-bulit-t6323",
+"20x100"
+],
+[
+"destornillador-cromo-tork-25x125-s800-bulit-t6324",
+"25x125"
+],
+[
+"destornillador-cromo-tork-27x125-s800-bulit-t6326",
+"27x125"
+],
+[
+"destornillador-cromo-tork-30x125-s800-bulit-t6327",
+"30x125"
+],
+[
+"destornillador-cromo-tork-40x150-s800-bulit-t6328",
+"40x150"
+],
+[
+"destornillador-cromo-tork-45x150-s800-bulit-t6329",
+"45x150"
+],
+[
+"destornillador-cromo-tork-50x150-s800-bulit-t6330",
+"50x150"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-punta-plana-g",
+"group": {
+"nombre": "Destornillador Punta Plana",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"destornillador-punta-plana-4x100-bulit-t6336",
+"4x100"
+],
+[
+"destornillador-punta-plana-4x125-bulit-t6337",
+"4x125"
+],
+[
+"destornillador-punta-plana-4x150-bulit-t6338",
+"4x150"
+],
+[
+"destornillador-punta-plana-5x100-bulit-t6342",
+"5x100"
+],
+[
+"destornillador-punta-plana-5x125-bulit-t6343",
+"5x125"
+],
+[
+"destornillador-punta-plana-6x100-bulit-t6345",
+"6x100"
+],
+[
+"destornillador-punta-plana-8x100-bulit-t6346",
+"8x100"
+],
+[
+"destornillador-punta-plana-8x200-bulit-t6348",
+"8x200"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-punta-plana-s800-g",
+"group": {
+"nombre": "Destornillador Punta Plana S800",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"destornillador-punta-plana-4x75-s800-bulit-t6341",
+"4x75"
+],
+[
+"destornillador-punta-plana-4x200-s800-bulit-t6339",
+"4x200"
+]
+]
+}
+},
+{
+"id": "bulit-destornillador-punta-plana-aislado-g",
+"group": {
+"nombre": "Destornillador Punta Plana Aislado",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"destornillador-punta-plana-aislado-3x75-bulit-t6349",
+"3x75"
+],
+[
+"destornillador-punta-plana-aislado-4x100-bulit-t6352",
+"4x100"
+],
+[
+"destornillador-punta-plana-aislado-5-5x125-bulit-t6355",
+"5,5x125"
+],
+[
+"destornillador-punta-plana-aislado-6-5x150-bulit-t6358",
+"6,5x150"
+]
+]
+}
+},
+{
+"id": "kex-disco-abrasivo-de-corte-g",
+"group": {
+"nombre": "Disco Abrasivo de Corte",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"disco-abrasivo-de-corte-115-x-1-2-mm-kex-t6365",
+"115 x 1,2 mm"
+],
+[
+"disco-abrasivo-de-corte-115-x-1-6-mm-kex-t6367",
+"115 x 1,6 mm"
+],
+[
+"disco-abrasivo-de-corte-180-x-1-8-mm-kex-t6369",
+"180 x 1,8 mm"
+]
+]
+}
+},
+{
+"id": "bulit-disco-abrasivo-de-corte-s400-115-g",
+"group": {
+"nombre": "Disco Abrasivo de Corte S400 115",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"disco-abrasivo-de-corte-s400-115-x-1-mm-bulit-t6373",
+"1 mm"
+],
+[
+"disco-abrasivo-de-corte-s400-115-x-1-6-mm-bulit-t6374",
+"1,6 mm"
+]
+]
+}
+},
+{
+"id": "lusqtoff-disco-diamantado-segmentado-g",
+"group": {
+"nombre": "Disco Diamantado Segmentado",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"disco-diamantado-segmentado-115-mm-lusqtoff-t6380",
+"115 mm"
+],
+[
+"disco-diamantado-segmentado-180-mm-lusqtoff-t6383",
+"180 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-disco-diamante-segmentado-prof-g",
+"group": {
+"nombre": "Disco Diamante Segmentado Prof",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"disco-diamante-segmentado-prof-115-mm-cross-t6400",
+"115 mm"
+],
+[
+"disco-diamante-segmentado-prof-230-mm-cross-t6402",
+"230 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-escalera-aluminio-escalones-g",
+"group": {
+"nombre": "Escalera Aluminio Escalones",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Escaleras",
+"items": [
+[
+"escalera-aluminio-4-escalones-cross-t6416",
+"4"
+],
+[
+"escalera-aluminio-5-escalones-cross-t6417",
+"5"
+]
+]
+}
+},
+{
+"id": "ximetal-estano-1-5-m-1-2-mm-g",
+"group": {
+"nombre": "Estaño 1,5 m 1,2 mm",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Soldadura",
+"items": [
+[
+"estano-1-5-m-1-2-mm-40-ximetal-t6435",
+"40%"
+],
+[
+"estano-1-5-m-1-2-mm-50-ximetal-t6436",
+"50%"
+],
+[
+"estano-1-5-m-1-2-mm-60-ximetal-t6440",
+"60%"
+]
+]
+}
+},
+{
+"id": "crossmaster-extension-punta-hexagonal-magnetica-g",
+"group": {
+"nombre": "Extensión Punta Hexagonal Magnética",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"extension-punta-hexagonal-magne-6-25x75-mm-cross-t6452",
+"6,25x75 mm"
+],
+[
+"extension-punta-hexagonal-megne-6-25x127-mm-cross-t6454",
+"6,25x127 mm"
+]
+]
+}
+},
+{
+"id": "bulit-llave-ajustable-g",
+"group": {
+"nombre": "Llave Ajustable",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"llave-ajustable-6-bulit-t6534",
+"6\""
+],
+[
+"llave-ajustable-8-bulit-t6538",
+"8\""
+],
+[
+"llave-ajustable-10-bulit-t6530",
+"10\""
+]
+]
+}
+},
+{
+"id": "bulit-llave-ajustable-serie-600-g",
+"group": {
+"nombre": "Llave Ajustable Serie 600",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"llave-ajustable-6-serie-600-bulit-t6536",
+"6\""
+],
+[
+"llave-ajustable-8-serie-600-bulit-t6539",
+"8\""
+],
+[
+"llave-ajustable-10-serie-600-bulit-t6532",
+"10\""
+]
+]
+}
+},
+{
+"id": "bulit-llave-ajustable-profesional-cromo-g",
+"group": {
+"nombre": "Llave Ajustable Profesional Cromo",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"llave-ajustable-profesional-6-cromo-bulit-t6541",
+"6\""
+],
+[
+"llave-ajustable-profesional-8-cromo-bulit-t6543",
+"8\""
+]
+]
+}
+},
+{
+"id": "bulit-llave-combinada-articulada-criquet-g",
+"group": {
+"nombre": "Llave Combinada Articulada Criquet",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"llave-combinada-articulada-criquet-10-mm-bulit-t6544",
+"10 mm"
+],
+[
+"llave-combinada-articulada-criquet-11-mm-bulit-t6546",
+"11 mm"
+],
+[
+"llave-combinada-articulada-criquet-12-mm-bulit-t6547",
+"12 mm"
+],
+[
+"llave-combinada-articulada-criquet-13-mm-bulit-t6550",
+"13 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-marcador-indeleble-x2-unidades-g",
+"group": {
+"nombre": "Marcador Indeleble x2 unidades",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"marcador-indeleble-amarillo-x2-u-cross-t6572",
+"Amarillo"
+],
+[
+"marcador-indeleble-blanco-x2-u-cross-t6575",
+"Blanco"
+]
+]
+}
+},
+{
+"id": "gardex-maza-minera-g",
+"group": {
+"nombre": "Maza Minera",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"maza-minera-1-kg-gardex-t6589",
+"1 kg"
+],
+[
+"maza-minera-1-5-kg-gardex-t6593",
+"1,5 kg"
+]
+]
+}
+},
+{
+"id": "biassoni-maza-minera-con-cabo-g",
+"group": {
+"nombre": "Maza Minera con Cabo",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"maza-minera-1-kg-con-cabo-biassoni-t6590",
+"1 kg"
+],
+[
+"maza-minera-1-5-kg-con-cabo-biassoni-t6594",
+"1,5 kg"
+]
+]
+}
+},
+{
+"id": "jadever-maza-minera-mango-f-vidrio-g",
+"group": {
+"nombre": "Maza Minera Mango F. Vidrio",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"maza-minera-1-kg-mango-f-vidrio-jadever-t6591",
+"1 kg"
+],
+[
+"maza-minera-2-kg-mango-f-vidrio-jadever-t6595",
+"2 kg"
+]
+]
+}
+},
+{
+"id": "dormer-mecha-acero-rapido-a002-g",
+"group": {
+"nombre": "Mecha Acero Rápido A002",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-acero-rapido-a002-3-mm-dormer-t6601",
+"3 mm"
+],
+[
+"mecha-acero-rapido-a002-3-5-mm-dormer-t6602",
+"3,5 mm"
+],
+[
+"mecha-acero-rapido-a002-4-mm-dormer-t6603",
+"4 mm"
+],
+[
+"mecha-acero-rapido-a002-4-5-mm-dormer-t6605",
+"4,5 mm"
+],
+[
+"mecha-acero-rapido-a002-5-mm-dormer-t6607",
+"5 mm"
+],
+[
+"mecha-acero-rapido-a002-5-5-mm-dormer-t6608",
+"5,5 mm"
+],
+[
+"mecha-acero-rapido-a002-6-mm-dormer-t6610",
+"6 mm"
+],
+[
+"mecha-acero-rapido-a002-7-mm-dormer-t6614",
+"7 mm"
+],
+[
+"mecha-acero-rapido-a002-8-mm-dormer-t6616",
+"8 mm"
+],
+[
+"mecha-acero-rapido-a002-10-mm-dormer-t6600",
+"10 mm"
+]
+]
+}
+},
+{
+"id": "dormer-mecha-acero-rapido-a114-g",
+"group": {
+"nombre": "Mecha Acero Rápido A114",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-acero-rapido-a114-2-5-mm-dormer-t6626",
+"2,5 mm"
+],
+[
+"mecha-acero-rapido-a114-3-mm-dormer-t6627",
+"3 mm"
+],
+[
+"mecha-acero-rapido-a114-3-5-mm-dormer-t6630",
+"3,5 mm"
+],
+[
+"mecha-acero-rapido-a114-4-mm-dormer-t6631",
+"4 mm"
+],
+[
+"mecha-acero-rapido-a114-4-5-mm-dormer-t6633",
+"4,5 mm"
+],
+[
+"mecha-acero-rapido-a114-5-mm-dormer-t6636",
+"5 mm"
+],
+[
+"mecha-acero-rapido-a114-5-5-mm-dormer-t6637",
+"5,5 mm"
+],
+[
+"mecha-acero-rapido-a114-6-mm-dormer-t6639",
+"6 mm"
+],
+[
+"mecha-acero-rapido-a114-7-mm-dormer-t6641",
+"7 mm"
+],
+[
+"mecha-acero-rapido-a114-8-mm-dormer-t6643",
+"8 mm"
+],
+[
+"mecha-acero-rapido-a114-10-mm-dormer-t6619",
+"10 mm"
+],
+[
+"mecha-acero-rapido-a114-12-mm-dormer-t6622",
+"12 mm"
+],
+[
+"mecha-acero-rapido-a114-13-mm-dormer-t6624",
+"13 mm"
+]
+]
+}
+},
+{
+"id": "dormer-mecha-broca-sds-a806-g",
+"group": {
+"nombre": "Mecha Broca SDS A806",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-broca-sds-a806-6-mm-largo-110mm-dormer-t6660",
+"6 mm (Largo 110MM)"
+],
+[
+"mecha-broca-sds-a806-6-mm-largo-210mm-dormer-t6662",
+"6 mm (Largo 210MM)"
+],
+[
+"mecha-broca-sds-a806-8-mm-largo-110mm-dormer-t6663",
+"8 mm (Largo 110MM)"
+],
+[
+"mecha-broca-sds-a806-8-mm-largo-210mm-dormer-t6665",
+"8 mm (Largo 210MM)"
+],
+[
+"mecha-broca-sds-a806-10-mm-largo-110mm-dormer-t6644",
+"10 mm (Largo 110MM)"
+],
+[
+"mecha-broca-sds-a806-10-mm-largo-210mm-dormer-t6646",
+"10 mm (Largo 210MM)"
+],
+[
+"mecha-broca-sds-a806-12-mm-largo-160mm-dormer-t6650",
+"12 mm (Largo 160MM)"
+],
+[
+"mecha-broca-sds-a806-12-mm-largo-210mm-dormer-t6651",
+"12 mm (Largo 210MM)"
+],
+[
+"mecha-broca-sds-a806-16-mm-largo-400mm-dormer-t6654",
+"16 mm (Largo 400MM)"
+],
+[
+"mecha-broca-sds-a806-20-mm-largo-400mm-dormer-t6655",
+"20 mm (Largo 400MM)"
+],
+[
+"mecha-broca-sds-a806-22-mm-largo-400mm-dormer-t6657",
+"22 mm (Largo 400MM)"
+],
+[
+"mecha-broca-sds-a806-25-mm-largo-460mm-dormer-t6659",
+"25 mm (Largo 460MM)"
+]
+]
+}
+},
+{
+"id": "kex-mecha-plana-g",
+"group": {
+"nombre": "Mecha Plana",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-plana-20-mm-kex-t6671",
+"20 mm"
+],
+[
+"mecha-plana-22-mm-kex-t6674",
+"22 mm"
+],
+[
+"mecha-plana-25-mm-kex-t6675",
+"25 mm"
+]
+]
+}
+},
+{
+"id": "gardex-mecha-plana-cromo-vanadio-g",
+"group": {
+"nombre": "Mecha Plana Cromo Vanadio",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-plana-cromo-vanadio-18-mm-gardex-t6678",
+"18 mm"
+],
+[
+"mecha-plana-cromo-vanadio-20-mm-gardex-t6680",
+"20 mm"
+],
+[
+"mecha-plana-cromo-vanadio-22-mm-gardex-t6682",
+"22 mm"
+],
+[
+"mecha-plana-cromo-vanadio-25-mm-gardex-t6683",
+"25 mm"
+],
+[
+"mecha-plana-cromo-vanadio-30-mm-gardex-t6685",
+"30 mm"
+]
+]
+}
+},
+{
+"id": "fischer-mecha-widia-g",
+"group": {
+"nombre": "Mecha Widia",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-widia-4-mm-x-75-mm-fischer-t6694",
+"4 mm X 75 mm"
+],
+[
+"mecha-widia-10-mm-x-120-mm-fischer-t6691",
+"10 mm X 120 mm"
+],
+[
+"mecha-widia-12-mm-x-150-mm-fischer-t6693",
+"12 mm X 150 mm"
+]
+]
+}
+},
+{
+"id": "dormer-mecha-widia-corta-g",
+"group": {
+"nombre": "Mecha Widia Corta",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-widia-corta-5-mm-dormer-t6699",
+"5 mm"
+],
+[
+"mecha-widia-corta-6-mm-dormer-t6700",
+"6 mm"
+],
+[
+"mecha-widia-corta-8-mm-dormer-t6710",
+"8 mm"
+],
+[
+"mecha-widia-corta-10-mm-dormer-t6696",
+"10 mm"
+],
+[
+"mecha-widia-corta-12-mm-dormer-t6698",
+"12 mm"
+]
+]
+}
+},
+{
+"id": "neike-mecha-widia-corta-g",
+"group": {
+"nombre": "Mecha Widia Corta",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-widia-corta-6-mm-neike-t6704",
+"6 mm"
+],
+[
+"mecha-widia-corta-8-mm-neike-t6708",
+"8 mm"
+]
+]
+}
+},
+{
+"id": "difelbroc-mecha-widia-corta-g",
+"group": {
+"nombre": "Mecha Widia Corta",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"mecha-widia-corta-6-mm-difelbroc-t6706",
+"6 mm"
+],
+[
+"mecha-widia-corta-8-mm-difelbroc-t6711",
+"8 mm"
+]
+]
+}
+},
+{
+"id": "jadever-nivel-2-burbujas-aluminio-g",
+"group": {
+"nombre": "Nivel 2 Burbujas Aluminio",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"nivel-2-burbujas-40-cm-aluminio-jadever-t6744",
+"40 cm"
+],
+[
+"nivel-2-burbujas-60-cm-aluminio-jadever-t6747",
+"60 cm"
+]
+]
+}
+},
+{
+"id": "bulit-nivel-3-burbujas-aluminio-g",
+"group": {
+"nombre": "Nivel 3 Burbujas Aluminio",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"nivel-3-burbujas-400-mm-aluminio-bulit-t6750",
+"400 mm"
+],
+[
+"nivel-3-burbujas-600-mm-aluminio-bulit-t6751",
+"600 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-nivel-laser-g",
+"group": {
+"nombre": "Nivel Láser",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Instrumentos de Medición",
+"items": [
+[
+"nivel-laser-rojo-2-lineas-0-10-m-cross-t6752",
+"Rojo 2 Líneas 0-10 m"
+],
+[
+"nivel-laser-verde-2-lineas-0-25-m-cross-t6756",
+"Verde 2 Líneas 0-25 m"
+]
+]
+}
+},
+{
+"id": "jadever-organizador-maletin-28-compartimentos-g",
+"group": {
+"nombre": "Organizador Maletín 28 Compartimentos",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"organizad-maletin-345x280x70-mm-28-comp-jadever-t6759",
+"345x280x70 mm"
+],
+[
+"organizad-maletin-430x350x70-mm-28-comp-jadever-t6760",
+"430x350x70 mm"
+]
+]
+}
+},
+{
+"id": "crossmaster-organizador-compartimentos-g",
+"group": {
+"nombre": "Organizador Compartimentos",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Cajas, Bolsos y Candados",
+"items": [
+[
+"organizador-280x330x50-mm-18-comp-cross-t6762",
+"280x330x50 mm 18"
+],
+[
+"organizador-420x334x115-mm-8-comp-cross-t6764",
+"420x334x115 mm 8"
+]
+]
+}
+},
+{
+"id": "crossmaster-pinza-media-punta-g",
+"group": {
+"nombre": "Pinza Media Punta",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"pinza-6-media-punta-cross-t6784",
+"6\""
+],
+[
+"pinza-8-media-punta-cross-t6796",
+"8\""
+]
+]
+}
+},
+{
+"id": "bulit-pinza-punta-curva-semiredonda-g",
+"group": {
+"nombre": "Pinza Punta Curva Semiredonda",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"pinza-6-punta-curva-semiredonda-bulit-t6787",
+"6\""
+],
+[
+"pinza-8-punta-curva-semiredonda-bulit-t6799",
+"8\""
+]
+]
+}
+},
+{
+"id": "bulit-pinza-universal-serie-600-g",
+"group": {
+"nombre": "Pinza Universal Serie 600",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-6-universal-serie-600-bulit-t6791",
+"6\""
+],
+[
+"pinza-7-universal-serie-600-bulit-t6795",
+"7\""
+],
+[
+"pinza-8-universal-serie-600-bulit-t6804",
+"8\""
+]
+]
+}
+},
+{
+"id": "gabexel-pinza-compresion-para-tif-o-punteras-g",
+"group": {
+"nombre": "Pinza Compresión para TIF o Punteras",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"pinza-compres-para-tif-o-punter-0-50-16-gabexel-t6807",
+"0.50-16"
+],
+[
+"pinza-compres-para-tif-o-punter-0-75-10-gabexel-t6810",
+"0.75-10"
+]
+]
+}
+},
+{
+"id": "gabexel-pinza-identadora-terminales-g",
+"group": {
+"nombre": "Pinza Identadora Terminales",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-identadora-terminales-1-5-10-mm-gabexel-t6833",
+"1,5 - 10 mm"
+],
+[
+"pinza-identadora-terminales-10-95-mm-gabexel-t6835",
+"10 - 95 mm"
+]
+]
+}
+},
+{
+"id": "zelta-pinza-industrial-punta-semiredonda-g",
+"group": {
+"nombre": "Pinza Industrial Punta Semiredonda",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"pinza-ndustrial-4-5-punta-semired-zelta-t6848",
+"4,5\""
+],
+[
+"pinza-industrial-6-punta-semired-zelta-t6841",
+"6\""
+],
+[
+"pinza-industrial-8-punta-semired-zelta-t6842",
+"8\""
+]
+]
+}
+},
+{
+"id": "lusqtoff-pinza-multiuso-puerta-larga-6-en-1-g",
+"group": {
+"nombre": "Pinza Multiuso Puerta Larga 6 en 1",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-multiuso-puerta-larga-8-6-en-1-lusqtoff-t6844",
+"8\""
+],
+[
+"pinza-multiuso-puerta-larga-9-6-en-1-lusqtoff-t6846",
+"9\""
+]
+]
+}
+},
+{
+"id": "bulit-pinza-profesional-punta-semiredonda-s700-g",
+"group": {
+"nombre": "Pinza Profesional Punta Semiredonda S700",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"pinza-profes-6-1000v-punta-semired-s700-bulit-t6861",
+"6\" 1000V"
+],
+[
+"pinza-profesional-8-punta-semired-s700-bulit-t6868",
+"8\""
+],
+[
+"pinza-profes-8-1000v-punta-semired-s700-bulit-t6864",
+"8\" 1000V"
+]
+]
+}
+},
+{
+"id": "jadever-pinza-universal-g",
+"group": {
+"nombre": "Pinza Universal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-universal-6-jadever-t6872",
+"6\""
+],
+[
+"pinza-universal-7-jadever-t6873",
+"7\""
+]
+]
+}
+},
+{
+"id": "zelta-pinza-universal-industrial-g",
+"group": {
+"nombre": "Pinza Universal Industrial",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-universal-industrial-4-5-zelta-t6885",
+"4,5\""
+],
+[
+"pinza-universal-industrial-160-mm-zelta-t6881",
+"160 mm"
+],
+[
+"pinza-universal-industrial-180-mm-zelta-t6884",
+"180 mm"
+]
+]
+}
+},
+{
+"id": "bulit-pinza-universal-profesional-s700-g",
+"group": {
+"nombre": "Pinza Universal Profesional S700",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"pinza-universal-profesional-6-s700-bulit-t6886",
+"6\""
+],
+[
+"pinza-universal-profesional-7-s700-bulit-t6887",
+"7\""
+]
+]
+}
+},
+{
+"id": "jadever-pistola-encoladora-g",
+"group": {
+"nombre": "Pistola Encoladora",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"pistola-encoladora-8w-con-2-barras-100-mm-jadever-t6901",
+"8W con 2 Barras 100 mm"
+],
+[
+"pistola-encoladora-45w-con-2-barras-112-mm-jadever-t6900",
+"45W con 2 Barras 112 mm"
+]
+]
+}
+},
+{
+"id": "biassoni-punta-hexagonal-g",
+"group": {
+"nombre": "Punta Hexagonal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"punta-hexagonal-250-mm-biassoni-t6933",
+"250 mm"
+],
+[
+"punta-hexagonal-350-mm-biassoni-t6936",
+"350 mm"
+]
+]
+}
+},
+{
+"id": "mp-punta-phillips-bremen-g",
+"group": {
+"nombre": "Punta Phillips Bremen",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"punta-phillips-2x25-mm-bremen-mp-t6939",
+"2x25 mm"
+],
+[
+"punta-phillips-2x50-mm-bremen-mp-t6940",
+"2x50 mm"
+]
+]
+}
+},
+{
+"id": "mavi-resistencia-para-soldador-g",
+"group": {
+"nombre": "Resistencia para Soldador",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"resistencia-para-soldador-60w-mavi-t6960",
+"60W"
+],
+[
+"resistencia-para-soldador-100w-mavi-t6955",
+"100W"
+],
+[
+"resistencia-para-soldador-160w-mavi-t6956",
+"160W"
+],
+[
+"resistencia-para-soldador-200w-mavi-t6958",
+"200W"
+]
+]
+}
+},
+{
+"id": "lusqtoff-rotomartillo-horizontal-g",
+"group": {
+"nombre": "Rotomartillo Horizontal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"rotomartillo-horizontal-850w-lusqtoff-t6972",
+"850W"
+],
+[
+"rotomartillo-horizontal-1100w-lusqtoff-t6969",
+"1100W"
+],
+[
+"rotomartillo-horizontal-1500w-lusqtoff-t6970",
+"1500W"
+]
+]
+}
+},
+{
+"id": "byh-semaf-baliza-led-220v-con-cables-g",
+"group": {
+"nombre": "Semaf / Baliza LED 220V con Cables",
+"rubro": "Tecnología y Seguridad",
+"subrubro": "Seguridad y Alarmas",
+"items": [
+[
+"semaf-baliza-led-220v-con-3-cables-byh-t6982",
+"3"
+],
+[
+"semaf-baliza-led-220v-con-4-cables-byh-t6984",
+"4"
+]
+]
+}
+},
+{
+"id": "bulit-set-piezas-puntas-y-adaptador-s1000-g",
+"group": {
+"nombre": "Set Piezas Puntas y Adaptador S1000",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"set-8-piezas-puntas-y-adaptador-s1000-bulit-t7013",
+"8"
+],
+[
+"set-29-piezas-puntas-y-adaptador-s1000-bulit-t6992",
+"29"
+]
+]
+}
+},
+{
+"id": "bosch-sierra-copa-bimetal-g",
+"group": {
+"nombre": "Sierra Copa Bimetal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"sierra-copa-bimetal-20-mm-3-4-bosch-t7040",
+"20 mm 3/4\""
+],
+[
+"sierra-copa-bimetal-22-mm-7-8-bosch-t7041",
+"22 mm 7/8\""
+],
+[
+"sierra-copa-bimetal-25-mm-1-bosch-t7045",
+"25 mm 1\""
+],
+[
+"sierra-copa-bimetal-27-mm-1-1-16-bosch-t7048",
+"27 mm 1 1/16\""
+],
+[
+"sierra-copa-bimetal-30-mm-1-3-16-bosch-t7050",
+"30 mm 1 3/16\""
+],
+[
+"sierra-copa-bimetal-35-mm-1-1-4-bosch-t7058",
+"35 mm 1 1/4\""
+],
+[
+"sierra-copa-bimetal-40-mm-1-1-2-bosch-t7062",
+"40 mm 1 1/2\""
+],
+[
+"sierra-copa-bimetal-51-mm-2-bosch-t7063",
+"51 mm 2\""
+]
+]
+}
+},
+{
+"id": "jadever-sierra-copa-bimetal-g",
+"group": {
+"nombre": "Sierra Copa Bimetal",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"sierra-copa-bimetal-35-mm-jadever-t7054",
+"35 mm"
+],
+[
+"sierra-copa-bimetal-57-mm-jadever-t7064",
+"57 mm"
+],
+[
+"sierra-copa-bimetal-64-mm-jadever-t7069",
+"64 mm"
+],
+[
+"sierra-copa-bimetal-76-mm-jadever-t7080",
+"76 mm"
+]
+]
+}
+},
+{
+"id": "bosch-sierra-copa-mandril-1-4-g",
+"group": {
+"nombre": "Sierra Copa Mandril -1/4",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"sierra-copa-mandril-14-a-30-mm-1-4-bosch-t7089",
+"14 a 30 mm"
+],
+[
+"sierra-copa-mandril-32-a-210-mm-1-4-bosch-t7091",
+"32 a 210 mm"
+]
+]
+}
+},
+{
+"id": "kex-sierra-copa-widia-g",
+"group": {
+"nombre": "Sierra Copa Widia",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Mechas, Discos y Accesorios",
+"items": [
+[
+"sierra-copa-widia-55-mm-kex-t7092",
+"55 mm"
+],
+[
+"sierra-copa-widia-60-mm-kex-t7094",
+"60 mm"
+],
+[
+"sierra-copa-widia-65-mm-kex-t7095",
+"65 mm"
+]
+]
+}
+},
+{
+"id": "mavi-soldador-g",
+"group": {
+"nombre": "Soldador",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"soldador-de-60w-mavi-t7114",
+"60W"
+],
+[
+"soldador-de-100w-mavi-t7106",
+"100W"
+],
+[
+"soldador-de-160w-mavi-t7110",
+"160W"
+],
+[
+"soldador-de-200w-mavi-t7111",
+"200W"
+]
+]
+}
+},
+{
+"id": "ja-soldador-profesional-punta-comun-g",
+"group": {
+"nombre": "Soldador Profesional Punta Común",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Eléctricas",
+"items": [
+[
+"soldador-profesional-30w-punta-comun-ja-t7116",
+"30W"
+],
+[
+"soldador-profesional-40w-punta-comun-ja-t7120",
+"40W"
+]
+]
+}
+},
+{
+"id": "bulit-tenaza-de-carpintero-serie-600-g",
+"group": {
+"nombre": "Tenaza de Carpintero Serie 600",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"tenaza-de-carpintero-7-serie-600-bulit-t7162",
+"7\""
+],
+[
+"tenaza-de-carpintero-8-serie-600-bulit-t7163",
+"8\""
+]
+]
+}
+},
+{
+"id": "bulit-tijera-corta-canos-serie-g",
+"group": {
+"nombre": "Tijera Corta Caños Serie",
+"rubro": "Herramientas y Ferretería",
+"subrubro": "Herramientas Manuales",
+"items": [
+[
+"tijera-corta-canos-serie-500-bulit-t7176",
+"500"
+],
+[
+"tijera-corta-canos-serie-600-bulit-t7177",
+"600"
+]
+]
+}
+}
 ]

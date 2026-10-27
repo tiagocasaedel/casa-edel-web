@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-z+IMpsGsWMsmFxg1nTXjuRGAHku+eAbdl/JD2s4UNdY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-av5/xTogvo5lM6PMDXPLrv9XTtWOftp7nxoU2Jyf0dg='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1088,6 +1088,8 @@ who = { name: String(who.name || '').slice(0, 80), note: String(who.note || '').
 /* ---------- images ---------- */
 /* photo paths come from the database: only plain https or relative paths, nothing that could break out of the style attribute */
 const SAFE_SRC = /^(https:\/\/[a-z0-9.-]+\/[A-Za-z0-9_\-.\/%~+]*|[A-Za-z0-9_\-.\/%~+]+)$/;
+/* photo of the chosen presentation (grouped products keep each size/colour photo) */
+function phV(p, vi){ const v = p && p.v && p.v[vi]; return v && v.i ? phStyle({ i: v.i }) || phStyle(p) : phStyle(p); }
 function phStyle(p, inset){
   const a = p && ATLAS[p.i];
   if (a){
@@ -1149,7 +1151,7 @@ async function fromDB(){
   return rows.map(x => {
     const p = { id:x.id, n:x.nombre, b:x.marca||'', c:x.rubro||'Otros', s:x.subrubro||'', u:x.unidad||'u', k:x.codigo||'', i:x.foto||'', r:Number(x.orden)||0, p:px(x.precio, x.precio_usd) };
     if (x.orden_cat != null) p.o = Number(x.orden_cat);
-    if (x.variantes && x.variantes.length){ p.v = x.variantes.map(v => ({ l:v.l, p:px(v.p, v.usd), k:v.k||'' })); p.p = Math.min(...p.v.map(v => v.p)); }
+    if (x.variantes && x.variantes.length){ p.v = x.variantes.map(v => ({ l:v.l, p:px(v.p, v.usd), k:v.k||'', i:typeof v.i === 'string' ? v.i : '', m:typeof v.m === 'string' ? v.m : '' })); p.p = Math.min(...p.v.map(v => v.p)); }
     return p;
   }).filter(p => p.p > 0);
 }
@@ -1164,8 +1166,10 @@ async function load(){
   if (!P.length) P = await (await fetch('products.json')).json();
   /* fotos nuevas que se suben a la web (fotos.json); una foto cargada desde el panel tiene prioridad */
   let FOTOS = {}; try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch {}
-  P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f; });
-  P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c].join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
+  P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f;
+    if (p.v) p.v.forEach(v => { const g = v.m && FOTOS[v.m]; if (typeof g === 'string' && !/supabase\.co/.test(v.i || '')) v.i = g; });
+    if (!p.i && p.v) p.i = (p.v.find(v => v.i) || {}).i || ''; });
+  P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c].concat(p.v ? p.v.flatMap(v => [v.l, v.k]) : []).join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
   cart = cart.filter(l => { const p = BY.get(l.id); return p && (p.v ? l.v < p.v.length : l.v === 0); });
 }
 
@@ -1513,7 +1517,7 @@ function renderCart(){
   }
   body.innerHTML = `<ul class="lines">${cart.map((l,i) => {
     const p = BY.get(l.id), u = unitOf(p,l.v);
-    return `<li class="line"><div class="th" style="background:${field(i)}">${phStyle(p)?`<span class="ph" style="${phStyle(p)}"></span>`:''}</div>
+    return `<li class="line"><div class="th" style="background:${field(i)}">${phV(p,l.v)?`<span class="ph" style="${phV(p,l.v)}"></span>`:''}</div>
       <div><p class="nm">${esc(p.n)}</p><p class="vr">${esc(p.b)}${p.v?' · '+esc(p.v[l.v].l):''} · ${money(priceOf(p,l.v))} ${u==='m'?'el metro':'c/u'}</p>
       <div class="ctl"><div class="step" role="group" aria-label="Cantidad"><button type="button" data-cdec="${i}" aria-label="Quitar uno">−</button><input class="num" size="3" inputmode="numeric" aria-label="Cantidad${u==='m'?' en metros':''}" value="${l.q}" data-cq="${i}"><button type="button" data-cinc="${i}" aria-label="Sumar uno">+</button></div><span class="lt num">${money(priceOf(p,l.v)*l.q)}</span></div>
       <button class="rm" type="button" data-crm="${i}">Quitar del pedido</button></div></li>`;
@@ -1552,7 +1556,7 @@ function renderPD(p){
   }
   const code = p.v ? p.v[pdSel].k : p.k;
   $('#pd').innerHTML = `<button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <div class="pd"><div class="tile" style="background:${field(idx)}">${phStyle(p)?`<span class="ph" style="${phStyle(p)}"></span>`:tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
+  <div class="pd"><div class="tile" style="background:${field(idx)}">${phV(p,pdSel)?`<span class="ph" style="${phV(p,pdSel)}"></span>`:tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
   <div class="body">
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
