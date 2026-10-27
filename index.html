@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-1dWXs9/pE7bgiZBUgYVVIYjbfW67TN97Y4bLvcT6MFE='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-4p1jb/Obp3xtDHaFDGu22x53ZCbp+4jjBKOw3CKjRyE='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1406,6 +1406,12 @@ function runSearch(rubro=''){
 }
 
 /* ---------- catalogue ---------- */
+const POLEW = { unipolar:'1x', bipolar:'2x', tripolar:'3x', tetrapolar:'4x' };
+const poleN = n => n.replace(/\b(unipolar|bipolar|tripolar|tetrapolar)\b/gi, m => POLEW[m.toLowerCase()]);
+function frac(t){ const m = t.match(/^(\d+)\/(\d+)$/); return m ? m[1] / m[2] : parseFloat(t.replace(',', '.')); }
+function numsOf(p){ return p._nums || (p._nums = (poleN(p.n).match(/\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:[.,]\d+)?/g) || []).map(t => { const m = t.match(/^(\d+)\s+(\d+)\/(\d+)$/); return m ? +m[1] + m[2] / m[3] : frac(t); })); }
+function famOf(p){ return p._fam || (p._fam = norm(poleN(p.n)).replace(/\bconductores\b/g, '').replace(/\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:[.,]\d+)?/g, '#').replace(/[#x\s"'.,\-]+/g, ' ').trim()); }
+function natCmp(a, b){ for (let i = 0; i < Math.max(a.length, b.length); i++){ const x = a[i] ?? -1, y = b[i] ?? -1; if (x !== y) return x - y; } return 0; }
 function compute(){
   let arr = P;
   if (state.rubro) arr = arr.filter(p => p.c === state.rubro);
@@ -1417,7 +1423,13 @@ function compute(){
   if (state.sub) arr = arr.filter(p => p.s === state.sub);
   const s = state.sort;
   const key = p => state.q ? (p.r||1e5) : state.rubro ? p.o : (p.r||1e5);
-  const top = (a,b) => (state.q ? a._s - b._s : 0) || (key(a) - key(b)) || ((ATLAS[b.i]?1:0) - (ATLAS[a.i]?1:0)) || a.n.localeCompare(b.n,'es');
+  /* inside a category: keep each family together (by its best seller) and list its sizes from small to big */
+  const sizeOrder = !!state.rubro && !state.q && state.rubro !== 'Llaves de Luz y Tomas';
+  const fr = {};
+  if (sizeOrder) arr.forEach(p => { const f = p.b + '|' + famOf(p); if (!(fr[f] <= p.o)) fr[f] = p.o; });
+  const fam = (a,b) => { if (!sizeOrder) return 0; const fa = a.b + '|' + famOf(a), fb = b.b + '|' + famOf(b);
+    return fa === fb ? natCmp(numsOf(a), numsOf(b)) : (fr[fa] - fr[fb]) || fa.localeCompare(fb, 'es'); };
+  const top = (a,b) => (state.q ? a._s - b._s : 0) || fam(a,b) || (key(a) - key(b)) || ((ATLAS[b.i]?1:0) - (ATLAS[a.i]?1:0)) || a.n.localeCompare(b.n,'es');
   const bc = {}; brandsHere.forEach(p => bc[p.b] = (bc[p.b]||0) + 1);
   const grouped = !!state.rubro && !state.brand && !state.q && s === 'top';
   const best = {}; brandsHere.forEach(p => { const v = p.r || 1e5; if (!(best[p.b] <= v)) best[p.b] = v; });
