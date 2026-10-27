@@ -203,5 +203,12 @@
    "visible": false
   },
   "motivo": "Marca Alic: ya no se trabaja"
+ },
+ {
+  "id": "indular---ecco-led-1-tubos-120cm",
+  "set": {
+   "nombre": "Ecco LED 1 Tubos 120 cm sin Louver"
+  },
+  "motivo": "Nombre corregido"
  }
 ]
