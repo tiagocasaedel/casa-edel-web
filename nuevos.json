@@ -11192,5 +11192,47 @@
 "visible": false
 },
 "motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "arlen---tapa-reduccion-bombe-10x10-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---caja-rectangular-10x5-5x10-ch20-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---caja-octogonal-grande-ch20-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---caja-octogonal-chica-ch20-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---caja-mignon-5x5-ch20-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---caja-cuadrada-10x10-ch20-blanca",
+"set": {
+"marca": "Santa Maria"
+},
+"motivo": "Arlen pasa a Santa Maria"
 }
 ]
