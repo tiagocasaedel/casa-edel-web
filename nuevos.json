@@ -11234,5 +11234,62 @@
 "marca": "Santa Maria"
 },
 "motivo": "Arlen pasa a Santa Maria"
+},
+{
+"id": "arlen---tapa-reduccion-bombe-10x10-blanca",
+"set": {
+"codigo": "057TA",
+"precio": 3142,
+"precio_usd": null,
+"marca": "Santa Maria"
+},
+"motivo": "Código y precio de Santa Maria"
+},
+{
+"id": "arlen---caja-octogonal-grande-ch20-blanca",
+"set": {
+"codigo": "004OG",
+"precio": 1030,
+"precio_usd": null,
+"marca": "Santa Maria"
+},
+"motivo": "Código y precio de Santa Maria"
+},
+{
+"id": "arlen---caja-cuadrada-10x10-ch20-blanca",
+"set": {
+"codigo": "005CU",
+"precio": 1175,
+"precio_usd": null,
+"marca": "Santa Maria"
+},
+"motivo": "Código y precio de Santa Maria"
+},
+{
+"id": "arlen---caja-octogonal-chica-ch20-blanca",
+"set": {
+"codigo": "002OC",
+"precio": 460,
+"precio_usd": null,
+"marca": "Santa Maria"
+},
+"motivo": "Código y precio de Santa Maria"
+},
+{
+"id": "arlen---caja-mignon-5x5-ch20-blanca",
+"set": {
+"codigo": "003MI",
+"precio": 460,
+"precio_usd": null,
+"marca": "Santa Maria"
+},
+"motivo": "Código y precio de Santa Maria"
+},
+{
+"id": "arlen---caja-rectangular-10x5-5x10-ch20-blanca",
+"set": {
+"visible": false
+},
+"motivo": "Repetida: queda la de Santa Maria 001RE"
 }
 ]
