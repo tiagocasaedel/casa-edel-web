@@ -210,5 +210,19 @@
    "nombre": "Ecco LED 1 Tubos 120 cm sin Louver"
   },
   "motivo": "Nombre corregido"
+ },
+ {
+  "id": "indular---ecco-led-2-tubos-120cm-blanco",
+  "set": {
+   "nombre": "Ecco LED 2 Tubos 120 cm Blanco sin Louver"
+  },
+  "motivo": "Nombre corregido"
+ },
+ {
+  "id": "indular---ecco-led-2-tubos-120cm-negro",
+  "set": {
+   "nombre": "Ecco LED 2 Tubos 120 cm Negro sin Louver"
+  },
+  "motivo": "Nombre corregido"
  }
 ]
