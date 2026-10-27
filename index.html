@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-4p1jb/Obp3xtDHaFDGu22x53ZCbp+4jjBKOw3CKjRyE='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-80CGciK1O3JFTKfYwJOqGmFQmrkMikK77j/jHxKZw5k='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -370,6 +370,10 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .card .ph{--k:84;background-repeat:no-repeat;mix-blend-mode:multiply;transition:transform 400ms var(--ease-out)}
 .card .none{position:absolute;inset:0;display:grid;place-items:center;padding:14%;color:#545b6e;text-align:center;font-weight:600;font-size:1.05rem;line-height:1.15}
 .card .none span{display:block;font-weight:400;font-size:.875rem;margin-top:6px;opacity:.8}
+.card .ph.sl{opacity:0;transition:opacity 800ms ease,transform 900ms var(--ease-out)}
+.card .ph.sl.on{opacity:1}
+.card .cdots{position:absolute;left:10px;bottom:10px;display:flex;gap:4px;background:rgba(255,253,248,.85);padding:5px 7px;border-radius:999px}
+.card .cdots .dot{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 .card .vbadge{position:absolute;left:8px;top:8px;background:#1b2238;color:#f6f2ea;border-radius:999px;font-size:.875rem;font-weight:500;padding:.3em .7em}
 @media (hover:hover) and (pointer:fine){.card .tile:hover .ph{transform:scale(1.05)}}
 .card h3{font-size:1rem;font-weight:500;line-height:1.3;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
@@ -1109,9 +1113,11 @@ who = { name: String(who.name || '').slice(0, 80), note: String(who.note || '').
 /* photo paths come from the database: only plain https or relative paths, nothing that could break out of the style attribute */
 const SAFE_SRC = /^(https:\/\/[a-z0-9.-]+\/[A-Za-z0-9_\-.\/%~+]*|[A-Za-z0-9_\-.\/%~+]+)$/;
 /* photo of the chosen presentation (grouped products keep each size/colour photo) */
-function phV(p, vi){ const v = p && p.v && p.v[vi]; return v && v.i ? phStyle({ i: v.i }) || phStyle(p) : phStyle(p); }
-function phStyle(p, inset){
+function phV(p, vi, hd){ const v = p && p.v && p.v[vi]; return v && v.i ? phStyle({ i: v.i }, hd) || phStyle(p, hd) : phStyle(p, hd); }
+/* hd: a sharp single image (cards, product sheet); otherwise the small sprite sheets (thumbnails) */
+function phStyle(p, hd){
   const a = p && ATLAS[p.i];
+  if (a && hd) return `background-image:url(img/hd/${a[0]}-${a[1]}.webp);background-size:contain;background-position:center`;
   if (a){
     const [s, c] = a, col = c % 6, row = Math.floor(c / 6);
     return `background-image:url(img/s${s}.webp);background-size:600% 600%;background-position:${col*20}% ${row*20}%`;
@@ -1123,7 +1129,10 @@ function phStyle(p, inset){
   return '';
 }
 function tileInner(p){
-  const st = phStyle(p);
+  const st = phStyle(p, true);
+  /* grouped products with several photos (colours, sizes): they take turns on the card */
+  const more = p.v ? [...new Set(p.v.map(v => v.i ? phStyle({ i: v.i }, true) : '').filter(Boolean))] : [];
+  if (more.length > 1) return more.slice(0, 8).map((x, i) => `<span class="ph sl${i ? '' : ' on'}" style="${x}"${i ? ' aria-hidden="true"' : ` role="img" aria-label="${esc(p.n)}"`}></span>`).join('');
   if (st) return `<span class="ph" style="${st}" role="img" aria-label="${esc(p.n)}"></span>`;
   return `<span class="none">${esc(p.b || 'Casa Edel')}<span>${esc(p.s || p.c)}</span></span>`;
 }
@@ -1219,7 +1228,7 @@ function renderStage(){
   const n = wide ? 14 : 10, seen = new Set(), picks = [];
   for (const p of P.filter(p => ATLAS[p.i] && p.r).sort((a,b) => a.r - b.r)){ if (seen.has(p.s) || seen.has(p.i)) continue; seen.add(p.s); seen.add(p.i); picks.push(p); if (picks.length === n) break; }
   ORB.items = [];
-  $('#stage').innerHTML = picks.map((p,i) => `<button type="button" class="orb" data-open="${esc(p.id)}" aria-label="${esc(p.n)}" tabindex="-1"><span class="ph" style="${phStyle(p)}"></span></button>`).join('');
+  $('#stage').innerHTML = picks.map((p,i) => `<button type="button" class="orb" data-open="${esc(p.id)}" aria-label="${esc(p.n)}" tabindex="-1"><span class="ph" style="${phStyle(p, true)}"></span></button>`).join('');
   document.querySelectorAll('#stage .orb').forEach((el,i,all) => ORB.items.push({ el, off: i / all.length * Math.PI * 2, wob: Math.random() * Math.PI * 2 }));
   placeOrbit(0);
 }
@@ -1453,15 +1462,28 @@ function buyHTML(p){
   return `<div class="step" role="group" aria-label="Cantidad"><button type="button" data-dec="${esc(p.id)}" aria-label="Quitar uno">−</button><output class="num">${l.q}</output><button type="button" data-inc="${esc(p.id)}" aria-label="Sumar uno">+</button></div>`;
 }
 function cardHTML(p, i){
-  const vb = p.v && p.v.length>1 ? `<span class="vbadge">${p.v.some(v=>/rollo/i.test(v.l)) ? 'Rollo o metro' : p.v.length+' opciones'}</span>` : '';
+  const vb = p.v && p.v.length>1 ? `<span class="vbadge">${p.v.some(v=>/rollo/i.test(v.l)) && p.v.length === 2 ? 'Rollo o metro' : p.v.length+' opciones'}</span>` : '';
+  const dm = p.v ? dimsOf(p) : null, cd = dm && dm.D.find(d => d.color || d.k === 'c');
+  const dots = cd ? `<span class="cdots" aria-hidden="true">${[...new Set(dm.rows.map(r => r[cd.k]))].filter(Boolean).slice(0, 8).map(v => swatch(cd, v)).join('')}</span>` : '';
   return `<article class="card" style="animation-delay:${Math.min(i%CONFIG.pageSize,12)*40}ms" data-id="${esc(p.id)}">
-    <button class="tile" type="button" data-open="${esc(p.id)}" style="background:${field(i)}" aria-label="Ver ${esc(p.n)}">${tileInner(p)}${vb}</button>
+    <button class="tile" type="button" data-open="${esc(p.id)}" style="background:${field(i)}" aria-label="Ver ${esc(p.n)}">${tileInner(p)}${vb}${dots}</button>
     <h3><button type="button" data-open="${esc(p.id)}">${esc(p.n)}</button></h3>
     <div class="meta">${[p.b, p.k ? 'cód. '+p.k : ''].filter(Boolean).map(esc).join(' · ')}</div>
     ${priceHTML(p)}
     <div class="buy">${buyHTML(p)}</div>
   </article>`;
 }
+/* cards with several photos change picture every few seconds while they are on screen */
+const slideSeen = new Set();
+const slideIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? slideSeen.add(e.target) : slideSeen.delete(e.target)), { threshold: .4 }) : null;
+function watchSlides(){ if (!slideIO) return; document.querySelectorAll('.card .tile').forEach(t => { if (t.querySelector('.sl') && !t._w){ t._w = 1; slideIO.observe(t); } }); }
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => {
+  if (document.hidden) return;
+  let k = 0;
+  slideSeen.forEach(t => { if (!t.isConnected){ slideSeen.delete(t); return; } if (t.matches(':hover')) return;
+    const sl = t.querySelectorAll('.sl'); const i = [...sl].findIndex(x => x.classList.contains('on'));
+    setTimeout(() => { sl[i].classList.remove('on'); sl[(i + 1) % sl.length].classList.add('on'); }, (k++ % 6) * 180); });
+}, 2600);
 function renderCatalog(reset=true){
   const {arr, brandsHere, subsHere, bc, grouped, best} = compute();
   list = arr;
@@ -1474,7 +1496,7 @@ function renderCatalog(reset=true){
     return head + cardHTML(p, state.shown + j);
   }).join(''));
   state.shown += next.length;
-  observeCards();
+  observeCards(); watchSlides();
   $('#more').hidden = state.shown >= arr.length;
   // heading
   const t = state.q ? `Resultados para “${state.q}”${state.rubro ? ' en ' + state.rubro : ''}` : state.rubro ? [state.rubro, state.brand, state.sub].filter(Boolean).join(' · ') : 'Lo más pedido';
@@ -1672,7 +1694,7 @@ function renderPD(p){
       if (pct > 0) saveTxt = `<p class="save">En ${esc(roll.l.split(' · ').pop().toLowerCase())} el metro te sale <b class="num">${money(pm)}</b>: ${pct}% menos que cortado.</p>`; }
   }
   const code = p.v ? p.v[pdSel].k : p.k;
-  const img = phV(p, pdSel), dm = dimsOf(p);
+  const img = phV(p, pdSel, true), dm = dimsOf(p);
   let opts = '';
   if (p.v && dm){
     const cur = dm.rows[pdSel], single = dm.D.length === 1;
