@@ -224,5 +224,75 @@
    "nombre": "Ecco LED 2 Tubos 120 cm Negro sin Louver"
   },
   "motivo": "Nombre corregido"
+ },
+ {
+  "id": "gabexel---caja-derivacion-metalica",
+  "group": {
+   "nombre": "Caja Derivación Metálica",
+   "rubro": "Cajas y Gabinetes",
+   "subrubro": "Gabinetes y Tableros",
+   "items": [
+    [
+     "gabexel---caja-derivacion-metalica-100x100x75",
+     "100 x 100 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-100x100x100",
+     "100 x 100 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-150x150x75",
+     "150 x 150 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-150x150x100",
+     "150 x 150 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-200x150x75",
+     "200 x 150 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-200x200x75",
+     "200 x 200 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-200x200x100",
+     "200 x 200 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-250x250x75",
+     "250 x 250 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-250x250x100",
+     "250 x 250 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-300x150x100",
+     "300 x 150 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-300x200x75",
+     "300 x 200 x 75 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-300x200x100",
+     "300 x 200 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-300x300x100",
+     "300 x 300 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-400x400x100",
+     "400 x 400 x 100 mm"
+    ],
+    [
+     "gabexel---caja-derivacion-metalica-500x500x100",
+     "500 x 500 x 100 mm"
+    ]
+   ]
+  }
  }
 ]

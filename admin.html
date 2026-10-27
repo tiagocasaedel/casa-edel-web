@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-LWUB9r8xQcOQebssl7gech30v6pI6qu5A26W4w0AG84='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-6HkkPDK9Ev7dD/SDMM004PcMmhndcxYvf8ve7J/8TnM='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -938,6 +938,23 @@ async function offerNew(){
   for (const r of (Array.isArray(src) ? src : [])){
     if (!idOk(r)) continue;
     const have = BYID.get(r.id);
+    if (r.group && Array.isArray(r.group.items)){
+      /* juntar varios productos en uno con presentaciones (medidas); los sueltos quedan ocultos */
+      const parts = r.group.items.map(([id, l]) => [BYID.get(id), String(l).slice(0,80)]).filter(([x]) => x);
+      if (!parts.length) continue;
+      const base = have || parts[0][0];
+      const row = Object.assign(JSON.parse(JSON.stringify(base)), { id:r.id, nombre:String(r.group.nombre).slice(0,300), rubro:r.group.rubro||base.rubro, subrubro:r.group.subrubro||base.subrubro, visible:true, codigo:'', precio_usd:null });
+      row.variantes = parts.map(([x, l]) => { const v = x.variantes && x.variantes[0]; return { l, p: Number(x.precio)||0, usd: x.precio_usd != null ? x.precio_usd : null, k: x.codigo || (v && v.k) || '' }; });
+      row.orden = Math.max(...parts.map(([x]) => Number(x.orden)||0));
+      row.precio = Math.min(...row.variantes.map(effV));
+      const same = have && JSON.stringify(have.variantes) === JSON.stringify(row.variantes) && have.nombre === row.nombre && have.visible;
+      const hide = parts.filter(([x]) => x.visible && x.id !== r.id).map(([x]) => Object.assign(JSON.parse(JSON.stringify(x)), { visible:false }));
+      if (same && !hide.length) continue;
+      if (!have) row._new = true;
+      NEW.push({ row, txt: `${row.nombre} (${parts.length} medidas en un solo producto)`, why: 'Productos agrupados por medida' });
+      hide.forEach(h => NEW.push({ row:h, txt:null, why:'Agrupado en ' + row.nombre }));
+      continue;
+    }
     if (!have){
       if (typeof r.nombre !== 'string' || !r.nombre || r.nombre.length > 300 || !(Number(r.precio) >= 0)) continue;
       const row = { id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio))||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 };
@@ -956,8 +973,9 @@ async function offerNew(){
     }
   }
   $('#newNote').hidden = !NEW.length; if (!NEW.length) return;
-  $('#newN').textContent = NEW.length === 1 ? 'Hay 1 cambio preparado:' : `Hay ${NEW.length} cambios preparados:`;
-  $('#newList').textContent = NEW.slice(0, 6).map(x => x.txt).join(' · ') + (NEW.length > 6 ? ` y ${NEW.length - 6} más` : '');
+  const vis = NEW.filter(x => x.txt);
+  $('#newN').textContent = vis.length === 1 ? 'Hay 1 cambio preparado:' : `Hay ${vis.length} cambios preparados:`;
+  $('#newList').textContent = vis.slice(0, 6).map(x => x.txt).join(' · ') + (vis.length > 6 ? ` y ${vis.length - 6} más` : '');
 }
 $('#newLater').addEventListener('click', () => { $('#newNote').hidden = true; });
 $('#newAdd').addEventListener('click', async () => {
