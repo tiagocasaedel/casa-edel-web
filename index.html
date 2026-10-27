@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-av5/xTogvo5lM6PMDXPLrv9XTtWOftp7nxoU2Jyf0dg='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-57HipyeICdmfOKYDyiXLUXofM26Y840ws54uW7hvqqs='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -506,41 +506,61 @@ dialog::backdrop{background:rgba(12,20,14,.48)}
 dialog[open]::backdrop{animation:fade 260ms ease both}
 @keyframes fade{from{opacity:0}}
 /* product sheet */
-#pd{width:min(920px,100vw - 32px);margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+#pd{width:min(1000px,100vw - 32px);margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.3);border-radius:24px;overflow:hidden}
 #pd[open]{animation:pop 300ms var(--ease-out) both}
 @keyframes pop{from{opacity:0;transform:scale(.96)}}
-.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.pd .tile{position:relative;aspect-ratio:1/1;container-type:size}
-.pd .ph{--k:80;background-repeat:no-repeat;mix-blend-mode:multiply}
-.pd .body{padding:28px 28px 24px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.pd h2{font-size:1.625rem;line-height:1.15;letter-spacing:-.02em;font-weight:600;margin:0;text-wrap:balance}
-.pd .meta{color:var(--ink-soft);font-size:var(--s-small);margin:0}
+.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.pd .tile{position:relative;min-height:440px;container-type:size;overflow:hidden}
+.pd .tile::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(255,255,255,.18));pointer-events:none}
+.pd .ph{--k:78;background-repeat:no-repeat;mix-blend-mode:multiply}
+.pd .ph.swap{animation:phIn 420ms var(--ease-out) both}
+@keyframes phIn{from{opacity:0;transform:scale(.94) translateY(10px)}}
+.pd .chips-ct{position:absolute;left:18px;top:18px;display:flex;gap:6px;flex-wrap:wrap;z-index:1}
+.pd .chips-ct span{background:rgba(255,253,248,.92);color:var(--ink);font-size:.8125rem;font-weight:600;padding:6px 11px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.pd .chips-ct .brand{background:var(--navy);color:#fff}
+.pd .body{padding:30px 30px 22px;display:flex;flex-direction:column;gap:16px;min-width:0;max-height:min(720px,100dvh - 48px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.pd h2{font-size:1.625rem;line-height:1.15;letter-spacing:-.02em;font-weight:600;margin:0;text-wrap:balance;padding-right:36px}
+.pd .meta{color:var(--ink-soft);font-size:var(--s-small);margin:-8px 0 0}
 .pd .crumb{font-size:var(--s-small);color:var(--ink-soft);margin:0}
 .pd .crumb button{all:unset;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.pd .price{font-size:2rem}
-.opts{display:grid;gap:8px}
-.opt{display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;border:0;border-radius:14px;background:var(--ground-2);padding:12px 16px;transition:background-color 160ms ease,transform 140ms var(--ease-out)}
-.opt:active{transform:scale(.98)}
-.opt[aria-checked="true"]{background:var(--ink);color:var(--ground)}
-.opt b{font-weight:600}
-.opt small{display:block;font-size:.875rem;opacity:.8}
+.pd .pricebox{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;background:var(--ground-2);border-radius:18px;padding:14px 18px}
+.pd .price{font-size:2rem;line-height:1}
+.pd .price small{display:block;font-size:.8125rem;font-weight:500;color:var(--ink-soft);letter-spacing:0;margin-top:6px;font-stretch:100%}
+.pd .sel-l{font-weight:700;font-size:.9375rem;text-align:right;max-width:55%;line-height:1.25}
+.pd .sel-l small{display:block;font-weight:500;color:var(--ink-soft);font-size:.8125rem}
+.dim{display:flex;flex-direction:column;gap:8px}
+.dim h3{margin:0;font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ink-soft);display:flex;justify-content:space-between}
+.dim h3 b{color:var(--ink);text-transform:none;letter-spacing:0;font-size:.875rem}
+.vchips{display:flex;flex-wrap:wrap;gap:8px}
+.vchip{position:relative;border:1.5px solid var(--line,#e2d9c8);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:.9375rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 140ms var(--ease-out),box-shadow 200ms ease}
+.vchip small{font-weight:500;font-size:.8125rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+@media (hover:hover) and (pointer:fine){.vchip:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 16px rgba(29,35,64,.10)}}
+.vchip:active{transform:scale(.96)}
+.vchip[aria-checked="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground);box-shadow:0 8px 20px rgba(29,35,64,.22)}
+.vchip[aria-checked="true"] small{color:rgba(250,246,238,.75)}
+.vchip.off{opacity:.45;border-style:dashed}
+.vchip .dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.vchip.sz{border-radius:12px;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 13px;min-width:86px}
 .save{background:var(--field-2);color:#1b2238;padding:10px 14px;border-radius:14px;font-size:.9375rem;margin:0}
-.pd .row{display:flex;gap:10px;align-items:center}
-.pd .row .step{flex:none;width:146px;height:50px}
-.pd .row .step button{height:50px;width:46px}
-.pd .row .add{height:50px}
-.pd .ask{font-size:var(--s-small);color:var(--ink-soft)}
+.pd .row{display:flex;gap:10px;align-items:center;margin-top:4px;position:sticky;bottom:-22px;background:var(--paper);padding:12px 0 22px;margin-bottom:-22px}
+.pd .row .step{flex:none;width:146px;height:52px}
+.pd .row .step button{height:52px;width:46px}
+.pd .row .add{height:52px;flex:1}
+.pd .ask{font-size:var(--s-small);color:var(--ink-soft);margin:0}
 .pd .ask a{color:var(--ink);font-weight:500}
-.x{position:absolute;right:calc(10px + env(safe-area-inset-right,0px));top:10px;width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);color:var(--ink);display:grid;place-items:center;z-index:2;transition:transform 140ms var(--ease-out)}
+.x{position:absolute;right:calc(12px + env(safe-area-inset-right,0px));top:12px;width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);color:var(--ink);display:grid;place-items:center;z-index:3;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:transform 140ms var(--ease-out)}
 .x:active{transform:scale(.92)}
 .x svg{width:20px;height:20px}
 @media (max-width:700px){
-  #pd{width:100vw;margin:auto 0 0;max-height:92dvh;overflow:auto;overscroll-behavior:contain;border-radius:20px 20px 0 0}
+  #pd{width:100vw;height:auto;margin:auto 0 0;max-height:92dvh;overflow:auto;overscroll-behavior:contain;border-radius:20px 20px 0 0}
   #pd[open]{animation:sheet 420ms var(--ease-drawer) both}
   .pd{grid-template-columns:1fr}
-  .pd .tile{aspect-ratio:4/3}
-  .pd .body{padding:20px var(--gut-r) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut)}
+  .pd .tile{min-height:0;aspect-ratio:4/3}
+  .pd .body{overflow:visible;max-height:none;padding:20px var(--gut-r) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut)}
+  .pd .row{bottom:0;margin-bottom:0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .vchip{padding:8px 13px;font-size:.875rem}
 }
+@media (prefers-reduced-motion:reduce){.pd .ph.swap{animation:none}}
 @keyframes sheet{from{transform:translateY(100%)}}
 /* the order note */
 #cart{margin:0 0 0 auto;height:100dvh;width:min(480px,100vw);box-shadow:-20px 0 60px rgba(0,0,0,.25)}
@@ -1537,17 +1557,65 @@ function renderCart(){
 function refreshSend(){ const a = $('#send'); if (a) a.href = waLink(orderText()); }
 
 /* ---------- product sheet ---------- */
-let pdSel = 0, pdQty = 1;
+let pdSel = 0, pdQty = 1, pdLast = { id:'', img:'', price:0 };
 function perMeter(lab, price){ const m = lab.match(/x\s*(\d+)\s*m\b/i); return m ? price / Number(m[1]) : null; }
+/* split each option into dimensions (medida · color · luz) so grouped products can be chosen step by step */
+const TEMP_RE = /(?:^|\s)(?:luz\s+)?(b\.\s?)?(c[aá]lid[oa]|fr[ií][oa]|neutr[oa]|d[ií]a|rgb)(?=\s|$)/i;
+const COLOR_RE = /(?:^|\s)(blanc[oa]|negr[oa]|gris|marfil|arena|roj[oa]|azul|verde|amarill[oa]|naranja|celeste|violeta|n[ií]quel|plata|platil|silver|beige|marr[oó]n|transparente|acero|grafito|bronce)(?=\s|$)/i;
+const SW = { blan:'#ffffff', negr:'#1c1c1c', gris:'#9aa0a6', marf:'#efe6cf', aren:'#d8c7a4', roj:'#d0362b', azul:'#2b59c3', verd:'#2f9e44', amar:'#f2c94c', nara:'#f08a24', cele:'#6cc3ea', viol:'#8e5bd6', niqu:'#b9bcc0', níqu:'#b9bcc0', plat:'#c9ccd1', silv:'#c9ccd1', beig:'#e9dcc0', marr:'#7a4a2b', tran:'linear-gradient(135deg,#fff,#dfe7ef)', acer:'#a7adb4', graf:'#4a4d52', bron:'#b08d57' };
+const TSW = { c:'#ffc46b', f:'#d9ecff', n:'#fff3d6', d:'#eef6ff', r:'conic-gradient(#f33,#fd3,#3d6,#39f,#c3f,#f33)' };
+const cap = t => t.charAt(0).toUpperCase() + t.slice(1).toLowerCase();
+function dimsOf(p){
+  if (p._dims !== undefined) return p._dims;
+  if (!p.v || p.v.length < 2) return (p._dims = null);
+  const rows = p.v.map(v => {
+    let l = ' ' + v.l + ' ', t = '', c = '';
+    const ab = l.match(/\s(CA|FR)(?=\s)/); if (ab){ t = ab[1] === 'CA' ? 'Cálida' : 'Fría'; l = l.replace(ab[0], ' '); }
+    const tm = t ? null : l.match(TEMP_RE); if (tm){ const w = tm[2].toLowerCase(); t = /^c/.test(w) ? 'Cálida' : /^f/.test(w) ? 'Fría' : /^n/.test(w) ? 'Neutra' : /^d/.test(w) ? 'Día' : 'RGB'; l = l.replace(tm[0], ' '); }
+    const cm = l.match(COLOR_RE); if (cm){ const w = cap(cm[1]); c = /^(Blanc|Negr|Roj|Amarill)a$/.test(w) ? w.slice(0, -1) + 'o' : w; l = l.replace(cm[0], ' '); }
+    return { t, c, s: l.replace(/\b\d+\s*lm\b/i, ' ').replace(/\s+/g, ' ').trim() };
+  });
+  // drop words every option shares (E27, 220V…) so the chips only show what changes
+  const common = rows.map(r => r.s.split(' ')).reduce((a, w) => a.filter(x => w.includes(x))).filter(x => !/^(cm|mm|m|mts|w|v|a|"|x|-|\/)$/i.test(x));
+  if (common.length) rows.forEach(r => { const t = r.s.split(' ').filter(x => !common.includes(x)).join(' '); if (t) r.s = t; });
+  const D = [];
+  const uniq = k => [...new Set(rows.map(r => r[k]))];
+  if (uniq('s').length > 1 || (uniq('s')[0] && uniq('c').length < 2 && uniq('t').length < 2)) D.push({ k:'s', name: p.v.some(v => /rollo|metro/i.test(v.l)) ? 'Presentación' : /\d/.test(rows[0].s) ? 'Medida' : 'Modelo' });
+  if (uniq('c').length > 1) D.push({ k:'c', name:'Color' });
+  if (uniq('t').length > 1) D.push({ k:'t', name:'Luz' });
+  // every option must be reachable by its combination; if not, fall back to a single list
+  const key = r => D.map(d => r[d.k]).join('|');
+  if (!D.length || new Set(rows.map(key)).size !== rows.length) return (p._dims = { rows: p.v.map(v => ({ s: v.l, c:'', t:'' })), D: [{ k:'s', name:'Opción' }] });
+  return (p._dims = { rows, D });
+}
+function swatch(d, val){
+  if (d.k === 'c'){ const k = val.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').slice(0,4); const bg = SW[k] || SW[k.slice(0,3)]; return bg ? `<span class="dot" style="background:${bg}"></span>` : ''; }
+  if (d.k === 't'){ const bg = TSW[val.normalize('NFD').charAt(0).toLowerCase()]; return bg ? `<span class="dot" style="background:${bg}"></span>` : ''; }
+  return '';
+}
+function pickDim(p, k, val){
+  const { rows, D } = dimsOf(p), cur = rows[pdSel];
+  let best = -1, score = -1;
+  rows.forEach((r, i) => { if (r[k] !== val) return; const sc = D.reduce((n, d) => n + (r[d.k] === cur[d.k] ? 1 : 0), 0); if (sc > score){ score = sc; best = i; } });
+  if (best > -1) pdSel = best;
+}
 function openProduct(id){
   const p = BY.get(id); if (!p) return;
   pdSel = p.v ? Math.max(0, p.v.findIndex(v => /rollo/i.test(v.l))) : 0; pdQty = 1;
+  pdLast = { id:'', img:'', price:0 };
   renderPD(p);
   const d = $('#pd'); if (!d.open) d.showModal();
+}
+function tweenPrice(el, from, to){
+  if (!el || from === to || !from || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const t0 = performance.now(), dur = 380;
+  const step = now => { const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = money(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
 }
 function renderPD(p){
   const idx = P.indexOf(p);
   const u = unitOf(p, pdSel), pr = priceOf(p, pdSel);
+  const body0 = $('#pd .body'), keepScroll = body0 && pdLast.id === p.id ? body0.scrollTop : 0;
   let saveTxt = '';
   if (p.v){
     const roll = p.v.find(v => perMeter(v.l, v.p)), cut = p.v.find(v => /metro/i.test(v.l));
@@ -1555,19 +1623,40 @@ function renderPD(p){
       if (pct > 0) saveTxt = `<p class="save">En ${esc(roll.l.toLowerCase())} el metro te sale <b class="num">${money(pm)}</b>: ${pct}% menos que cortado.</p>`; }
   }
   const code = p.v ? p.v[pdSel].k : p.k;
+  const img = phV(p, pdSel), dm = dimsOf(p);
+  let opts = '';
+  if (p.v && dm){
+    const cur = dm.rows[pdSel], single = dm.D.length === 1;
+    opts = dm.D.map(d => {
+      const vals = [...new Set(dm.rows.map(r => r[d.k]))].filter(Boolean);
+      const chips = vals.map(val => {
+        const i = dm.rows.findIndex(r => r[d.k] === val && dm.D.every(o => o.k === d.k || r[o.k] === cur[o.k]));
+        const any = dm.rows.findIndex(r => r[d.k] === val);
+        const on = cur[d.k] === val, off = i < 0;
+        const pv = single ? p.v[any].p : null;
+        const pm = single ? perMeter(p.v[any].l, p.v[any].p) : null;
+        return `<button class="vchip${single && /\d/.test(val) ? ' sz' : ''}${off ? ' off' : ''}" type="button" role="radio" aria-checked="${on}" data-dim="${d.k}" data-val="${esc(val)}">${swatch(d, val)}<span>${esc(val)}</span>${pv != null ? `<small class="num">${money(pv)}${pm ? ' · ' + money(pm) + '/m' : ''}</small>` : ''}</button>`;
+      }).join('');
+      return `<div class="dim" role="radiogroup" aria-label="${d.name}"><h3>${d.name}${vals.length > 2 ? ` <span>${vals.length} opciones</span>` : ''}</h3><div class="vchips">${chips}</div></div>`;
+    }).join('');
+  }
+  const minP = p.v ? Math.min(...p.v.map(v => v.p)) : pr, maxP = p.v ? Math.max(...p.v.map(v => v.p)) : pr;
   $('#pd').innerHTML = `<button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <div class="pd"><div class="tile" style="background:${field(idx)}">${phV(p,pdSel)?`<span class="ph" style="${phV(p,pdSel)}"></span>`:tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
+  <div class="pd"><div class="tile" style="background:${field(idx)}"><div class="chips-ct">${p.b ? `<span class="brand">${esc(p.b)}</span>` : ''}${p.v && p.v.length > 1 ? `<span>${p.v.length} opciones</span>` : ''}</div>${img ? `<span class="ph${pdLast.id === p.id && pdLast.img !== img ? ' swap' : ''}" style="${img}"></span>` : tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
   <div class="body">
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
-    <p class="meta">${esc(p.b)}${code?' · código '+esc(code):''}</p>
-    <div class="price num">${money(pr)}<small>${u==='m'?'el metro':p.v?esc(p.v[pdSel].l.toLowerCase()):'c/u'}</small></div>
-    ${p.v ? `<div class="opts" role="radiogroup" aria-label="Presentación">${p.v.map((v,i)=>`<button class="opt" type="button" role="radio" aria-checked="${i===pdSel}" data-opt="${i}"><span><b>${esc(v.l)}</b>${perMeter(v.l,v.p)?`<small class="num">${money(perMeter(v.l,v.p))} el metro</small>`:''}</span><span class="num">${money(v.p)}</span></button>`).join('')}</div>` : ''}
+    <p class="meta">${esc(p.b)}${code ? ' · código ' + esc(code) : ''}</p>
+    <div class="pricebox"><div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
+    ${opts}
     ${saveTxt}
-    <div class="row"><div class="step" role="group" aria-label="Cantidad"><button type="button" data-pdq="-1" aria-label="Quitar uno">−</button><input class="num" id="pdQty" size="3" inputmode="numeric" aria-label="Cantidad${u==='m'?' en metros':''}" value="${pdQty}"><button type="button" data-pdq="1" aria-label="Sumar uno">+</button></div>
-    <button class="add" type="button" data-pdadd="${esc(p.id)}">Agregar ${u==='m'?'metros':''} · <span class="num">${money(pr*pdQty)}</span></button></div>
-    <p class="ask">¿Necesitás saber si hay stock o una medida que no ves? <a target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Consulto por: ' + p.n + (p.b?' – '+p.b:'') + (code?' (cód. '+code+')':''))}">Consultá disponibilidad</a></p>
+    <p class="ask">¿Necesitás saber si hay stock o una medida que no ves? <a target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Consulto por: ' + p.n + (p.v ? ' ' + p.v[pdSel].l : '') + (p.b ? ' – ' + p.b : '') + (code ? ' (cód. ' + code + ')' : ''))}">Consultá disponibilidad</a></p>
+    <div class="row"><div class="step" role="group" aria-label="Cantidad"><button type="button" data-pdq="-1" aria-label="Quitar uno">−</button><input class="num" id="pdQty" size="3" inputmode="numeric" aria-label="Cantidad${u === 'm' ? ' en metros' : ''}" value="${pdQty}"><button type="button" data-pdq="1" aria-label="Sumar uno">+</button></div>
+    <button class="add" type="button" data-pdadd="${esc(p.id)}">Agregar ${u === 'm' ? 'metros' : ''} · <span class="num">${money(pr * pdQty)}</span></button></div>
   </div></div>`;
+  const b = $('#pd .body'); if (b && keepScroll) b.scrollTop = keepScroll;
+  if (pdLast.id === p.id) tweenPrice($('#pdPrice'), pdLast.price, pr);
+  pdLast = { id: p.id, img, price: pr };
 }
 
 /* ---------- toast ---------- */
@@ -1633,6 +1722,7 @@ document.addEventListener('click', e => {
   if (d.brand !== undefined){ state.brand = (state.brand === d.brand && d.brand) ? '' : d.brand; state.sub=''; renderCatalog(); document.getElementById('catT').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); return; }
   if (d.crumb){ $('#pd').close(); state.rubro=d.crumb; state.sub=''; state.q=''; $('#q').value=''; renderCatalog(); goCatalog(); return; }
   if (d.opt !== undefined){ pdSel = Number(d.opt); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
+  if (d.dim !== undefined){ const p = BY.get(document.querySelector('[data-pdadd]').dataset.pdadd); pickDim(p, d.dim, d.val); renderPD(p); return; }
   if (d.pdq){ const inp=$('#pdQty'); pdQty = Math.min(99999, Math.max(1,(parseInt(inp.value)||1)+Number(d.pdq))); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
   if (d.pdadd){ const q = Math.min(99999, Math.max(1, parseInt($('#pdQty').value)||1)); add(d.pdadd, pdSel, q); $('#pd').close(); return; }
   if (d.cinc !== undefined){ const l=cart[d.cinc]; setQty(l.id,l.v,l.q+1); return; }

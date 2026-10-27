@@ -4992,73 +4992,153 @@
 }
 },
 {
-"id": "teclastar-proyector-led-50w-luz-5500lm-g",
+"id": "candil-proyector-led-g",
 "group": {
-"nombre": "Proyector LED 50W Luz 5500lm",
+"nombre": "Proyector LED",
 "rubro": "Iluminación",
 "subrubro": "Proyectores y Alumbrado",
 "items": [
 [
-"teclastar---proyector-led-50w-luz-calida-5500lm",
-"Cálida"
+"candil---proyector-led-10w-luz-fria-6500k-750lm",
+"10W Luz Fría 6500K 750lm"
 ],
 [
-"teclastar---proyector-led-50w-luz-fria-5500lm",
-"Fría"
+"candil---proyector-led-30w-luz-fria-6500k-2250lm",
+"30W Luz Fría 6500K 2250lm"
+],
+[
+"candil---proyector-led-30w-luz-neutra-4000k-2250lm",
+"30W Luz Neutra 4000K 2250lm"
+],
+[
+"candil---proyector-led-50w-luz-fria-6500k-3750lm",
+"50W Luz Fría 6500K 3750lm"
+],
+[
+"candil---proyector-led-50w-luz-neutra-3750lm",
+"50W Luz Neutra 3750lm"
+],
+[
+"candil---proyector-led-100w-luz-fria-6500k-7500lm",
+"100W Luz Fría 6500K 7500lm"
 ]
 ]
 }
 },
 {
-"id": "teclastar-proyector-led-30w-luz-3300lm-g",
+"id": "bael-proyector-led-g",
 "group": {
-"nombre": "Proyector LED 30W Luz 3300lm",
+"nombre": "Proyector LED",
 "rubro": "Iluminación",
 "subrubro": "Proyectores y Alumbrado",
 "items": [
 [
-"teclastar---proyector-led-30w-luz-calida-3300lm",
-"Cálida"
+"bael---proyector-led-30w-luz-calida-3000k-2400lm",
+"30W Luz Cálida 3000K 2400lm"
 ],
 [
-"teclastar---proyector-led-30w-luz-fria-3300lm",
-"Fría"
+"bael---proyector-led-30w-luz-fria-6000k-2400lm",
+"30W Luz Fría 6000K 2400lm"
+],
+[
+"bael---proyector-led-50w-luz-calida-3000k-4000lm",
+"50W Luz Cálida 3000K 4000lm"
+],
+[
+"bael---proyector-led-50w-luz-fria-6000k-4000lm",
+"50W Luz Fría 6000K 4000lm"
 ]
 ]
 }
 },
 {
-"id": "teclastar-proyector-led-20w-luz-2200lm-g",
+"id": "teclastar-proyector-led-g",
 "group": {
-"nombre": "Proyector LED 20W Luz 2200lm",
+"nombre": "Proyector LED",
 "rubro": "Iluminación",
 "subrubro": "Proyectores y Alumbrado",
 "items": [
 [
 "teclastar---proyector-led-20w-luz-calida-2200lm",
-"Cálida"
+"20W Luz Cálida 2200lm"
 ],
 [
 "teclastar---proyector-led-20w-luz-fria-2200lm",
-"Fría"
+"20W Luz Fría 2200lm"
+],
+[
+"teclastar---proyector-led-30w-luz-calida-3300lm",
+"30W Luz Cálida 3300lm"
+],
+[
+"teclastar---proyector-led-30w-luz-fria-3300lm",
+"30W Luz Fría 3300lm"
+],
+[
+"teclastar---proyector-led-50w-luz-calida-5500lm",
+"50W Luz Cálida 5500lm"
+],
+[
+"teclastar---proyector-led-50w-luz-fria-5500lm",
+"50W Luz Fría 5500lm"
 ]
 ]
 }
 },
 {
-"id": "bael-luminaria-ufo-de-colgar-90-6000k-g",
+"id": "h-intercom-proyector-led-g",
 "group": {
-"nombre": "Luminaria Ufo de Colgar 90° 6000K",
+"nombre": "Proyector LED",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"hyundai---proyector-led-30w-luz-fria-3300lm",
+"30W Luz Fría 3300lm"
+],
+[
+"hyundai---proyector-led-50w-luz-fria-5500lm",
+"50W Luz Fría 5500lm"
+]
+]
+}
+},
+{
+"id": "bael-proyector-led-l90-g",
+"group": {
+"nombre": "Proyector LED L90°",
+"rubro": "Iluminación",
+"subrubro": "Proyectores y Alumbrado",
+"items": [
+[
+"bael---proyector-led-100w-luz-fria-l90-15000lm",
+"100W Luz Fría 15000lm"
+],
+[
+"bael---proyector-led-200w-luz-fria-l90-30000lm",
+"200W Luz Fría 30000lm"
+]
+]
+}
+},
+{
+"id": "bael-luminaria-ufo-de-colgar-g",
+"group": {
+"nombre": "Luminaria Ufo de Colgar",
 "rubro": "Iluminación",
 "subrubro": "Proyectores y Alumbrado",
 "items": [
 [
 "bael---luminaria-ufo-de-colgar-90-150w-6000k",
-"150W"
+"90° 150W 6000K"
 ],
 [
 "bael---luminaria-ufo-de-colgar-90-200w-6000k",
-"200W"
+"90° 200W 6000K"
+],
+[
+"bael---luminaria-ufo-de-colgar-100w",
+"100W"
 ]
 ]
 }
@@ -6046,19 +6126,27 @@
 }
 },
 {
-"id": "lucciola-panel-led-embutir-60x60-45w-4320lm-blanco-g",
+"id": "lucciola-panel-led-embutir-60x60-45w-g",
 "group": {
-"nombre": "Panel LED Embutir 60x60 45W 4320lm Blanco",
+"nombre": "Panel LED Embutir 60x60 45W",
 "rubro": "Iluminación",
 "subrubro": "Plafones y Paneles",
 "items": [
 [
+"lucciola---panel-led-emb-60x60-45w-3000k-bl-calido",
+"3000K Blanco Cálido"
+],
+[
 "lucciola---panel-led-emb-60x60-45w-4320lm-bla-frio",
-"Frío"
+"4320lm Blanco Frío"
 ],
 [
 "lucciola---panel-led-emb-60x60-45w-4320lm-bla-neu",
-"Neutra"
+"4320lm Blanco Neutra"
+],
+[
+"lucciola---panel-led-emb-60x60-45w-4500lm-bla-neu",
+"4500lm Blanco Neutra"
 ]
 ]
 }
@@ -6536,95 +6624,145 @@
 }
 },
 {
-"id": "h-intercom-lampara-led-a60-750lm-g",
+"id": "interelec-lampara-led-a60-g",
 "group": {
-"nombre": "Lámpara LED A60 750lm",
+"nombre": "Lámpara LED A60",
 "rubro": "Iluminación",
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
+"interelec---lampara-led-a60-5w-e27-calida-400lm",
+"5W E27 Cálida 400lm"
+],
+[
+"interelec---lampara-led-a60-5w-e27-fria-440lm",
+"5W E27 Fría 440lm"
+],
+[
+"interelec---lampara-led-a60-7w-e27-calida-570lm",
+"7W E27 Cálida 570lm"
+],
+[
+"interelec---lampara-led-a60-7w-e27-fria-630lm",
+"7W E27 Fría 630lm"
+],
+[
+"interelec---lampara-led-a60-9w-e27-calida-730lm",
+"9W E27 Cálida 730lm"
+],
+[
+"interelec---lampara-led-a60-9w-e27-fria-810lm",
+"9W E27 Fría 810lm"
+],
+[
+"interelec---lampara-led-a60-12w-e27-calida-990lm",
+"12W E27 Cálida 990lm"
+],
+[
+"interelec---lampara-led-a60-12w-e27-fria-1100lm",
+"12W E27 Fría 1100lm"
+],
+[
+"interelec---lampara-led-a60-15w-e27-calida-1150lm",
+"15W E27 Cálida 1150lm"
+],
+[
+"interelec---lampara-led-a60-15w-e27-fria-1280lm",
+"15W E27 Fría 1280lm"
+],
+[
+"interelec---lampara-led-a60-18w-e27-calida-1460lm",
+"18W E27 Cálida 1460lm"
+],
+[
+"interelec---lampara-led-a60-18w-e27-fria-1620lm",
+"18W E27 Fría 1620lm"
+]
+]
+}
+},
+{
+"id": "h-intercom-lampara-led-a60-g",
+"group": {
+"nombre": "Lámpara LED A60",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"hyundai---lampara-led-a60-6w-e27-fria-354lm",
+"6W E27 Fría 354lm"
+],
+[
+"hyundai---lampara-led-a60-8w-e27-fria-560lm",
+"8W E27 Fría 560lm"
+],
+[
 "hyundai---lampara-led-a60-9w-e27-calida-750lm",
-"9W E27 Cálida"
+"9W E27 Cálida 750lm"
 ],
 [
 "hyundai---lampara-led-a60-11w-e27-fria-750lm",
-"11W E27 Fría"
+"11W E27 Fría 750lm"
 ]
 ]
 }
 },
 {
-"id": "king-lampara-led-a60-9-5w-e27-950lm-g",
+"id": "king-lampara-led-a60-g",
 "group": {
-"nombre": "Lámpara LED A60 9,5W E27 950lm",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"king---lampara-led-a60-95w-e27-calida-950lm",
-"Cálida"
-],
-[
-"king---lampara-led-a60-95w-e27-fria-950lm",
-"Fría"
-]
-]
-}
-},
-{
-"id": "king-lampara-led-a60-6-5w-e27-690lm-g",
-"group": {
-"nombre": "Lámpara LED A60 6,5W E27 690lm",
+"nombre": "Lámpara LED A60",
 "rubro": "Iluminación",
 "subrubro": "Lámparas y Tubos",
 "items": [
 [
 "king---lampara-led-a60-65w-e27-calida-690lm",
-"Cálida"
+"6,5W E27 Cálida 690lm"
 ],
 [
 "king---lampara-led-a60-65w-e27-fria-690lm",
-"Fría"
-]
-]
-}
-},
-{
-"id": "macroled-lampara-led-a60-e27-luz-neutra-g",
-"group": {
-"nombre": "Lámpara LED A60 E27 Luz Neutra",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
-[
-"macroled---lampara-led-a60-10w-e27-luz-neutra",
-"10W"
+"6,5W E27 Fría 690lm"
 ],
 [
-"macroled---lampara-led-a60-12w-e27-luz-neutra",
-"12W"
+"king---lampara-led-a60-95w-e27-calida-950lm",
+"9,5W E27 Cálida 950lm"
 ],
 [
-"macroled---lampara-led-a60-15w-e27-luz-neutra",
-"15W"
-]
-]
-}
-},
-{
-"id": "king-lampara-led-a60-11-5w-e27-1100lm-g",
-"group": {
-"nombre": "Lámpara LED A60 11,5W E27 1100lm",
-"rubro": "Iluminación",
-"subrubro": "Lámparas y Tubos",
-"items": [
+"king---lampara-led-a60-95w-e27-fria-950lm",
+"9,5W E27 Fría 950lm"
+],
 [
 "king---lampara-led-a60-115w-e27-calida-1100lm",
-"Cálida"
+"11,5W E27 Cálida 1100lm"
 ],
 [
 "king---lampara-led-a60-115w-e27-fria-1100lm",
-"Fría"
+"11,5W E27 Fría 1100lm"
+]
+]
+}
+},
+{
+"id": "macroled-lampara-led-a60-g",
+"group": {
+"nombre": "Lámpara LED A60",
+"rubro": "Iluminación",
+"subrubro": "Lámparas y Tubos",
+"items": [
+[
+"macroled---lampara-led-a60-10w-e27-fria-950lm",
+"10W E27 Fría 950lm"
+],
+[
+"macroled---lampara-led-a60-10w-e27-luz-neutra",
+"10W E27 Luz Neutra"
+],
+[
+"macroled---lampara-led-a60-12w-e27-luz-neutra",
+"12W E27 Luz Neutra"
+],
+[
+"macroled---lampara-led-a60-15w-e27-luz-neutra",
+"15W E27 Luz Neutra"
 ]
 ]
 }
@@ -9042,5 +9180,75 @@
 ]
 ]
 }
+},
+{
+"id": "teclastar-proyector-led-50w-luz-5500lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "teclastar-proyector-led-30w-luz-3300lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "teclastar-proyector-led-20w-luz-2200lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "bael-luminaria-ufo-de-colgar-90-6000k-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "lucciola-panel-led-embutir-60x60-45w-4320lm-blanco-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "h-intercom-lampara-led-a60-750lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "king-lampara-led-a60-9-5w-e27-950lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "king-lampara-led-a60-6-5w-e27-690lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "macroled-lampara-led-a60-e27-luz-neutra-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
+},
+{
+"id": "king-lampara-led-a60-11-5w-e27-1100lm-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
 }
 ]
