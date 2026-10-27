@@ -3926,76 +3926,6 @@
 }
 },
 {
-"id": "gabexel-terminal-tif-para-cable-g",
-"group": {
-"nombre": "Terminal TIF para Cable",
-"rubro": "Bornes y Terminales",
-"subrubro": "Terminales y Conectores",
-"items": [
-[
-"gabexel---terminal-tif-p-cable-25-negro",
-"25 Negro"
-],
-[
-"gabexel---terminal-tif-p-cable-35-rojo",
-"35 Rojo"
-],
-[
-"gabexel---terminal-tif-p-cable-50-azul",
-"50 Azul"
-]
-]
-}
-},
-{
-"id": "fusse-terminal-tif-para-cable-g",
-"group": {
-"nombre": "Terminal TIF para Cable",
-"rubro": "Bornes y Terminales",
-"subrubro": "Terminales y Conectores",
-"items": [
-[
-"fusse---terminal-tif-p-cable-050mm-blanco",
-"0,50 mm Blanco"
-],
-[
-"fusse---terminal-tif-p-cable-075mm-azul",
-"0,75 mm Azul"
-],
-[
-"fusse---terminal-tif-p-cable-35mm-rojo",
-"35 mm Rojo"
-]
-]
-}
-},
-{
-"id": "zoloda-terminal-tif-doble-para-cable-g",
-"group": {
-"nombre": "Terminal TIF Doble para Cable",
-"rubro": "Bornes y Terminales",
-"subrubro": "Terminales y Conectores",
-"items": [
-[
-"zoloda---terminal-tif-doble-pcable-25mm-gris",
-"2,5 mm Gris"
-],
-[
-"zoloda---terminal-tif-doble-pcable-4mm-naranja",
-"4 mm Naranja"
-],
-[
-"zoloda---terminal-tif-doble-pcable-6mm-verde",
-"6 mm Verde"
-],
-[
-"zoloda---terminal-tif-doble-pcable-10mm-marron",
-"10 mm Marrón"
-]
-]
-}
-},
-{
 "id": "fusse-terminal-preaislado-union-g",
 "group": {
 "nombre": "Terminal Preaislado Unión",
@@ -10302,24 +10232,6 @@
 }
 },
 {
-"id": "gabexel-pinza-compresion-para-tif-o-punteras-g",
-"group": {
-"nombre": "Pinza Compresión para TIF o Punteras",
-"rubro": "Herramientas y Ferretería",
-"subrubro": "Herramientas Eléctricas",
-"items": [
-[
-"pinza-compres-para-tif-o-punter-0-50-16-gabexel-t6807",
-"0.50-16"
-],
-[
-"pinza-compres-para-tif-o-punter-0-75-10-gabexel-t6810",
-"0.75-10"
-]
-]
-}
-},
-{
 "id": "gabexel-pinza-identadora-terminales-g",
 "group": {
 "nombre": "Pinza Identadora Terminales",
@@ -11110,5 +11022,153 @@
 "orden_cat": 4
 },
 "motivo": "Primero en Schneider"
+},
+{
+"id": "zoloda-terminal-tif-para-cable-g",
+"group": {
+"nombre": "Terminal TIF para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"zoloda---terminal-tif-p-cable-1mm-rojo",
+"1 mm (rojo)"
+],
+[
+"zoloda---terminal-tif-p-cable-15-negro",
+"1,5 mm (negro)"
+],
+[
+"zoloda---terminal-tif-pcable-25-gris",
+"2,5 mm (gris)"
+],
+[
+"zoloda---terminal-tif-p-cable-4-naranja",
+"4 mm (naranja)"
+],
+[
+"zoloda---terminal-tif-pcable-6mm-verde-cu",
+"6 mm (verde)"
+],
+[
+"zoloda---terminal-tif-pcable-10-marron",
+"10 mm (marrón)"
+],
+[
+"zoloda---terminal-tif-pcable-16-marfil-ze-16-12",
+"16 mm (marfil, largo 12)"
+],
+[
+"zoloda---terminal-tif-pcable-16-marfil-ze-16-18",
+"16 mm (marfil, largo 18)"
+],
+[
+"zoloda---terminal-tif-pcable-25mm-negro",
+"25 mm (negro)"
+],
+[
+"zoloda--terminal-tif-pcable-35mm-rojo-cu",
+"35 mm (rojo)"
+]
+]
+}
+},
+{
+"id": "gabexel-terminal-tif-para-cable-g",
+"group": {
+"nombre": "Terminal TIF para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"gabexel---terminal-tif-p-cable-25-negro",
+"25 mm (negro)"
+],
+[
+"gabexel---terminal-tif-p-cable-35-rojo",
+"35 mm (rojo)"
+],
+[
+"gabexel---terminal-tif-p-cable-50-azul",
+"50 mm (azul)"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-tif-para-cable-g",
+"group": {
+"nombre": "Terminal TIF para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-tif-p-cable-050mm-blanco",
+"0,50 mm (blanco)"
+],
+[
+"fusse---terminal-tif-p-cable-075mm-azul",
+"0,75 mm (azul)"
+],
+[
+"fusse---terminal-tif-p-cable-35mm-rojo",
+"35 mm (rojo)"
+]
+]
+}
+},
+{
+"id": "zoloda-terminal-tif-doble-para-cable-g",
+"group": {
+"nombre": "Terminal TIF Doble para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"zoloda---terminal-tif-doble-pcable-25mm-gris",
+"2,5 mm (gris)"
+],
+[
+"zoloda---terminal-tif-doble-pcable-4mm-naranja",
+"4 mm (naranja)"
+],
+[
+"zoloda---terminal-tif-doble-pcable-6mm-verde",
+"6 mm (verde)"
+],
+[
+"zoloda---terminal-tif-doble-pcable-10mm-marron",
+"10 mm (marrón)"
+]
+]
+}
+},
+{
+"id": "fusse-terminal-tif-doble-para-cable-g",
+"group": {
+"nombre": "Terminal TIF Doble para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"fusse---terminal-tif-doble-p-cable-6mm-verde",
+"6 mm (verde)"
+]
+]
+}
+},
+{
+"id": "gabexel-terminal-tif-doble-para-cable-g",
+"group": {
+"nombre": "Terminal TIF Doble para Cable",
+"rubro": "Bornes y Terminales",
+"subrubro": "Terminales y Conectores",
+"items": [
+[
+"gabexel---terminal-tif-doble-pcable-25mm-gris",
+"2,5 mm (gris)"
+]
+]
+}
 }
 ]
