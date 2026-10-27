@@ -2490,7 +2490,7 @@
 {
 "id": "multicap-capacitor-eco-con-faston-400vca-g",
 "group": {
-"nombre": "Capacitor Eco con Faston 400VCA",
+"nombre": "Capacitor Eco con Faston 400 VCA",
 "rubro": "Energía y Puesta a Tierra",
 "subrubro": "Capacitores",
 "items": [
@@ -2525,17 +2525,7 @@
 [
 "multicap---capacitor-eco-con-faston-25-uf-400vca",
 "25 µF"
-]
-]
-}
-},
-{
-"id": "multicap-capacitor-eco-con-faston-400-vca-g",
-"group": {
-"nombre": "Capacitor Eco con Faston 400 VCA",
-"rubro": "Energía y Puesta a Tierra",
-"subrubro": "Capacitores",
-"items": [
+],
 [
 "multicap---capacitor-eco-con-faston-30-uf-400-vca",
 "30 µF"
@@ -5584,13 +5574,17 @@
 {
 "id": "genrod-nera-grampa-con-clip-para-negro-g",
 "group": {
-"nombre": "Nera Grampa con Clip para Negro",
+"nombre": "Nera Grampa con Clip Negro",
 "rubro": "Caños y Canalización",
 "subrubro": "Caños y Accesorios",
 "items": [
 [
 "genrod---nera-grampa-c-clip-p-20mm---34-neg",
 "20 mm - 3/4\""
+],
+[
+"genrod---nera-grampa-c-clip-p-22mm---78-neg",
+"22 mm - 7/8\""
 ],
 [
 "genrod---nera-grampa-c-clip-p-25mm---1-negro",
@@ -11056,11 +11050,7 @@
 ],
 [
 "zoloda---terminal-tif-pcable-16-marfil-ze-16-12",
-"16 mm (marfil, largo 12)"
-],
-[
-"zoloda---terminal-tif-pcable-16-marfil-ze-16-18",
-"16 mm (marfil, largo 18)"
+"16 mm (marfil)"
 ],
 [
 "zoloda---terminal-tif-pcable-25mm-negro",
@@ -11170,5 +11160,37 @@
 ]
 ]
 }
+},
+{
+"id": "zoloda---terminal-tif-pcable-16-marfil-ze-16-18",
+"set": {
+"visible": false
+},
+"motivo": "Ya no se vende"
+},
+{
+"id": "zoloda-riel-din-perforado-35-mm-g",
+"group": {
+"nombre": "Riel DIN Perforado 35 mm",
+"rubro": "Bornes y Terminales",
+"subrubro": "Bornes y Repartidores",
+"items": [
+[
+"zoloda---riel-din-perf-35mm-x-10-cm",
+"10 cm"
+],
+[
+"zoloda---riel-din-perf-35mm-x-1-metro",
+"1 metro"
+]
+]
+}
+},
+{
+"id": "multicap-capacitor-eco-con-faston-400-vca-g",
+"set": {
+"visible": false
+},
+"motivo": "Reemplazado por un agrupado nuevo"
 }
 ]
