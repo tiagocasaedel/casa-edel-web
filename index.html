@@ -8,7 +8,7 @@
 <meta name="description" content="Catálogo de materiales eléctricos de Casa Edel con precios. Armá tu pedido y envialo por WhatsApp.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>/* never inside someone else's frame on the real site */ if (window.top !== window.self && /github\.io$/.test(location.hostname)) window.top.location = window.self.location.href;</script>
-<meta name="theme-color" content="#f3f5f9">
+<meta name="theme-color" content="#f7f5ec">
 <style>
 @font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(fonts/archivo.woff2) format('woff2')}
 /* Layout: the counter of Casa Edel, in the colours of the central's sign (red and navy), softened over a warm white.
@@ -30,7 +30,7 @@
   --field-2:#e7ebf3;       /* azul muy claro */
   --field-3:#f6e7e2;       /* rojo muy claro */
   --field-4:#ece8df;
-  --edge:#d3dae5;          /* solo en campos */
+  --edge:#dcd5c1;          /* solo en campos */
   --focus:#b3372c;
   --font:"Rubik", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
   --s-small:.875rem;
@@ -276,7 +276,7 @@ header.top.scrolled{background:var(--paper)}
   .s-prod-copy p{font-size:1rem}
 }
 
-.s-orbit{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#ffffff 0%,#eef2f8 62%,#dfe6f1 100%)}
+.s-orbit{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#fffdf6 0%,#f3efe2 62%,#e8e2cf 100%)}
 .orbit{position:absolute;inset:0}
 .orb{position:absolute;left:50%;top:50%;border:0;padding:0;background:transparent;cursor:pointer;container-type:size;will-change:transform;transition:filter 200ms ease}
 .orb .ph{--k:100;background-repeat:no-repeat}
@@ -290,7 +290,7 @@ header.top.scrolled{background:var(--paper)}
 .slide.on .orbit-copy > *{animation:wordIn 800ms var(--ease-out) both}
 .slide.on .orbit-copy > :nth-child(2){animation-delay:90ms}.slide.on .orbit-copy > :nth-child(3){animation-delay:180ms}
 @media (max-width:700px){.orbit-copy{width:68%}.orbit-copy p{font-size:.9375rem}.orbit-copy h2{font-size:1.75rem}}
-.s-vent{position:absolute;inset:0;display:block;overflow:hidden;background:#eef1f5;color:inherit;text-decoration:none}
+.s-vent{position:absolute;inset:0;display:block;overflow:hidden;background:#f2efe5;color:inherit;text-decoration:none}
 .s-vent .kb{inset:0}
 .s-vent .kb img{object-position:left center;transform-origin:left center;animation-name:kenburnsL}
 @keyframes kenburnsL{from{transform:scale(1)}to{transform:scale(1.05)}}
@@ -536,7 +536,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .dim h3{margin:0;font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ink-soft);display:flex;justify-content:space-between}
 .dim h3 b{color:var(--ink);text-transform:none;letter-spacing:0;font-size:.875rem}
 .vchips{display:flex;flex-wrap:wrap;gap:8px}
-.vchip{position:relative;border:1.5px solid var(--line,#d9e0ea);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:.9375rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 140ms var(--ease-out),box-shadow 200ms ease}
+.vchip{position:relative;border:1.5px solid var(--line,#ddd6c3);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:.9375rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 140ms var(--ease-out),box-shadow 200ms ease}
 .vchip small{font-weight:500;font-size:.8125rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 @media (hover:hover) and (pointer:fine){.vchip:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 16px rgba(29,35,64,.10)}}
 .vchip:active{transform:scale(.96)}
@@ -621,9 +621,9 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 
 /* ===================== identidad: tipografía de cartel + movimiento ===================== */
 :root{
-  --ground:#f3f5f9; --ground-2:#e6eaf1; --paper:#ffffff; --ink:#141a38; --ink-soft:#4f5670;
-  --accent:#c4302a; --accent-deep:#97231e; --navy:#22306f; --navy-deep:#161f4a; --tile:#edf0f5; --copper:#c27a3a;
-  --field-1:#eef1f6; --field-2:#e6ebf4; --field-3:#eceff5; --field-4:#e9edf3;
+  --ground:#f7f5ec; --ground-2:#ebe7d9; --paper:#ffffff; --ink:#141a38; --ink-soft:#4f5670;
+  --accent:#c4302a; --accent-deep:#97231e; --navy:#22306f; --navy-deep:#161f4a; --tile:#f0ede2; --copper:#c27a3a;
+  --field-1:#f2efe4; --field-2:#eeeadd; --field-3:#f0ede2; --field-4:#ece8db;
   --font:"Archivo","Helvetica Neue",Arial,sans-serif;
   --ease-in-out:cubic-bezier(.77,0,.175,1);
 }
@@ -734,7 +734,7 @@ header.top.away{transform:translateY(-100%)}
 }
 
 /* ===== video claro, cintas de color y secciones que siguen el color ===== */
-.s-light{background:#e8ecf2}
+.s-light{background:#ece8db}
 .s-light::after{background:linear-gradient(90deg,rgba(246,244,239,.92) 0%,rgba(246,244,239,.55) 34%,rgba(246,244,239,0) 58%)}
 .s-light .s-video-copy{color:var(--ink)}
 .s-light .s-video-copy h2{color:var(--navy)}
@@ -744,11 +744,11 @@ header.top.away{transform:translateY(-100%)}
 .tick-in{display:flex;align-items:center;width:max-content;gap:clamp(22px,3vw,44px);animation:marquee 26s linear infinite;padding-right:clamp(22px,3vw,44px)}
 .tick span{font-stretch:125%;font-weight:800;font-size:clamp(1.6rem,1rem + 2.6vw,3.4rem);line-height:1;letter-spacing:-.035em;white-space:nowrap}
 .tick i{width:clamp(14px,1.4vw,22px);height:clamp(14px,1.4vw,22px);border-radius:50%;flex:none;box-shadow:inset 0 0 0 clamp(3px,.35vw,5px) currentColor;opacity:.7}
-.tick.t-navy{background:var(--navy);color:#f2f5fb}
+.tick.t-navy{background:var(--navy);color:#f7f4ea}
 .tick.t-red{background:var(--accent);color:#fff}
 .tick.t-red .tick-in{animation-direction:reverse;animation-duration:30s}
 /* the section after a band keeps its colour, so the band reads as its edge */
-section.t-navy{background:var(--navy);color:#f2f5fb;padding-top:clamp(40px,6vw,84px)}
+section.t-navy{background:var(--navy);color:#f7f4ea;padding-top:clamp(40px,6vw,84px)}
 section.t-navy .h2{color:#fff}
 section.t-navy .steps p{color:#dfe3f1}
 section.t-navy .steps p b{color:#fff}
