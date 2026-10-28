@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-78Gfe7l6cfefxXcokmDKBll0P+Ac0d+LX2sfiRNXQvY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-xxFvmq5s0iRZr2ig3yUfEN41Hfv930mVBUms/Oekck0='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Catálogo de materiales eléctricos de Casa Edel con precios. Armá tu pedido y envialo por WhatsApp.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>/* never inside someone else's frame on the real site */ if (window.top !== window.self && /github\.io$/.test(location.hostname)) window.top.location = window.self.location.href;</script>
-<meta name="theme-color" content="#f6f4ef">
+<meta name="theme-color" content="#f3f5f9">
 <style>
 @font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(fonts/archivo.woff2) format('woff2')}
 /* Layout: the counter of Casa Edel, in the colours of the central's sign (red and navy), softened over a warm white.
@@ -30,7 +30,7 @@
   --field-2:#e7ebf3;       /* azul muy claro */
   --field-3:#f6e7e2;       /* rojo muy claro */
   --field-4:#ece8df;
-  --edge:#d8cfbf;          /* solo en campos */
+  --edge:#d3dae5;          /* solo en campos */
   --focus:#b3372c;
   --font:"Rubik", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
   --s-small:.875rem;
@@ -244,13 +244,13 @@ header.top.scrolled{background:var(--paper)}
 .s-prod-copy p{margin:0;font-size:var(--s-lead);line-height:1.4;max-width:30ch;color:#1d2340}
 .slide:not(.on) .fl button{animation:none}
 .stage{position:relative;min-height:0;height:100%}
-.car-nav{position:absolute;top:50%;z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,253,248,.92);color:var(--navy);display:grid;place-items:center;transform:translateY(-50%);transition:transform 160ms var(--ease-out),opacity 200ms ease;opacity:0}
+.car-nav{position:absolute;top:50%;z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--navy);display:grid;place-items:center;transform:translateY(-50%);transition:transform 160ms var(--ease-out),opacity 200ms ease;opacity:0}
 .car-nav svg{width:22px;height:22px}
 .car-nav.prev{left:14px}.car-nav.next{right:14px}
 .car:hover .car-nav,.car:focus-within .car-nav{opacity:1}
 .car-nav:active{transform:translateY(-50%) scale(.92)}
 @media (hover:none){.car-nav{display:none}}
-.dots{position:absolute;z-index:3;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px;background:rgba(255,253,248,.85);padding:6px 10px;border-radius:999px}
+.dots{position:absolute;z-index:3;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px;background:rgba(255,255,255,.85);padding:6px 10px;border-radius:999px}
 .dots button{border:0;background:transparent;padding:4px;display:grid;place-items:center}
 .dots i{display:block;width:8px;height:8px;border-radius:999px;background:#9aa0b4;transition:width 300ms var(--ease-out),background-color 200ms ease}
 .dots [aria-selected="true"] i{width:28px;background:var(--accent);position:relative;overflow:hidden}
@@ -276,7 +276,7 @@ header.top.scrolled{background:var(--paper)}
   .s-prod-copy p{font-size:1rem}
 }
 
-.s-orbit{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#fbf8f1 0%,#efe8da 70%,#e7dfcd 100%)}
+.s-orbit{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#ffffff 0%,#eef2f8 62%,#dfe6f1 100%)}
 .orbit{position:absolute;inset:0}
 .orb{position:absolute;left:50%;top:50%;border:0;padding:0;background:transparent;cursor:pointer;container-type:size;will-change:transform;transition:filter 200ms ease}
 .orb .ph{--k:100;background-repeat:no-repeat}
@@ -284,13 +284,13 @@ header.top.scrolled{background:var(--paper)}
 @media (hover:hover) and (pointer:fine){.orb:hover{filter:drop-shadow(0 10px 18px rgba(20,26,56,.18)) brightness(1.03)}}
 .orbit-copy{position:absolute;z-index:60;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,38%);text-align:center;display:grid;justify-items:center;gap:12px;pointer-events:none}
 .orbit-copy > *{pointer-events:auto}
-.orbit-copy::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(251,248,241,.96),rgba(251,248,241,.85) 60%,rgba(251,248,241,0))}
+.orbit-copy::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.96),rgba(251,248,241,.85) 60%,rgba(255,255,255,0))}
 .orbit-copy h2{margin:0;font-stretch:125%;font-weight:800;letter-spacing:-.04em;line-height:.92;font-size:clamp(1.7rem,1rem + 2.4vw,3.2rem);color:var(--navy)}
 .orbit-copy p{margin:0;font-size:1.0625rem;line-height:1.4;color:var(--ink);max-width:32ch}
 .slide.on .orbit-copy > *{animation:wordIn 800ms var(--ease-out) both}
 .slide.on .orbit-copy > :nth-child(2){animation-delay:90ms}.slide.on .orbit-copy > :nth-child(3){animation-delay:180ms}
 @media (max-width:700px){.orbit-copy{width:68%}.orbit-copy p{font-size:.9375rem}.orbit-copy h2{font-size:1.75rem}}
-.s-vent{position:absolute;inset:0;display:block;overflow:hidden;background:#f3f2f0;color:inherit;text-decoration:none}
+.s-vent{position:absolute;inset:0;display:block;overflow:hidden;background:#eef1f5;color:inherit;text-decoration:none}
 .s-vent .kb{inset:0}
 .s-vent .kb img{object-position:left center;transform-origin:left center;animation-name:kenburnsL}
 @keyframes kenburnsL{from{transform:scale(1)}to{transform:scale(1.05)}}
@@ -311,7 +311,7 @@ header.top.scrolled{background:var(--paper)}
 }
 
 /* ---------- ribbon of brands ---------- */
-.ribbon{position:relative;margin:clamp(28px,4vw,48px) -4vw clamp(8px,2vw,20px);background:#fffdf8;transform:rotate(-2deg);padding-block:18px;box-shadow:0 10px 30px rgba(29,35,64,.08)}
+.ribbon{position:relative;margin:clamp(28px,4vw,48px) -4vw clamp(8px,2vw,20px);background:#ffffff;transform:rotate(-2deg);padding-block:18px;box-shadow:0 10px 30px rgba(29,35,64,.08)}
 .ribbon::before{content:"";position:absolute;inset:-10px 0 auto;height:6px;background:var(--accent);transform:translateY(-4px)}
 .ribbon::after{content:"";position:absolute;inset:auto 0 -10px;height:6px;background:var(--navy);transform:translateY(4px)}
 .ribbon .track{display:flex;align-items:center;width:max-content;animation:marquee 95s linear infinite}
@@ -372,7 +372,7 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .card .none span{display:block;font-weight:400;font-size:.875rem;margin-top:6px;opacity:.8}
 .card .ph.sl{opacity:0;transition:opacity 800ms ease,transform 900ms var(--ease-out)}
 .card .ph.sl.on{opacity:1}
-.card .cdots{position:absolute;left:10px;bottom:10px;display:flex;gap:4px;background:rgba(255,253,248,.85);padding:5px 7px;border-radius:999px}
+.card .cdots{position:absolute;left:10px;bottom:10px;display:flex;gap:4px;background:rgba(255,255,255,.85);padding:5px 7px;border-radius:999px}
 .card .cdots .dot{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 .card .vbadge{position:absolute;left:8px;top:8px;background:#1b2238;color:#f6f2ea;border-radius:999px;font-size:.875rem;font-weight:500;padding:.3em .7em}
 @media (hover:hover) and (pointer:fine){.card .tile:hover .ph{transform:scale(1.05)}}
@@ -520,7 +520,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .pd .ph.swap{animation:phIn 420ms var(--ease-out) both}
 @keyframes phIn{from{opacity:0;transform:scale(.94) translateY(10px)}}
 .pd .chips-ct{position:absolute;left:18px;top:18px;display:flex;gap:6px;flex-wrap:wrap;z-index:1}
-.pd .chips-ct span{background:rgba(255,253,248,.92);color:var(--ink);font-size:.8125rem;font-weight:600;padding:6px 11px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.pd .chips-ct span{background:rgba(255,255,255,.92);color:var(--ink);font-size:.8125rem;font-weight:600;padding:6px 11px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .pd .chips-ct .brand{background:var(--navy);color:#fff}
 .pd .body{padding:30px 30px 22px;display:flex;flex-direction:column;gap:16px;min-width:0;max-height:min(720px,100dvh - 48px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 .pd h2{font-size:1.625rem;line-height:1.15;letter-spacing:-.02em;font-weight:600;margin:0;text-wrap:balance;padding-right:36px}
@@ -536,7 +536,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .dim h3{margin:0;font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ink-soft);display:flex;justify-content:space-between}
 .dim h3 b{color:var(--ink);text-transform:none;letter-spacing:0;font-size:.875rem}
 .vchips{display:flex;flex-wrap:wrap;gap:8px}
-.vchip{position:relative;border:1.5px solid var(--line,#e2d9c8);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:.9375rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 140ms var(--ease-out),box-shadow 200ms ease}
+.vchip{position:relative;border:1.5px solid var(--line,#d9e0ea);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:.9375rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 140ms var(--ease-out),box-shadow 200ms ease}
 .vchip small{font-weight:500;font-size:.8125rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 @media (hover:hover) and (pointer:fine){.vchip:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 16px rgba(29,35,64,.10)}}
 .vchip:active{transform:scale(.96)}
@@ -621,9 +621,9 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 
 /* ===================== identidad: tipografía de cartel + movimiento ===================== */
 :root{
-  --ground:#f6f4ef; --ground-2:#ece8e0; --paper:#ffffff; --ink:#141a38; --ink-soft:#50566a;
-  --accent:#c4302a; --accent-deep:#97231e; --navy:#22306f; --navy-deep:#161f4a; --tile:#efece6; --copper:#c27a3a;
-  --field-1:#f2ede3; --field-2:#e6eaf3; --field-3:#f5e6e2; --field-4:#ebe7df;
+  --ground:#f3f5f9; --ground-2:#e6eaf1; --paper:#ffffff; --ink:#141a38; --ink-soft:#4f5670;
+  --accent:#c4302a; --accent-deep:#97231e; --navy:#22306f; --navy-deep:#161f4a; --tile:#edf0f5; --copper:#c27a3a;
+  --field-1:#eef1f6; --field-2:#e6ebf4; --field-3:#eceff5; --field-4:#e9edf3;
   --font:"Archivo","Helvetica Neue",Arial,sans-serif;
   --ease-in-out:cubic-bezier(.77,0,.175,1);
 }
@@ -734,7 +734,7 @@ header.top.away{transform:translateY(-100%)}
 }
 
 /* ===== video claro, cintas de color y secciones que siguen el color ===== */
-.s-light{background:#e9e8e6}
+.s-light{background:#e8ecf2}
 .s-light::after{background:linear-gradient(90deg,rgba(246,244,239,.92) 0%,rgba(246,244,239,.55) 34%,rgba(246,244,239,0) 58%)}
 .s-light .s-video-copy{color:var(--ink)}
 .s-light .s-video-copy h2{color:var(--navy)}
@@ -744,11 +744,11 @@ header.top.away{transform:translateY(-100%)}
 .tick-in{display:flex;align-items:center;width:max-content;gap:clamp(22px,3vw,44px);animation:marquee 26s linear infinite;padding-right:clamp(22px,3vw,44px)}
 .tick span{font-stretch:125%;font-weight:800;font-size:clamp(1.6rem,1rem + 2.6vw,3.4rem);line-height:1;letter-spacing:-.035em;white-space:nowrap}
 .tick i{width:clamp(14px,1.4vw,22px);height:clamp(14px,1.4vw,22px);border-radius:50%;flex:none;box-shadow:inset 0 0 0 clamp(3px,.35vw,5px) currentColor;opacity:.7}
-.tick.t-navy{background:var(--navy);color:#f3efe6}
+.tick.t-navy{background:var(--navy);color:#f2f5fb}
 .tick.t-red{background:var(--accent);color:#fff}
 .tick.t-red .tick-in{animation-direction:reverse;animation-duration:30s}
 /* the section after a band keeps its colour, so the band reads as its edge */
-section.t-navy{background:var(--navy);color:#f3efe6;padding-top:clamp(40px,6vw,84px)}
+section.t-navy{background:var(--navy);color:#f2f5fb;padding-top:clamp(40px,6vw,84px)}
 section.t-navy .h2{color:#fff}
 section.t-navy .steps p{color:#dfe3f1}
 section.t-navy .steps p b{color:#fff}
@@ -763,7 +763,7 @@ section.t-navy .cable::after{background:var(--navy)}
 
 
 /* ===== intro ===== */
-.intro{position:fixed;inset:0;z-index:200;background:var(--ground);cursor:pointer;overflow:hidden;transition:opacity 500ms ease 450ms}
+.intro{position:fixed;inset:0;z-index:200;background:#f5f3ef;cursor:pointer;overflow:hidden;transition:opacity 500ms ease 450ms}
 .intro.out{opacity:0;pointer-events:none}
 .intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 600ms var(--ease-out),transform 900ms var(--ease-out),filter 600ms ease}
 .intro.out video{opacity:0;transform:scale(.92) translateY(-3%);filter:blur(4px)}
@@ -1029,7 +1029,7 @@ html.intro-on .car{animation-play-state:paused}
   </section>
 </main>
 
-  <div class="tick t-red" aria-hidden="true"><div class="tick-in"><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Precio de mostrador</span><i></i><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Precio de mostrador</span><i></i></div></div>
+  <div class="tick t-red" aria-hidden="true"><div class="tick-in"><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i></div></div>
 <footer>
   <div class="wrap">
     <img class="name" src="img/logo-casaedel.png?v=2" alt="Electricidad Casa Edel" width="541" height="143" loading="lazy">
@@ -1086,7 +1086,7 @@ const CONFIG = {
 };
 const RUBRO_ORDER = ['Cables','Llaves de Luz y Tomas','Iluminación','Protecciones y Maniobra','Caños y Canalización','Cajas y Gabinetes','Bornes y Terminales','Fichas y Prolongadores','Herramientas y Ferretería','Energía y Puesta a Tierra','Tecnología y Seguridad','Climatización y Hogar'];
 const FIELDS = ['var(--tile)'];
-const BRAND_LOGO = {'Bulit':'bulit','Crossmaster':'crossmaster','Gamasonic':'gamasonic','Gurina':'gurina','MIG':'mig','Demasled':'demasled','Jadever':'jadever','Indular':'indular','H Intercom':'hintercom','King':'king','Bael':'bael','Practiled':'practiled','Percanplast':'percanplast','Novalucce':'novalucce','NCB':'ncb','Nevar':'nevar','Probattery':'probattery','Exultt':'exultt','Kalop':'kalop','RBC':'rbc','Genrod':'genrod','Sica':'sica','Schneider':'schneider','Jeluz':'jeluz','Cambre':'cambre','Teclastar':'teclastar','Fonseca':'fonseca','Interelec':'interelec','Argenplas':'argenplas','BAW':'baw','Candil':'candil','3M':'3m','San Justo':'sanjusto','Macroled':'macroled','Zoloda':'zoloda'};
+const BRAND_LOGO = {'Lucciola':'lucciola','Bulit':'bulit','Crossmaster':'crossmaster','Gamasonic':'gamasonic','Gurina':'gurina','MIG':'mig','Demasled':'demasled','Jadever':'jadever','King':'king','Bael':'bael','Percanplast':'percanplast','NCB':'ncb','Nevar':'nevar','Probattery':'probattery','Exultt':'exultt','Kalop':'kalop','RBC':'rbc','Genrod':'genrod','Sica':'sica','Schneider':'schneider','Jeluz':'jeluz','Cambre':'cambre','Teclastar':'teclastar','Fonseca':'fonseca','Interelec':'interelec','Argenplas':'argenplas','BAW':'baw','Candil':'candil','3M':'3m','San Justo':'sanjusto','Macroled':'macroled','Zoloda':'zoloda'};
 const brandMark = (b, cls='') => BRAND_LOGO[b] ? `<img class="${cls}" src="img/logos/${BRAND_LOGO[b]}.png" alt="${esc(b)}" loading="lazy">` : `<span class="bname ${cls}">${esc(b||'Otras marcas')}</span>`;
 const CELL = 280, SHEET = 1680;
 
@@ -1278,7 +1278,7 @@ function placeOrbit(dt){
 function renderMarquee(){
   const items = [['genrod','Genrod'],['sica','Sica'],['schneider','Schneider Electric'],['jeluz','Jeluz'],['cambre','Cambre'],['teclastar','Teclastar'],
     ['fonseca','Fonseca'],['interelec','Interelec'],['argenplas','Argenplas'],['baw','BAW'],['candil','Candil'],['sistelectric','Sistelectric'],
-    ['3m','3M'],['sanjusto','San Justo'],['macroled','Macroled'],['kalop','Kalop'],['exultt','Exultt'],['rbc','RBC Sitel'],['jadever','Jadever'],['king','King'],['bael','Bael'],['indular','Indular'],['hintercom','H Intercom'],['practiled','Practiled'],['novalucce','Novalucce'],['probattery','Probattery'],['zoloda','Zoloda'],['bulit','Bulit'],['crossmaster','Crossmaster']].map(x => ['logo', ...x]);
+    ['3m','3M'],['sanjusto','San Justo'],['macroled','Macroled'],['kalop','Kalop'],['exultt','Exultt'],['rbc','RBC Sitel'],['jadever','Jadever'],['king','King'],['bael','Bael'],['lucciola','Lucciola'],['probattery','Probattery'],['zoloda','Zoloda'],['bulit','Bulit'],['crossmaster','Crossmaster']].map(x => ['logo', ...x]);
   const row = items.map(i => i[0]==='logo' ? `<span class="it"><img src="img/logos/${i[1]}.png" alt="${esc(i[2])}" height="46"></span>` : `<span class="it"><span>${esc(i[1])}</span></span>`).join('');
   $('#track').innerHTML = row + row.replace(/<span class="it">/g,'<span class="it" aria-hidden="true">').replace(/alt="[^"]*"/g,'alt=""');
 }
@@ -1444,6 +1444,11 @@ function compute(){
   const best = {}; brandsHere.forEach(p => { const v = p.r || 1e5; if (!(best[p.b] <= v)) best[p.b] = v; });
   const byBrand = (a,b) => (best[a.b]-best[b.b]) || (bc[b.b]-bc[a.b]) || (a.b||'~').localeCompare(b.b||'~','es') || top(a,b);
   arr = [...arr].sort(grouped ? byBrand : s==='asc' ? (a,b)=>a.p-b.p : s==='desc' ? (a,b)=>b.p-a.p : s==='az' ? (a,b)=>a.n.localeCompare(b.n,'es') : top);
+  /* home page "lo más pedido": one product per family, so it isn't twelve colours of the same tapa */
+  if (!state.rubro && !state.q && !state.brand && !state.sub && s === 'top'){
+    const seen = new Set();
+    arr = arr.filter(p => { const k = p.b + '|' + famOf(p).replace(/\b(blanc[oa]s?|negr[oa]s?|gris|marfil|arena|roj[oa]|azul|verde|amarill[oa]|naranja|celeste|violeta|niquel|plata|platil|silver|beige|marron|transparente|acero|grafito|bronce|antracita|champagne|uva|dorad[oa]|cobre|cristal|calid[oa]|fri[oa]|neutr[oa]|rgb)\b/g, ' ').replace(/\s+/g, ' ').trim(); if (seen.has(k)) return false; seen.add(k); return true; });
+  }
   return {arr, brandsHere, subsHere, bc, grouped, best};
 }
 function priceHTML(p){
