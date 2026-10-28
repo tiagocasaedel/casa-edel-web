@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-AAeZl9q3+K/VngflaRosr2SCag0IPijAGvc+PMGW2yc='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-mt5CvSNyrWVIasT/VoXQlQ37YwgO4MSqMKAZNMBpkck='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -80,6 +80,12 @@ h2{margin:0 0 4px;font-size:1.25rem;font-weight:600;letter-spacing:-.01em}
 .th .ph{position:absolute;inset:0;margin:auto;width:84cqw;height:84cqh;background-repeat:no-repeat;mix-blend-mode:multiply}
 .nm b{display:block;font-weight:500;line-height:1.25}
 .nm small{color:var(--ink-soft)}
+.vtog{all:unset;cursor:pointer;display:inline-block;margin-top:3px;font-size:.75rem;font-weight:700;color:var(--navy,#26346e);background:#e7ebf3;border-radius:999px;padding:2px 9px}
+.vtog:hover{background:#d6ddec}
+.tbl tr.vrow td{background:#faf8f3;border-bottom:1px dotted #ece4d4;padding-top:4px;padding-bottom:4px}
+.tbl tr.vrow .nm span{padding-left:14px;border-left:2px solid #d6ddec;font-size:.875rem}
+.tbl tr.vrow .nm small{padding-left:16px}
+.ing{display:block;color:#8a6d1e;font-size:.75rem}
 .tag{display:inline-block;font-size:.6875rem;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:999px;background:var(--ground-2);color:var(--ink-soft);margin-left:4px;vertical-align:1px}
 .tag.usd{background:#e3e9f6;color:var(--navy)}
 .tag.off{background:var(--warn-bg);color:var(--accent-deep)}
@@ -225,7 +231,7 @@ dialog[open]{animation:dIn 240ms var(--ease-out)}
         <select class="field" id="fmar" aria-label="Marca"></select>
         <select class="field" id="fest" aria-label="Estado">
           <option value="">Todos</option><option value="usd">En dólares</option><option value="ars">En pesos</option>
-          <option value="off">Ocultos</option><option value="nofoto">Sin foto</option><option value="recent">Cambiados hoy</option>
+          <option value="off">Ocultos</option><option value="grp">Agrupados (con presentaciones)</option><option value="inside">Sueltos que están dentro de un agrupado</option><option value="nofoto">Sin foto</option><option value="recent">Cambiados hoy</option>
         </select>
         <button class="btn go" type="button" id="newBtn">+ Nuevo producto</button>
         <button class="btn" type="button" id="xlsBtn">Descargar Excel</button>
@@ -456,7 +462,10 @@ function index(){
   BYID = new Map(R.map(r => [r.id, r])); BYCODE = new Map();
   const put = (k, hit) => { k = codeKey(k); if (!k) return; (BYCODE.get(k) || BYCODE.set(k, []).get(k)).push(hit); };
   R.forEach(r => { if (r.variantes && r.variantes.length) r.variantes.forEach((v,i) => put(v.k, {r, vi:i})); else put(r.codigo, {r, vi:-1}); });
+  /* products that live inside a grouped product (shown as its presentations, kept hidden on their own) */
+  INGROUP = new Map(); R.forEach(r => { if (r.visible && r.variantes) r.variantes.forEach(v => { if (v.m && v.m !== r.id) INGROUP.set(v.m, r); }); });
 }
+let INGROUP = new Map(), OPEN = new Set();
 const SAFE_SRC = /^(https:\/\/[a-z0-9.-]+\/[A-Za-z0-9_\-.\/%~+]*|[A-Za-z0-9_\-.\/%~+]+)$/;
 function phStyle(foto){
   const a = ATLAS[foto];
@@ -492,6 +501,10 @@ function applyFilters(){
     if (mar && r.marca !== mar) return false;
     if (est === 'usd' && (r.precio_usd == null || r.precio_usd === '')) return false;
     if (est === 'ars' && !(r.precio_usd == null || r.precio_usd === '')) return false;
+    const inside = !r.visible && INGROUP.has(r.id);
+    if (est === 'inside') { if (!inside) return false; }
+    else if (inside) return false;
+    if (est === 'grp' && !(r.variantes && r.variantes.length > 1)) return false;
     if (est === 'off' && r.visible) return false;
     if (est === 'nofoto' && fotoOf(r)) return false;
     if (est === 'recent' && !recent.has(r.id)) return false;
@@ -505,12 +518,16 @@ function rowHTML(r0){
   return `<tr data-id="${esc(r.id)}" class="${dirty.has(r.id) ? 'dirty' : ''} ${sel.has(r.id) ? 'sel' : ''}">
     <td><input type="checkbox" data-sel aria-label="Seleccionar" ${sel.has(r.id) ? 'checked' : ''}></td>
     <td>${thumb(fotoOf(r))}</td>
-    <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}${hasV ? `<span class="tag">${r.variantes.length} presentaciones</span>` : ''}</b><small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo].filter(Boolean).join(' · '))}</small></td>
+    <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}</b>${hasV ? `<button type="button" class="vtog" data-vtog aria-expanded="${OPEN.has(r.id)}">${OPEN.has(r.id) ? '▾' : '▸'} ${r.variantes.length} presentaciones</button>` : ''}${!r.visible && INGROUP.has(r.id) ? `<small class="ing">Está dentro de “${esc(INGROUP.get(r.id).nombre)}”</small>` : ''}<small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo].filter(Boolean).join(' · '))}</small></td>
     <td class="c-rub mini">${esc(r.rubro)}</td>
-    <td class="c-pr" style="text-align:right">${hasV ? `<span class="num">${r.variantes.map(v => money(effV(v))).slice(0,2).join(' / ')}</span>` : `<input class="pin num" data-f="precio" inputmode="decimal" value="${isU ? effP(r) : r.precio}" ${isU ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos">`}</td>
+    <td class="c-pr" style="text-align:right">${hasV ? `<span class="num mini">desde ${money(Math.min(...r.variantes.map(effV)))}</span>` : `<input class="pin num" data-f="precio" inputmode="decimal" value="${isU ? effP(r) : r.precio}" ${isU ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos">`}</td>
     <td class="c-usd" style="text-align:right">${hasV ? '' : `<input class="pin usd num" data-f="precio_usd" inputmode="decimal" value="${isU ? r.precio_usd : ''}" placeholder="—" aria-label="Precio en dólares">`}</td>
     <td class="c-vis"><button type="button" class="sw" role="switch" data-vis aria-checked="${!!r.visible}" aria-label="Mostrar en la web"></button></td>
-    <td class="c-ed"><button class="btn sm" type="button" data-edit>Editar</button></td></tr>`;
+    <td class="c-ed"><button class="btn sm" type="button" data-edit>Editar</button></td></tr>${hasV && OPEN.has(r.id) ? r.variantes.map((v, i) => {
+      const vu = v.usd != null && v.usd !== '';
+      return `<tr class="vrow" data-id="${esc(r.id)}" data-vi="${i}"><td></td><td>${v.i ? thumb(v.i) : ''}</td><td class="nm"><span>${esc(v.l)}</span><small>${v.k ? 'cód. ' + esc(v.k) : ''}</small></td><td></td>
+        <td style="text-align:right"><input class="pin num" data-vf="p" inputmode="decimal" value="${vu ? effV(v) : v.p}" ${vu ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos"></td>
+        <td style="text-align:right"><input class="pin usd num" data-vf="usd" inputmode="decimal" value="${vu ? v.usd : ''}" placeholder="—" aria-label="Precio en dólares"></td><td></td><td></td></tr>`; }).join('') : ''}`;
 }
 function renderRows(){
   $('#rows').innerHTML = filtered.slice(0, shown).map(rowHTML).join('');
@@ -518,7 +535,7 @@ function renderRows(){
   $('#pcount').textContent = `${filtered.length.toLocaleString('es-AR')} productos` + (filtered.length > shown ? ` · mostrando ${shown}` : '');
   $('#selAll').checked = filtered.slice(0, shown).length > 0 && filtered.slice(0, shown).every(r => sel.has(r.id));
 }
-function refreshRow(id){ const tr = document.querySelector(`#rows tr[data-id="${CSS.escape(id)}"]`); if (tr) tr.outerHTML = rowHTML(BYID.get(id)); }
+function refreshRow(id){ const trs = document.querySelectorAll(`#rows tr[data-id="${CSS.escape(id)}"]`); if (!trs.length) return; trs.forEach((t, i) => { if (i) t.remove(); }); trs[0].outerHTML = rowHTML(BYID.get(id)); }
 function markDirty(row){ dirty.set(row.id, row); updateBars(); }
 function updateBars(){
   $('#dirtyN').textContent = dirty.size; $('#saveBar').classList.toggle('on', dirty.size > 0);
@@ -752,6 +769,7 @@ document.addEventListener('click', async e => {
   const tr = t.closest('#rows tr'), id = tr && tr.dataset.id;
   if (t.hasAttribute('data-vis') && id){ const r = JSON.parse(JSON.stringify(cur(id))); r.visible = !r.visible; markDirty(r); refreshRow(id); return; }
   if (t.hasAttribute('data-edit') && id){ openEdit(id); return; }
+  if (t.hasAttribute('data-vtog') && id){ OPEN.has(id) ? OPEN.delete(id) : OPEN.add(id); refreshRow(id); return; }
   if (t.hasAttribute('data-close')){ t.closest('dialog').close(); return; }
   if (t.hasAttribute('data-vdel')){ edit.variantes.splice(+t.closest('tr').dataset.vi, 1); if (!edit.variantes.length) edit.variantes = null; renderVariants(); return; }
   if (t.dataset.selvis){ sel.forEach(i => { const r = JSON.parse(JSON.stringify(cur(i))); r.visible = t.dataset.selvis === '1'; markDirty(r); }); renderRows(); return; }
@@ -759,6 +777,12 @@ document.addEventListener('click', async e => {
 $('#rows').addEventListener('change', e => {
   const tr = e.target.closest('tr'), id = tr.dataset.id;
   if (e.target.matches('[data-sel]')){ e.target.checked ? sel.add(id) : sel.delete(id); tr.classList.toggle('sel', e.target.checked); updateBars(); return; }
+  if (e.target.dataset.vf){
+    const r = JSON.parse(JSON.stringify(cur(id))), vi = +tr.dataset.vi, x = r.variantes[vi], val = e.target.value.trim();
+    if (e.target.dataset.vf === 'p'){ const n = num(val); if (!(n >= 0)){ toast('Precio inválido', true); refreshRow(id); return; } x.p = Math.round(n); }
+    else if (val === ''){ x.p = effV(x); x.usd = null; } else { const n = num(val); if (!(n > 0)){ toast('Precio en USD inválido', true); refreshRow(id); return; } x.usd = r4(n); }
+    r.precio = Math.min(...r.variantes.map(effV)); markDirty(r); refreshRow(id); return;
+  }
   const f = e.target.dataset.f; if (!f) return;
   const r = JSON.parse(JSON.stringify(cur(id))), v = e.target.value.trim();
   if (f === 'precio'){ const n = num(v); if (!(n >= 0)){ toast('Precio inválido', true); e.target.value = r.precio; return; } r.precio = Math.round(n); }
