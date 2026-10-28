@@ -250,7 +250,7 @@ header.top.scrolled{background:var(--paper)}
 .car:hover .car-nav,.car:focus-within .car-nav{opacity:1}
 .car-nav:active{transform:translateY(-50%) scale(.92)}
 @media (hover:none){.car-nav{display:none}}
-.dots{position:absolute;z-index:3;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px;background:rgba(255,255,255,.85);padding:6px 10px;border-radius:999px}
+.dots{position:absolute;z-index:3;left:50%;bottom:clamp(40px,4.4vw,64px);transform:translateX(-50%);display:flex;gap:6px;background:rgba(255,255,255,.85);padding:6px 10px;border-radius:999px}
 .dots button{border:0;background:transparent;padding:4px;display:grid;place-items:center}
 .dots i{display:block;width:8px;height:8px;border-radius:999px;background:#9aa0b4;transition:width 300ms var(--ease-out),background-color 200ms ease}
 .dots [aria-selected="true"] i{width:28px;background:var(--accent);position:relative;overflow:hidden}
@@ -311,7 +311,7 @@ header.top.scrolled{background:var(--paper)}
 }
 
 /* ---------- ribbon of brands ---------- */
-.ribbon{position:relative;z-index:6;margin:clamp(30px,4vw,50px) -4vw clamp(26px,3.4vw,44px);background:linear-gradient(180deg,#ffffff 0%,#fbfaf7 100%);transform:rotate(-2deg);padding-block:18px 16px;box-shadow:0 18px 36px -16px rgba(20,26,56,.30),0 2px 0 rgba(20,26,56,.04)}
+.ribbon{position:relative;z-index:6;margin:clamp(-46px,-3.2vw,-22px) -4vw clamp(26px,3.4vw,44px);background:linear-gradient(180deg,#ffffff 0%,#fbfaf7 100%);transform:rotate(-2deg);padding-block:18px 16px;box-shadow:0 18px 36px -16px rgba(20,26,56,.30),0 2px 0 rgba(20,26,56,.04)}
 .ribbon::before{content:"";position:absolute;left:0;right:0;top:-7px;height:7px;background:var(--accent);box-shadow:0 -3px 0 #fff}
 .ribbon::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:7px;background:var(--navy);box-shadow:0 3px 0 #fff}
 .ribbon .track{display:flex;align-items:center;width:max-content;animation:marquee 60s linear infinite;padding-top:2px}
