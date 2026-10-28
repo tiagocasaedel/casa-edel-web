@@ -12428,5 +12428,23 @@
 ]
 ]
 }
+},
+{
+"id": "indular-cable-espiral-blanco-g",
+"group": {
+"nombre": "Cable Espiral Blanco",
+"rubro": "Cables",
+"subrubro": "Cables de Datos y Telefonía",
+"items": [
+[
+"cable-espiral-1-metro-corto-blanco",
+"1 metro (corto)"
+],
+[
+"cable-espiral-2-metros-largo-blanco",
+"2 metros (largo)"
+]
+]
+}
 }
 ]
