@@ -8366,13 +8366,17 @@
 {
 "id": "comsid-cinta-clasica-g",
 "group": {
-"nombre": "Cinta Clásica",
+"nombre": "Cinta Rotuladora",
 "rubro": "Herramientas y Ferretería",
 "subrubro": "Herramientas Manuales",
 "items": [
 [
 "cinta-6-mm-negro-sin-blanco-clasica-comsid-t6156",
 "6 mm Negro sobre Blanco"
+],
+[
+"cinta-rotul-negro-sin-amarillo-12-mm-comsid-t6214",
+"12 mm Negro sobre Amarillo"
 ],
 [
 "cinta-18-mm-negro-sin-amarillo-clasica-comsid-t6146",
@@ -8385,6 +8389,10 @@
 [
 "cinta-18-mm-negro-sin-transparente-clasica-comsid-t6151",
 "18 mm Negro sobre Transparente"
+],
+[
+"cinta-24-mm-negro-sin-blanco-adhesiva-extra-comsid-t6153",
+"24 mm Negro sobre Blanco (Adhesiva Extra)"
 ],
 [
 "cinta-36-mm-negro-sin-blanco-clasica-comsid-t6155",
