@@ -671,7 +671,7 @@ header.top .top-row > :nth-child(2){animation-delay:60ms}header.top .top-row > :
 
 /* scroll: the hero stays behind as the page slides over it */
 .hero2{position:relative}
-.car{--py:0;translate:0 calc(var(--py) * 22%)}
+.car{--py:0;translate:0 calc(var(--py) * 22%);clip-path:polygon(0 0,100% 0,100% calc(100% - var(--py) * 22% - 3.6vw),0 calc(100% - var(--py) * 22%))}
 .car::after{content:"";position:absolute;inset:0;z-index:4;background:var(--ink);opacity:calc(var(--py) * .55);pointer-events:none}
 /* header steps out of the way while reading down, comes back on the way up */
 header.top{transition:transform 360ms var(--ease-out),background-color 200ms ease,box-shadow 200ms ease}
