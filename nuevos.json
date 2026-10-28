@@ -490,7 +490,8 @@
 "schneider---interrupt-termomag-e9-4x63a-45ka",
 "63A"
 ]
-]
+],
+"orden": 4
 }
 },
 {
@@ -536,7 +537,8 @@
 "schneider---interrupt-termomag-e9-3x63a-45ka",
 "63A"
 ]
-]
+],
+"orden": 3
 }
 },
 {
@@ -582,7 +584,8 @@
 "schneider---interrupt-termomag-e9-2x63a-45ka",
 "63A"
 ]
-]
+],
+"orden": 2
 }
 },
 {
@@ -620,7 +623,8 @@
 "schneider---interrupt-termomag-e9-1x40a-45ka",
 "40A"
 ]
-]
+],
+"orden": 1
 }
 },
 {
@@ -10338,38 +10342,6 @@
 ]
 ]
 }
-},
-{
-"id": "schneider-interruptor-termomagnetico-unipolar-e9-4-5ka-g",
-"set": {
-"orden": 1,
-"orden_cat": 1
-},
-"motivo": "Primero en Schneider"
-},
-{
-"id": "schneider-interruptor-termomagnetico-bipolar-e9-4-5ka-g",
-"set": {
-"orden": 2,
-"orden_cat": 2
-},
-"motivo": "Primero en Schneider"
-},
-{
-"id": "schneider-interruptor-termomagnetico-tripolar-e9-4-5ka-g",
-"set": {
-"orden": 3,
-"orden_cat": 3
-},
-"motivo": "Primero en Schneider"
-},
-{
-"id": "schneider-interruptor-termomagnetico-tetrapolar-e9-4-5ka-g",
-"set": {
-"orden": 4,
-"orden_cat": 4
-},
-"motivo": "Primero en Schneider"
 },
 {
 "id": "zoloda-terminal-tif-para-cable-g",
