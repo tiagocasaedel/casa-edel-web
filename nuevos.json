@@ -10105,255 +10105,183 @@
 },
 {
 "id": "indusil-cable-siliconado-1x4-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "indusil-cable-siliconado-1x2-50-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-3x2-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-3x1-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-3x1-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-2x2-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-2x1-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-2x1-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-tpr-2x0-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-paralelo-2x1-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-paralelo-2x1-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-paralelo-2x0-75-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-paralelo-2x0-50-mm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-subterraneo-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-subterraneo-de-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-preensamblado-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "argenplas-cable-preensamblado-aluminio-por-metro-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-4x50a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-4x40a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-4x20a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-3x32a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-2x63a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-1x32a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-1x25a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-1x20a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "sica-interruptor-termomagnetico-din-1x10a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "teclastar-proyector-led-50w-luz-5500lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "teclastar-proyector-led-30w-luz-3300lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "teclastar-proyector-led-20w-luz-2200lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "bael-luminaria-ufo-de-colgar-90-6000k-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "lucciola-panel-led-embutir-60x60-45w-4320lm-blanco-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "h-intercom-lampara-led-a60-750lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "king-lampara-led-a60-9-5w-e27-950lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "king-lampara-led-a60-6-5w-e27-690lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "macroled-lampara-led-a60-e27-luz-neutra-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "king-lampara-led-a60-11-5w-e27-1100lm-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "fonseca-cable-unipolar-1x50-mm-g",
@@ -10602,10 +10530,8 @@
 },
 {
 "id": "multicap-capacitor-eco-con-faston-400-vca-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "arlen---tapa-reduccion-bombe-10x10-blanca",
@@ -10708,38 +10634,28 @@
 },
 {
 "id": "pastoriza-abrazaderas-media-omega-gx",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "interelec-lampara-led-high-power-e27-e40-fria-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "interelec-lampara-led-high-power-e27-fria-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "interelec-lampara-led-velita-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "candil-lampara-led-velita-8w-e14-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "bael-luminaria-ufo-de-colgar-g",
@@ -10769,10 +10685,8 @@
 },
 {
 "id": "metalce-barra-ac-cobre-1-2-x-morseto-t2-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "metalce-barra-ac-cobre-5-8-x-morseto-t22-g",
@@ -11476,10 +11390,8 @@
 },
 {
 "id": "tea-fusible-cilindrico-vidrio-6x30-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "tea-fusible-cilindrico-vidrio-5x20-g",
@@ -11855,10 +11767,8 @@
 },
 {
 "id": "interelec-lampara-dicro-led-gu10-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "interelec-lampara-dicro-led-e27-5w-36-g",
@@ -12260,10 +12170,8 @@
 },
 {
 "id": "elent-barra-distribuidor-unipolar-din-125a-g",
-"set": {
-"visible": false
-},
-"motivo": "Reemplazado por un agrupado nuevo"
+"motivo": "Agrupado viejo reemplazado (se borra)",
+"borrar": true
 },
 {
 "id": "tirafondo-g",

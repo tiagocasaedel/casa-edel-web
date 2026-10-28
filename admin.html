@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-mt5CvSNyrWVIasT/VoXQlQ37YwgO4MSqMKAZNMBpkck='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-aAjgriP8ICkzxStCAE9a1BW2ooFzSmlJab8GZYaxcJA='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -962,6 +962,11 @@ async function offerNew(){
   for (const r of (Array.isArray(src) ? src : [])){
     if (!idOk(r)) continue;
     const have = BYID.get(r.id);
+    if (r.borrar === true){
+      /* only old grouped products (they carry presentations of other products) can be removed this way */
+      if (have && have.variantes && have.variantes.some(v => v.m && v.m !== have.id) && !have.visible) NEW.push({ row: have, del: true, txt: `${have.nombre} (agrupado viejo, se borra)`, why: r.motivo || 'Agrupado viejo' });
+      continue;
+    }
     if (r.group && Array.isArray(r.group.items)){
       /* juntar varios productos en uno con presentaciones (medidas); los sueltos quedan ocultos */
       const parts = r.group.items.map(([id, l, only]) => [BYID.get(id), String(l).slice(0,80), only]).filter(([x]) => x);
@@ -1016,7 +1021,9 @@ async function offerNew(){
 $('#newLater').addEventListener('click', () => { $('#newNote').hidden = true; });
 $('#newAdd').addEventListener('click', async () => {
   const b = $('#newAdd'); b.disabled = true;
-  try { const groups = {}; NEW.forEach(x => (groups[x.why] ||= []).push(x.row)); let n = 0; for (const [why, rows] of Object.entries(groups)) n += await commit(rows, why); const rows = { length: n }; index(); fillSelects(); applyFilters(); $('#newNote').hidden = true; toast(rows.length === 1 ? "Listo, 1 cambio guardado" : `Listo, ${rows.length} cambios guardados`); }
+  try { const dels = NEW.filter(x => x.del).map(x => x.row.id);
+    if (dels.length){ await DB.remove(dels); await DB.log(dels.map(id => ({ producto:id, detalle:{ motivo:'Agrupado viejo borrado', nombre:(BYID.get(id)||{}).nombre || id } }))); const g = new Set(dels); R = R.filter(r => !g.has(r.id)); index(); }
+    const groups = {}; NEW.filter(x => !x.del).forEach(x => (groups[x.why] ||= []).push(x.row)); let n = dels.length; for (const [why, rows] of Object.entries(groups)) n += await commit(rows, why); const rows = { length: n }; index(); fillSelects(); applyFilters(); $('#newNote').hidden = true; toast(rows.length === 1 ? "Listo, 1 cambio guardado" : `Listo, ${rows.length} cambios guardados`); }
   catch (err) { toast('No se pudo agregar: ' + (err.message || err), true); }
   b.disabled = false;
 });
