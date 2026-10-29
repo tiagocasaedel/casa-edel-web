@@ -12426,5 +12426,51 @@
 ]
 ]
 }
+},
+{
+"id": "indular-ecco-led-120-cm-g",
+"group": {
+"nombre": "Ecco LED 120 cm",
+"rubro": "Iluminación",
+"subrubro": "Listones y Cintas LED",
+"items": [
+[
+"indular---ecco-led-1-tubos-120cm-blanco",
+"1 Tubo · Sin Louver · Blanco"
+],
+[
+"indular---ecco-led-1-tubos-120cm-c-louver-blanco",
+"1 Tubo · Con Louver · Blanco"
+],
+[
+"indular---ecco-led-1-tubos-120cm-c-louver-negro",
+"1 Tubo · Con Louver · Negro"
+],
+[
+"indular---ecco-led-1-tubos-120cm-policarbon",
+"1 Tubo · Policarbonato · Blanco"
+],
+[
+"indular---ecco-led-2-tubos-120cm-blanco",
+"2 Tubos · Sin Louver · Blanco"
+],
+[
+"indular---ecco-led-2-tubos-120cm-negro",
+"2 Tubos · Sin Louver · Negro"
+],
+[
+"indular---ecco-led-2-tubos-120cm-c-louver-blanco",
+"2 Tubos · Con Louver · Blanco"
+],
+[
+"indular---ecco-led-2-tubos-120cm-c-louver-negro",
+"2 Tubos · Con Louver · Negro"
+],
+[
+"indular---ecco-led-2-tubos-120cm-policarb-blanco",
+"2 Tubos · Policarbonato · Blanco"
+]
+]
+}
 }
 ]

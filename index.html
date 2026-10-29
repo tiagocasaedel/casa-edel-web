@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-MWTSn/pbG1trA1gb/L8Xn8jyOgPNm9V/T//RAmxflDI='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-uxqFtTWkO3E3Byk7y9XrYS9Nqhok92q+RpAM0hCiLkU='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1617,6 +1617,8 @@ function dimsOf(p){
         : col.every(x => /mA$/i.test(x)) ? 'Sensibilidad'
         : col.every(x => /^CAT/i.test(x)) ? 'Categoría'
         : col.every(x => /interior|exterior/i.test(x)) ? 'Uso'
+        : col.every(x => /^\d+\s*tubos?$/i.test(x)) ? 'Tubos'
+        : col.every(x => /louver|policarb/i.test(x)) ? 'Modelo'
         : /\d/.test(col[0]) ? 'Medida' : 'Opción';
       if (new Set(col).size > 1) D.push({ k, name, color: name === 'Color', temp: name === 'Luz' });
     }
