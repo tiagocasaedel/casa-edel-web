@@ -9588,11 +9588,15 @@
 "items": [
 [
 "organizador-280x330x50-mm-18-comp-cross-t6762",
-"280x330x50 mm 18"
+"280x330x50 mm · 18 compartimentos"
+],
+[
+"organizador-420x330x50-mm-19-comp-cross-t6763",
+"420x330x50 mm · 19 compartimentos"
 ],
 [
 "organizador-420x334x115-mm-8-comp-cross-t6764",
-"420x334x115 mm 8"
+"420x334x115 mm · 8 compartimentos"
 ]
 ]
 }
@@ -12542,5 +12546,13 @@
 "subrubro": "Módulos y Tomas"
 },
 "motivo": "Módulo pasa a Módulos y Tomas"
+},
+{
+"id": "nisuta-viru-viru-t6742",
+"set": {
+"nombre": "Rastreador y Probador de Cables NS-VIRU",
+"marca": "Nisuta"
+},
+"motivo": "Nombre y marca estaban invertidos"
 }
 ]
