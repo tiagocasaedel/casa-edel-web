@@ -12003,17 +12003,21 @@
 {
 "id": "bulit-pinza-pico-serie-600-g",
 "group": {
-"nombre": "Pinza Pico de Loro Serie 600",
+"nombre": "Pinza Pico de Loro",
 "rubro": "Herramientas y Ferretería",
 "subrubro": "Herramientas Manuales",
 "items": [
 [
-"pinza-pico-de-loro-6-serie-600-bulit-t6858",
+"pinza-pico-de-loro-6-bulit-t6857",
 "6\""
 ],
 [
+"pinza-pico-de-loro-6-serie-600-bulit-t6858",
+"6\" Serie 600"
+],
+[
 "pinza-pico-loro-10-serie-600-bulit-t6860",
-"10\""
+"10\" Serie 600"
 ]
 ]
 }
