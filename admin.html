@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-0OPcm49FQTZPz6mYj0iW5oO/BLVXfJDJXURA9p6YykI='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-W6aEFOaoLljfe4DsIJBmgZZcVsfaeGjid7heDHUuwmg='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -962,7 +962,7 @@ let NEW = [], GONE = new Set();
 async function offerNew(){
   let src = []; try { src = await (await fetch('nuevos.json', { cache:'no-cache' })).json(); } catch {}
   const idOk = r => r && typeof r.id === 'string' && /^[a-z0-9-]{1,120}$/.test(r.id);
-  const SETS = ['visible','precio','precio_usd','nombre','marca','orden','orden_cat','codigo'];
+  const SETS = ['visible','precio','precio_usd','nombre','marca','subrubro','orden','orden_cat','codigo'];
   try { GONE = new Set(await DB.deleted()); } catch { GONE = new Set(); }
   NEW = [];
   for (const r of (Array.isArray(src) ? src : [])){

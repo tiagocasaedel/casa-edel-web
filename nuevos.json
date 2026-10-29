@@ -12472,5 +12472,75 @@
 ]
 ]
 }
+},
+{
+"id": "jeluz---verona-bastidor-mignon-5x5",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "jeluz---verona-bastidor-5x10---10x5",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "jeluz---verona-bastidor-10x10",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "teclastar---pq-bastidor-mignon-5x5",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "teclastar---pq-bastidor-10x10",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "teclastar---bastidor-univ-10x5-serie-pq---ministd",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "exultt---bastidor-c-tapa-capsulada-3-mod",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "exultt---bastidor-3-modulos-5x10-10x5",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "teclastar---bast-minimal-p-vidkrmadpiedalu",
+"set": {
+"subrubro": "Tapas y Bastidores"
+},
+"motivo": "Bastidor pasa a Tapas y Bastidores"
+},
+{
+"id": "teclastar---pq-mod-combinacion-multiple-660w-bla",
+"set": {
+"subrubro": "Módulos y Tomas"
+},
+"motivo": "Módulo pasa a Módulos y Tomas"
 }
 ]
