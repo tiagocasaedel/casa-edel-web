@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-TPZNy/t7XJ4jKD5IjYVLJOEhgCmGEpmZ+dO19Et28/Y='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-vDKAJ4a0kR0ldEZxw0kW7Cn05E1R4c3SumtFYQ0RxOM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1180,11 +1180,25 @@ async function fromDB(){
 }
 const POLOS = { unipolar:1, bipolar:2, tripolar:3, tetrapolar:4 };
 /* "Bipolar" products also answer to 2x…: 2x25, 2x25a */
+/* how many poles a breaker / contactor / switch has, so "3x", "3x25", "tripolar", "trifásico" or "3P" all find it */
+const POLE_WORD = ['', 'unipolar', 'bipolar', 'tripolar', 'tetrapolar'];
 function poleAlias(p){
-  const m = p.n.match(/\b(unipolar|bipolar|tripolar|tetrapolar)\b/i); if (!m) return '';
-  const n = POLOS[m[1].toLowerCase()], out = [n + 'x'];
-  (p.v || []).forEach(v => { const a = v.l.match(/(\d+)\s*A\b/); if (a) out.push(`${n}x${a[1]}`, `${n}x${a[1]}a`, `${n}x${a[1].padStart(2,'0')}`); });
-  return out.join(' ');
+  if (/\bcable|cobre desnudo|barra|bornera|peine\b/i.test(p.n)) return '';
+  let n = 0; const m = p.n.match(/\b(unipolar|bipolar|tripolar|tetrapolar)\b/i);
+  if (m) n = POLOS[m[1].toLowerCase()];
+  else if (/\b1\s*P\.?\s*\+\s*N/i.test(p.n)) n = 2;
+  else { const brk = /interruptor|termomag|disyuntor|diferencial|contactor|seccionador|guardamotor/i.test(p.n); const x = p.n.match(/\b([1-4])\s*x\s*\d+\s*A\b/i) || (brk && p.n.match(/\b([1-4])\s*x\s*\d/i)) || p.n.match(/\b([1-4])\s*P\b/i); if (x) n = +x[1]; }
+  if (!n) return '';
+  const amps = new Set();
+  [p.n, ...(p.v || []).map(v => v.l)].forEach(t => { for (const a of t.matchAll(/(?:x\s*)?(\d+)\s*A(?:mp)?\b\.?/gi)) amps.add(a[1]); });
+  { const xa = p.n.match(/\b[1-4]\s*x\s*(\d+)\b/i); if (xa) amps.add(xa[1]); }
+  const ns = [n];
+  /* a three-phase residual-current device is four-pole: whoever types "disyuntor 3x40" means that one */
+  if (n === 4 && /disyuntor|diferencial/i.test(p.n)) ns.push(3);
+  const out = [n + 'x'];
+  ns.forEach(k => { out.push(k + 'x', POLE_WORD[k], k + 'p'); amps.forEach(a => out.push(`${k}x${a}`, `${k}x${a}a`, `${k}x${a.padStart(2,'0')}`)); });
+  out.push(n >= 3 ? 'trifasico' : 'monofasico');
+  return [...new Set(out)].join(' ');
 }
 async function load(){
   try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
@@ -1354,7 +1368,7 @@ function renderRubros(){
 }
 
 /* ---------- search ---------- */
-const SYN = {termica:['termomagn'], termicas:['termomagn'], disyuntor:['diferencial'], diferencial:['disyuntor'], foco:['lampara'], focos:['lampara'], lamparita:['lampara'], lamparitas:['lampara'],
+const SYN = {trifasica:['trifasico'], monofasica:['monofasico'], termica:['termomagn'], termicas:['termomagn'], disyuntor:['diferencial'], diferencial:['disyuntor'], foco:['lampara'], focos:['lampara'], lamparita:['lampara'], lamparitas:['lampara'],
   dicroica:['dicro'], dicroicas:['dicro'], zapatilla:['prolongador'], enchufe:['ficha','toma'], tomacorriente:['toma'], llave:['interruptor','llave'], reflector:['proyector'], reflectores:['proyector'], spot:['spot','aplique'], cano:['cano'], plafon:['plafon','panel']};
 const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 function qToks(q){ return norm(q).split(/\s+/).filter(Boolean).map(t => { const alts = [t, ...(SYN[t]||[])]; if (t.length >= 5 && /[aos]$/.test(t) && !/\d/.test(t)) alts.push(t.slice(0,-1)); if (t.length >= 6 && /es$/.test(t)) alts.push(t.slice(0,-2)); return alts; }); }
@@ -1690,7 +1704,7 @@ function openProduct(id){
   pdSel = p.v ? Math.max(0, p.v.findIndex(v => /rollo/i.test(v.l))) : 0; pdQty = 1;
   /* came from a search like "2x25": open on that amperage */
   const qm = ($('#q').value || '').match(/(\d)\s*x\s*0*(\d+)/i);
-  if (p.v && qm){ const i = p.v.findIndex(v => new RegExp('^' + qm[2] + '\\s*A\\b', 'i').test(v.l)); if (i > -1 && poleAlias(p).startsWith(qm[1] + 'x')) pdSel = i; }
+  if (p.v && qm){ const i = p.v.findIndex(v => new RegExp('^' + qm[2] + '\\s*A\\b', 'i').test(v.l)); if (i > -1 && (' ' + poleAlias(p) + ' ').includes(' ' + qm[1] + 'x ')) pdSel = i; }
   pdLast = { id:'', img:'', price:0 };
   renderPD(p);
   const d = $('#pd'); if (!d.open) d.showModal();
