@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-z9OLXGCNBB857GgMPE/LX+Dp0Nd5nVBmQqtCbmOr04A='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-CnYlge+jTSqr6QxCPhLbyse6CEmQ1Bdy2ZNomqxZEVk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -349,6 +349,7 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 #catalogo,#categorias,#como-pedir,#contacto{scroll-margin-top:150px}
 .cat-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 24px}
 .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+@media (max-width:560px){.tools{flex-wrap:nowrap;width:100%}.tools .sel{flex:1;min-width:0}}
 .tools label{font-size:var(--s-small);color:var(--ink-soft)}
 .sel{height:44px;border-radius:999px;border:2px solid var(--edge);background:var(--paper);padding:0 36px 0 16px;appearance:none;-webkit-appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%237a857c' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -386,6 +387,8 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .buy{display:flex;align-items:center;gap:8px;margin-top:2px}
 .add{flex:1;height:42px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);font-weight:600;transition:transform 140ms var(--ease-out),background-color 160ms ease}
 .add:active{transform:scale(.97)}
+.add.alt{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+@media (hover:hover) and (pointer:fine){.add.alt:hover{background:var(--accent);color:#fff}}
 @media (hover:hover) and (pointer:fine){.add:hover{background:var(--accent-deep);color:var(--ground)}}
 .step{display:flex;align-items:center;flex:1;height:42px;border-radius:999px;background:var(--ground-2)}
 .step button{width:42px;height:42px;border:0;background:transparent;border-radius:50%;font-size:1.25rem;font-weight:500;transition:transform 140ms var(--ease-out)}
@@ -423,15 +426,17 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 @media (hover:hover) and (pointer:fine){.mbrands button:hover{text-decoration:underline}}
 
 /* how to order: tiles that grow */
-.steps{display:grid;grid-template-columns:3fr 4fr 5fr;gap:12px;align-items:end;margin:40px 0 0;padding:0;list-style:none}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;margin:40px 0 0;padding:0;list-style:none}
 .steps li{display:flex;flex-direction:column;gap:14px}
 .steps .t{display:flex;align-items:flex-end;padding:20px;font-weight:600;letter-spacing:-.03em;line-height:.95;color:#1b2238;font-size:clamp(1.75rem,1rem + 2.6vw,3.25rem)}
-.steps li:nth-child(1) .t{height:clamp(150px,22vw,240px);background:var(--field-1)}
-.steps li:nth-child(2) .t{height:clamp(190px,30vw,330px);background:var(--field-2)}
-.steps li:nth-child(3) .t{height:clamp(230px,38vw,420px);background:var(--navy);color:var(--cream-ink)}
+.steps .t{height:clamp(170px,20vw,250px);border-radius:18px;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:10px}
+.steps .t .n{font-size:.95rem;font-weight:700;letter-spacing:0;font-stretch:100%;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);margin-bottom:auto;margin-top:22px}
+.steps li:nth-child(1) .t{background:var(--field-1)}
+.steps li:nth-child(2) .t{background:var(--field-2)}
+.steps li:nth-child(3) .t{background:var(--navy);color:var(--cream-ink)}
 .steps p{margin:0;max-width:40ch}
 .steps p b{display:block;font-weight:600}
-@media (max-width:700px){.steps{grid-template-columns:1fr}.steps li:nth-child(1) .t{height:34vw}.steps li:nth-child(2) .t{height:46vw}.steps li:nth-child(3) .t{height:58vw}}
+@media (max-width:700px){.steps{grid-template-columns:1fr}.steps .t{height:auto;min-height:150px}}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:36px;align-items:start}
@@ -487,7 +492,17 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 
 /* footer */
 footer{padding-block:56px 40px;background:var(--ground-2)}
-footer .name{display:block;width:min(100%,760px);height:auto;margin:0}
+footer .name{display:block;width:min(100%,240px);height:auto;margin:0}
+.fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px 40px;align-items:start}
+.fbrand .motto{margin:12px 0 18px}
+.fcol h4{margin:0 0 10px;font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.fcol p{margin:0 0 10px;color:var(--ink);line-height:1.5}
+.fcol .soft{color:var(--ink-soft);font-size:var(--s-small)}
+.fcol a{color:var(--ink)}
+.fcol .foot-nav{margin-top:14px;gap:4px 14px}
+footer .row{border-top:1px solid var(--line,#ddd6c3);padding-top:20px;margin-top:36px !important}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
+@media (max-width:480px){.fgrid{grid-template-columns:1fr}}
 footer .name span{color:var(--ink)}
 footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px 40px;margin-top:28px;color:var(--ink-soft);font-size:var(--s-small)}
 footer .row p{margin:0;max-width:62ch}
@@ -503,6 +518,11 @@ footer .motto{font-weight:600;color:var(--ink);font-size:var(--s-lead)}
   transition:transform 140ms var(--ease-out)}
 .bar button:active{transform:scale(.98)}
 @media (min-width:761px){.bar{display:none}}
+.wa-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:34;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);transition:transform 220ms var(--ease-out),opacity 200ms ease}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab:active{transform:scale(.94)}
+html.intro-on .wa-fab{opacity:0}
+@media (max-width:760px){.wa-fab{width:52px;height:52px}.wa-fab svg{width:27px;height:27px}body.has-bar .wa-fab{transform:translateY(-74px)}}
 
 /* ---------- dialogs ---------- */
 dialog{border:0;padding:0;color:var(--ink);background:var(--paper);max-width:none;max-height:none}
@@ -749,8 +769,8 @@ section.t-navy{background:var(--navy);color:#f7f4ea;padding-top:clamp(40px,6vw,8
 section.t-navy .h2{color:#fff}
 section.t-navy .steps p{color:#dfe3f1}
 section.t-navy .steps p b{color:#fff}
-section.t-navy .steps li:nth-child(1) .t{background:#2d3c80;color:#fff}
-section.t-navy .steps li:nth-child(2) .t{background:#3a4a94;color:#fff}
+section.t-navy .steps li:nth-child(1) .t{background:#34448c;color:#fff}
+section.t-navy .steps li:nth-child(2) .t{background:#34448c;color:#fff}
 section.t-navy .steps li:nth-child(3) .t{background:var(--accent);color:#fff}
 section.t-navy .steps li:nth-child(3) .t::before{background:#fff}
 section.t-navy .steps .t::before{background:#ffd9a8;box-shadow:0 0 0 4px rgba(255,217,168,.25)}
@@ -820,6 +840,7 @@ html.intro-on .car{animation-play-state:paused}
       <label class="vh" for="q">Buscar en el catálogo</label>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" type="search" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="qPanel" aria-autocomplete="list" placeholder="Buscá: cable 2,5, térmica 2x20, dicroica…">
+      <script>if (innerWidth < 520) document.getElementById('q').placeholder = 'Buscá: cable 2,5, térmica…';</script>
       <button type="button" class="clear" id="qClear" aria-label="Borrar búsqueda" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="qpanel" id="qPanel" role="listbox" aria-label="Sugerencias" hidden></div>
     </form>
@@ -932,14 +953,13 @@ html.intro-on .car{animation-play-state:paused}
     </div>
   </section>
 
-  <div class="tick t-navy" aria-hidden="true"><div class="tick-in"><span>Cables</span><i></i><span>Llaves y tomas</span><i></i><span>Térmicas</span><i></i><span>Iluminación LED</span><i></i><span>Caños</span><i></i><span>Herramientas</span><i></i><span>Tableros</span><i></i><span>Bornes</span><i></i><span>Cables</span><i></i><span>Llaves y tomas</span><i></i><span>Térmicas</span><i></i><span>Iluminación LED</span><i></i><span>Caños</span><i></i><span>Herramientas</span><i></i><span>Tableros</span><i></i><span>Bornes</span><i></i></div></div>
   <section class="block t-navy" id="como-pedir" aria-labelledby="howT">
     <div class="wrap">
       <h2 class="h2" id="howT">Cómo pedir</h2>
       <ol class="steps">
-        <li><div class="t">Elegí</div><p><b>Armá la lista</b>Buscá cada artículo y sumalo al pedido. En cables elegís rollo o metro cortado.</p></li>
-        <li><div class="t">Enviá</div><p><b>Mandalo por WhatsApp</b>El pedido sale escrito con códigos, cantidades y total. No pagás nada online.</p></li>
-        <li><div class="t">Retirá o recibí</div><p><b>Te confirmamos</b>Un vendedor revisa el stock, te responde y coordinan retiro en el local o envío.</p></li>
+        <li><div class="t"><span class="n">1</span>Elegí</div><p><b>Armá la lista</b>Buscá cada artículo y sumalo al pedido. En cables elegís rollo o metro cortado.</p></li>
+        <li><div class="t"><span class="n">2</span>Enviá</div><p><b>Mandalo por WhatsApp</b>El pedido sale escrito con códigos, cantidades y total. No pagás nada online.</p></li>
+        <li><div class="t"><span class="n">3</span>Retirá o recibí</div><p><b>Te confirmamos</b>Un vendedor revisa el stock, te responde y coordinan retiro en el local o envío.</p></li>
       </ol>
     </div>
   </section>
@@ -994,16 +1014,25 @@ html.intro-on .car{animation-play-state:paused}
   <div class="tick t-red" aria-hidden="true"><div class="tick-in"><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i><span>Pedí por WhatsApp</span><i></i><span>+54 9 342 595-6706</span><i></i><span>Retirás en el local</span><i></i><span>O te lo enviamos</span><i></i></div></div>
 <footer>
   <div class="wrap">
-    <img class="name" src="img/logo-casaedel.png?v=2" alt="Electricidad Casa Edel" width="541" height="143" loading="lazy">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img class="name" src="img/logo-casaedel.png?v=2" alt="Electricidad Casa Edel" width="541" height="143" loading="lazy">
+        <p class="motto">La casa amiga del gremio</p>
+        <a class="btn btn-wa" href="https://wa.me/5493425956706" target="_blank" rel="noopener">Pedí por WhatsApp</a>
+      </div>
+      <div class="fcol"><h4>Casa central</h4><p>Marcial Candioti 2906<br>Santa Fe</p><p class="soft">Lunes a viernes<br>7:30 a 16:30</p></div>
+      <div class="fcol"><h4>Casa Edel Express</h4><p>Av. Aristóbulo del Valle 5837<br>Santa Fe</p><p class="soft">Lunes a viernes 8 a 17<br>Sábados 9:30 a 12:30</p></div>
+      <div class="fcol"><h4>Contacto</h4><p><span class="num">+54 9 342 595-6706</span><br><a href="https://www.instagram.com/casa.edel/" target="_blank" rel="noopener">@casa.edel</a></p><nav class="foot-nav" aria-label="Secciones del pie"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a href="#como-pedir">Cómo pedir</a><a href="#contacto">Contacto</a></nav></div>
+    </div>
     <div class="row">
-      <p class="motto">La casa amiga del gremio</p>
-      <nav class="foot-nav" aria-label="Secciones del pie"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a href="#como-pedir">Cómo pedir</a><a href="#contacto">Contacto</a></nav>
-      <p>Precios sujetos a confirmación de stock al responder tu pedido. Las fotos son ilustrativas: un mismo modelo puede mostrarse en otra medida o color. Privacidad: esta web no usa cookies ni rastreadores; tu pedido se guarda solo en tu navegador hasta que lo enviás por WhatsApp. <a href="admin.html" style="color:inherit;opacity:.6">Administración</a></p>
+      <p>Precios sujetos a confirmación de stock al responder tu pedido. Las fotos son ilustrativas: un mismo modelo puede mostrarse en otra medida o color. Esta web no usa cookies ni rastreadores; tu pedido se guarda solo en tu navegador hasta que lo enviás por WhatsApp.</p>
+      <p>© Electricidad Casa Edel · <a href="admin.html" style="color:inherit;opacity:.6">Administración</a></p>
     </div>
   </div>
 </footer>
 
 <div class="bar" id="bar"><button type="button" id="barBtn"><span id="barTxt">Ver pedido</span><span class="num" id="barTot"></span></button></div>
+<a class="wa-fab" id="waFab" href="https://wa.me/5493425956706" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></a>
 <div class="toast" id="toast" role="status"></div>
 
 <dialog id="pd" aria-labelledby="pdName"></dialog>
@@ -1274,12 +1303,15 @@ function carTimer(){
   car.addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null; if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) carShow(CAR.i + (dx < 0 ? 1 : -1)); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(CAR.t); else carTimer(); });
 })();
+/* the picture that stands for each category (falls back to its best seller with a photo) */
+const REP_PICK = { 'Climatización y Hogar':'selene-ventilador-4-palas-1-20-m-g', 'Caños y Canalización':'genrod-cano-corrugado-pvc-g' };
+const repOf = r => { const f = BY.get(REP_PICK[r]); return f && phStyle(f) ? f : topWithPhoto(P.filter(p => p.c === r), 1)[0] || P.find(p => p.c===r && ATLAS[p.i]); };
 function catsHTML(kind){
   const counts = {}, subs = {};
   P.forEach(p => { counts[p.c]=(counts[p.c]||0)+1; (subs[p.c] ||= {})[p.s] = ((subs[p.c]||{})[p.s]||0)+1; });
   const rubros = RUBRO_ORDER.filter(r => counts[r]).concat(Object.keys(counts).filter(r => !RUBRO_ORDER.includes(r)));
   return rubros.map((r,i) => {
-    const rep = topWithPhoto(P.filter(p => p.c === r), 1)[0] || P.find(p => p.c===r && ATLAS[p.i]);
+    const rep = repOf(r);
     const dot = `<span class="dot" style="background:${field(i)}">${rep?`<span class="ph" style="--k:86;mix-blend-mode:multiply;${phStyle(rep)}"></span>`:''}</span>`;
     if (kind === 'menu') return `<button class="mcat" type="button" data-cat="${esc(r)}">${dot}${esc(r)}</button>`;
     const ss = Object.keys(subs[r]).filter(Boolean).sort((a,b)=>subs[r][b]-subs[r][a]);
@@ -1299,7 +1331,7 @@ let revealIO;
 function setupReveal(root=document){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   revealIO ||= new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('reveal-in'); e.target.classList.remove('reveal-wait'); revealIO.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
-  const groups = ['.block .sub', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .name', 'footer .row'];
+  const groups = ['.block .sub', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .fgrid > *', 'footer .row'];
   groups.forEach(sel => root.querySelectorAll(sel).forEach((el,i) => {
     if (el.dataset.rv) return; el.dataset.rv = 1;
     if (el.getBoundingClientRect().top < innerHeight) return;
@@ -1311,7 +1343,7 @@ function renderRubros(){
   const counts = {}; P.forEach(p => counts[p.c] = (counts[p.c]||0)+1);
   const rubros = RUBRO_ORDER.filter(r => counts[r]).concat(Object.keys(counts).filter(r => !RUBRO_ORDER.includes(r)));
   $('#rubros').innerHTML = rubros.map((r,i) => {
-    const rep = topWithPhoto(P.filter(p => p.c === r), 1)[0] || P.find(p => p.c===r && ATLAS[p.i]);
+    const rep = repOf(r);
     return `<button class="rubro" type="button" data-rubro="${esc(r)}" aria-pressed="${state.rubro===r}"><span class="tile" style="background:${field(i)}">${rep?`<span class="ph" style="${phStyle(rep)}"></span>`:''}</span><span class="nm">${esc(r)}</span><span class="ct num">${counts[r].toLocaleString('es-AR')} artículos</span></button>`;
   }).join('');
 }
@@ -1423,7 +1455,7 @@ function priceHTML(p){
 }
 function inCart(id, v=0){ return cart.find(l => l.id===id && l.v===v); }
 function buyHTML(p){
-  if (p.v && p.v.length > 1) return `<button class="add" type="button" data-open="${esc(p.id)}">Elegir</button>`;
+  if (p.v && p.v.length > 1) return `<button class="add alt" type="button" data-open="${esc(p.id)}">Elegir opción</button>`;
   const l = inCart(p.id, 0);
   if (!l) return `<button class="add" type="button" data-add="${esc(p.id)}">Agregar</button>`;
   return `<div class="step" role="group" aria-label="Cantidad"><button type="button" data-dec="${esc(p.id)}" aria-label="Quitar uno">−</button><output class="num">${l.q}</output><button type="button" data-inc="${esc(p.id)}" aria-label="Sumar uno">+</button></div>`;
@@ -1519,6 +1551,7 @@ function updateCount(bump){
   const n = items(); const c = $('#cartCount');
   c.textContent = n; if (bump){ c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump'); }
   $('#bar').classList.toggle('on', n > 0 && !$('#cart').open);
+  document.body.classList.toggle('has-bar', n > 0 && !$('#cart').open);
   $('#barTxt').textContent = `Ver pedido · ${n} ${n===1?'artículo':'artículos'}`;
   $('#barTot').textContent = money(total());
   if ($('#cart').open) renderCart();
