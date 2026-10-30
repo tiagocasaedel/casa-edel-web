@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-wF4JW+ajM/Yq/NpvLITOZbK6Y6709RYDFevFOg4EdHQ='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-tk8J1W26GFfZyxbqYMwCdZcf0bZC5pNrNkJPgSz0bXA='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -386,6 +386,9 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .price .from{font-weight:400;font-size:.875rem;color:var(--ink-soft);margin-right:4px}
 .buy{display:flex;align-items:center;gap:8px;margin-top:2px}
 .add{flex:1;height:42px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);font-weight:600;transition:transform 140ms var(--ease-out),background-color 160ms ease}
+.clear-all{display:block;margin:4px 0 14px auto;background:none;border:0;padding:6px 0;color:var(--ink-soft);font-size:var(--s-small);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.clear-all:hover{color:var(--accent)}
+.clear-all.sure{color:#fff;background:var(--accent);text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:600}
 .add:active{transform:scale(.97)}
 .add.alt{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
 @media (hover:hover) and (pointer:fine){.add.alt:hover{background:var(--accent);color:#fff}}
@@ -1530,6 +1533,7 @@ function refreshCard(id){
 }
 
 /* ---------- cart ---------- */
+/* empty-order button */
 function save(){ store.set('ce-cart', cart); store.set('ce-who', who); }
 function unitOf(p, v){ const lab = p.v ? p.v[v].l : ''; return (/metro/i.test(lab) || (p.u==='m' && !/rollo|unidad/i.test(lab))) ? 'm' : 'u'; }
 function priceOf(p, v){ return p.v ? p.v[v].p : p.p; }
@@ -1596,6 +1600,7 @@ function renderCart(){
       <button class="rm" type="button" data-crm="${i}">Quitar del pedido</button></div></li>`;
   }).join('')}</ul>
   <div class="totals"><span>Total estimado</span><b class="num">${money(total())}</b></div>
+  <button class="clear-all" type="button" data-clearall>Vaciar pedido</button>
   <p class="fine">El vendedor te confirma stock y precio final antes de cerrar.</p>
   <div class="promo"><b>¿Buscás más promociones?</b><span>Por cantidad, por obra o pagando en efectivo hay más descuentos. <a href="${waLink('Hola Casa Edel! Quería consultar por promociones.')}" target="_blank" rel="noopener">Consultanos por WhatsApp</a>.</span></div>
   <div class="form">
@@ -1815,6 +1820,12 @@ document.addEventListener('click', e => {
   if (d.cinc !== undefined){ const l=cart[d.cinc]; setQty(l.id,l.v,l.q+1); return; }
   if (d.cdec !== undefined){ const l=cart[d.cdec]; setQty(l.id,l.v,l.q-1); return; }
   if (d.crm !== undefined){ const l=cart[d.crm]; setQty(l.id,l.v,0); return; }
+  if (d.clearall !== undefined){
+    const b = t;
+    /* two taps: the first one asks, the second one empties */
+    if (!b.classList.contains('sure')){ b.classList.add('sure'); b.textContent = '¿Seguro? Tocá de nuevo para vaciar'; setTimeout(() => { if (b.isConnected){ b.classList.remove('sure'); b.textContent = 'Vaciar pedido'; } }, 4000); return; }
+    const ids = [...new Set(cart.map(l => l.id))]; cart = []; save(); updateCount(); ids.forEach(refreshCard); return;
+  }
   if (d.mode){ who.mode = d.mode; save(); document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-checked', b.dataset.mode===who.mode)); refreshSend(); return; }
   if (t.id === 'send'){ setTimeout(() => { const s=$('#sentNote'); s.hidden=false; s.className='sent'; s.innerHTML='Se abre WhatsApp con el pedido escrito: revisalo y tocá enviar. Si no se abrió, <button type="button" id="copyOrder">copiá el pedido</button> y pegalo en un chat con '+CONFIG.phoneLabel+'.'; }, 300); return; }
   if (t.id === 'copyOrder'){ navigator.clipboard.writeText(orderText()).then(()=>toast('Pedido copiado'),()=>toast('No se pudo copiar')); return; }
