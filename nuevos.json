@@ -12566,5 +12566,33 @@
 "marca": "Nisuta"
 },
 "motivo": "Nombre y marca estaban invertidos"
+},
+{
+"id": "teclastar---tapa-quadra-rectang-met-plata-antigu",
+"set": {
+"visible": false
+},
+"motivo": "Sin foto, se oculta"
+},
+{
+"id": "teclastar---tapa-quadra-rectang-met-oro-brillant",
+"set": {
+"visible": false
+},
+"motivo": "Sin foto, se oculta"
+},
+{
+"id": "teclastar---tapa-quadra-rectang-met-oro-antiguo",
+"set": {
+"visible": false
+},
+"motivo": "Sin foto, se oculta"
+},
+{
+"id": "teclastar---tapa-quadra-10x10-met-satinado",
+"set": {
+"visible": false
+},
+"motivo": "Sin foto, se oculta"
 }
 ]
