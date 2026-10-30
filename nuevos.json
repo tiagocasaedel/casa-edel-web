@@ -6029,10 +6029,6 @@
 "B.Frío"
 ],
 [
-"aurelia---tira-neon-led-12v-144w-celeste",
-"Celeste"
-],
-[
 "aurelia---tira-neon-led-12v-144w-naranja",
 "Naranja"
 ],
@@ -6255,10 +6251,6 @@
 [
 "teclastar---proyector-led-20w-luz-calida-2200lm",
 "20W Luz Cálida 2200lm"
-],
-[
-"teclastar---proyector-led-20w-luz-fria-2200lm",
-"20W Luz Fría 2200lm"
 ],
 [
 "teclastar---proyector-led-30w-luz-calida-3300lm",
@@ -12772,5 +12764,31 @@
 "visible": false
 },
 "motivo": "Duplicado de Dicro 7W 38° Cálida"
+},
+{
+"id": "teclastar---proyector-led-20w-luz-fria-2200lm",
+"set": {
+"visible": false
+},
+"motivo": "Suspendido, no se vende más"
+},
+{
+"id": "aurelia---tira-neon-led-12v-144w-celeste",
+"set": {
+"visible": false
+},
+"motivo": "No se vende (no figura en el sistema)"
+},
+{
+"id": "tornillo-parker-6-x-1-jadever-t7779",
+"vset": {
+"0": {
+"k": "JDXSA914"
+},
+"1": {
+"k": "JDXSA914/1"
+}
+},
+"motivo": "Código de cada presentación"
 }
 ]

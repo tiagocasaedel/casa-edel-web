@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-MuVUPVq1RnsbyHiy/y79nlFoyhG6Y21h9wObDycWyQQ='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-FyrVIaQ9dYnxLE8B/Z3N1UWMLJNYhXsiujdT5xgpDb4='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -1013,6 +1013,12 @@ async function offerNew(){
       const row = { id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio))||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 };
       if (row.precio_usd != null && DOLAR > 0) row.precio = Math.round(row.precio_usd * DOLAR);
       row._new = true; NEW.push({ row, txt: row.nombre + ' (nuevo)', why: 'Producto nuevo' });
+    } else if (r.vset && typeof r.vset === 'object' && have.variantes){
+      /* change the code of single presentations: { "0": { "k": "ABC" } } */
+      const row = JSON.parse(JSON.stringify(have)); let ch = false;
+      for (const [i, o] of Object.entries(r.vset)){ const v = row.variantes[Number(i)]; if (v && o && typeof o.k === 'string' && o.k.length < 60 && v.k !== o.k){ v.k = o.k; ch = true; } }
+      if (!ch) continue;
+      NEW.push({ row, txt: `${row.nombre} (código de presentaciones)`, why: r.motivo ? String(r.motivo).slice(0,120) : 'Cambio preparado' });
     } else if (r.set && typeof r.set === 'object'){
       const row = JSON.parse(JSON.stringify(have)); let ch = [];
       for (const k of SETS) if (k in r.set){
