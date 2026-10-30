@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-CnYlge+jTSqr6QxCPhLbyse6CEmQ1Bdy2ZNomqxZEVk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-mzhBZ9FrZndAROrZl0+VNBEEL/obChtKZgMrVSSLXDY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1603,7 +1603,7 @@ let pdSel = 0, pdQty = 1, pdLast = { id:'', img:'', price:0 };
 function perMeter(lab, price){ const m = lab.match(/x\s*(\d+)\s*m\b/i); return m ? price / Number(m[1]) : null; }
 /* split each option into dimensions (medida · color · luz) so grouped products can be chosen step by step */
 const TEMP_RE = /(?:^|\s)(?:luz\s+)?(b\.\s?)?(c[aá]lid[oa]|fr[ií][oa]|neutr[oa]|d[ií]a|rgb)(?=\s|$)/i;
-const COLOR_RE = /(?:^|\s)(blanc[oa]|negr[oa]|gris|marfil|arena|roj[oa]|azul|verde|amarill[oa]|naranja|celeste|violeta|n[ií]quel|plata|platil|silver|beige|marr[oó]n|transparente|acero|grafito|bronce)(?=\s|$)/i;
+const COLOR_RE = /(?:^|\s)(verde\/amarill[oa]|blanc[oa]|negr[oa]|gris|marfil|arena|roj[oa]|azul|verde|amarill[oa]|naranja|celeste|violeta|n[ií]quel|plata|platil|silver|beige|marr[oó]n|transparente|acero|grafito|bronce)(?=\s|$)/i;
 const SW = { blan:'#ffffff', negr:'#1c1c1c', gris:'#9aa0a6', marf:'#efe6cf', aren:'#d8c7a4', roj:'#d0362b', azul:'#2b59c3', verd:'#2f9e44', amar:'#f2c94c', nara:'#f08a24', cele:'#6cc3ea', viol:'#8e5bd6', niqu:'#b9bcc0', níqu:'#b9bcc0', plat:'#c9ccd1', silv:'#c9ccd1', beig:'#e9dcc0', marr:'#7a4a2b', tran:'linear-gradient(135deg,#fff,#dfe7ef)', acer:'#a7adb4', graf:'#4a4d52', bron:'#b08d57' };
 const TSW = { c:'#ffc46b', f:'#d9ecff', n:'#fff3d6', d:'#eef6ff', r:'conic-gradient(#f33,#fd3,#3d6,#39f,#c3f,#f33)' };
 const cap = t => t.charAt(0).toUpperCase() + t.slice(1).toLowerCase();
@@ -1636,7 +1636,7 @@ function dimsOf(p){
     let l = ' ' + v.l + ' ', t = '', c = '';
     const ab = l.match(/\s(CA|FR)(?=\s)/); if (ab){ t = ab[1] === 'CA' ? 'Cálida' : 'Fría'; l = l.replace(ab[0], ' '); }
     const tm = t ? null : l.match(TEMP_RE); if (tm){ const w = tm[2].toLowerCase(); t = /^c/.test(w) ? 'Cálida' : /^f/.test(w) ? 'Fría' : /^n/.test(w) ? 'Neutra' : /^d/.test(w) ? 'Día' : 'RGB'; l = l.replace(tm[0], ' '); }
-    const cm = l.match(COLOR_RE); if (cm){ const w = cap(cm[1]); c = /^(Blanc|Negr|Roj|Amarill)a$/.test(w) ? w.slice(0, -1) + 'o' : w; l = l.replace(cm[0], ' '); }
+    const cm = l.match(COLOR_RE); if (cm){ const w = cap(cm[1]).replace(/\/(\w)/, (m, x) => '/' + x.toUpperCase()); c = /^(Blanc|Negr|Roj|Amarill)a$/.test(w) ? w.slice(0, -1) + 'o' : w; l = l.replace(cm[0], ' '); }
     return { t, c, s: l.replace(/\b\d+\s*lm\b/i, ' ').replace(/\s+/g, ' ').trim() };
   });
   // drop words every option shares (E27, 220V…) so the chips only show what changes
@@ -1647,6 +1647,8 @@ function dimsOf(p){
   if (uniq('s').length > 1 || (uniq('s')[0] && uniq('c').length < 2 && uniq('t').length < 2)) D.push({ k:'s', name: p.v.some(v => /rollo|metro/i.test(v.l)) ? 'Presentación' : /\d/.test(rows[0].s) ? 'Medida' : 'Modelo' });
   if (uniq('c').length > 1) D.push({ k:'c', name:'Color' });
   if (uniq('t').length > 1) D.push({ k:'t', name:'Luz' });
+  /* colour and light that never appear together (a neon tape in white light or in colours) read better as one list */
+  if (D.some(d => d.k === 'c') && D.some(d => d.k === 't') && rows.every(r => !!r.c !== !!r.t)) return (p._dims = { rows: p.v.map(v => ({ s: v.l, c:'', t:'' })), D: [{ k:'s', name:'Color' }] });
   // every option must be reachable by its combination; if not, fall back to a single list
   const key = r => D.map(d => r[d.k]).join('|');
   if (!D.length || new Set(rows.map(key)).size !== rows.length) return (p._dims = { rows: p.v.map(v => ({ s: v.l, c:'', t:'' })), D: [{ k:'s', name:'Opción' }] });

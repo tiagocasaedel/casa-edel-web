@@ -3870,7 +3870,7 @@
 "items": [
 [
 "fusse---terminal-preaislado-amarillo-pala-hba-63",
-"Amarillo 6,3"
+"Amarillo 6,3 mm"
 ],
 [
 "fusse---terminal-preaislado-azul-pala-hembra-63mm",
@@ -5044,7 +5044,7 @@
 ],
 [
 "zoloda---esquinero-exterior-100x50",
-"100x50"
+"100x50 Blanco"
 ]
 ]
 }
@@ -5110,7 +5110,7 @@
 ],
 [
 "zoloda---curva-plana-100x50",
-"100x50"
+"100x50 Blanco"
 ]
 ]
 }
@@ -6194,27 +6194,27 @@
 "items": [
 [
 "candil---proyector-led-10w-luz-fria-6500k-750lm",
-"10W Luz Fría 6500K 750lm"
+"10W Fría"
 ],
 [
 "candil---proyector-led-30w-luz-fria-6500k-2250lm",
-"30W Luz Fría 6500K 2250lm"
+"30W Fría"
 ],
 [
 "candil---proyector-led-30w-luz-neutra-4000k-2250lm",
-"30W Luz Neutra 4000K 2250lm"
+"30W Neutra"
 ],
 [
 "candil---proyector-led-50w-luz-fria-6500k-3750lm",
-"50W Luz Fría 6500K 3750lm"
+"50W Fría"
 ],
 [
 "candil---proyector-led-50w-luz-neutra-3750lm",
-"50W Luz Neutra 3750lm"
+"50W Neutra"
 ],
 [
 "candil---proyector-led-100w-luz-fria-6500k-7500lm",
-"100W Luz Fría 6500K 7500lm"
+"100W Fría"
 ]
 ]
 }
@@ -6640,11 +6640,11 @@
 ],
 [
 "interelec---plafon-led-ext-red-12w-17cm-bla-calido",
-"12W 17 cm Blanco Cálido"
+"12W 17 cm Blanco Cálida"
 ],
 [
 "interelec---plafon-led-ext-red-12w-blanco-fria",
-"12W Blanco Fría"
+"12W 17 cm Blanco Fría"
 ],
 [
 "interelec---plafon-led-ext-red-18w-22cm-bla-calida",
@@ -6656,7 +6656,7 @@
 ],
 [
 "interelec---plafon-led-ext-red-18w-22cm-negro-frio",
-"18W 22 cm Negro Frío"
+"18W 22 cm Negro Fría"
 ],
 [
 "interelec---plafon-led-ext-red-24w-30cm-bla-calida",
@@ -7010,11 +7010,11 @@
 "items": [
 [
 "interelec---panel-led-emb-red-6w-12cm-calida",
-"6W 12 cm Cálida"
+"6W 12 cm Blanco Cálida"
 ],
 [
 "interelec---panel-led-emb-red-6w-12cm-fria",
-"6W 12 cm Fría"
+"6W 12 cm Blanco Fría"
 ],
 [
 "interelec---panel-led-emb-red-12w-17cm-bla-calida",
@@ -7030,11 +7030,11 @@
 ],
 [
 "interelec---panel-led-emb-red-18w-22cm-calida",
-"18W 22 cm Cálida"
+"18W 22 cm Blanco Cálida"
 ],
 [
 "interelec---panel-led-emb-red-18w-blanco-frio",
-"18W Blanco Frío"
+"18W 22 cm Blanco Fría"
 ],
 [
 "interelec---panel-led-emb-red-24w-30cm-bla-fria",
@@ -7042,7 +7042,7 @@
 ],
 [
 "interelec---panel-led-emb-red-24w-30cm-calida",
-"24W 30 cm Cálida"
+"24W 30 cm Blanco Cálida"
 ]
 ]
 }
@@ -7202,11 +7202,11 @@
 "items": [
 [
 "interelec---panel-led-emb-cuad-6w-12cm-luz-calida",
-"6W 12 cm Luz Cálida"
+"6W 12 cm Blanco Cálida"
 ],
 [
 "interelec---panel-led-emb-cuad-6w-12cm-luz-fria",
-"6W 12 cm Luz Fría"
+"6W 12 cm Blanco Fría"
 ],
 [
 "interelec---panel-led-emb-cuad-12w-17cm-bla-calida",
@@ -7218,19 +7218,19 @@
 ],
 [
 "interelec---panel-led-emb-cuad-18w-22cm-bla-frio",
-"18W 22 cm Blanco Frío"
+"18W 22 cm Blanco Fría"
 ],
 [
 "interelec---panel-led-emb-cuad-18w-22cm-calida",
-"18W 22 cm Cálida"
+"18W 22 cm Blanco Cálida"
 ],
 [
 "interelec---panel-led-emb-cuad-24w-30cm-calido",
-"24W 30 cm Cálido"
+"24W 30 cm Blanco Cálida"
 ],
 [
 "interelec---panel-led-emb-cuad-24w-30cm-fria",
-"24W 30 cm Fría"
+"24W 30 cm Blanco Fría"
 ]
 ]
 }
@@ -7270,19 +7270,19 @@
 "items": [
 [
 "lucciola---panel-led-emb-60x60-45w-3000k-bl-calido",
-"3000K Blanco Cálido"
+"Cálida 3000K"
 ],
 [
 "lucciola---panel-led-emb-60x60-45w-4320lm-bla-frio",
-"4320lm Blanco Frío"
+"Fría 4320 lúmenes"
 ],
 [
 "lucciola---panel-led-emb-60x60-45w-4320lm-bla-neu",
-"4320lm Blanco Neutra"
+"Neutra 4320 lúmenes"
 ],
 [
 "lucciola---panel-led-emb-60x60-45w-4500lm-bla-neu",
-"4500lm Blanco Neutra"
+"Neutra 4500 lúmenes"
 ]
 ]
 }
@@ -7296,11 +7296,11 @@
 "items": [
 [
 "interelec---panel-led-emb-120-x-30cm-40w-luz-fria",
-"40W Luz Fría"
+"40W Fría"
 ],
 [
 "interelec---panel-led-emb-120-x-30cm-48w-luz-fria",
-"48W Luz Fría"
+"48W Fría"
 ],
 [
 "interelec---panel-led-emb-120-x-30cm-48w-neutra",
@@ -11690,23 +11690,23 @@
 "items": [
 [
 "macroled---lampara-led-a60-10w-e27-fria-950lm",
-"10W E27 Fría 950lm"
+"10W Fría"
 ],
 [
 "macroled---lampara-led-a60-10w-e27-luz-neutra",
-"10W E27 Luz Neutra"
+"10W Neutra"
 ],
 [
 "macroled---lampara-led-a60-12w-e27-luz-neutra",
-"12W E27 Luz Neutra"
+"12W Neutra"
 ],
 [
 "macroled---lampara-led-a60-12w-luz-rgb",
-"12W Luz RGB"
+"12W RGB"
 ],
 [
 "macroled---lampara-led-a60-15w-e27-luz-neutra",
-"15W E27 Luz Neutra"
+"15W Neutra"
 ]
 ]
 }
