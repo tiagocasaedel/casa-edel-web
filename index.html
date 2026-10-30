@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-W+d/34eL53ZfTZxPTv7eFHjHkYgCJeM80/Wk8RzKOgM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-z9OLXGCNBB857GgMPE/LX+Dp0Nd5nVBmQqtCbmOr04A='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -644,7 +644,7 @@ button,a,[role="button"]{-webkit-user-select:none;user-select:none}
 .btn,.add,.cart-btn,.qall{font-stretch:112%;font-weight:700}
 .chip,.qcats button{font-stretch:108%}
 .card h3{font-weight:500;font-size:1.0313rem;line-height:1.25}
-.card .meta{font-stretch:92%}
+.card .meta{font-stretch:92%;margin-bottom:auto}
 .rubro .nm{font-stretch:115%;font-weight:700;letter-spacing:-.02em;font-size:1.125rem;line-height:1.08}
 .rubro .ct{font-stretch:88%}
 .place h3,.bh-txt b{font-stretch:112%;font-weight:700}
@@ -1468,7 +1468,7 @@ function renderCatalog(reset=true){
   // heading
   const t = state.q ? `Resultados para “${state.q}”${state.rubro ? ' en ' + state.rubro : ''}` : state.rubro ? [state.rubro, state.brand, state.sub].filter(Boolean).join(' · ') : 'Lo más pedido';
   $('#catT').textContent = t;
-  $('#catSub').textContent = state.q || state.rubro ? (state.rubro && !state.q ? (state.brand ? 'Elegí el tipo de producto o volvé a ver todas las marcas.' : 'Elegí la marca: cada línea tiene sus propios módulos, tapas y repuestos.') : 'Buscamos en nombre, marca y código.') : 'Lo que más sale en el mostrador. Elegí un rubro o buscá por nombre, marca o código.';
+  $('#catSub').textContent = state.q || state.rubro ? (state.rubro && !state.q ? (state.brand ? 'Elegí el tipo de producto o volvé a ver todas las marcas.' : (state.rubro === 'Llaves de Luz y Tomas' ? 'Elegí la marca: cada línea tiene sus propios módulos, tapas y repuestos.' : 'Filtrá por marca o por tipo de producto.')) : 'Buscamos en nombre, marca y código.') : 'Lo que más sale en el mostrador. Elegí un rubro o buscá por nombre, marca o código.';
   $('#status').textContent = arr.length ? `${arr.length.toLocaleString('es-AR')} artículos · mostrando ${state.shown.toLocaleString('es-AR')}` : '';
   if (!arr.length){
     $('#grid').innerHTML = `<div class="empty" style="grid-column:1/-1"><h3 class="h2" style="font-size:1.5rem">No encontramos “${esc(state.q)}”</h3><p>Probá con otra palabra o con el código del artículo. Si no está en la web, igual podemos tenerlo: preguntanos.</p><a class="btn btn-go" target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Estoy buscando: ' + state.q + '. ¿Lo tienen?')}">Preguntar por WhatsApp</a></div>`;
