@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-mzhBZ9FrZndAROrZl0+VNBEEL/obChtKZgMrVSSLXDY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-wF4JW+ajM/Yq/NpvLITOZbK6Y6709RYDFevFOg4EdHQ='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1558,17 +1558,28 @@ function updateCount(bump){
 }
 function waLink(text){ return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`; }
 function orderText(){
-  const L = ['¡Hola Casa Edel! Quiero hacer este pedido:',''];
-  cart.forEach(l => {
-    const p = BY.get(l.id), u = unitOf(p, l.v), var_ = p.v ? ` (${p.v[l.v].l})` : '';
-    const code = p.v ? p.v[l.v].k : p.k;
-    L.push(`• ${u==='m' ? l.q+' m de' : l.q+' ×'} ${p.n}${p.b?' – '+p.b:''}${var_}${code?' · cód. '+code:''} = ${money(priceOf(p,l.v)*l.q)}`);
+  /* written for the person at the counter: one block per item, code first, then a code × quantity list to load it fast */
+  const items = cart.map(l => {
+    const p = BY.get(l.id), u = unitOf(p, l.v), v = p.v ? p.v[l.v] : null;
+    return { p, u, v, q: l.q, code: (v ? v.k : p.k) || 'sin código', unit: priceOf(p, l.v) };
   });
-  L.push('', `Total estimado: ${money(total())}`);
-  if (who.name.trim()) L.push(`Nombre: ${who.name.trim()}`);
-  L.push(`Entrega: ${who.mode}`);
-  if (who.note.trim()) L.push(`Nota: ${who.note.trim()}`);
-  L.push('', 'Precios de la web. Quedo atento a la confirmación de stock.');
+  const qty = it => it.u === 'm' ? `${it.q} m` : it.v && /rollo/i.test(it.v.l) ? `${it.q} ${it.q === 1 ? 'rollo' : 'rollos'}` : `${it.q} u.`;
+  const L = ['¡Hola Casa Edel! Quiero hacer este pedido:', ''];
+  if (who.name.trim()) L.push(`*Cliente:* ${who.name.trim()}`);
+  L.push(`*Entrega:* ${who.mode}`);
+  if (who.note.trim()) L.push(`*Nota:* ${who.note.trim()}`);
+  L.push('', `*ARTÍCULOS (${items.length})*`, '');
+  items.forEach((it, i) => {
+    L.push(`*${i + 1}) Cód. ${it.code}*`);
+    L.push(`${it.p.n}${it.v ? ' · ' + it.v.l : ''}${it.p.b ? ' (' + it.p.b + ')' : ''}`);
+    L.push(`Cantidad: *${qty(it)}*  ·  ${money(it.unit)} ${it.u === 'm' ? 'el metro' : it.v && /rollo/i.test(it.v.l) ? 'el rollo' : 'c/u'}  ·  Subtotal ${money(it.unit * it.q)}`);
+    L.push('');
+  });
+  L.push(`*TOTAL ESTIMADO: ${money(total())}*`, '');
+  L.push('Para cargar (código × cantidad):', '```');
+  const w = Math.max(...items.map(it => it.code.length));
+  items.forEach(it => L.push(`${it.code.padEnd(w)}  x ${qty(it)}`));
+  L.push('```', '', 'Precios de la web. Quedo atento a la confirmación de stock.');
   return L.join('\n');
 }
 function renderCart(){
