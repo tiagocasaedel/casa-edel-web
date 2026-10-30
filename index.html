@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-tk8J1W26GFfZyxbqYMwCdZcf0bZC5pNrNkJPgSz0bXA='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-4uNIU+FCBsysp7gx7NwoZ9fuBvlS1MnX3gTPBezUH5g='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1562,7 +1562,7 @@ function updateCount(bump){
 }
 function waLink(text){ return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`; }
 function orderText(){
-  /* written for the person at the counter: one block per item, code first, then a code × quantity list to load it fast */
+  /* written for the person at the counter: one block per item, code first, with the important parts in bold */
   const items = cart.map(l => {
     const p = BY.get(l.id), u = unitOf(p, l.v), v = p.v ? p.v[l.v] : null;
     return { p, u, v, q: l.q, code: (v ? v.k : p.k) || 'sin código', unit: priceOf(p, l.v) };
@@ -1580,10 +1580,7 @@ function orderText(){
     L.push('');
   });
   L.push(`*TOTAL ESTIMADO: ${money(total())}*`, '');
-  L.push('Para cargar (código × cantidad):', '```');
-  const w = Math.max(...items.map(it => it.code.length));
-  items.forEach(it => L.push(`${it.code.padEnd(w)}  x ${qty(it)}`));
-  L.push('```', '', 'Precios de la web. Quedo atento a la confirmación de stock.');
+  L.push('Precios de la web. Quedo atento a la confirmación de stock.');
   return L.join('\n');
 }
 function renderCart(){
