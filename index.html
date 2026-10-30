@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-vDKAJ4a0kR0ldEZxw0kW7Cn05E1R4c3SumtFYQ0RxOM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-t2HZ44ZXG2iwJ+mLmfGdDoUbsKz6XJe+Fz5mxHLUaDA='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1193,8 +1193,6 @@ function poleAlias(p){
   [p.n, ...(p.v || []).map(v => v.l)].forEach(t => { for (const a of t.matchAll(/(?:x\s*)?(\d+)\s*A(?:mp)?\b\.?/gi)) amps.add(a[1]); });
   { const xa = p.n.match(/\b[1-4]\s*x\s*(\d+)\b/i); if (xa) amps.add(xa[1]); }
   const ns = [n];
-  /* a three-phase residual-current device is four-pole: whoever types "disyuntor 3x40" means that one */
-  if (n === 4 && /disyuntor|diferencial/i.test(p.n)) ns.push(3);
   const out = [n + 'x'];
   ns.forEach(k => { out.push(k + 'x', POLE_WORD[k], k + 'p'); amps.forEach(a => out.push(`${k}x${a}`, `${k}x${a}a`, `${k}x${a.padStart(2,'0')}`)); });
   out.push(n >= 3 ? 'trifasico' : 'monofasico');
