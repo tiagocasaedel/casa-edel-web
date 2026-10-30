@@ -9,11 +9,7 @@
 "codigo": "NK-ELEC-00009-BL",
 "precio": 118469,
 "precio_usd": 75.9416,
-"visible": true,
-"set": {
-"precio_usd": 75.9416
-},
-"motivo": "Producto en dólares"
+"visible": true
 },
 {
 "id": "sdn---tubo-led-t8-18w-120cm-1-pta-l-fria",
@@ -291,46 +287,6 @@
 [
 "gabexel---caja-derivacion-metalica-500x500x100",
 "500 x 500 x 100 mm"
-]
-]
-}
-},
-{
-"id": "sica-disyuntor-diferencial-bipolar-g",
-"group": {
-"nombre": "Disyuntor Diferencial Bipolar",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Disyuntores Diferenciales",
-"items": [
-[
-"sica---id-disyuntor-de-2x25a-iram-ce",
-"25A"
-],
-[
-"sica---id-disyuntor-de-2x40a-iram-ce",
-"40A"
-]
-]
-}
-},
-{
-"id": "jeluz-disyuntor-diferencial-bipolar-g",
-"group": {
-"nombre": "Disyuntor Diferencial Bipolar",
-"rubro": "Protecciones y Maniobra",
-"subrubro": "Disyuntores Diferenciales",
-"items": [
-[
-"jeluz---id-disyuntor-de-2x25a-iram-ce",
-"25A · 30mA"
-],
-[
-"jeluz---id-disyuntor-de-2x40a-iram-ce",
-"40A · 30mA"
-],
-[
-"jeluz---id-disyuntor-de-2x40a-100ma-iram-ce",
-"40A · 100mA"
 ]
 ]
 }
@@ -1527,24 +1483,6 @@
 [
 "argenplas---cable-cobre-desnudo-1x50mm",
 "1x50 mm"
-]
-]
-}
-},
-{
-"id": "argenplas-cable-alma-acero-2x0-50-mm-g",
-"group": {
-"nombre": "Cable Alma Acero",
-"rubro": "Cables",
-"subrubro": "Cables Subterráneos y Especiales",
-"items": [
-[
-"argenplas-cable-alma-acero-2x050mm-blanco",
-"2x0,50 mm · Blanco"
-],
-[
-"argenplas--cable-alma-acero-2x050mm-negro",
-"2x0,50 mm · Negro"
 ]
 ]
 }
