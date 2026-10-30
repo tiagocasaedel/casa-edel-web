@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-FyrVIaQ9dYnxLE8B/Z3N1UWMLJNYhXsiujdT5xgpDb4='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-TAn9hq9CxIcj+g8u9KTgfQ9SJDRoOKLDdFGEeVJA6TY='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -649,6 +649,7 @@ function loadSheet(){
   plan();
 }
 function plan(){
+  if (!R.length){ $('#iSum').innerHTML = '<div class="pill warn">Todavía se están cargando los productos. Esperá unos segundos: la planilla se revisa sola cuando terminen.</div>'; $('#iApply').disabled = true; return; }
   const ci = +$('#iCode').value, pi = +$('#iPrice').value, key = $('#iKey').value, brand = $('#iBrand').value, cur_ = $('#iCur').value;
   const kind = $('#iKind').value, desc = num($('#iDesc').value) || 0, iva = $('#iIva').checked, prop = $('#iProp').checked, show = $('#iShow').checked;
   const mi = $('#iMon').value === '' ? -1 : +$('#iMon').value, keepU = $('#iKeepUsd').checked;
@@ -956,6 +957,8 @@ async function start(){
   if (!R.length && !DEMO){ try { $('#seedN').textContent = (await (await fetch('products.json')).json()).length.toLocaleString('es-AR'); } catch {} $('#seed').hidden = false; }
   if (R.length) await migrate();
   index(); fillSelects(); applyFilters();
+  /* a price list chosen while the products were still loading is checked again now */
+  if (SHEET.length) plan();
   offerNew();
 }
 /* productos preparados para agregar (nuevos.json): se cargan solo cuando el administrador toca "Agregar" */
