@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-W6aEFOaoLljfe4DsIJBmgZZcVsfaeGjid7heDHUuwmg='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-MuVUPVq1RnsbyHiy/y79nlFoyhG6Y21h9wObDycWyQQ='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -513,7 +513,7 @@ function applyFilters(){
     if (est === 'off' && r.visible) return false;
     if (est === 'nofoto' && fotoOf(r)) return false;
     if (est === 'recent' && !recent.has(r.id)) return false;
-    if (toks.length){ const h = norm([r.nombre, r.marca, r.codigo, (r.variantes||[]).map(v => v.k).join(' '), r.id].join(' ')); if (!toks.every(t => h.includes(t))) return false; }
+    if (toks.length){ const h = norm([r.nombre, r.marca, r.codigo, alqOf(r.codigo), (r.variantes||[]).map(v => v.k + ' ' + alqOf(v.k)).join(' '), r.id].join(' ')); if (!toks.every(t => h.includes(t))) return false; }
     return true;
   }).sort((a,b) => ((a.orden||1e5) - (b.orden||1e5)) || a.nombre.localeCompare(b.nombre,'es'));
   shown = 60; renderRows();
@@ -523,14 +523,14 @@ function rowHTML(r0){
   return `<tr data-id="${esc(r.id)}" class="${dirty.has(r.id) ? 'dirty' : ''} ${sel.has(r.id) ? 'sel' : ''}">
     <td><input type="checkbox" data-sel aria-label="Seleccionar" ${sel.has(r.id) ? 'checked' : ''}></td>
     <td>${thumb(fotoOf(r))}</td>
-    <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}</b>${hasV ? `<button type="button" class="vtog" data-vtog aria-expanded="${OPEN.has(r.id)}">${OPEN.has(r.id) ? '▾' : '▸'} ${r.variantes.length} presentaciones</button>` : ''}${!r.visible && INGROUP.has(r.id) ? `<small class="ing">Está dentro de “${esc(INGROUP.get(r.id).nombre)}”</small>` : ''}<small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo].filter(Boolean).join(' · '))}</small></td>
+    <td class="nm"><b>${esc(r.nombre)}${isU ? '<span class="tag usd">USD</span>' : ''}${r.visible ? '' : '<span class="tag off">Oculto</span>'}</b>${hasV ? `<button type="button" class="vtog" data-vtog aria-expanded="${OPEN.has(r.id)}">${OPEN.has(r.id) ? '▾' : '▸'} ${r.variantes.length} presentaciones</button>` : ''}${!r.visible && INGROUP.has(r.id) ? `<small class="ing">Está dentro de “${esc(INGROUP.get(r.id).nombre)}”</small>` : ''}<small>${esc([r.marca, r.codigo && 'cód. ' + r.codigo, alqOf(r.codigo) && 'Alquimia ' + alqOf(r.codigo)].filter(Boolean).join(' · '))}</small></td>
     <td class="c-rub mini">${esc(r.rubro)}</td>
     <td class="c-pr" style="text-align:right">${hasV ? `<span class="num mini">desde ${money(Math.min(...r.variantes.map(effV)))}</span>` : `<input class="pin num" data-f="precio" inputmode="decimal" value="${isU ? effP(r) : r.precio}" ${isU ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos">`}</td>
     <td class="c-usd" style="text-align:right">${hasV ? '' : `<input class="pin usd num" data-f="precio_usd" inputmode="decimal" value="${isU ? r.precio_usd : ''}" placeholder="—" aria-label="Precio en dólares">`}</td>
     <td class="c-vis"><button type="button" class="sw" role="switch" data-vis aria-checked="${!!r.visible}" aria-label="Mostrar en la web"></button></td>
     <td class="c-ed"><button class="btn sm" type="button" data-edit>Editar</button></td></tr>${hasV && OPEN.has(r.id) ? r.variantes.map((v, i) => {
       const vu = v.usd != null && v.usd !== '';
-      return `<tr class="vrow" data-id="${esc(r.id)}" data-vi="${i}"><td></td><td>${v.i ? thumb(v.i) : ''}</td><td class="nm"><span>${esc(v.l)}</span><small>${v.k ? 'cód. ' + esc(v.k) : ''}</small></td><td></td>
+      return `<tr class="vrow" data-id="${esc(r.id)}" data-vi="${i}"><td></td><td>${v.i ? thumb(v.i) : ''}</td><td class="nm"><span>${esc(v.l)}</span><small>${v.k ? 'cód. ' + esc(v.k) : ''}${alqOf(v.k) ? ' · Alquimia ' + esc(alqOf(v.k)) : ''}</small></td><td></td>
         <td style="text-align:right"><input class="pin num" data-vf="p" inputmode="decimal" value="${vu ? effV(v) : v.p}" ${vu ? 'disabled title="Se calcula con el dólar"' : ''} aria-label="Precio en pesos"></td>
         <td style="text-align:right"><input class="pin usd num" data-vf="usd" inputmode="decimal" value="${vu ? v.usd : ''}" placeholder="—" aria-label="Precio en dólares"></td><td></td><td></td></tr>`; }).join('') : ''}`;
 }
@@ -950,6 +950,7 @@ async function start(){
   $('#loginView').hidden = true; $('#app').hidden = false; $('#demoNote').hidden = !DEMO; $('#who').textContent = u.email;
   try { ATLAS = await (await fetch('img/atlas.json')).json(); } catch { ATLAS = {}; }
   try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch { FOTOS = {}; }
+  try { ALQ = await (await fetch('alquimia.json', {cache:'no-cache'})).json(); } catch { ALQ = {}; }
   DOLAR = await DB.dolar(); $('#dolar').value = DOLAR;
   try { R = await DB.all(); } catch (err) { toast('No pude leer los productos: ' + (err.message || err), true); R = []; }
   if (!R.length && !DEMO){ try { $('#seedN').textContent = (await (await fetch('products.json')).json()).length.toLocaleString('es-AR'); } catch {} $('#seed').hidden = false; }
@@ -959,6 +960,9 @@ async function start(){
 }
 /* productos preparados para agregar (nuevos.json): se cargan solo cuando el administrador toca "Agregar" */
 let NEW = [], GONE = new Set();
+/* internal (Alquimia) code of each maker code */
+var ALQ = {};
+const alqOf = c => c ? (ALQ[c] || '') : '';
 async function offerNew(){
   let src = []; try { src = await (await fetch('nuevos.json', { cache:'no-cache' })).json(); } catch {}
   const idOk = r => r && typeof r.id === 'string' && /^[a-z0-9-]{1,120}$/.test(r.id);

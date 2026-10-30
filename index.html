@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-4uNIU+FCBsysp7gx7NwoZ9fuBvlS1MnX3gTPBezUH5g='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-TPZNy/t7XJ4jKD5IjYVLJOEhgCmGEpmZ+dO19Et28/Y='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1093,7 +1093,7 @@ const store = {
   set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 };
 
-let P = [], BY = new Map(), ATLAS = {};
+let P = [], BY = new Map(), ATLAS = {}, ALQ = {};
 const state = { q:'', rubro:'', sub:'', brand:'', sort:'top', shown:0 };
 let list = [];
 let cart = store.get('ce-cart', []);   // [{id, v, q}]
@@ -1197,6 +1197,8 @@ async function load(){
   if (!P.length) P = await (await fetch('products.json')).json();
   /* fotos nuevas que se suben a la web (fotos.json); una foto cargada desde el panel tiene prioridad */
   let FOTOS = {}; try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch {}
+  /* internal (Alquimia) code for each maker code, used in the WhatsApp order */
+  fetch('alquimia.json', {cache:'no-cache'}).then(r => r.json()).then(j => { ALQ = j || {}; }).catch(() => {});
   P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f;
     if (p.v) p.v.forEach(v => { const g = v.m && FOTOS[v.m]; if (typeof g === 'string' && !/supabase\.co/.test(v.i || '')) v.i = g; });
     if (!p.i && p.v) p.i = (p.v.find(v => v.i) || {}).i || ''; });
@@ -1565,7 +1567,8 @@ function orderText(){
   /* written for the person at the counter: one block per item, code first, with the important parts in bold */
   const items = cart.map(l => {
     const p = BY.get(l.id), u = unitOf(p, l.v), v = p.v ? p.v[l.v] : null;
-    return { p, u, v, q: l.q, code: (v ? v.k : p.k) || 'sin código', unit: priceOf(p, l.v) };
+    const mk = (v ? v.k : p.k) || '';
+    return { p, u, v, q: l.q, code: mk || 'sin código', alq: mk && (ALQ[mk] || ALQ[mk.toUpperCase()]), unit: priceOf(p, l.v) };
   });
   const qty = it => it.u === 'm' ? `${it.q} m` : it.v && /rollo/i.test(it.v.l) ? `${it.q} ${it.q === 1 ? 'rollo' : 'rollos'}` : `${it.q} u.`;
   const L = ['¡Hola Casa Edel! Quiero hacer este pedido:', ''];
@@ -1574,7 +1577,7 @@ function orderText(){
   if (who.note.trim()) L.push(`*Nota:* ${who.note.trim()}`);
   L.push('', `*ARTÍCULOS (${items.length})*`, '');
   items.forEach((it, i) => {
-    L.push(`*${i + 1}) Cód. ${it.code}*`);
+    L.push(it.alq ? `*${i + 1}) Cód. ${it.alq}*  (cód. empresa ${it.code})` : `*${i + 1}) Cód. empresa ${it.code}*`);
     L.push(`${it.p.n}${it.v ? ' · ' + it.v.l : ''}${it.p.b ? ' (' + it.p.b + ')' : ''}`);
     L.push(`Cantidad: *${qty(it)}*  ·  ${money(it.unit)} ${it.u === 'm' ? 'el metro' : it.v && /rollo/i.test(it.v.l) ? 'el rollo' : 'c/u'}  ·  Subtotal ${money(it.unit * it.q)}`);
     L.push('');
