@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-1Rz7qaTpF9007bFfUeCSJoMmCJ91+9gsBd3yPQfTlgI=' 'sha256-W+d/34eL53ZfTZxPTv7eFHjHkYgCJeM80/Wk8RzKOgM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-W+d/34eL53ZfTZxPTv7eFHjHkYgCJeM80/Wk8RzKOgM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -764,12 +764,11 @@ section.t-navy .cable::after{background:var(--navy)}
 .intro.out{opacity:0;pointer-events:none}
 .intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 600ms var(--ease-out),transform 900ms var(--ease-out),filter 600ms ease}
 .intro.out video{opacity:0;transform:scale(.92) translateY(-3%);filter:blur(4px)}
-.intro.flying{opacity:0;pointer-events:none;transition:opacity 700ms ease 150ms}
-.intro.flying video{opacity:0;transition:opacity 250ms ease}
-.intro.out .intro-skip,.intro.flying .intro-skip{opacity:0;transition:opacity 200ms ease}
+.intro.fade{opacity:0;pointer-events:none;transition:opacity 1100ms cubic-bezier(.4,0,.2,1)}
+.intro.fade video{transform:scale(1.03);transition:transform 1200ms cubic-bezier(.4,0,.2,1)}
+.intro.out .intro-skip,.intro.fade .intro-skip{opacity:0;transition:opacity 200ms ease}
 .intro-fly{position:fixed;left:0;top:0;z-index:201;transform-origin:0 0;pointer-events:none;will-change:transform}
 .intro-fly img{display:block;width:100%;height:100%}
-html.mark-hide .mark img{opacity:0}
 html.intro-ran header.top .top-row > *{animation:none}
 html.intro-on .car{animation-play-state:paused}
 </style>
@@ -780,49 +779,26 @@ html.intro-on .car{animation-play-state:paused}
 </div>
 <script>
 /* intro: once per visit, never when the person asked for less motion.
-   When it ends, the logo lifts out of the video and lands on the header logo. */
+   When it ends, it fades gently into the page. */
 (function(){
   var el = document.getElementById('intro'), seen = false;
   try { seen = sessionStorage.getItem('ce-intro') === '1'; } catch(e){}
   if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.remove(); return; }
-  var root = document.documentElement; root.classList.add('intro-on', 'intro-ran', 'mark-hide');
+  var root = document.documentElement; root.classList.add('intro-on', 'intro-ran');
   var v = document.getElementById('introV'), done = false;
   var tall = innerHeight > innerWidth * 1.1, name = tall ? 'img/intro-m' : 'img/intro';
-  /* where the logo sits in the last frame of each video (video pixels): x0,y0,x1,y1 */
-  var BOX = tall ? [91.25, 585.6, 632.3, 764.9] : [510, 449, 1416, 749];
-  /* the part of the flying image that matches the header logo (fractions of the image) */
-  var TOP = { x0: .0077, y0: .0233, x1: .9917, y1: .79 }, HDR = { x0: 2/541, y0: 2/143, x1: 538/541, y1: 141/143 };
   v.innerHTML = '<source src="' + name + '.mp4" type="video/mp4"><source src="' + name + '.webm" type="video/webm">';
-  var logo = new Image(); logo.src = 'img/intro-logo.png';
   function finish(){
     try { sessionStorage.setItem('ce-intro', '1'); } catch(e){}
     root.classList.remove('intro-on');
     dispatchEvent(new Event('ce-intro-done'));
     setTimeout(function(){ el.remove(); }, 1100);
   }
-  function close(){ if (done) return; done = true; el.classList.add('out'); root.classList.remove('mark-hide'); finish(); }
+  function close(){ if (done) return; done = true; el.classList.add('out'); finish(); }
+  /* at the end the video holds its last frame for a moment, then the whole screen fades softly into the page */
   function fly(){
     if (done) return; done = true;
-    var mark = document.querySelector('.mark img');
-    var vw = v.videoWidth, vh = v.videoHeight;
-    if (!mark || !vw || !logo.complete){ el.classList.add('out'); root.classList.remove('mark-hide'); finish(); return; }
-    var r = v.getBoundingClientRect(), k = Math.max(r.width / vw, r.height / vh);
-    var ox = r.left + (r.width - vw * k) / 2, oy = r.top + (r.height - vh * k) / 2;
-    var sx = ox + BOX[0] * k, sy = oy + BOX[1] * k, sw = (BOX[2] - BOX[0]) * k, sh = (BOX[3] - BOX[1]) * k;
-    var m = mark.getBoundingClientRect();
-    var cw = m.width * (HDR.x1 - HDR.x0), cx = m.left + m.width * HDR.x0, cy = m.top + m.height * HDR.y0;
-    var sc = cw / (sw * (TOP.x1 - TOP.x0));
-    var tx = cx - sw * TOP.x0 * sc, ty = cy - sh * TOP.y0 * sc;
-    var f = document.createElement('div'); f.className = 'intro-fly';
-    f.style.width = sw + 'px'; f.style.height = sh + 'px';
-    f.appendChild(logo); document.body.appendChild(f);
-    el.classList.add('flying');
-    var a = f.animate([
-      { transform: 'translate(' + sx + 'px,' + sy + 'px) scale(1)', clipPath: 'inset(0 0 0 0)' },
-      { transform: 'translate(' + tx + 'px,' + ty + 'px) scale(' + sc + ')', clipPath: 'inset(0 0 ' + ((1 - TOP.y1) * 100).toFixed(1) + '% 0)' }
-    ], { duration: 1000, delay: 120, easing: 'cubic-bezier(.77,0,.175,1)', fill: 'forwards' });
-    finish();
-    a.onfinish = function(){ root.classList.remove('mark-hide'); f.style.transition = 'opacity 180ms ease'; requestAnimationFrame(function(){ f.style.opacity = 0; setTimeout(function(){ f.remove(); }, 220); }); };
+    setTimeout(function(){ el.classList.add('fade'); finish(); }, 350);
   }
   v.addEventListener('ended', fly);
   v.addEventListener('timeupdate', function(){ if (v.duration && v.currentTime > v.duration - .08) fly(); });
