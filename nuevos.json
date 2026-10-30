@@ -7871,10 +7871,6 @@
 [
 "macroled---lamp-dicro-led-gu10-7w-38-neutra",
 "38° Neutra"
-],
-[
-"macroled---lamp-dicro-led-gu10-7w-bl-calid",
-"Blanco Cálida"
 ]
 ]
 }
@@ -11187,7 +11183,7 @@
 "items": [
 [
 "kalop---tekna-1-toma-exterior-superficie",
-"Estándar"
+"Blanco"
 ],
 [
 "kalop---tekna-1-toma-exterior-superficie-negro",
@@ -11205,11 +11201,11 @@
 "items": [
 [
 "san-justo---cano-de-hierro-38-roscado",
-"Estándar"
+"Por metro"
 ],
 [
 "san-justo---cano-de-hierro-38-roscado-x-4-cm",
-"X 4 cm"
+"Niple x 4 cm"
 ]
 ]
 }
@@ -11544,11 +11540,11 @@
 "items": [
 [
 "gsg---perfil-aluminio-p-cinta-led-c-difusor",
-"Estándar"
+"Por metro"
 ],
 [
 "gsg---perfil-aluminio-p-cinta-led-c-difusor-x-3m",
-"x 3 m"
+"Tira x 3 m"
 ]
 ]
 }
@@ -12769,5 +12765,12 @@
 "visible": false
 },
 "motivo": "Sin foto, se oculta"
+},
+{
+"id": "macroled---lamp-dicro-led-gu10-7w-bl-calid",
+"set": {
+"visible": false
+},
+"motivo": "Duplicado de Dicro 7W 38° Cálida"
 }
 ]
