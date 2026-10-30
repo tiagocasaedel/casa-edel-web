@@ -763,9 +763,8 @@ section.t-navy .cable::after{background:var(--navy)}
 .intro{position:fixed;inset:0;z-index:200;background:#f5f3ef;cursor:pointer;overflow:hidden;transition:opacity 500ms ease 450ms}
 .intro.out{opacity:0;pointer-events:none}
 .intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 600ms var(--ease-out),transform 900ms var(--ease-out),filter 600ms ease}
-.intro.out video{opacity:0;transform:scale(.92) translateY(-3%);filter:blur(4px)}
-.intro.fade{opacity:0;pointer-events:none;transition:opacity 1100ms cubic-bezier(.4,0,.2,1)}
-.intro.fade video{transform:scale(1.03);transition:transform 1200ms cubic-bezier(.4,0,.2,1)}
+.intro.out video{opacity:0}
+.intro.fade{opacity:0;pointer-events:none;transition:opacity 900ms ease}
 .intro.out .intro-skip,.intro.fade .intro-skip{opacity:0;transition:opacity 200ms ease}
 .intro-fly{position:fixed;left:0;top:0;z-index:201;transform-origin:0 0;pointer-events:none;will-change:transform}
 .intro-fly img{display:block;width:100%;height:100%}
