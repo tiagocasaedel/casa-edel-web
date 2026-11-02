@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-t2HZ44ZXG2iwJ+mLmfGdDoUbsKz6XJe+Fz5mxHLUaDA='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-QtgCWj+eDMFSMmQzrdsQvuaS4YVQr81lvbgLEZPsGYY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -550,6 +550,7 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .pd .meta{color:var(--ink-soft);font-size:var(--s-small);margin:-8px 0 0}
 .pd .crumb{font-size:var(--s-small);color:var(--ink-soft);margin:0}
 .pd .crumb button{all:unset;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.pd .pthumb{display:none}
 .pd .pricebox{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;background:var(--ground-2);border-radius:18px;padding:14px 18px}
 .pd .price{font-size:2rem;line-height:1}
 .pd .price small{display:block;font-size:.8125rem;font-weight:500;color:var(--ink-soft);letter-spacing:0;margin-top:6px;font-stretch:100%}
@@ -582,7 +583,12 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
   #pd{width:100vw;height:auto;margin:auto 0 0;max-height:92dvh;overflow:auto;overscroll-behavior:contain;border-radius:20px 20px 0 0}
   #pd[open]{animation:sheet 420ms var(--ease-drawer) both}
   .pd{grid-template-columns:1fr}
-  .pd .tile{min-height:0;aspect-ratio:4/3}
+  .pd .tile{display:none}
+  .pd h2{padding-right:44px;font-size:1.45rem}
+  .pd .pricebox{align-items:center;padding:10px 14px 10px 10px;position:sticky;top:-1px;z-index:2;box-shadow:0 6px 14px -10px rgba(0,0,0,.25)}
+  .pd .pthumb{display:block;flex:none;width:76px;height:76px;border-radius:12px;background-color:#fff;padding:6px;background-origin:content-box;background-clip:border-box;background-repeat:no-repeat;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+  .pd .pricebox .price{flex:1;min-width:0;font-size:1.9rem}
+  .pd .sel-l{max-width:42%}
   .pd .body{overflow:visible;max-height:none;padding:20px var(--gut-r) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut)}
   .pd .row{bottom:0;margin-bottom:0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
   .vchip{padding:8px 13px;font-size:.875rem}
@@ -1751,7 +1757,7 @@ function renderPD(p){
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
     <p class="meta">${[esc(p.b), code ? 'código ' + esc(code) : ''].filter(Boolean).join(' · ')}</p>
-    <div class="pricebox"><div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP && !p.v.some(v => /metro/i.test(v.l)) ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
+    <div class="pricebox">${img ? `<span class="pthumb" style="${img}"></span>` : ''}<div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP && !p.v.some(v => /metro/i.test(v.l)) ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
     ${opts}
     ${saveTxt}
     <p class="ask">¿Necesitás saber si hay stock o una medida que no ves? <a target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Consulto por: ' + p.n + (p.v ? ' ' + p.v[pdSel].l : '') + (p.b ? ' – ' + p.b : '') + (code ? ' (cód. ' + code + ')' : ''))}">Consultá disponibilidad</a></p>
