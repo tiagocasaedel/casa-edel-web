@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-QtgCWj+eDMFSMmQzrdsQvuaS4YVQr81lvbgLEZPsGYY='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-nz8qggTPkENrE7wXVqr1BFIGe05Gxiea92Ocv7ni6Oo='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -569,6 +569,9 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .vchip.off{opacity:.62;border-style:dashed}
 .vchip .dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
 .vchip.sz{border-radius:12px;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 13px;min-width:86px}
+.save.pack{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.save.pack button{all:unset;cursor:pointer;background:var(--navy);color:#fff;font-weight:600;font-size:.875rem;padding:8px 14px;border-radius:999px}
+.save.pack em{font-style:normal;font-weight:600;font-size:.875rem;color:var(--ink-soft)}
 .save{background:var(--field-2);color:#1b2238;padding:10px 14px;border-radius:14px;font-size:.9375rem;margin:0}
 .pd .row{display:flex;gap:10px;align-items:center;margin-top:4px;position:sticky;bottom:-22px;background:var(--paper);padding:12px 0 22px;margin-bottom:-22px}
 .pd .row .step{flex:none;width:146px;height:52px}
@@ -1719,6 +1722,8 @@ function tweenPrice(el, from, to){
   const step = now => { const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = money(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); };
   requestAnimationFrame(step);
 }
+/* caños rígidos de 3 m: cuántos trae cada paquete cerrado (tabla del local) */
+const PACK = { TR20SD:[37,111], RS20:[37,111], TR22SD:[24,72], RS22:[24,72], TR25SD:[24,72], TR32SD:[19,57], TR40SD:[10,30], TR50SD:[7,21] };
 function renderPD(p){
   const idx = P.indexOf(p);
   const u = unitOf(p, pdSel), pr = priceOf(p, pdSel);
@@ -1732,6 +1737,8 @@ function renderPD(p){
       if (pct > 0) saveTxt = `<p class="save">En ${esc(roll.l.split(' · ').pop().toLowerCase())} el metro te sale <b class="num">${money(pm)}</b>: ${pct}% menos que cortado.</p>`; }
   }
   const code = p.v ? p.v[pdSel].k : p.k;
+  const pk = PACK[code];
+  if (pk) saveTxt += `<div class="save pack"><span>Paquete cerrado: <b class="num">${pk[0]} caños de 3 m = ${pk[1]} m</b></span>${pdQty === pk[1] ? '<em>Ya elegiste el paquete</em>' : `<button type="button" data-pdpack="${pk[1]}">Llevar paquete (${pk[1]} m)</button>`}</div>`;
   const img = phV(p, pdSel, true), dm = dimsOf(p);
   let opts = '';
   if (p.v && dm){
@@ -1762,7 +1769,7 @@ function renderPD(p){
     ${saveTxt}
     <p class="ask">¿Necesitás saber si hay stock o una medida que no ves? <a target="_blank" rel="noopener" href="${waLink('Hola Casa Edel! Consulto por: ' + p.n + (p.v ? ' ' + p.v[pdSel].l : '') + (p.b ? ' – ' + p.b : '') + (code ? ' (cód. ' + code + ')' : ''))}">Consultá disponibilidad</a></p>
     <div class="row"><div class="step" role="group" aria-label="Cantidad"><button type="button" data-pdq="-1" aria-label="Quitar uno">−</button><input class="num" id="pdQty" size="3" inputmode="numeric" aria-label="Cantidad${u === 'm' ? ' en metros' : ''}" value="${pdQty}"><button type="button" data-pdq="1" aria-label="Sumar uno">+</button></div>
-    <button class="add" type="button" data-pdadd="${esc(p.id)}">Agregar ${u === 'm' ? 'metros' : ''} · <span class="num">${money(pr * pdQty)}</span></button></div>
+    <button class="add" type="button" data-pdadd="${esc(p.id)}">Agregar · <span class="num">${money(pr * pdQty)}</span></button></div>
   </div></div>`;
   const b = $('#pd .body'); if (b && keepScroll) b.scrollTop = keepScroll;
   if (pdLast.id === p.id) tweenPrice($('#pdPrice'), pdLast.price, pr);
@@ -1833,6 +1840,7 @@ document.addEventListener('click', e => {
   if (d.crumb){ $('#pd').close(); state.rubro=d.crumb; state.sub=''; state.q=''; $('#q').value=''; renderCatalog(); goCatalog(); return; }
   if (d.opt !== undefined){ pdSel = Number(d.opt); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
   if (d.dim !== undefined){ const p = BY.get(document.querySelector('[data-pdadd]').dataset.pdadd); pickDim(p, d.dim, d.val); renderPD(p); return; }
+  if (d.pdpack){ pdQty = Number(d.pdpack); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
   if (d.pdq){ const inp=$('#pdQty'); pdQty = Math.min(99999, Math.max(1,(parseInt(inp.value)||1)+Number(d.pdq))); renderPD(BY.get(document.querySelector('[data-pdadd]').dataset.pdadd)); return; }
   if (d.pdadd){ const q = Math.min(99999, Math.max(1, parseInt($('#pdQty').value)||1)); add(d.pdadd, pdSel, q); $('#pd').close(); return; }
   if (d.cinc !== undefined){ const l=cart[d.cinc]; setQty(l.id,l.v,l.q+1); return; }
