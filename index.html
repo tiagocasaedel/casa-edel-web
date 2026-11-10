@@ -786,12 +786,13 @@ header.top.away{transform:translateY(-100%)}
   .s-prod-copy h2{font-size:2rem}
   .s-prod-copy p{display:block;font-size:1rem}
   .h2{font-size:clamp(2.3rem,11vw,3.2rem)}
-  /* categories become a two-row strip you swipe sideways */
-  .rubros{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-template-columns:none;grid-auto-columns:40vw;gap:14px 12px;
-    overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gut)) calc(-1 * var(--gut-r));padding:4px var(--gut-r) 10px var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none;overscroll-behavior-x:contain}
-  .rubros::-webkit-scrollbar{display:none}
-  .rubro{scroll-snap-align:start}
-  .rubro .nm{font-size:1rem}
+  /* categories: a still grid of small tiles, all visible at once (no sideways swiping) */
+  .rubros{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px;margin-top:22px}
+  .rubro{gap:7px}
+  .rubro .tile{border-radius:16px}
+  .rubro .tile .ph{--k:82}
+  .rubro .nm{font-size:.875rem;line-height:1.12;letter-spacing:-.01em}
+  .rubro .ct{font-size:.75rem;margin-top:-4px}
   .steps .t{font-size:2.6rem}
 }
 @media (prefers-reduced-motion:reduce){
