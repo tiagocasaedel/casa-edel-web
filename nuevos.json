@@ -12751,5 +12751,17 @@
    }
   },
   "motivo": "Precio por metro de la lista 02/11 (AAB/1): lista $2.652 −35%"
+ },
+ {
+  "id": "ag---caja-rectangular-10x5-5x10-ch20-1-agujero",
+  "nombre": "Caja Rectangular 10x5 - 5x10 Chapa 20 1 Agujero",
+  "marca": "AG",
+  "rubro": "Cajas y Gabinetes",
+  "subrubro": "Cajas Metálicas y de Medidor",
+  "unidad": "u",
+  "codigo": "AGHCLLSC02",
+  "precio": 632,
+  "precio_usd": null,
+  "visible": true
  }
 ]
