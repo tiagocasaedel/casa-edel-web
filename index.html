@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-nz8qggTPkENrE7wXVqr1BFIGe05Gxiea92Ocv7ni6Oo='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-UGe/oCwHDv4cVvzDa+rjK2K5lMa1aKvdXgDTX0a522U='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -642,6 +642,44 @@ dialog[open]::backdrop{animation:fade 260ms ease both}
 .empty-note p{color:var(--ink-soft)}
 
 /* toast */
+/* "you left an order here" card: shown once per visit when the saved order has items */
+.back{position:fixed;z-index:70;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));width:min(460px,calc(100vw - 24px));transform:translateX(-50%);background:var(--paper);color:var(--ink);border-radius:22px;padding:18px 18px 16px;box-shadow:0 24px 60px -12px rgba(20,26,56,.45),0 0 0 1px rgba(20,26,56,.06);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.back[hidden]{display:none}
+.back.in{animation:backIn 620ms cubic-bezier(.2,1.25,.35,1) both}
+.back.out{animation:backOut 260ms ease-in both}
+@keyframes backIn{from{opacity:0;transform:translate(-50%,40px) scale(.94)}}
+@keyframes backOut{to{opacity:0;transform:translate(-50%,24px) scale(.97)}}
+.back-bag{position:relative;width:54px;height:54px;border-radius:16px;background:var(--accent);color:#fff;display:grid;place-items:center;animation:bagWig 1.1s 520ms ease-in-out 2}
+.back-bag svg{width:28px;height:28px}
+.back-n{position:absolute;top:-7px;right:-7px;min-width:24px;height:24px;padding:0 6px;border-radius:99px;background:var(--navy);color:#fff;font-size:.8125rem;font-weight:700;display:grid;place-items:center;box-shadow:0 0 0 3px var(--paper);animation:bump 480ms 700ms var(--ease-out) both}
+@keyframes bagWig{0%,100%{transform:rotate(0)}20%{transform:rotate(-12deg)}40%{transform:rotate(10deg)}60%{transform:rotate(-6deg)}80%{transform:rotate(3deg)}}
+.back-tx{min-width:0;padding-right:28px}
+.back h3{margin:0;font-size:1.125rem;font-weight:800;font-stretch:115%;letter-spacing:-.02em;line-height:1.15}
+.back p{margin:3px 0 0;color:var(--ink-soft);font-size:.9375rem}
+.back p b{color:var(--ink)}
+.back-th{grid-column:1/-1;display:flex;gap:6px;margin-top:10px}
+.back-th span{width:44px;height:44px;border-radius:10px;background:var(--tile);position:relative;overflow:hidden;flex:none}
+.back-th span .ph{position:absolute;inset:4px;mix-blend-mode:multiply;background-repeat:no-repeat}
+.back-th em{align-self:center;font-style:normal;font-weight:600;color:var(--ink-soft);font-size:.875rem;padding-left:4px}
+.back-act{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.back-act button{all:unset;cursor:pointer;height:42px;padding:0 16px;border-radius:99px;font-weight:600;font-size:.9375rem;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;transition:transform 140ms var(--ease-out)}
+.back-act button:active{transform:scale(.96)}
+.back-act button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.back-act .btn-k{background:var(--navy);color:#fff;flex:1 1 40%}
+.back-act .btn-g{background:var(--ground-2);color:var(--ink);flex:1 1 40%}
+.back-act .btn-l{color:var(--accent);padding:0 10px;flex:1 1 100%;height:36px;text-decoration:underline;text-underline-offset:3px}
+.back-act .btn-l.sure{background:var(--accent);color:#fff;padding:0 16px;text-decoration:none}
+.back-scrim{position:fixed;inset:0;z-index:69;background:rgba(20,26,56,.38);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);animation:fadeIn 400ms ease both}
+.back-scrim[hidden]{display:none}
+.back-scrim.out{animation:fadeOut 260ms ease-in both}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes fadeOut{to{opacity:0}}
+.back-x{all:unset;cursor:pointer;position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:99px;display:grid;place-items:center;color:var(--ink-soft)}
+.back-x svg{width:18px;height:18px}
+.cart-btn.ring{animation:ring 1.4s ease-out 3}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(196,48,42,.55)}100%{box-shadow:0 0 0 16px rgba(196,48,42,0)}}
+body.has-bar .back{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media (prefers-reduced-motion:reduce){.back-scrim,.back-scrim.out,.back.in,.back.out,.back-bag,.back-n,.cart-btn.ring{animation:none}}
 .toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:60;background:var(--ink);color:var(--ground);
   padding:12px 18px;border-radius:999px;font-size:.9375rem;max-width:calc(100vw - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;transition:opacity 200ms ease,transform 300ms var(--ease-out)}
 .toast.on{opacity:1;transform:translate(-50%,0)}
@@ -1046,6 +1084,14 @@ html.intro-on .car{animation-play-state:paused}
 <div class="bar" id="bar"><button type="button" id="barBtn"><span id="barTxt">Ver pedido</span><span class="num" id="barTot"></span></button></div>
 <a class="wa-fab" id="waFab" href="https://wa.me/5493425956706" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></a>
 <div class="toast" id="toast" role="status"></div>
+<div class="back-scrim" id="backScrim" data-back="keep" hidden></div>
+<section class="back" id="back" role="dialog" aria-labelledby="backT" hidden>
+  <div class="back-bag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="back-n num" id="backN"></span></div>
+  <div class="back-tx"><h3 id="backT">Tenés un pedido guardado</h3><p id="backS"></p></div>
+  <div class="back-th" id="backTh"></div>
+  <div class="back-act"><button type="button" class="btn-k" data-back="see">Ver pedido</button><button type="button" class="btn-g" data-back="keep">Seguir con este</button><button type="button" class="btn-l" data-back="clear">Empezar de cero</button></div>
+  <button type="button" class="back-x" data-back="keep" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</section>
 
 <dialog id="pd" aria-labelledby="pdName"></dialog>
 <dialog id="menu" aria-label="Menú">
@@ -1557,7 +1603,7 @@ function refreshCard(id){
 
 /* ---------- cart ---------- */
 /* empty-order button */
-function save(){ store.set('ce-cart', cart); store.set('ce-who', who); }
+function save(){ store.set('ce-cart', cart); store.set('ce-who', who); store.set('ce-cart-t', Date.now()); }
 function unitOf(p, v){ const lab = p.v ? p.v[v].l : ''; return (/metro/i.test(lab) || (p.u==='m' && !/rollo|unidad/i.test(lab))) ? 'm' : 'u'; }
 function priceOf(p, v){ return p.v ? p.v[v].p : p.p; }
 function add(id, v=0, q=1, silent){
@@ -1812,7 +1858,7 @@ $('#copyPhone').addEventListener('click', async e => {
   try { await navigator.clipboard.writeText(CONFIG.phoneLabel); toast('Número copiado'); }
   catch { const r = document.createRange(); r.selectNodeContents(document.querySelector('.visit .phone')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Seleccioná y copiá el número'); }
 });
-function openCart(){ renderCart(); $('#cart').showModal(); $('#bar').classList.remove('on'); }
+function openCart(){ closeBack(); renderCart(); $('#cart').showModal(); $('#bar').classList.remove('on'); }
 addEventListener('scroll', () => $('#top').classList.toggle('scrolled', scrollY > 10), {passive:true});
 
 document.addEventListener('click', e => {
@@ -1936,10 +1982,52 @@ function observeCards(){
   }
 })();
 
+/* ---------- welcome back: a saved order from an earlier visit ---------- */
+function agoTxt(t){
+  if (!t) return '';
+  const d0 = new Date(); d0.setHours(0,0,0,0);
+  const days = Math.round((d0 - new Date(new Date(t).setHours(0,0,0,0))) / 864e5);
+  if (days <= 0) return 'lo armaste hoy';
+  if (days === 1) return 'lo armaste ayer';
+  if (days < 7) return `lo armaste hace ${days} días`;
+  return 'lo armaste el ' + new Date(t).toLocaleDateString('es-AR', { day:'numeric', month:'numeric' });
+}
+function welcomeBack(){
+  if (!cart.length) return;
+  try { if (sessionStorage.getItem('ce-back') === '1') return; sessionStorage.setItem('ce-back', '1'); } catch(e){}
+  const show = () => setTimeout(() => {
+    if (!cart.length || document.querySelector('dialog[open]')) return;
+    const n = items(), b = $('#back');
+    $('#backN').textContent = n;
+    const ago = agoTxt(store.get('ce-cart-t', 0));
+    $('#backS').innerHTML = `${n} ${n === 1 ? 'artículo' : 'artículos'} · <b class="num">${money(total())}</b>${ago ? ' · ' + ago : ''}. ¿Lo seguís usando?`;
+    const th = cart.slice(0, 5).map((l, i) => { const p = BY.get(l.id), st = phV(p, l.v, false); return `<span style="background:${field(i)}">${st ? `<span class="ph" style="${st}"></span>` : ''}</span>`; }).join('');
+    $('#backTh').innerHTML = th + (cart.length > 5 ? `<em>+${cart.length - 5}</em>` : '');
+    b.hidden = false; b.classList.remove('out'); b.classList.add('in'); $('#backScrim').hidden = false; $('#backScrim').classList.remove('out');
+    $('#openCart').classList.add('ring');
+    setTimeout(() => $('#openCart').classList.remove('ring'), 4300);
+  }, 700);
+  if (document.documentElement.classList.contains('intro-on')) addEventListener('ce-intro-done', show, { once:true }); else show();
+}
+function closeBack(){ const b = $('#back'), sc = $('#backScrim'); if (b.hidden) return; b.classList.remove('in'); b.classList.add('out'); sc.classList.add('out'); setTimeout(() => { b.hidden = true; sc.hidden = true; b.classList.remove('out'); }, 260); }
+$('#backScrim').addEventListener('click', closeBack);
+$('#back').addEventListener('click', e => {
+  const t = e.target.closest('[data-back]'); if (!t) return;
+  const a = t.dataset.back;
+  if (a === 'keep'){ closeBack(); return; }
+  if (a === 'see'){ closeBack(); openCart(); return; }
+  if (a === 'clear'){
+    if (!t.classList.contains('sure')){ t.classList.add('sure'); t.textContent = '¿Seguro? Tocá de nuevo'; setTimeout(() => { if (t.isConnected){ t.classList.remove('sure'); t.textContent = 'Empezar de cero'; } }, 4000); return; }
+    const ids = [...new Set(cart.map(l => l.id))]; cart = []; save(); updateCount(); ids.forEach(refreshCard);
+    closeBack(); toast('Listo, empezás un pedido nuevo');
+  }
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') closeBack(); });
+
 /* ---------- boot ---------- */
 load().then(() => {
   $('#factN').textContent = P.length.toLocaleString('es-AR');
-  renderStage(); renderMarquee(); carShow(0); renderRubros(); renderCatalog(); updateCount();
+  renderStage(); renderMarquee(); carShow(0); renderRubros(); renderCatalog(); updateCount(); welcomeBack();
   $('#mega').innerHTML = catsHTML('mega'); $('#menuCats').innerHTML = catsHTML('menu');
   matchMedia('(min-width:701px)').addEventListener('change', renderStage);
   requestAnimationFrame(() => setupReveal());
