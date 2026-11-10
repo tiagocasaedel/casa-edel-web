@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-TAn9hq9CxIcj+g8u9KTgfQ9SJDRoOKLDdFGEeVJA6TY='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-VRYbgT3yu+Zp7V562nLK5Zdb2EE3dO7yTZlrzvu70+s=' 'sha256-IDFkVK/MG0TqipyHHDu5UIY0dO1cdbGVgCnYac8gERI='; img-src 'self' data: blob: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co wss://pduvxjjvtedpykgwlews.supabase.co; worker-src 'self'">
 <title>Panel Casa Edel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -1019,9 +1019,12 @@ async function offerNew(){
     } else if (r.vset && typeof r.vset === 'object' && have.variantes){
       /* change the code of single presentations: { "0": { "k": "ABC" } } */
       const row = JSON.parse(JSON.stringify(have)); let ch = false;
-      for (const [i, o] of Object.entries(r.vset)){ const v = row.variantes[Number(i)]; if (v && o && typeof o.k === 'string' && o.k.length < 60 && v.k !== o.k){ v.k = o.k; ch = true; } }
+      for (const [i, o] of Object.entries(r.vset)){ const v = row.variantes[Number(i)]; if (!v || !o) continue;
+        if (typeof o.k === 'string' && o.k.length < 60 && v.k !== o.k){ v.k = o.k; ch = true; }
+        /* a fixed price for one presentation: { "1": { "p": 1724 } } (the product price follows when it showed that presentation) */
+        if (Number(o.p) > 0 && Math.round(Number(o.p)) !== v.p){ const np = Math.round(Number(o.p)); if (row.precio === v.p) row.precio = np; v.p = np; ch = true; } }
       if (!ch) continue;
-      NEW.push({ row, txt: `${row.nombre} (código de presentaciones)`, why: r.motivo ? String(r.motivo).slice(0,120) : 'Cambio preparado' });
+      NEW.push({ row, txt: `${row.nombre} (presentaciones)`, why: r.motivo ? String(r.motivo).slice(0,120) : 'Cambio preparado' });
     } else if (r.set && typeof r.set === 'object'){
       const row = JSON.parse(JSON.stringify(have)); let ch = [];
       for (const k of SETS) if (k in r.set){
