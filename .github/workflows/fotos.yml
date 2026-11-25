@@ -1,0 +1,24 @@
+name: fotos
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: script to run
+        default: tools/fotos/probe.py
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pillow
+      - run: python ${{ github.event.inputs.script }}
+      - name: commit
+        run: |
+          git config user.name "fotos-bot"; git config user.email "fotos-bot@users.noreply.github.com"
+          git add -A tools/fotos fotos || true
+          git diff --cached --quiet || (git commit -m "fotos: resultados de ${{ github.event.inputs.script }}" && git pull --rebase && git push)
