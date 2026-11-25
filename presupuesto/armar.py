@@ -153,7 +153,7 @@ def page_html(order, data):
     dline = f'<div class="l d"><span>Descuento especial {fmt_q(dx)}%</span><span class="num">− {money(dto)}</span></div>' if dx else ''
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><style>{CSS.replace('ROOT', ROOT.as_uri())}</style></head><body>
 <div class="page"><div class="band"></div>
-<header><div><img src="{(ROOT/'img/logo-casaedel.png').as_uri()}" alt="Electricidad Casa Edel"><p class="motto">La casa amiga del gremio</p></div>
+<header><div><img src="{(ROOT/'img/logo-casaedel.png').as_uri()}" alt="Electricidad Casa Edel"><p class="motto">Materiales eléctricos · Santa Fe</p></div>
 <div class="doc"><h1>Presupuesto</h1><div class="meta">N° <b>{esc(numero)}</b><br>Fecha <b>{now.strftime('%d/%m/%Y')}</b><br>Válido hasta <b>{venc}</b></div></div></header>
 <div class="client">{clihtml}</div>
 <table><thead><tr>{'<th style="width:15mm"></th>' if hasimg else ''}<th style="width:22mm">Código</th><th>Artículo</th><th class="r" style="width:22mm">Cant.</th><th class="r" style="width:27mm">Unitario</th><th class="r" style="width:29mm">Subtotal</th></tr></thead>
