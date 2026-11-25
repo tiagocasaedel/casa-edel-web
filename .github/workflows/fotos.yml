@@ -4,7 +4,7 @@ on:
     inputs:
       script:
         description: script to run
-        default: tools/fotos/probe.py
+        default: tools/fotos/buscar.py
 permissions:
   contents: write
 jobs:
