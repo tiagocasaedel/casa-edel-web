@@ -21,7 +21,7 @@ def ddg_pages(q):
         u = urllib.parse.unquote(m.group(1))
         if u not in urls: urls.append(u)
     out = []
-    for u in urls[:4]:
+    for u in [u for u in urls if not re.search(r'youtube|facebook|instagram|pinterest|\.pdf', u)][:6]:
         p = get(u, 12).decode('utf8', 'ignore')
         for rx in (r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image'):
             m = re.search(rx, p)
@@ -42,15 +42,15 @@ def main(batch):
     Q = json.load(open(f'tools/fotos/q/{batch}.json'))
     res = {}
     def one(x):
-        c = bing(x['q'])[:8]
-        if len(c) < 3: c += ddg_pages(x['q'])
+        c = ddg_pages(x['q'])
+        if len(c) < 2: c += ddg_pages(x['q2'])
         good = []
         for cand in c:
             th = thumb(cand['u'])
             if th: good.append((cand, th))
             if len(good) == 5: break
         return x, good
-    with cf.ThreadPoolExecutor(8) as ex: results = list(ex.map(one, Q))
+    with cf.ThreadPoolExecutor(3) as ex: results = list(ex.map(one, Q))
     os.makedirs('tools/fotos/r', exist_ok=True); os.makedirs('tools/fotos/s', exist_ok=True)
     font = ImageFont.load_default()
     rows = 12; S = 150; L = 260
