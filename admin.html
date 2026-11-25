@@ -1013,7 +1013,7 @@ async function offerNew(){
     }
     if (!have){
       if (typeof r.nombre !== 'string' || !r.nombre || r.nombre.length > 300 || !(Number(r.precio) >= 0)) continue;
-      const row = { id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio))||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 };
+      const row = { id:r.id, nombre:r.nombre, marca:r.marca||'', rubro:r.rubro||'Otros', subrubro:r.subrubro||'', unidad:r.unidad==='m'?'m':'u', codigo:r.codigo||'', precio:Math.round(Number(r.precio)*100)/100||0, precio_usd:r.precio_usd!=null?r4(Number(r.precio_usd)):null, variantes:null, foto:'', visible:r.visible!==false, orden:Number(r.orden)||0 };
       if (row.precio_usd != null && DOLAR > 0) row.precio = Math.round(row.precio_usd * DOLAR);
       row._new = true; NEW.push({ row, txt: row.nombre + ' (nuevo)', why: 'Producto nuevo' });
     } else if (r.vset && typeof r.vset === 'object' && have.variantes){

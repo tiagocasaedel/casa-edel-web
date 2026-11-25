@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-aXS+9mZiGPcrwcACGT0PUa6kUmktoxjhAmVe2YcgcRY=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-ELECD460y0VOv0sIvQzHmFAkGI2d8TeXvwUmWPeAb/0='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-aXS+9mZiGPcrwcACGT0PUa6kUmktoxjhAmVe2YcgcRY=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-GWmlgN9QrjklFkji6QRcdmO0zS3nnwvL+gIqlHDUNeM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -482,6 +482,8 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .card .ph.sl.on{opacity:1}
 .card .cdots{position:absolute;left:10px;bottom:10px;display:flex;gap:4px;background:rgba(255,255,255,.85);padding:5px 7px;border-radius:999px}
 .card .cdots .dot{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.card .refb,.pd .refb{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.88);color:#4a5068;border:1px solid rgba(27,43,110,.14);border-radius:999px;font-size:.6875rem;font-weight:500;letter-spacing:.01em;padding:.25em .65em;pointer-events:none}
+.card .tile{position:relative}
 .card .vbadge{position:absolute;left:8px;top:8px;background:#1b2238;color:#f6f2ea;border-radius:999px;font-size:.875rem;font-weight:500;padding:.3em .7em}
 @media (hover:hover) and (pointer:fine){.card .tile:hover .ph{transform:scale(1.05)}}
 .card h3{font-size:1rem;font-weight:500;line-height:1.3;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
@@ -1454,12 +1456,13 @@ function phStyle(p, hd){
   }
   return '';
 }
+const isRef = p => /^fotos\/ref\//.test((p && p.i) || '');
 function tileInner(p){
   const st = phStyle(p, true);
   /* grouped products with several photos (colours, sizes): they take turns on the card */
   const more = p.v ? [...new Set(p.v.map(v => v.i ? phStyle({ i: v.i }, true) : '').filter(Boolean))] : [];
   if (more.length > 1) return more.slice(0, 8).map((x, i) => `<span class="ph sl${i ? '' : ' on'}" style="${x}"${i ? ' aria-hidden="true"' : ` role="img" aria-label="${esc(p.n)}"`}></span>`).join('');
-  if (st) return `<span class="ph" style="${st}" role="img" aria-label="${esc(p.n)}"></span>`;
+  if (st) return `<span class="ph" style="${st}" role="img" aria-label="${esc(p.n)}"></span>${isRef(p) ? '<span class="refb">Imagen ilustrativa</span>' : ''}`;
   return `<span class="none">${esc(p.b || 'Casa Edel')}<span>${esc(p.s || p.c)}</span></span>`;
 }
 const field = i => FIELDS[i % FIELDS.length];
@@ -2085,7 +2088,7 @@ function renderPD(p){
   }
   const minP = p.v ? Math.min(...p.v.map(v => v.p)) : pr, maxP = p.v ? Math.max(...p.v.map(v => v.p)) : pr;
   $('#pd').innerHTML = `<button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <div class="pd"><div class="tile" style="background:${field(idx)}"><div class="chips-ct">${p.b ? `<span class="brand">${esc(p.b)}</span>` : ''}${p.v && p.v.length > 1 ? `<span>${p.v.length} opciones</span>` : ''}</div>${img ? `<span class="ph${pdLast.id === p.id && pdLast.img !== img ? ' swap' : ''}" style="${img}"></span>` : tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
+  <div class="pd"><div class="tile" style="background:${field(idx)}"><div class="chips-ct">${p.b ? `<span class="brand">${esc(p.b)}</span>` : ''}${p.v && p.v.length > 1 ? `<span>${p.v.length} opciones</span>` : ''}</div>${img ? `<span class="ph${pdLast.id === p.id && pdLast.img !== img ? ' swap' : ''}" style="${img}"></span>${isRef(p) ? '<span class="refb">Imagen ilustrativa · la foto real puede variar</span>' : ''}` : tileInner(p).replace('class="none"','class="none" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:600"')}</div>
   <div class="body">
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
