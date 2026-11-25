@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-UGe/oCwHDv4cVvzDa+rjK2K5lMa1aKvdXgDTX0a522U='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-ZqW1EOA5N604ZO1SqURWxetoYN8YzjgzOQ1okqjrPbE=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-2N1cUlScsWEYCf2yglQ/OcpRTQdFmtC6mo1tsMUJeBw='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -310,18 +310,125 @@ header.top.scrolled{background:var(--paper)}
   .slide.on .vent-copy{animation:wordIn 800ms var(--ease-out) both}
 }
 
-/* ---------- ribbon of brands ---------- */
-.ribbon{position:relative;z-index:6;margin:clamp(-46px,-3.2vw,-22px) -4vw clamp(26px,3.4vw,44px);background:linear-gradient(180deg,#ffffff 0%,#fbfaf7 100%);transform:rotate(-2deg);padding-block:18px 16px;box-shadow:0 18px 36px -16px rgba(20,26,56,.30),0 2px 0 rgba(20,26,56,.04),0 90px 0 0 var(--ground),0 170px 0 0 var(--ground)}
-.ribbon::before{content:"";position:absolute;left:0;right:0;top:-7px;height:7px;background:var(--accent);box-shadow:0 -3px 0 #fff}
-.ribbon::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:7px;background:var(--navy);box-shadow:0 3px 0 #fff}
-.ribbon .track{display:flex;align-items:center;width:max-content;animation:marquee 60s linear infinite;padding-top:2px}
+/* ---------- portada: lo más pedido, cada artículo solo sobre su color ---------- */
+.hero3{background:var(--ground);padding-top:clamp(20px,2.8vw,44px);overflow:hidden}
+.h3-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(24px,2.6vw,40px) clamp(32px,4vw,64px);align-items:start;padding-bottom:clamp(40px,5vw,72px)}
+.h3-copy{display:grid;gap:clamp(20px,2.4vw,34px);align-content:start;padding-top:clamp(0px,1vw,12px)}
+.h3-title{grid-column:1 / -1;margin:0;color:var(--navy);font-size:clamp(2.4rem,.4rem + 5vw,5.2rem);line-height:.98;letter-spacing:-.045em;font-weight:800;font-stretch:108%}
+.h3-title .ln{display:inline-block}
+@media (max-width:1000px){.h3-title .ln{display:block}}
+.h3-title .ln{overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.h3-title .ln > span{display:inline-block;animation:lnUp 1000ms var(--ease-out) both}
+.h3-title .ln + .ln > span{animation-delay:90ms;color:var(--accent)}
+@keyframes lnUp{from{transform:translateY(105%)}}
+html.intro-on .h3-title .ln > span,html.intro-on .h3-lead,html.intro-on .h3-acts,html.intro-on .h3-facts,html.intro-on .spec{animation-play-state:paused}
+.h3-lead{margin:0;font-size:clamp(1.0625rem,.98rem + .35vw,1.3rem);line-height:1.5;color:var(--ink);max-width:44ch;animation:wordIn 900ms var(--ease-out) 180ms both}
+.h3-lead b{font-weight:700}
+.h3-acts{display:flex;align-items:center;gap:22px;flex-wrap:wrap;animation:wordIn 900ms var(--ease-out) 260ms both}
+.h3-cta{font-size:1.0625rem;padding:1em 1.6em}
+.h3-cta .arr{width:20px;height:20px;transition:transform 200ms var(--ease-out)}
+.h3-cta:hover .arr{transform:translateX(4px)}
+.h3-link{font-weight:600;color:var(--navy);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;transition:color 160ms ease}
+.h3-link:hover{color:var(--accent)}
+.h3-facts{display:flex;gap:clamp(22px,3vw,44px);margin:clamp(6px,1.2vw,18px) 0 0;animation:wordIn 900ms var(--ease-out) 340ms both}
+.h3-facts div{display:grid;gap:2px}
+.h3-facts dt{font-size:clamp(1.6rem,1.1rem + 1.3vw,2.25rem);font-weight:800;font-stretch:100%;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.h3-facts dd{margin:0;font-size:.9375rem;color:var(--ink-soft);max-width:19ch;line-height:1.3}
+
+.spec{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,2.2vw,32px);align-items:center;animation:wordIn 1000ms var(--ease-out) 200ms both}
+.spec-names{list-style:none;margin:0;padding:0;display:grid;gap:2px;justify-items:end;text-align:right}
+.spec-names button{all:unset;cursor:pointer;white-space:nowrap;display:grid;justify-items:end;gap:6px;padding:10px 0 11px;font-size:clamp(1rem,.8rem + .5vw,1.3rem);font-weight:600;line-height:1.15;color:var(--ink-soft);transition:color 220ms ease,transform 260ms var(--ease-out)}
+.spec-names button:hover{color:var(--ink)}
+.spec-names button:focus-visible{outline:3px solid var(--focus);outline-offset:4px;border-radius:6px}
+.spec-names button[aria-selected="true"]{color:var(--ink);transform:translateX(-6px)}
+.spec-names i{display:block;height:3px;width:56px;border-radius:3px;background:var(--ground-2);overflow:hidden;opacity:0;transition:opacity 200ms ease}
+.spec-names button[aria-selected="true"] i{opacity:1}
+.spec-names button[aria-selected="true"] i::after{content:"";display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);animation:prog var(--sdur,6s) linear forwards}
+.spec.hold .spec-names i::after{animation:none!important;transform:scaleX(1)!important}
+.spec-tile{margin:0 0 0 auto;display:grid;gap:14px;min-width:0;width:fit-content;max-width:100%}
+.spec-stage{all:unset;cursor:pointer;display:block;position:relative;aspect-ratio:4/5;width:min(100%, calc((100svh - 330px) * .8));min-width:300px;margin-left:auto;border-radius:22px;overflow:hidden;background:var(--sbg,#ece4d4);transition:background-color 900ms var(--ease-out);isolation:isolate}
+.spec-stage:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.spec-stage img{position:absolute;inset:0;translate:calc(var(--mx,0) * -14px) calc(var(--my,0) * -10px);width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06) translateY(1.5%);transition:opacity 900ms var(--ease-out),transform 1400ms var(--ease-out)}
+.spec-stage img.on{opacity:1;transform:scale(1) translateY(0)}
+.spec-stage img.on.drift{transform:scale(1.035) translateY(-1%);transition:opacity 900ms var(--ease-out),transform 7s linear}
+.spec-cap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:56px}
+.spec-txt{display:grid;gap:2px;min-width:0}
+.spec-txt b{font-size:1.125rem;font-weight:700;color:var(--ink)}
+.spec-txt span{font-size:.9375rem;color:var(--ink-soft);white-space:nowrap}
+.spec-txt.swap{animation:wordIn 600ms var(--ease-out) both}
+.spec-go{all:unset;cursor:pointer;flex:none;display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;font-size:.9375rem;transition:background-color 160ms ease,transform 140ms var(--ease-out)}
+.spec-go svg{width:18px;height:18px;transition:transform 200ms var(--ease-out)}
+.spec-go:hover{background:var(--navy-deep)}.spec-go:hover svg{transform:translateX(3px)}
+.spec-go:active,.spec-stage:active{transform:scale(.98)}
+.spec-go:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){.spec-stage img{transition:opacity 900ms var(--ease-out),transform 1400ms var(--ease-out),translate 500ms var(--ease-out)}}
+@media (max-width:1000px){
+  .h3-grid{grid-template-columns:1fr;gap:36px}
+  .spec{grid-template-columns:minmax(0,.7fr) minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .hero3{padding-top:18px}
+  .h3-title{font-size:clamp(2.2rem,10.4vw,3rem)}
+  .h3-lead{font-size:1.0625rem}
+  .h3-acts{gap:18px}
+  .h3-cta{flex:1 1 auto;justify-content:center}
+  .h3-facts{gap:18px}
+  .h3-facts dd{font-size:.8125rem}
+  .spec{grid-template-columns:1fr;gap:12px}
+  .spec-tile{order:1}
+  .spec-names{order:2;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--gut);justify-items:start;text-align:left;margin:0 calc(-1 * var(--gut-r)) 0 calc(-1 * var(--gut));padding:0 var(--gut-r) 4px var(--gut);scrollbar-width:none}
+  .spec-names::-webkit-scrollbar{display:none}
+  .spec-names li{flex:none;scroll-snap-align:start}
+  .spec-names button{justify-items:start;white-space:nowrap;font-size:1rem;padding:6px 0}
+  .spec-names button[aria-selected="true"]{transform:none}
+  .spec-tile{width:auto;margin:0}
+  .spec-stage{aspect-ratio:1/1;border-radius:18px;width:100%;min-width:0}
+  .spec-stage img{object-position:center 45%}
+  .spec-cap{min-height:0}
+  .spec-go{height:42px;padding:0 14px}
+  .spec-go .lg{display:none}
+  .spec-txt span{font-size:.875rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .h3-title .ln > span,.h3-lead,.h3-acts,.h3-facts,.spec,.spec-txt.swap{animation:none}
+  .spec-stage img,.spec-stage img.on,.spec-stage img.on.drift{transform:none;transition:opacity 300ms ease}
+}
+
+/* ---------- para cada trabajo: tres fotos grandes que llevan a su rubro ---------- */
+.jobs-sec{padding-block:clamp(56px,7vw,112px) 0}
+.jobs-head .sub{max-width:52ch}
+.jobs{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:clamp(520px,46vw,680px);margin-top:clamp(28px,3vw,44px)}
+.job{all:unset;cursor:pointer;position:relative;overflow:hidden;border-radius:22px;background:var(--navy-deep);isolation:isolate;display:block}
+.job-a{grid-row:1 / span 2}
+.job img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1200ms var(--ease-out)}
+.job::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(14,18,40,.78) 0%,rgba(14,18,40,.35) 34%,rgba(14,18,40,0) 58%)}
+.job-tx{position:absolute;z-index:2;left:clamp(18px,2vw,30px);right:84px;bottom:clamp(18px,2vw,28px);display:grid;gap:4px;color:#fff}
+.job-tx b{font-size:clamp(1.4rem,1rem + 1.2vw,2.1rem);font-weight:800;font-stretch:112%;letter-spacing:-.03em;line-height:1.02}
+.job-tx span{font-size:1rem;opacity:.92}
+.job-go{position:absolute;z-index:2;right:clamp(18px,2vw,28px);bottom:clamp(18px,2vw,28px);width:48px;height:48px;border-radius:999px;background:#fff;color:var(--navy);display:grid;place-items:center;transition:transform 260ms var(--ease-out),background-color 200ms ease,color 200ms ease}
+.job-go svg{width:20px;height:20px}
+.job:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.job:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.job:hover img{transform:scale(1.07)}.job:hover .job-go{transform:translateX(4px);background:var(--accent);color:#fff}}
+@media (max-width:700px){
+  .jobs{grid-template-columns:1fr;grid-template-rows:none;height:auto;gap:12px}
+  .job-a{grid-row:auto;aspect-ratio:4/5}
+  .job-b,.job-c{aspect-ratio:3/2}
+  .job-tx span{font-size:.9375rem}
+  .job-go{width:42px;height:42px}
+}
+@media (prefers-reduced-motion:reduce){.job img,.job:hover img{transform:none;transition:none}}
+
+/* ---------- marcas: una franja quieta bajo la portada ---------- */
+.ribbon{position:relative;background:var(--paper);padding-block:20px;overflow:hidden}
+.ribbon .track{display:flex;align-items:center;width:max-content;animation:marquee 70s linear infinite}
 .ribbon:hover .track{animation-play-state:paused}
-.ribbon .it{display:flex;align-items:center;height:56px;padding:0 30px;flex:none;position:relative;transition:transform 260ms var(--ease-out),opacity 220ms ease,filter 220ms ease;opacity:.82;filter:saturate(.85)}
-.ribbon .it + .it::before{content:"";position:absolute;left:0;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:#d9d4c9}
-.ribbon .it img{height:42px;width:auto;max-width:190px;object-fit:contain}
-.ribbon .it span{font-size:clamp(1.15rem,1rem + .7vw,1.6rem);font-weight:800;font-style:italic;letter-spacing:-.01em;color:var(--navy);white-space:nowrap}
-@media (hover:hover) and (pointer:fine){.ribbon .it:hover{transform:translateY(-2px) scale(1.06);opacity:1;filter:none}}
-@media (max-width:700px){.ribbon{padding-block:12px 10px}.ribbon .it{height:40px;padding:0 20px}.ribbon .it img{height:30px}}
+.ribbon .it{display:flex;align-items:center;height:52px;padding:0 34px;flex:none;transition:opacity 220ms ease,filter 220ms ease,transform 260ms var(--ease-out);opacity:.7;filter:grayscale(1)}
+.ribbon .it img{height:38px;width:auto;max-width:170px;object-fit:contain}
+.ribbon .it span{font-size:clamp(1.1rem,1rem + .5vw,1.45rem);font-weight:800;color:var(--navy);white-space:nowrap}
+@media (hover:hover) and (pointer:fine){.ribbon .it:hover{opacity:1;filter:none;transform:scale(1.05)}}
+@media (max-width:700px){.ribbon{padding-block:12px}.ribbon .it{height:40px;padding:0 22px}.ribbon .it img{height:28px}}
+@media (prefers-reduced-motion:reduce){.ribbon .track{animation:none}}
 
 /* scroll reveal: only things below the fold at load wait for it */
 .reveal-wait{opacity:0;transform:translateY(26px)}
@@ -807,7 +914,7 @@ header.top.away{transform:translateY(-100%)}
 .s-light .s-video-copy{color:var(--ink)}
 .s-light .s-video-copy h2{color:var(--navy)}
 @media (max-width:700px){.s-light::after{background:linear-gradient(180deg,rgba(233,232,230,.85) 0%,rgba(233,232,230,0) 38%)}.s-light .s-video-copy{top:26px;bottom:auto;transform:none}.s-light .s-video-copy p{display:block;font-size:.9375rem;max-width:30ch}}
-.ribbon .track{animation-duration:55s}
+
 .tick{overflow:hidden;position:relative;padding-block:clamp(14px,2vw,22px);border:0}
 .tick-in{display:flex;align-items:center;width:max-content;gap:clamp(22px,3vw,44px);animation:marquee 26s linear infinite;padding-right:clamp(22px,3vw,44px)}
 .tick span{font-stretch:125%;font-weight:800;font-size:clamp(1.6rem,1rem + 2.6vw,3.4rem);line-height:1;letter-spacing:-.035em;white-space:nowrap}
@@ -915,58 +1022,58 @@ html.intro-on .car{animation-play-state:paused}
 </header>
 
 <main id="inicio">
-  <section class="hero2" aria-labelledby="heroT">
-    <h1 class="vh" id="heroT">Casa Edel, materiales eléctricos en Santa Fe</h1>
-    <div class="wrap">
-      <div class="car" id="car" aria-roledescription="carrusel" aria-label="Destacados">
-        <div class="slide on" data-i="0" aria-roledescription="diapositiva" aria-label="1 de 4">
-          <div class="s-video s-light">
-            <video muted playsinline loop preload="metadata" poster="img/cajas.jpg"><source src="img/cajas.mp4" type="video/mp4"></video>
-            <div class="s-video-copy">
-              <h2>Todo en su lugar</h2>
-              <p>Cajas de herramientas y organizadores Jadever, Keter, Biassoni y Crossmaster.</p>
-              <button class="btn btn-go" type="button" data-cat="Herramientas y Ferretería" data-csub="Cajas, Bolsos y Candados" tabindex="-1">Ver cajas <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            </div>
-          </div>
+  <section class="hero3" aria-labelledby="heroT">
+    <div class="wrap h3-grid">
+      <h1 class="h3-title" id="heroT"><span class="ln"><span>Todo lo eléctrico,</span></span> <span class="ln"><span>con precio.</span></span></h1>
+      <div class="h3-copy">
+        <p class="h3-lead">Más de <b class="num" id="factN">1.300</b> artículos de Jeluz, Schneider, Fonseca, Cambre y muchas marcas más. Armás el pedido acá y nos llega por WhatsApp a Casa Edel, en Santa Fe.</p>
+        <div class="h3-acts">
+          <a class="btn btn-go h3-cta" href="#catalogo" data-goto>Ver productos <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="h3-link" href="#como-pedir">Cómo pedir</a>
         </div>
-        <div class="slide" data-i="1" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true">
-          <a class="s-banner" href="#catalogo" data-goto aria-label="Electricidad Casa Edel, la casa amiga del gremio: ver productos">
-            <picture class="kb"><source media="(max-width:700px)" srcset="img/banner-v.webp"><img src="img/banner.webp" alt="Electricidad Casa Edel, la casa amiga del gremio. Todo lo que necesitás para tus proyectos: hogar, obra, industria e instalación" width="2048" height="650" fetchpriority="high"></picture>
-            <span class="shine" aria-hidden="true"></span>
-          </a>
-        </div>
-        <div class="slide" data-i="2" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true">
-          <div class="s-video">
-            <video id="vid" muted playsinline loop preload="metadata" poster="img/herramientas.jpg"><source src="img/herramientas.mp4" type="video/mp4"></video>
-            <div class="s-video-copy">
-              <h2>Herramientas para la obra</h2>
-              <p>Amoladoras, rotopercutores, pinzas, martillos y toda la fijación.</p>
-              <button class="btn btn-go" type="button" data-cat="Herramientas y Ferretería" tabindex="-1">Ver herramientas <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            </div>
-          </div>
-        </div>
-        <div class="slide" data-i="3" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true">
-          <div class="s-orbit">
-            <div class="orbit" id="stage" aria-label="Productos destacados"></div>
-            <div class="orbit-copy">
-              <h2>Todo para tu instalación</h2>
-              <p>Más de <b class="num" id="factN">2.800</b> artículos con precio. Armá el pedido y mandalo por WhatsApp.</p>
-              <a class="btn btn-go" href="#catalogo" data-goto tabindex="-1">Ver productos <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-        <button class="car-nav prev" type="button" data-car="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button class="car-nav next" type="button" data-car="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
-        <div class="dots" role="tablist" aria-label="Elegir diapositiva">
-          <button type="button" role="tab" aria-selected="true" data-dot="0" aria-label="Cajas de herramientas"><i></i></button>
-          <button type="button" role="tab" aria-selected="false" data-dot="1" aria-label="Banner Casa Edel"><i></i></button>
-          <button type="button" role="tab" aria-selected="false" data-dot="2" aria-label="Herramientas"><i></i></button>
-          <button type="button" role="tab" aria-selected="false" data-dot="3" aria-label="Productos destacados"><i></i></button>
-        </div>
+        <dl class="h3-facts">
+          <div><dt class="num">7:30</dt><dd>abrimos, de lunes a viernes</dd></div>
+          <div><dt class="num">2</dt><dd>locales en Santa Fe</dd></div>
+          <div><dt class="num" id="factB">60</dt><dd>marcas con foto y precio</dd></div>
+        </dl>
+      </div>
+      <div class="spec" id="spec" aria-label="Lo que más se pide en el mostrador">
+        <ul class="spec-names" role="tablist" aria-label="Lo más pedido"></ul>
+        <figure class="spec-tile">
+          <button class="spec-stage" type="button" id="specStage" aria-label="Ver opciones">
+            <img src="img/portada/cable-960.webp" srcset="img/portada/cable-560.webp 560w, img/portada/cable-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Rollo de cable unipolar rojo" fetchpriority="high" decoding="async">
+            <img src="img/portada/termica-960.webp" srcset="img/portada/termica-560.webp 560w, img/portada/termica-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Interruptor termomagnético bipolar" loading="lazy" decoding="async">
+            <img src="img/portada/disyuntor-960.webp" srcset="img/portada/disyuntor-560.webp 560w, img/portada/disyuntor-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Interruptor diferencial bipolar" loading="lazy" decoding="async">
+            <img src="img/portada/led-960.webp" srcset="img/portada/led-560.webp 560w, img/portada/led-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Lámpara LED" loading="lazy" decoding="async">
+            <img src="img/portada/llave-960.webp" srcset="img/portada/llave-560.webp 560w, img/portada/llave-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Llave de un punto y toma en bastidor blanco" loading="lazy" decoding="async">
+            <img src="img/portada/pinza-960.webp" srcset="img/portada/pinza-560.webp 560w, img/portada/pinza-960.webp 960w" sizes="(max-width:700px) 92vw, 440px" width="960" height="1200" alt="Pinza universal con mangos aislados" loading="lazy" decoding="async">
+          </button>
+          <figcaption class="spec-cap"><span class="spec-txt"><b id="specName">Cable unipolar 2,5 mm</b><span id="specFact">Varias marcas y presentaciones</span></span><button class="spec-go" type="button" id="specGo">Ver<span class="lg">opciones</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></figcaption>
+        </figure>
       </div>
     </div>
     <div class="ribbon" aria-label="Marcas que trabajamos">
       <div class="track" id="track"></div>
+    </div>
+  </section>
+
+  <section class="block jobs-sec" id="trabajos" aria-labelledby="jobsT">
+    <div class="wrap">
+      <div class="jobs-head"><h2 class="h2" id="jobsT">Para cada trabajo</h2><p class="sub">Desde el tablero hasta la última lámpara: lo que pide el gremio, en un solo pedido.</p></div>
+      <div class="jobs">
+        <button class="job job-a" type="button" data-cat="Protecciones y Maniobra">
+          <img src="img/portada/tablero-820.webp" srcset="img/portada/tablero-820.webp 820w, img/portada/tablero-1100.webp 1100w" sizes="(max-width:700px) 92vw, 42vw" width="1100" height="1375" alt="Tablero eléctrico armado con térmicas y disyuntor" loading="lazy" decoding="async">
+          <span class="job-tx"><b>El tablero, completo</b><span>Térmicas, disyuntores, gabinetes y borneras.</span></span><span class="job-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+        <button class="job job-b" type="button" data-cat="Iluminación">
+          <img src="img/portada/luz-900.webp" srcset="img/portada/luz-900.webp 900w, img/portada/luz-1400.webp 1400w" sizes="(max-width:700px) 92vw, 56vw" width="1400" height="933" alt="Cocina y living iluminados con luz LED cálida" loading="lazy" decoding="async">
+          <span class="job-tx"><b>Luz LED para la casa</b><span>Lámparas, paneles, dicroicas, tiras y colgantes.</span></span><span class="job-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+        <button class="job job-c" type="button" data-cat="Herramientas y Ferretería">
+          <img src="img/portada/herramientas-900.webp" srcset="img/portada/herramientas-900.webp 900w, img/portada/herramientas-1400.webp 1400w" sizes="(max-width:700px) 92vw, 56vw" width="1400" height="933" alt="Herramientas de electricista sobre un banco de trabajo" loading="lazy" decoding="async">
+          <span class="job-tx"><b>Herramientas del oficio</b><span>Pinzas, destornilladores aislados, testers y fijación.</span></span><span class="job-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -1288,6 +1395,7 @@ function topWithPhoto(arr, n, distinct){
 /* products slide: a slow ring of products around the message, the nearer ones larger */
 const ORB = { items: [], a: 0, raf: 0, last: 0 };
 function renderStage(){
+  if (!$('#stage')) return;
   const wide = matchMedia('(min-width:701px)').matches;
   const n = wide ? 14 : 10, seen = new Set(), picks = [];
   for (const p of P.filter(p => ATLAS[p.i] && p.r).sort((a,b) => a.r - b.r)){ if (seen.has(p.s) || seen.has(p.i)) continue; seen.add(p.s); seen.add(p.i); picks.push(p); if (picks.length === n) break; }
@@ -1349,6 +1457,7 @@ function renderMarquee(){
 /* carousel */
 const CAR = { i:0, n:4, t:0, dur:7000, paused:false };
 function carShow(i){
+  if (!$('#car')) return;
   CAR.i = (i + CAR.n) % CAR.n;
   document.querySelectorAll('#car .slide').forEach((el,k) => {
     const on = k === CAR.i; el.classList.toggle('on', on); el.setAttribute('aria-hidden', !on);
@@ -1363,6 +1472,7 @@ function carShow(i){
 }
 addEventListener('ce-intro-done', () => carShow(0));
 function carTimer(){
+  if (!$('#car')) return;
   clearTimeout(CAR.t);
   const dur = document.querySelectorAll('#car .slide')[CAR.i]?.querySelector('video') ? 10000 : CAR.dur;
   $('#car').style.setProperty('--dur', dur + 'ms');
@@ -1404,7 +1514,7 @@ let revealIO;
 function setupReveal(root=document){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   revealIO ||= new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('reveal-in'); e.target.classList.remove('reveal-wait'); revealIO.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
-  const groups = ['.block .sub', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .fgrid > *', 'footer .row'];
+  const groups = ['.block .sub', '.job', '.rubro', '.steps li', '.place', '.ways', '.contact .acts', '.contact .photo', 'footer .fgrid > *', 'footer .row'];
   groups.forEach(sel => root.querySelectorAll(sel).forEach((el,i) => {
     if (el.dataset.rv) return; el.dataset.rv = 1;
     if (el.getBoundingClientRect().top < innerHeight) return;
@@ -2025,10 +2135,84 @@ $('#back').addEventListener('click', e => {
 });
 addEventListener('keydown', e => { if (e.key === 'Escape') closeBack(); });
 
+/* ---------- portada: lo más pedido en el mostrador ---------- */
+const SPEC = [
+  { k:'cable',     n:'Cable unipolar 2,5 mm', q:'cable unipolar 2,5',  bg:'#ece4d4' },
+  { k:'termica',   n:'Térmica bipolar 2x20',  q:'termica 2x20',        bg:'#1a2966' },
+  { k:'disyuntor', n:'Disyuntor 2x40',        q:'disyuntor 2x40',      bg:'#e9e2d5' },
+  { k:'led',       n:'Lámpara LED',           q:'lampara led',         bg:'#ba2822' },
+  { k:'llave',     n:'Llaves y tomas',        q:'modulo toma',         bg:'#d7dce8' },
+  { k:'pinza',     n:'Pinza universal',       q:'pinza universal',     bg:'#1c2d6a' }
+];
+const SP = { i:0, t:0, dur:6000, hold:false };
+function specStats(sp){
+  const toks = qToks(sp.q), arr = P.filter(p => matchQ(p, toks));
+  let min = Infinity, unit = '';
+  arr.forEach(p => (p.v ? p.v.map((v,i) => i) : [0]).forEach(i => { const pr = priceOf(p, i); if (pr > 0 && pr < min){ min = pr; unit = unitOf(p, i); } }));
+  const n = arr.reduce((s,p) => s + (p.v ? p.v.length : 1), 0);
+  return { n, min, unit };
+}
+function renderSpec(){
+  const box = $('#spec'); if (!box) return;
+  SPEC.forEach(sp => sp.st = specStats(sp));
+  $('.spec-names').innerHTML = SPEC.map((sp,i) => `<li role="presentation"><button type="button" role="tab" id="spt${i}" aria-selected="${i===0}" data-spec="${i}">${esc(sp.n)}<i aria-hidden="true"></i></button></li>`).join('');
+  specShow(0, true);
+}
+function specShow(i, first){
+  SP.i = (i + SPEC.length) % SPEC.length;
+  const sp = SPEC[SP.i], st = sp.st || {};
+  document.querySelectorAll('.spec-names button').forEach((b,k) => {
+    b.setAttribute('aria-selected', k === SP.i);
+    const bar = b.querySelector('i'); bar.replaceWith(bar.cloneNode());
+  });
+  const imgs = document.querySelectorAll('#specStage img');
+  imgs.forEach((im,k) => { im.classList.toggle('on', k === SP.i); im.classList.remove('drift'); });
+  const cur = imgs[SP.i]; if (cur && !REDUCE) setTimeout(() => cur.classList.contains('on') && cur.classList.add('drift'), 60);
+  $('#specStage').style.setProperty('--sbg', sp.bg);
+  $('#specStage').setAttribute('aria-label', 'Ver opciones de ' + sp.n);
+  const tx = $('.spec-txt'); tx.classList.remove('swap'); if (!first) { void tx.offsetWidth; tx.classList.add('swap'); }
+  $('#specName').textContent = sp.n;
+  $('#specFact').textContent = st.n ? `${st.n} ${st.n === 1 ? 'opción' : 'opciones'} · desde ${money(st.min)}${st.unit === 'm' ? '/m' : ''}` : 'Consultá por WhatsApp';
+  const act = document.querySelector('.spec-names [aria-selected="true"]'); if (act && matchMedia('(max-width:700px)').matches && !first) act.scrollIntoView({ block:'nearest', inline:'center', behavior:'smooth' });
+  specTimer();
+}
+function specTimer(){
+  clearTimeout(SP.t);
+  $('#spec').style.setProperty('--sdur', SP.dur + 'ms');
+  $('#spec').classList.toggle('hold', SP.hold || REDUCE);
+  if (SP.hold || REDUCE || document.hidden || document.documentElement.classList.contains('intro-on')) return;
+  SP.t = setTimeout(() => specShow(SP.i + 1), SP.dur);
+}
+function specGo(){ const sp = SPEC[SP.i]; $('#q').value = sp.q; $('#qClear').hidden = false; runSearch(); }
+(function(){
+  const box = $('#spec'); if (!box) return;
+  box.addEventListener('click', e => {
+    const b = e.target.closest('[data-spec]');
+    if (b){ SP.hold = true; specShow(Number(b.dataset.spec)); return; }
+    if (e.target.closest('#specStage, #specGo')) specGo();
+  });
+  box.addEventListener('keydown', e => {
+    if (!e.target.closest('[role="tab"]') || !/Arrow(Up|Down|Left|Right)/.test(e.key)) return;
+    e.preventDefault(); SP.hold = true; specShow(SP.i + (/Up|Left/.test(e.key) ? -1 : 1));
+    document.querySelector('.spec-names [aria-selected="true"]').focus();
+  });
+  box.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse'){ clearTimeout(SP.t); box.classList.add('hold'); } });
+  box.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && !SP.hold){ box.classList.remove('hold'); specShow(SP.i, true); } });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(SP.t); else specTimer(); });
+  addEventListener('ce-intro-done', () => specTimer());
+  /* the object leans a little toward the pointer, as if it sat on the counter in front of you */
+  const stage = $('#specStage');
+  if (!REDUCE && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    stage.addEventListener('pointermove', e => { const r = stage.getBoundingClientRect(); stage.style.setProperty('--mx', ((e.clientX - r.left) / r.width - .5).toFixed(3)); stage.style.setProperty('--my', ((e.clientY - r.top) / r.height - .5).toFixed(3)); });
+    stage.addEventListener('pointerleave', () => { stage.style.setProperty('--mx', 0); stage.style.setProperty('--my', 0); });
+  }
+})();
+
 /* ---------- boot ---------- */
 load().then(() => {
-  $('#factN').textContent = P.length.toLocaleString('es-AR');
-  renderStage(); renderMarquee(); carShow(0); renderRubros(); renderCatalog(); updateCount(); welcomeBack();
+  $('#factN').textContent = (Math.floor(P.length / 100) * 100).toLocaleString('es-AR');
+  { const bs = new Set(P.map(p => p.b).filter(Boolean)); const fb = $('#factB'); if (fb) fb.textContent = bs.size; }
+  renderStage(); renderMarquee(); carShow(0); renderSpec(); renderRubros(); renderCatalog(); updateCount(); welcomeBack();
   $('#mega').innerHTML = catsHTML('mega'); $('#menuCats').innerHTML = catsHTML('menu');
   matchMedia('(min-width:701px)').addEventListener('change', renderStage);
   requestAnimationFrame(() => setupReveal());
