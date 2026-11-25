@@ -1,0 +1,576 @@
+{
+ "Genrod": [],
+ "Teclastar": [
+  {
+   "d": "teclastar.com.ar",
+   "final": "https://www.teclastar.com.ar/",
+   "title": "Home Teclastar",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Schneider": [],
+ "Candil": [
+  {
+   "d": "candil.com.ar",
+   "final": "https://www.candil.com.ar/",
+   "title": "",
+   "sitemaps": [
+    "https://www.candil.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  },
+  {
+   "d": "candililuminacion.com.ar",
+   "final": "https://www.candililuminacion.com.ar/",
+   "title": "",
+   "sitemaps": [
+    "https://www.candililuminacion.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Jeluz": [
+  {
+   "d": "jeluz.net",
+   "final": "https://jeluz.net/",
+   "title": "Jeluz Argentina | Fabricación y desarrollo de productos eléctricos",
+   "sitemaps": [
+    "https://jeluz.net/sitemap.xml",
+    "https://www.jeluz.net/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": true
+  }
+ ],
+ "San Justo": [
+  {
+   "d": "sanjustoiluminacion.com.ar",
+   "final": "https://www.sanjustoiluminacion.com.ar/",
+   "title": "San Justo Iluminación | Fabricantes de iluminación",
+   "sitemaps": [
+    "https://sanjustoiluminacion.com.ar/sitemap.xml",
+    "https://www.sanjustoiluminacion.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  },
+  {
+   "d": "sanjusto.com.ar",
+   "final": "https://www.mutualcolon.com.ar/",
+   "title": "Inicio - Mutual Club Colón de San Justo",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "BAW": [
+  {
+   "d": "baw.com.ar",
+   "final": "https://www.baw.com.ar/",
+   "title": "Inicio | Grupo BAW",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  },
+  {
+   "d": "bawelectric.com.ar",
+   "final": "https://www.bawelectric.com.ar/",
+   "title": "Index of /",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Argenplas": [
+  {
+   "d": "argenplas.com.ar",
+   "final": "https://www.argenplas.com.ar/",
+   "title": "ARGENPLÁS 2026",
+   "sitemaps": [
+    "https://www.argenplas.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Sica": [],
+ "Interelec": [
+  {
+   "d": "interelec.com.ar",
+   "final": "https://www.interelec.com.ar/",
+   "title": "Interelec - Inicio",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "JA": [],
+ "Fonseca": [
+  {
+   "d": "fonseca.com.ar",
+   "final": "https://fonseca.com.ar/",
+   "title": "fonseca.com.ar",
+   "sitemaps": [
+    "https://fonseca.com.ar/wp-sitemap.xml",
+    "https://www.fonseca.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Cambre": [
+  {
+   "d": "cambre.com.ar",
+   "final": "https://www.cambre.com.ar/",
+   "title": "Cambre - Distribuidores",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Zoloda": [
+  {
+   "d": "zoloda.com.ar",
+   "final": "https://www.zoloda.com.ar/",
+   "title": "Zoloda - Fábrica de productos para instalaciones eléctricas",
+   "sitemaps": [
+    "https://www.zoloda.com.ar/product-sitemap.xml",
+    "https://www.zoloda.com.ar/sitemap.rss",
+    "https://www.zoloda.com.ar/sitemap.xml",
+    "https://www.zoloda.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Elibet": [],
+ "Plasnavi": [],
+ "Macroled": [
+  {
+   "d": "macroled.com.ar",
+   "final": "https://www.macroled.com.ar/",
+   "title": "Macroled - Home",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Kalop": [
+  {
+   "d": "kalop.com.ar",
+   "final": "https://www.kalop.com.ar/",
+   "title": "Kalop",
+   "sitemaps": [
+    "https://www.kalop.com.ar/product-sitemap.xml",
+    "https://www.kalop.com.ar/sitemap.xml",
+    "https://www.kalop.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Alic": [
+  {
+   "d": "alic.com.ar",
+   "final": "https://alic.com.ar/",
+   "title": "ALIC S.A.",
+   "sitemaps": [
+    "https://alic.com.ar/wp-sitemap.xml",
+    "https://www.alic.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Elece": [
+  {
+   "d": "elecesa.com.ar",
+   "final": "https://www.elecesa.com.ar/",
+   "title": "Nuevo sitio en %DOMINIO_PRINCIPAL%",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Lucciola": [
+  {
+   "d": "lucciola.com.ar",
+   "final": "https://www.lucciola.com.ar/",
+   "title": "Lucciola Iluminación Profesional",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Asanno": [],
+ "Industrias Sur": [
+  {
+   "d": "industriassur.com.ar",
+   "final": "https://industrias-sur.myshopify.com/password",
+   "title": "Industrias Sur",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": true
+  }
+ ],
+ "Miguez": [
+  {
+   "d": "miguez.com.ar",
+   "final": "https://www.miguez.com.ar/",
+   "title": "Horacio Miguez",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Demasled": [
+  {
+   "d": "demasled.com.ar",
+   "final": "https://demasled.com.ar/",
+   "title": "Tienda Online de DEMASLED",
+   "sitemaps": [
+    "https://demasled.com.ar/sitemap.xml.gz",
+    "https://www.demasled.com.ar/sitemap.xml"
+   ],
+   "tn": true,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Cañellas": [
+  {
+   "d": "canellas.com.ar",
+   "final": "https://www.canellas.com.ar/",
+   "title": "H.C.Cañellas",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "TEA": [
+  {
+   "d": "tea.com.ar",
+   "final": "https://tea.com.ar/",
+   "title": "Primera Escuela Taller Automotriz de Argentina | té.com.ar",
+   "sitemaps": [
+    "https://tea.com.ar/sitemap_index.xml",
+    "https://www.tea.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "RBC Sitel": [],
+ "Metalce": [],
+ "PY": [],
+ "Ital Air": [
+  {
+   "d": "italair.com.ar",
+   "final": "https://www.italair.com.ar/",
+   "title": "Ital Air",
+   "sitemaps": [
+    "https://acdn-us.mitiendanube.com/stores/005/624/745/themes/common/sitemap.xml.gz",
+    "https://www.italair.com.ar/sitemap.xml"
+   ],
+   "tn": true,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Rolux": [
+  {
+   "d": "rolux.com.ar",
+   "final": "https://www.rolux.com.ar/",
+   "title": "Web Hosting",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Gabexel": [
+  {
+   "d": "gabexel.com.ar",
+   "final": "https://www.gabexel.com.ar/",
+   "title": "Gabexel, Gabinetes con &quot;Excelencia&quot; -",
+   "sitemaps": [
+    "https://www.gabexel.com.ar/sitemap.xml",
+    "https://www.gabexel.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Commax": [
+  {
+   "d": "commax.com.ar",
+   "final": "https://commax.com.ar/",
+   "title": "COMMAX &#8211; CCH",
+   "sitemaps": [
+    "https://commax.com.ar/sitemap.xml",
+    "https://www.commax.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  },
+  {
+   "d": "commax.com",
+   "final": "https://www.commax.com/index?lang=en",
+   "title": "코맥스 - Smart Home & Security",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Multicap": [
+  {
+   "d": "multicap.com.ar",
+   "final": "https://multicap.com.ar/",
+   "title": "Accesorios para Camionetas | Multicap",
+   "sitemaps": [
+    "http://multicap.com.ar/sitemap_index.xml",
+    "https://www.multicap.com.ar/sitemap.xml",
+    "https://www.multicap.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Light Lion": [
+  {
+   "d": "lightlion.com.ar",
+   "final": "https://www.lightlion.com.ar/",
+   "title": "Lion: Importador de Luminarias LED y Solar- Venta Mayorista Argentina",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Sanderson": [],
+ "Sicar Luz": [],
+ "NCB": [
+  {
+   "d": "ncb.com.ar",
+   "final": "https://ncb-p.netlify.app/",
+   "title": "Nueva Clínica Belgrano",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Practiled": [],
+ "GC": [
+  {
+   "d": "gcelectricidad.com.ar",
+   "final": "https://gcelectricidad.com.ar/",
+   "title": "Inicio - gcelectricidad.com.ar",
+   "sitemaps": [
+    "https://gcelectricidad.com.ar/sitemap.rss",
+    "https://gcelectricidad.com.ar/sitemap.xml",
+    "https://www.gcelectricidad.com.ar/sitemap.xml",
+    "https://www.gcelectricidad.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Bael": [
+  {
+   "d": "bael.com.ar",
+   "final": "https://www.bael.com.ar/",
+   "title": "BAEL | Iluminación LED profesional Argentina",
+   "sitemaps": [
+    "https://www.bael.com.ar/product-sitemap.xml",
+    "https://www.bael.com.ar/sitemap.xml",
+    "https://www.bael.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Tacsa": [
+  {
+   "d": "tacsa.com.ar",
+   "final": "https://tacsa.com.ar/",
+   "title": "TACSA | Tecnología Argentina en Cintas S.A.",
+   "sitemaps": [
+    "https://tacsa.com.ar/wp-sitemap.xml",
+    "https://www.tacsa.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "King": [],
+ "Exultt": [
+  {
+   "d": "exultt.com.ar",
+   "final": "https://exultt.com.ar/",
+   "title": "Exultt Electricidad para el hogar &#8211; Exultt &#8211; Fabricante de productos",
+   "sitemaps": [
+    "https://exultt.com.ar/wp-sitemap.xml",
+    "https://www.exultt.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Indusil": [],
+ "Vefben": [],
+ "Thomelec": [],
+ "MJK": [
+  {
+   "d": "mjk.com.ar",
+   "final": "https://www.mjk.com.ar/",
+   "title": "MJK - Timbres - Llamadores - Campanillas - Zumbadores - Campanas de Alarma Indus",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Indular": [
+  {
+   "d": "indular.com.ar",
+   "final": "https://indular.com.ar/",
+   "title": "- Indular | Iluminación Led | Fábrica de Luminarias | Rosario",
+   "sitemaps": [
+    "https://indular.com.ar/sitemap_index.xml",
+    "https://www.indular.com.ar/product-sitemap.xml",
+    "https://www.indular.com.ar/sitemap.xml",
+    "https://www.indular.com.ar/sitemap_index.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Suprabond": [
+  {
+   "d": "suprabond.com.ar",
+   "final": "https://www.suprabond.com/",
+   "title": "Suprabond | Bulit | Somerset &#8211; Sitio oficial de Suprabond, Bulit y Somerse",
+   "sitemaps": [
+    "https://www.suprabond.com.ar/sitemap.xml",
+    "https://www.suprabond.com/wp-sitemap.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "MIG": [
+  {
+   "d": "mig.com.ar",
+   "final": "https://www.mig.com.ar/",
+   "title": "MIG",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Nevar": [],
+ "Delta": [],
+ "Probattery": [
+  {
+   "d": "probattery.com.ar",
+   "final": "https://www.probattery.com.ar/",
+   "title": "",
+   "sitemaps": [
+    "https://www.probattery.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Tecnotec": [
+  {
+   "d": "tecnotec.com.ar",
+   "final": "https://www.tecnotec.com.ar/",
+   "title": "Alquiler y Venta de Andamios en Tucumán — Tecnotec S.R.L.",
+   "sitemaps": [
+    "https://www.tecnotec.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Tramontina": [
+  {
+   "d": "tramontina.com.ar",
+   "final": "https://www.tramontina.com.ar/",
+   "title": "",
+   "sitemaps": [
+    "https://www.tramontina.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Elent": [
+  {
+   "d": "elent.com.ar",
+   "final": "https://www.borneras-elent.com.ar/",
+   "title": "Borneras Elent &#8211; Ingeniería Eléctrica",
+   "sitemaps": [
+    "https://www.borneras-elent.com.ar/wp-sitemap.xml",
+    "https://www.elent.com.ar/sitemap.xml"
+   ],
+   "tn": false,
+   "woo": true,
+   "shopify": false
+  }
+ ],
+ "Conextube": [
+  {
+   "d": "conextube.com.ar",
+   "final": "https://www.conextube.com.ar/",
+   "title": "Info Conextube",
+   "sitemaps": [],
+   "tn": false,
+   "woo": false,
+   "shopify": false
+  }
+ ],
+ "Lavarmin": []
+}
