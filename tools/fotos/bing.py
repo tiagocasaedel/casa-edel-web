@@ -6,7 +6,8 @@ def get(u):
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=15).read(1500000).decode('utf8', 'ignore')
     except Exception: return ''
 def search(q):
-    b = get('https://www.bing.com/images/search?q=' + urllib.parse.quote(q) + '&setlang=es&cc=AR&first=1')
+    b = get('https://www.bing.com/images/async?q=' + urllib.parse.quote(q) + '&first=0&count=35&mmasync=1')
+    if not b: time.sleep(6); b = get('https://www.bing.com/images/async?q=' + urllib.parse.quote(q) + '&first=0&count=35&mmasync=1')
     out = []
     for m in re.finditer(r'\bm="(\{[^"]+\})"', b):
         try: d = json.loads(html.unescape(m.group(1)))
@@ -15,18 +16,19 @@ def search(q):
         out.append({'i': d['murl'], 'th': d.get('turl', ''), 'u': d.get('purl', ''), 't': html.unescape(d.get('t', ''))[:140], 'src': (d.get('purl', '') or '//?').split('/')[2]})
         if len(out) >= 6: break
     return out, len(b)
-tag = sys.argv[1]; Q = json.load(open(f'tools/fotos/q/{tag}.json'))
+tag = sys.argv[1]; Q = json.load(open(f'tools/fotos/q/{tag}.json'))[:int(sys.argv[2])] if len(sys.argv) > 2 else json.load(open(f'tools/fotos/q/{tag}.json'))
 P = {x['id']: x for x in json.load(open('tools/fotos/productos.json'))}
 out = {}; ok = 0
 for n, pid in enumerate(Q):
     x = P[pid]
     name = re.sub(r'\bpor (metro|unidad)\b', '', x['n'], flags=re.I).strip()
-    q = f"{x['b']} {name} {x['k']}" if x['k'] and len(x['k']) >= 3 else f"{x['b']} {name}"
-    r, ln = search(q)
-    if len(r) < 2:  # retry without code
-        time.sleep(1.5); r2, ln = search(f"{x['b']} {name}"); r += [c for c in r2 if c['i'] not in {d['i'] for d in r}]
+    short = ' '.join(re.sub(r'[\"/().,]', ' ', name).split()[:6])
+    q = f"{x['b']} {short}"; r = []
+    if x['k'] and len(x['k']) >= 4:
+        r, ln = search(f"{x['b']} {x['k']}"); r = r[:3]; time.sleep(2)
+    r2, ln = search(q); r += [c for c in r2 if c['i'] not in {d['i'] for d in r}]
     out[pid] = {'q': q, 'c': r[:6]}; ok += bool(r)
     if n % 25 == 0: print(n, ok, ln, flush=True)
-    time.sleep(1.5)
+    time.sleep(2)
 json.dump(out, open(f'tools/fotos/bing_{tag}.json', 'w'), ensure_ascii=False)
 print('done', len(out), ok)
