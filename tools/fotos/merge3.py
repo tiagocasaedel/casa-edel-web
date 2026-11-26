@@ -10,6 +10,7 @@ for f in glob.glob(D + 'tiendas_t[1-9].json'):
         if k in E: continue
         x = P[k]; kk = norm(x['k']); cs = []
         for c in v:
+            c = dict(c, i=c['i'].split()[0].rstrip(','))
             s = sim(x['n'], c['t']); kc = len(kk) >= 4 and kk in norm(c['t'] + c.get('sku', ''))
             if (s >= 0.3 or kc) and (k, c['i']) not in REJ:
                 cs.append(dict(c, sc=round(s + (1 if kc else 0) + (0.2 if norm(x['b']) in norm(c['t']) else 0), 2), why='código' if kc else 'web'))
