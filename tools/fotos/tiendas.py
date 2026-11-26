@@ -2,10 +2,10 @@
 import json, urllib.request, urllib.parse, re, sys, time, html, ssl, threading, concurrent.futures as cf
 H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36', 'Accept-Language': 'es-AR,es;q=0.9'}
 CTX = ssl.create_default_context(); CTX.check_hostname = False; CTX.verify_mode = ssl.CERT_NONE
-TN = ['complementoselectricos.com.ar', 'store.sermatel.com.ar', 'e631.com.ar', 'laelectrica.com.ar', 'electrocity.com.ar', 'cavego.ar',
+TN = ['complementoselectricos.com.ar', 'e631.com.ar', 'laelectrica.com.ar', 'electrocity.com.ar', 'cavego.ar',
       'www.electricidadmava.com.ar', 'distribuidorabarbiero.mitiendanube.com', 'luzin.com.ar', 'gimenezelectricidad2.mitiendanube.com',
       'sanjosedistribuciones.com.ar', 'www.perbe.com.ar', 'www.proelectric.ar']
-WC = ['malpassielectrica.com.ar', 'gencoelec.com.ar', 'www.pimesa.com.ar', 'electrovir.com.ar', 'electrinet.com.ar']
+WC = []
 def get(u, t=20):
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t, context=CTX).read(2500000).decode('utf8', 'ignore')
     except Exception: return ''
