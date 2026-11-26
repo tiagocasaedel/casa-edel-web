@@ -4,7 +4,7 @@ H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 def get(u, t=15, data=None):
     try: return urllib.request.urlopen(urllib.request.Request(u, data=data, headers=H), timeout=t).read(1500000).decode('utf8', 'ignore')
     except Exception as e: return ''
-BAD = re.compile(r'mercadolibre|facebook|instagram|youtube|pinterest|tiktok|\.pdf|amazon\.|aliexpress|wikipedia|scribd|editores-srl', re.I)
+BAD = re.compile(r'duckduckgo|bing\.com|mercadolibre|facebook|instagram|youtube|pinterest|tiktok|\.pdf|amazon\.|aliexpress|wikipedia|scribd|editores-srl', re.I)
 def search(q):
     b = get('https://lite.duckduckgo.com/lite/', data=urllib.parse.urlencode({'q': q, 'kl': 'ar-es'}).encode())
     urls = []
