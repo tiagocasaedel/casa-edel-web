@@ -32,8 +32,9 @@ for pid, x in P.items():
     for r in EASY.get(pid, []): cs.append({'t': r['t'], 'i': r['i'], 'u': r['u'], 'src': 'easy', 'sc': round(sim(x['n'], r['t']), 2), 'why': 'easy'})
     for r in WEB.get(pid, []):
         if BADI.search(r['i']): continue
-        hay = norm(r.get('t', '') + r.get('u', ''))
-        cs.append(dict(r, sc=round(sim(x['n'], r.get('t', '')) + (1.0 if len(k) >= 4 and k in hay else 0) - 0.05, 2), why='web'))
+        hay = norm(r.get('t', '') + r.get('u', '')); s0 = sim(x['n'], r.get('t', '')); kc = len(k) >= 4 and k in hay
+        if not kc and (s0 < 0.1 or re.search(r'pexels|moge\.ai|toolerific|unsplash|pixabay|freepik|shutterstock', r.get('u', '') + r['i'])): continue
+        cs.append(dict(r, sc=round(s0 + (1.0 if kc else 0) - 0.05, 2), why='web'))
     seen = set(); best = []
     for c in sorted(cs, key=lambda c: -c['sc']):
         if c['i'] in seen or (pid, c['i']) in REJ: continue
