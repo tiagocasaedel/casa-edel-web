@@ -5,11 +5,19 @@ H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 E = json.load(open('tools/fotos/elegidas.json'))
 os.makedirs('fotos/web', exist_ok=True)
 def one(item):
-    pid, url = item
+    pid, urls = item
     name = 'fotos/web/' + hashlib.md5(pid.encode()).hexdigest()[:12] + '.webp'
+    if os.path.exists(name) and not os.environ.get('REDO'): return pid, name
+    for url in ([urls] if isinstance(urls, str) else urls):
+        try:
+            b = urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=30).read()
+            im = Image.open(io.BytesIO(b)); im.load(); im = im.convert('RGBA')
+            if min(im.size) < 120: raise ValueError('chica')
+            break
+        except Exception as e:
+            print('fallo', pid, url[:80], e); im = None
+    if im is None: return pid, None
     try:
-        b = urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=30).read()
-        im = Image.open(io.BytesIO(b)); im.load(); im = im.convert('RGBA')
         bg = Image.new('RGBA', im.size, (255, 255, 255, 255)); bg.alpha_composite(im); im = bg.convert('RGB')
         diff = ImageChops.difference(im, Image.new('RGB', im.size, (255, 255, 255))).convert('L').point(lambda v: 255 if v > 12 else 0)
         bb = diff.getbbox() or (0, 0) + im.size
@@ -18,7 +26,7 @@ def one(item):
         c.resize((600, 600), Image.LANCZOS).save(name, 'WEBP', quality=82)
         return pid, name
     except Exception as e:
-        print('fallo', pid, url[:80], e); return pid, None
+        print('fallo', pid, e); return pid, None
 with cf.ThreadPoolExecutor(10) as ex: res = list(ex.map(one, E.items()))
 F = json.load(open('fotos.json'))
 ok = 0
