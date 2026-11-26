@@ -17,7 +17,7 @@ def crawl(site):
     ncodes = {norm(c): c for c in codes if len(norm(c)) >= 4}
     found = {}
     t0 = time.time()
-    while queue and len(seen) < limit and time.time() - t0 < 2400:
+    while queue and len(seen) < limit and time.time() - t0 < 1500:
         batch = []
         while queue and len(batch) < 8:
             u = queue.pop(0).split('#')[0]
@@ -35,10 +35,17 @@ def crawl(site):
             t = re.search(r'<h1[^>]*>(.*?)</h1>', b, re.S) or re.search(r'<title>(.*?)</title>', b, re.S)
             title = html.unescape(re.sub(r'<[^>]+>|\s+', ' ', t.group(1))).strip()[:160] if t else ''
             img = urllib.parse.urljoin(u, html.unescape(og.group(1))) if og else ''
+            if not img:
+                m = re.search(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)', b) or re.search(r'"image"\s*:\s*\[?\s*"([^"]+\.(?:jpe?g|png|webp)[^"]*)"', b) or re.search(r'<link[^>]+rel=["\']image_src["\'][^>]+href=["\']([^"\']+)', b)
+                if m: img = urllib.parse.urljoin(u, html.unescape(m.group(1)))
+            if not img:
+                for m in re.finditer(r'<img[^>]+(?:data-src|data-lazy-src|src)=["\']([^"\']+\.(?:jpe?g|png|webp)[^"\']*)', b, re.I):
+                    v = m.group(1)
+                    if re.search(r'logo|icon|banner|slider|favicon|placeholder|whatsapp|facebook|instagram|flag|footer|header|sprite|loader', v, re.I): continue
+                    img = urllib.parse.urljoin(u, html.unescape(v)); break
             nb = norm(re.sub(r'<script.*?</script>', '', b, flags=re.S))
             hits = [c for k, c in ncodes.items() if k in nb]
-            if img: pages.append({'u': u, 't': title, 'i': img, 'c': hits[:5]})
-            for c in hits[:3]: found.setdefault(c, []).append(len(pages) - 1 if img else -1)
+            if img or hits: pages.append({'u': u, 't': title, 'i': img, 'c': hits[:5]})
             for l in re.findall(r'href=["\']([^"\'#]+)', b):
                 l = urllib.parse.urljoin(u, html.unescape(l))
                 if urllib.parse.urlparse(l).netloc.replace('www.', '') == host and not SKIP.search(l) and l not in seen: queue.append(l)
