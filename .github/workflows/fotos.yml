@@ -20,5 +20,5 @@ jobs:
       - name: commit
         run: |
           git config user.name "fotos-bot"; git config user.email "fotos-bot@users.noreply.github.com"
-          git add -A tools/fotos fotos || true
+          git add -A tools/fotos fotos fotos.json || true
           git diff --cached --quiet || (git commit -m "fotos: resultados de ${{ github.event.inputs.script }}" && git pull --rebase && git push)
