@@ -13,3 +13,10 @@ def one(rel):
     except Exception as e: return rel, str(e)
 with cf.ThreadPoolExecutor(6) as ex:
     for r in ex.map(one, lst): print(*r)
+# publish dl/ on a throwaway orphan branch (artifact downloads are not reachable from the editing machine)
+import subprocess, shutil
+br = 'dl-tmp'
+subprocess.run(['git', 'worktree', 'add', '--orphan', '-b', br, '/tmp/wt'], check=True)
+shutil.copytree('dl', '/tmp/wt/dl')
+subprocess.run('cd /tmp/wt && git add -A && git -c user.name=fotos-bot -c user.email=fotos-bot@users.noreply.github.com commit -qm dl && git push -f origin ' + br, shell=True, check=True)
+shutil.rmtree('dl')
