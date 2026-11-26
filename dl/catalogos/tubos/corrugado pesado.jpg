@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<base href="/">
+
+	<title ng-bind="tit"> GENROD / Instalaciones Seguras </title>
+	<meta property="og:site_name" content="Genrod">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="GENROD / Instalaciones Seguras" />
+	<meta property="og:description" content="Somos una empresa Argentina que desarrolla, fabrica y comercializa soluciones para instalaciones de la más alta calidad." />
+	<meta property="og:image" content="http://www.genrod.com.ar/img/og.jpg" />
+	<meta property="og:url" content="http://www.genrod.com.ar" />
+	<meta name="description" content="Somos una empresa Argentina que desarrolla, fabrica y comercializa soluciones para instalaciones de la más alta calidad." />
+	<meta name="keywords" content="GENROD" />
+
+
+  	<link rel="shorcut icon" href="img/favicon.png">
+	<link href="css/reset.css" rel="stylesheet">
+	<link href="css/slick.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+  	<link href="css/css.css?v=1" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" rel="stylesheet">
+
+	<meta name="theme-color" content="#3baf29">
+
+	<!-- Hotjar Tracking Code for www.genrod.com.ar -->
+	<script> (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1517620,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); </script>
+	
+</head>
+<body>
+
+	<div id="loader">
+		<div class="logo"><img src="img/logo-genrod-blanco.svg"></div>
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+			<div class="bounce4"></div>
+		</div>
+	</div>
+
+	<div id="navbar" ng-class="{'active': showNav}">
+		<div class="first">
+			<a class="link desktop" linkeable ng-class="{'active': productHover || section == 'productos'}" ng-click="productHover = true" data-text="Productos">Productos</a>
+			<a class="link mobile" linkeable ng-class="{'active': section == 'productos'}" href="productos"  data-text="Productos">Productos</a><br>
+			<a class="link" linkeable ng-class="{'active': section == 'descargas'}" href="descargas"  data-text="Descargas">Descargas</a><br>
+			<a class="link" linkeable ng-class="{'active': section == 'contacto'}" href="contacto"  data-text="Contacto">Contacto</a><br>
+			<div class="little">
+				<a class="link" ng-class="{'active': section == 'instalaciones'}" linkeable href="instalaciones-seguras">Instalaciones seguras</a><br>
+				<a class="link" ng-class="{'active': section == 'novedades'}" linkeable href="novedades">Novedades</a><br>
+				<a class="link" ng-class="{'active': section == 'nosotros'}" linkeable href="sobre-genrod">Sobre Genrod</a><br>
+				<a class="link" ng-class="{'active': section == 'plantas'}" linkeable href="nuestras-plantas">Nuestras Plantas</a><br>
+				<a class="link" ng-class="{'active': section == 'historia'}" linkeable href="historia">Historia</a><br>
+				<a class="link" ng-class="{'active': section == 'rrhh'}" linkeable href="rrhh">RRHH</a><br>
+				<!-- <a class="link" linkeable href="plantas">Plantas</a><br> -->
+				<!-- <a class="link" linkeable href="rrhh">RRHH</a><br> -->
+			</div>
+		</div>
+		<div class="second" ng-class="{'active': productHover}">
+			<i class="fa fa-angle-right" ng-click="productHover = false" linkeable></i>
+			<div class="big" id="big1" ng-mouseenter="vm.hide = 1" ng-mouseleave="vm.hide = 0" ng-class="{hide: vm.hide == 2}">
+			<div class="inner">
+				<a href="https://sistelectric.com/" linkeable target="_blank">
+					<img style="width: 241px; height: 132px;" src="img/electric-menu.png">
+					<p>Para ir al sitio de Sistelectric haga click aquí</p>
+					<!-- <nav>
+						<a class="link" linkeable href="productos/sistelectric/tubos">Tubos</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/cajas">Cajas</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/accesorios">Accesorios</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/interruptores">Interruptores</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/termicas-y-diferenciales">Térmicas y diferenciales</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/puesta-a-tierra/detalle">Puesta a tierra</a> <br>
+						<a class="link" linkeable href="productos/sistelectric/herramientas">Herramientas</a> <br>
+					</nav> -->
+				</a>
+			</div>
+			</div>
+			<div class="big" id="big2" ng-mouseenter="vm.hide = 2" ng-mouseleave="vm.hide = 0" ng-class="{hide: vm.hide == 1}">
+			<div class="inner">
+				<a href="productos/linea-gabinetes" linkeable><img src="img/gabinetes-menu.png"></a>
+				<p>Envolventes para instalaciones eléctricas y de datos, tanto industriales, comerciales, domiciliarias como de oficina</p>
+				<nav>
+					<a class="link" linkeable href="productos/linea-gabinetes/s9000">S9000</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/s97">S97</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/q-energy">Q Energy</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/q-racks">Q Racks</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/ventilacion">Ventilación</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/pupitres">Pupitres</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/puestos">Puestos</a><br>
+        			<a class="link" linkeable href="productos/linea-gabinetes/para-usos-extremos">Para usos extremos</a><br>
+					<a class="link" linkeable href="productos/linea-gabinetes/gabinetes-a-pedido">Gabinetes a pedido</a>
+				</nav>
+			</div>
+			</div>
+		</div>
+		</div>
+	
+	<div ng-view class="view-animate view-{{section}}"></div>
+	<div id="pointer"></div>
+
+	<!-- libs -->
+
+  	<script src="js/lib/jquery-1.12.1.min.js"></script>
+	<script src="js/lib/angular.min.js"></script>
+	<script defer src="js/lib/slick.js"></script>
+	<script defer src="js/lib/angular-slick.min.js"></script>
+	<script defer src="https://code.angularjs.org/1.5.0-rc.0/angular-route.min.js"></script>
+	<script defer src="//code.angularjs.org/1.5.0-rc.0/angular-resource.js"></script>
+	<script defer src="https://code.angularjs.org/1.5.0-rc.0/angular-animate.min.js"></script>
+	<script defer src="js/lib/angulartics.min.js"></script>
+	<script defer src="js/lib/angulartics-ga.min.js"></script>
+	<script defer src="js/lib/ScrollMagic.min.js"></script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIekmBwmr0H7MM9ZJSmw35VE6kyj_wzL4&libraries=placeses,visualization,drawing,geometry,places"></script>
+	<script defer src="js/lib/ng-map.min.js"></script>
+	<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+	<script src="js/lib/ngclipboard.min.js"></script>
+	<script defer src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+	<script defer src="js/lib/angular-local-storage.min.js"></script>
+	<script defer src="js/lib/ng-file-upload-shim.min.js"></script>
+	<script defer src="js/lib/ng-file-upload.min.js"></script>
+
+	<!-- app -->
+	<script src="js/app.js"></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120823960-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-120823960-1');
+	</script>
+	
+
+
+</body>
+</html>
