@@ -1,0 +1,738 @@
+{
+    "electric": [
+        {
+            "name": "Cajas",
+            "url": "cajas",
+            "image": "img/electric-cajas.png", 
+            "pre": "las",            
+            "products": [
+                {
+                    "name": "Kit de pilar",
+                    "url": "kit-de-pilar",
+                    "logoR": false,
+                    "logoO": true,
+					"catalogo2": "catalogos/Gabinetes-para-Medicion-Colectiva.pdf",
+                    "text": "Ofrece todos los materiales necesarios para la instalacion de un pilar de luz. Está compuesto por un caño de pilar doble aislacion, caja de medidor, caja para térmica, pipeta, conector y accesorios para coneccionado. Cuenta con caño doble aislación de 2mm con sello IRAM.",
+                    "image": "img/productos/electric/thumbs/electric-cajas-kit.png",
+                    "slide": ["img/productos/electric/cajas/kit-medidor/slider/electric-cajas-kit-01.jpg", "img/productos/electric/cajas/kit-medidor/slider/electric-cajas-kit-02.jpg", "img/productos/electric/cajas/kit-medidor/slider/electric-cajas-kit-03.jpg"]
+                },
+                {
+                    "name": "Caja para medidor (monofásico / trifásico)",
+                    "url": "caja-para-medidor-monofasico-trifasico",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Especialmente diseñadas para la medición de energía en suministros monofásicos y trifásicos",
+                    "image": "img/productos/electric/thumbs/electric-cajas-medidores.png",
+                    "slide": ["img/productos/electric/cajas/medidor/slider/electric-cajas-medidor-01.jpg", "img/productos/electric/cajas/medidor/slider/electric-cajas-medidor-02.jpg", "img/productos/electric/cajas/medidor/slider/electric-cajas-medidor-03.jpg"]
+                },
+                {
+                    "name": "Gabinetes para medición colectiva",
+                    "url": "gabinetes-para-medicion-colectiva",
+                    "cad": true,
+                    "logoR": false,
+                    "logoO": false,
+                    "catalogo": "biblioteca-cad/Biblioteca-CAD-Gabinetes-para-Medicion-Colectiva.zip",
+                    "catalogo2": "catalogos/Gabinetes-para-Medicion-Colectiva.pdf",
+                    "text": "Están diseñados y fabricados para el uso en inmuebles particulares de varias viviendas o locales comerciales, en ellos pueden ser instalados tanto medidores de energía monofásicos como trifásicos.",
+                    "new": true,
+                    "image": "img/productos/electric/cajas/multimedidor/slider/electric-cajas-multimedidor-02.jpg",
+                    "slide": ["img/productos/electric/cajas/multimedidor/slider/electric-cajas-multimedidor-02.jpg","img/productos/electric/cajas/multimedidor/slider/genrod-gab-viv-col-3.jpg"]
+                },
+                {
+                    "name": "Gabinete Provisorio de obra",
+                    "url": "gabinete-provisorio-de-obra",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Diseñados para la medición de energía eléctrica durante la obra en puestos de venta en la vía pública. Pueden ser instalados medidores de energía monofásicos como trifásicos tarifa 1 y 2 hasta 30 KW. Construidos termoplásticos de última tecnología alcanzado valores de resistencia a los impactos, autoextinguibilidad y resistencia a los rayos UV necesarios para su funcionamiento seguro y en acuerdo con las normas de seguridad vigentes.",
+                    "image": "img/productos/electric/thumbs/electric-medidor-obra.png",
+                    "slide": ["img/productos/electric/cajas/gabinetes-estancos/slider/electric-cajas-provisorio-01.jpg", "img/productos/electric/cajas/gabinetes-estancos/slider/electric-cajas-provisorio-02.jpg"]
+                },
+                {
+                    "name": "Cajas para toma y medición",
+                    "url": "cajas-para-toma-y-medicion",
+                    "logoR": false,
+                    "logoO": false,
+                    "new": true,
+                    "text": "Para acometida de energia subterranea fabricados de acuerdo a los requerimientos de las distribuidora de energia y normativas vigentes, se complementan con las cajas para toma y medicion indirecta.",
+                    "image": "img/productos/electric/thumbs/electric-cajas-de-toma.png",
+                    "slide": ["img/productos/electric/cajas/cajas-de-toma/slider/electric-cajas-toma-01.jpg", "img/productos/electric/cajas/cajas-de-toma/slider/electric-cajas-toma-02.jpg", "img/productos/electric/cajas/cajas-de-toma/slider/electric-cajas-toma-03.jpg", "img/productos/electric/cajas/cajas-de-toma/slider/electric-cajas-toma-04.jpg"]
+                },
+                {
+                    "name": "Cajas Q Energy DIN",
+                    "url": "cajas-q-energy-din",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Su uso está orientado a la integración de tableros seccionales de distribución eléctrica para elementos de modulación DIN. Poseen un diseño cuidado y funcional pensado para facilitarle el trabajo al instalador en todas las etapas del montaje. Se han desarrollado en dos versiones: de embutir y sobreponer, y son aptas para todo tipo de paredes o tabiques, tanto en construcciones tradicionales como en seco.",
+                    "image": "img/productos/electric/thumbs/electric-cajas-termicas-din.png",
+                    "lh": true,
+                    "catalogo": "catalogos/Cajas_Termica_DIN_.pdf",
+                    "slide": ["img/productos/electric/cajas/termicas/slider/electric-cajas-termicas-04.jpg", "img/productos/electric/cajas/termicas/slider/electric-cajas-termicas-02b.jpg","img/productos/electric/cajas/termicas/slider/electric-cajas-termicas-01.jpg", "img/productos/electric/cajas/termicas/slider/electric-cajas-termicas-02.jpg", "img/productos/electric/cajas/termicas/slider/electric-cajas-termicas-03.jpg"
+                    ]
+                },
+                {
+                    "name": "Cajas IP 65 para polos DIN",
+                    "url": "cajas-de-sobreponer-din-estancas",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Cajas plásticas IP 65 para módulos din, cuentan con nivel de burbuja para una instalación perfecta.",
+                    "new": true,
+                    "image": "img/productos/electric/thumbs/electric-cajas-tm-tomas-encapsuladas.png",
+                    "slide": ["img/productos/electric/cajas/envolvente-para-tm-y-tomas-encapsuladas-ip65/slider/electric-cajas-tm-tomas-encapsuladas-01.jpg"]
+                },
+                {
+                    "name": "Cajas IP 65 para tomas encapsuladas",
+                    "url": "cajas-ip-65-para-tomas-encapsuladas",
+                    "logoR": true,
+                    "logoO": false,
+                    "new": true,
+                    "text": "Cajas plásticas estancas IP 65 para alojamiento de módulos din y / o tomas encapsuladas, cuentan con nivel de burbuja para una instalación perfecta. Disponibles en versiones de 2 a 6 tomas.",
+                    "image": "img/productos/electric/thumbs/electric-cajas-encapsuladas.png",
+                    "slide": ["img/productos/electric/cajas/cajas-encapsuladas/slider/electric-cajas-encapsuladas-01.jpg", "img/productos/electric/cajas/cajas-encapsuladas/slider/electric-cajas-encapsuladas-02.jpg", "img/productos/electric/cajas/cajas-encapsuladas/slider/electric-cajas-encapsuladas-03.jpg", "img/productos/electric/cajas/cajas-encapsuladas/slider/electric-cajas-encapsuladas-04.jpg"]
+                },
+                {
+                    "name": "Cajas de pase estancas ip 65",
+                    "url": "cajas-de-pase-estancas-ip-65",
+                    "logoR": true,
+                    "logoO": false,
+                    "lh": true,
+                    "text": "Son especialmente aptas para ser usadas a la intemperie por su grado de protección IP65. Para paso, derivación y conexión. Son fabricadas con termoplásticos aislantes, siendo aptas para ser utilizadas en instalaciones fijas domiciliarias o industriales tanto embutidas como sobrepuestas y compatibles con la totalidad de los artículos Genrod.",
+                    "catalogo": "catalogos/Caja_estanca_plastica_IP65.pdf",
+                    "image": "img/productos/electric/thumbs/electric-cajas-estancas.png",
+                    "slide": ["img/productos/electric/cajas/estancas/slider/electric-cajas-estancas-01.jpg"]
+                },
+                {
+                    "name": "Cajas de pase de embutir",
+                    "url": "cajas-de-pase-de-embutir",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Envolventes diseñados para paso, derivación y conexión. Indicado para instalaciones embutidas.",
+                    "new": true,
+                    "catalogo": "catalogos/GENROD_-_Folleto_-_Caja_de_Pase.pdf",
+                    "image": "img/productos/electric/thumbs/electric-cajas-pase-embutir.png",
+                    "slide": ["img/productos/electric/cajas/pase-embutir/slider/electric-cajas-pase-embutir-01.jpg", "img/productos/electric/cajas/pase-embutir/slider/electric-cajas-pase-embutir-02.jpg"]
+                },
+                {
+                    "name": "Cajas de sobreponer",
+                    "url": "cajas-de-sobreponer",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Cajas de conexión para instalaciones a la vista.",
+                    "lh": true,
+                    "image": "img/productos/electric/thumbs/electric-cajas-sobreponer.png",
+                    "slide": ["img/productos/electric/cajas/sobreponer/slider/electric-cajas-sobreponer-01.jpg", "img/productos/electric/cajas/sobreponer/slider/electric-cajas-sobreponer-02.jpg", "img/productos/electric/cajas/sobreponer/slider/electric-cajas-sobreponer-03.jpg"]
+                },
+                {
+                    "name": "Cajas de embutir",
+                    "url": "cajas-de-embutir",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Se utilizan para organizar el paso de cableados, desarrollas para instalarse embutidas en todo tipo de instalacion fija, siendo aptas para la construccion tradicional como en seco. ",
+                    "lh": true,
+                    "image": "img/productos/electric/thumbs/electric-cajas-embutir.png",
+                    "slide": ["img/productos/electric/cajas/embutir/slider/electric-cajas-embutir-01.jpg", "img/productos/electric/cajas/embutir/slider/electric-cajas-embutir-02.jpg", "img/productos/electric/cajas/embutir/slider/electric-cajas-embutir-03.jpg", "img/productos/electric/cajas/embutir/slider/electric-cajas-embutir-05.jpg", "img/productos/electric/cajas/embutir/slider/electric-cajas-embutir-06.jpg"]
+                },
+                {
+                    "name": "Tapas para cajas de embutir",
+                    "url": "tapas-para-cajas-de-embutir",
+                    "logoR": false,
+                    "logoO": false,
+                    "new": true,
+                    "text": "Tapa ciega para caja de embutir el complemento ideal para ser utilizardas con cajas de embutir Genrod y lograr terminaciones prolijas ",
+                    "image": "img/productos/electric/thumbs/electric-tapas-cajas.png",
+                    "slide": ["img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-01.jpg", "img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-02.jpg", "img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-03.jpg", "img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-04.jpg", "img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-05.jpg", "img/productos/electric/cajas/tapa-caja-embutir/slider/electric-cajas-pase-embutir-06.jpg"]
+                },
+                {
+                    "name": "Kit soporte para caja octogonal",
+                    "url": "kit-soporte-para-caja-octogonal",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Accesorio diseñado para combinarlos con cajas octogonales genrod. por su diseño permite colgar elementos pesados desde la caja octogonal.",
+                    "image": "img/productos/electric/thumbs/electric-cajas-grampa.png",
+                    "slide": ["img/productos/electric/cajas/kit-de-losa/slider/electric-cajas-grampa.jpg"]
+                },
+                {
+                    "name": "Gabinete estanco Q Energy",
+                    "url": "gabinete-estanco-q-energy",
+                    "logoR": true,
+                    "logoO": false,
+                    "catalogo": "catalogos/GENROD_-_Folleto_-_Gabinetes_-_QEnergy_-_v3.0.pdf",
+                    "new": true,
+                    "text": "Familia de envolventes estancos con IP65 según Norma IRAM 62670 construidos en material termoplástico aislante. Se adaptan a Los usos de La industria, el hogar y la construcción. Además de ser compatibles para una vasta utilización en telecomunicaciones, distribución de energía y sistemas de seguridad y video. Se proveen con puerta opaca y con puerta fumé.",
+                    "image": "img/productos/electric/thumbs/electric-gabinetes-estancos.png",
+                    "slide": ["img/productos/electric/cajas/gabinetes-estancos/slider/electric-gabinetes-estancos-02.jpg", "img/productos/electric/cajas/gabinetes-estancos/slider/electric-gabinetes-estancos-03.jpg"]
+                },
+                {
+                    "name": "Tapas multiples usos",
+                    "url": "tapas-multiples-usos",
+                    "logoR": false,
+                    "logoO": false,
+                    "new": true,
+                    "text": "Diseñada para multiples usos en la construccion, permite tapar espacios logrando terminaciones prolijas.",
+                    "image": "img/productos/electric/cajas/tapa-multiuso/tapa-multiuso.jpg",
+                    "slide": ["img/productos/electric/cajas/tapa-multiuso/tapa-multiuso.jpg"]
+                },
+                {
+                    "name": "Gabinete Q energy plus",
+                    "url": "gabinete-q-energy-plus",
+                    "logoR": true,
+                    "logoO": false,
+                    "new": true,
+                    "text": "Gabinetes estancos construidos en material aislante aptos para instalaciones eléctricas en intemperie, se provee en diferentes versiones con cierre media vuelta y falleba.",
+                    "image": "img/productos/electric/cajas/gabinete-qenergy-plus/gabinete-qenergy.jpg",
+                    "slide": ["img/productos/electric/cajas/gabinete-qenergy-plus/gabinete-qenergy.jpg"]
+                },
+                {
+                    "name": "Gabinete Q energy poliester",
+                    "url": "gabinete-q-energ-poliester",
+                    "logoR": false,
+                    "logoO": true,
+                    "new": true,
+                    "text": "Gabinetes estancos con IP65, construidos en poliéster. Se adaptan a los usos de la industria, el hogar y la construcción. Además de ser compatibles para una vasta utilización en telecomunicaciones, distribución de energía y sistemas de seguridad y video. ",
+                    "image": "img/productos/electric/cajas/gabinete-poliester/gabinete-poliester-1.jpg",
+                    "slide": ["img/productos/electric/cajas/gabinete-poliester/gabinete-poliester-1.jpg","img/productos/electric/cajas/gabinete-poliester/gabinete-poliester-2.jpg"]
+                }
+            ]    
+        },
+        {
+            "name": "Accesorios",
+            "url": "accesorios",
+            "image": "img/electric-accesorios.png",
+            "pre": "los",            
+            "products": [
+                {
+                    "name": "Adhesivo ",
+                    "url": "adhesivo",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Adhesivo / sellador para tubos, permite una rápida aplicación en el armado, produce una unión de alta adherencia y sellado, elevando el grado de protección de la canalización desde IP54 a IP65.",
+                    "new": true,
+                    "image": "img/productos/electric/accesorios/adhesivo/slider/adhesivo.jpg",
+                    "slide": ["img/productos/electric/accesorios/adhesivo/slider/adhesivo.jpg"]
+                }, 
+                {
+                    "name": "Conectores ",
+                    "url": "conectores",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Permiten un acople rápido de ajuste exacto entre una caja y un tubo rígido del sistema. Construidos en material termoplástico, aislante y autoextinguible, los conectores GENROD electric cuentan con un grado de protección IP54 y cuando se utiliza el adhesivo sellador GENROD el grado de protección se eleva a IP65. Compatibles para tubos rígidos y corrugados.",
+                    "lh": true,
+                    "image": "img/productos/electric/thumbs/electric-accesorios-conector.png",
+                    "slide": ["img/productos/electric/accesorios/conector/slider/accesorios-conector-01.jpg"]
+                },
+                {
+                    "name": "Uniones ",
+                    "url": "uniones",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Acople rápido y/o prolongación de ajuste exacto entre dos tramos de tubos rígidos de igual diámetro.",
+                    "lh": true,
+                    "image": "img/productos/electric/thumbs/electric-accesorios-union.png",
+                    "slide": ["img/productos/electric/accesorios/union/slider/accesorios-union-01.jpg"]
+                },
+                {
+                    "name": "Curva",
+                    "url": "curva",
+                    "logoR": true,
+                    "logoO": false,
+                    "text": "Acople rápido a 90° de ajuste exacto entre dos tramos de tubos rígidos de igual diámetro de GENROD",
+                    "lh": true,
+                    "image": "img/productos/electric/thumbs/electric-accesorios-curva.png",
+                    "slide": ["img/productos/electric/accesorios/curva/slider/accesorios-curva-01.jpg"]
+                },
+                {
+                    "name": "Grampas",
+                    "url": "grampas",
+                    "logoR": true,
+                    "logoO": false,
+                    "lh": true,
+                    "text": "Con clip de seguridad para tubos rígidos.",
+                    "image": "img/productos/electric/thumbs/electric-accesorios-grampa.png",
+                    "slide": ["img/productos/electric/accesorios/grampa/slider/accesorios-grampa-01.jpg"]
+                },
+                {
+                    "name": "Rieles para Grampa Ajustable",
+                    "url": "rieles-para-grampa-ajustable",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Para alojar dos o más grampas en línea, aumentando la resistencia de adherencia en la superficie donde se encuentre.",
+                    "image": "img/productos/electric/thumbs/electric-accesorios-rieles.png",
+                    "slide": ["img/productos/electric/accesorios/rieles/slider/accesorios-rieles-01.jpg"]
+                }
+            ]
+        },
+        {
+            "name": "Puesta a tierra",
+            "url": "puesta-a-tierra",
+            "logoR": true,
+            "logoO": false,
+            "image": "img/productos/electric/thumbs/electric-puesta-a-tierra.png",
+            "slide": ["img/productos/electric/puesta-a-tierra/slider/puesta-a-tierra-01.jpg","img/productos/electric/puesta-a-tierra/slider/puesta-a-tierra-02.jpg","img/productos/electric/puesta-a-tierra/slider/puesta-a-tierra-03.jpg","img/productos/electric/puesta-a-tierra/slider/puesta-a-tierra-04.jpg","img/productos/electric/puesta-a-tierra/slider/puesta-a-tierra-05.jpg"],
+            "catalogo": "catalogos/Puesta_a_Tierra.pdf",
+            "isProduct": true,
+            "text": "La puesta a tierra se emplean en las instalaciones eléctricas como una medida de seguridad. La línea está compuesta por jabalinas con sello IRAM 2309-01, conjuntos con cable ( soldados o agrafados), accesorios para jabalinas, moldes para soldadura, cable acero cobre, cajas de inspección y gel mejorador de suelo."
+        },
+        {
+            "name": "Herramientas",
+            "url": "herramientas",
+            "image": "img/electric-herramientas.png",
+            "pre": "las",            
+            "products": [
+                {
+                    "name": "Mecha Caladora Múltiple",
+                    "url": "mecha-caladora-multiple",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Diseño exclusivo. Calados exactos. Concentra el trabajo de varios tipos de mechas de diferentes medidas, lo que implica un gran ahorro. Sus escalones de perforación realizan el calado exacto para cada medida de conector GENROD.",
+                    "image": "img/productos/electric/thumbs/electric-herramientas-mecha.png",
+                    "slide": [ "img/productos/electric/herramientas/mecha/slider/herramientas-mecha-01.jpg" ]
+                },
+                {
+                    "name": "Tijera",
+                    "url": "tijera",
+                    "logoR": false,
+                    "logoO": false,
+                    "text": "Permite realizar cortes de caños de manera practica y rápida.",
+                    "image": "img/productos/electric/thumbs/electric-herramientas-tijera-corta-tubo.png",
+                    "slide": [ "img/productos/electric/herramientas/tijera/slider/herramientas-tijera-01.jpg" ]
+                }
+            ]
+        },
+		{
+            "name": "Interruptores",
+            "url": "interruptores",
+            "image": "img/electric-interruptores.png",
+            "pre": "los",            
+            "products": [
+                {
+                    "name": "Interruptores termomagnéticos",
+                    "url": "interruptores-termomagneticos",
+                    "new": true,
+                    "logoR": false,
+                    "logoO": true,
+                    "text": "Actuan interrumpiendo automáticamente el circuito eléctrico al cual están conectados, cuando detectan una sobrecarga o un cortocircuito, protegiendo a la instalación y los bienes. Los interruptores termomagnéticos pueden instalarse y montarse sobre el perfil DIN en las cajas de la línea QEnergy , cajas para medidor y viviendas colectivas, S9000 o en cualquier otra caja que ofrezca el perfil DIN como método de montaje. Cuentan con 4500 A de poder de ruptura y la máxima limitación de corriente (Clase 3). Norma de aplicación: IEC 60898-1. Curva de disparo: C - Protección de cables alimentando receptores clásicos. Capacidad de Ruptura: 4,5 KA. Rango de intensidad: 2 a 63 A. Número de polos: 1 - 2 - 3 - 4. Tensión nominal de operación: 230/400V. Tensión de aislación mínima: 500V. Frecuencia: 50/60Hz. Clase de limitación de corriente: Clase 3",
+                    "image": "img/productos/electric/thumbs/electric-interruptores-termicas.png",
+                    "slide": [ "img/productos/electric/interruptores/termicas/slider/interruptores-termica-01.jpg", "img/productos/electric/interruptores/termicas/slider/interruptores-termica-02.jpg" ]
+                },
+                {
+                    "name": "Interruptores diferenciales",
+                    "url": "interruptores-diferenciales",
+                    "new": true,
+                    "logoR": false,
+                    "logoO": true,
+                    "text": "Actúan protegiendo a las personas de accidentes directos e indirectos los cuales pueden ser provocados por el contacto con partes activas de la instalación electrica (contacto directo) o con elementos expuestos a potencial debido de partes activas - contacto indirecto. Norma de aplicación: IEC 61008-1. Clase AC - aptos para corrientes de defecto a tierra senoidales. Número de polos: 2 - 4. Corriente Nominal: 25-32-40-63A. Tensión nominal de operación: 230V - bipolar / 400V - tetrapolar. Sensibilidad: 30mA. Frecuencia: 50/60Hz. Capacidad nominal de ruptura y de conexión: 500-630A. Capacidad diferencial de ruptura y de conexión: 500-630A. Corriente Nominal condicional de cortocircuito: 6000A. Dispositivo de protección contra cortocircuito: FUS 63A gG",
+                    "image": "img/productos/electric/thumbs/electric-interruptores-diferenciales.png",
+                    "slide": [ "img/productos/electric/interruptores/diferenciales/slider/interruptores-diferenciales-01.jpg", "img/productos/electric/interruptores/diferenciales/slider/interruptores-diferenciales-02.jpg" ]
+                }
+            ]
+        },
+        {
+            "name": "Tubos",
+            "url": "tubos",
+            "image": "img/electric-tubos.png", 
+            "pre": "las",  
+            "products": [
+                {
+                    "name": "Rígido Libre de halogeno (Ultra LH)",
+                    "url": "rigido-lh",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/rigido halogeno.jpg", 
+                    "url": "rigido-halogeno",
+                    "ficha": true,
+                    "text": "Especialmente indicado para ser utilizado en forma sobrepuesta por su alta resistencia mecánica. Además está especificado para lugares y locales de pública concurrencia. Indicado, especialmente, como reemplazo directo de tubos metálicos semipesados. Rígido libre de halogenos Clasificación 4422 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/liso-lh/Genrod-Tubos-LH.jpg",
+                    "slide": ["img/productos/electric/tubos/liso-lh/Genrod-Tubos-LH.jpg"]
+                },
+                {
+                    "name": "Rígido extrapesado",
+                    "url": "rigido-extrapesado",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/rigido extrapesado.jpg", 
+                    "url": "rigido-extrapesado",
+                    "ficha": true,
+                    "text": "Particularmente indicado para instalaciones en losas y en todo proyecto donde sea necesaria una canalización con una alta resistencia a la compresión. Rígido extra pesado Clasificación 4321 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/liso-extrapesado/Genrod-Tubos-Extrapesado.jpg",
+                    "slide": ["img/productos/electric/tubos/liso-extrapesado/Genrod-Tubos-Extrapesado.jpg"]
+                },
+                {
+                    "name": "Rígido semipesado",
+                    "url": "rigido-semipesado",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/rigido semipesado.jpg", 
+                    "url": "rigido-semipesado",
+                    "ficha": true,
+                    "text": "Indicado para todo tipo de proyecto, así sea en obras del tipo húmeda y seca, en colocación embutida u oculta, asegurando instalación eléctrica segura e inalterable con el paso del tiempo. Rígido semipesado Clasificación 3321 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/liso-semi-pesado/Genrod-Tubos-Semipesado.jpg",
+                    "slide": ["img/productos/electric/tubos/liso-semi-pesado/Genrod-Tubos-Semipesado.jpg"]
+                },
+                {
+                    "name": "Corrugado extrapesado",
+                    "url": "corrugado-extrapesado",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/corrugado pesado.jpg", 
+                    "url": "corrugado-pesado",
+                    "ficha": true,
+                    "text": "Aptos para obras húmedas: embutidos en losas, en paredes, bajo pisos técnicos y techos. Corrugado pesado Clasificación 4321 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/corrugado-extrapesado/Genrod-Tubos-Corrugado-Extrapesado.jpg",
+                    "slide": ["img/productos/electric/tubos/corrugado-extrapesado/Genrod-Tubos-Corrugado-Extrapesado.jpg"]
+                },
+                {
+                    "name": "Corrugado semi pesado",
+                    "url": "corrugado-semi-pesado",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/corrugado semipesado.jpg", 
+                    "url": "corrugado-semipesado",
+                    "ficha": true,
+                    "text": "Aptos para obras húmedas: embutidos en paredes, bajo pisos técnicos y techos. Corrugado semipesado Clasificación 3321 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/corrugado-semi-pesado/Genrod-Tubos-Corrugado-Semipesado.jpg",
+                    "slide": ["img/productos/electric/tubos/corrugado-semi-pesado/Genrod-Tubos-Corrugado-Semipesado.jpg","img/productos/electric/tubos/corrugado-semi-pesado/Genrod-Tubos-Corrugado-Semipesado_2.jpg"]
+                },
+                {
+                    "name": "Corrugado liviano",
+                    "url": "corrugado-liviano",
+                    "logoR": false,
+                    "logoO": true,
+                    "catalogo": "catalogos/tubos/corrugado liviano.jpg", 
+                    "url": "corrugado-liviano",
+                    "ficha": true,
+                    "text": "Indicado para obras secas embutidas en techos, pisos, paredes o tabiques, construidos en hormigón premoldeado, donde la instalación suponga la previsión de huecos o canales en él; considerando las prescripciones adicionales que indica la Reglamentación AEA 90364-7-770 para este tipo de canalizaciones. Corrugado liviano. Clasificación 2321 s/IRAM 62386",
+                    "image": "img/productos/electric/tubos/corrugado-liviano/Genrod-Tubos-Corrugado-Liviano.jpg",
+                    "slide": ["img/productos/electric/tubos/corrugado-liviano/Genrod-Tubos-Corrugado-Liviano.jpg","img/productos/electric/tubos/corrugado-liviano/Genrod-Tubos-Corrugado-Liviano_2.jpg"]
+                }
+            ]
+        }
+        
+    ],
+    "gabinetes": [
+        {
+            "name": "S9000",
+            "url": "s9000",
+            "logoR": true,
+            "logoO": false,
+            "text": "Los gabinetes S9000 son estructuras para uso eléctrico, autoportantes de alta resistencia al impacto, indeformable, con grado de protección a la penetración de cuerpos sólidos y líquidos IP55 (IRAM 2444 - IEC 60529). Las piezas construidas en chapa de acero al carbono son mecanizadas (punzonado y plegado) utilizando maquinaria de última generación con tecnología de C.N.C; soldadas mediante procesos TIG, MIG y de proyección. Su presentación estándar cuenta con bandeja fija galvanizada es con puerta metálica ciega. Para usos específicos se fabrican con una puerta mixta con visor de vidrio templado de gran tamaño. ",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-s9000.png",
+            "catalogo": "catalogos/Gabinetes_S9000.pdf",
+            "slide": ["img/productos/gabinetes/s9000/slider/s9000-01.jpg", "img/productos/gabinetes/s9000/slider/s9000-02.jpg", "img/productos/gabinetes/s9000/slider/s9000-03.jpg", "img/productos/gabinetes/s9000/slider/s9000-04.jpg"],
+            "config": [
+                {
+                "img": "img/productos/gabinetes/s9000/configuracion/s9000-1.jpg",
+                "little": "vidrio",
+                "big": "Con visor de",
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/s9000/configuracion/s9000-2.jpg",
+                "little": "bandeja",
+                "big": "Estándar chapa con",
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/s9000/configuracion/s9000-3.jpg",
+                "little": "Inoxidable",
+                "big": "Acero",
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/s9000/configuracion/s9000-4.jpg",
+                "little": "calado",
+                "big": "Estándar con contrafrente",
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            }],
+            "complementos": [
+                {
+                "img": "img/productos/gabinetes/s9000/accesorios/s9000-accesorios-1.jpg",
+                "name": "Contrafrente abisagrado calado"
+            },{
+                "img": "img/productos/gabinetes/s9000/accesorios/s9000-accesorios-2.jpg",
+                "name": "Contrafrente abisagrado ciego"
+            },{
+                "img": "img/productos/gabinetes/s9000/accesorios/s9000-accesorios-3.jpg",
+                "name": "Contrafrente abulonado calado"
+            },{
+                "img": "img/productos/gabinetes/s9000/accesorios/s9000-accesorios-4.jpg",
+                "name": "Contrafrente abulonado ciego"
+            },{
+                "img": "img/productos/gabinetes/s9000/accesorios/s9000-accesorios-5.jpg",
+                "name": "Soportes regulables para contrafrentes"
+            }]
+        },
+        {
+            "name": "S97",
+            "url": "s97",
+            "logoR": true,
+            "logoO": false,
+            "text": "Es un sistema de gabinetes modulares, componibles entre sí, con un grado de protección IP42. Están orientados a la construcción de tableros generales de baja tensión (TGBT), centros de control de motores (CCM), tableros principales (TP) y secundarios o seccionales (TS) , de potencia y/o comando. Se forman conjuntos versátilesy de elevada rigidez estructural. Todas las partes son de fácil ensamblado, mediante el uso de herramientas de mano, utilizando bulones estándar.",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-s97.png",
+            "catalogo": "catalogos/Genrod--S97.pdf",
+            "slide": ["img/productos/gabinetes/s97/slider/s97-01.jpg", "img/productos/gabinetes/s97/slider/s97-02.jpg", "img/productos/gabinetes/s97/slider/s97-03.jpg", "img/productos/gabinetes/s97/slider/s97-04.jpg", "img/productos/gabinetes/s97/slider/s97-05.jpg", "img/productos/gabinetes/s97/slider/s97-06.jpg"],
+            "config": [
+                {
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-bp.jpg",
+                "little": "(BP)",
+                "big": "Puerta trasera abisagrada",
+                "addons": ["Puerta frontal ciega","Bandeja altura completa, regulable sobre correderas","Una puerta trasera","No cuenta con cierres laterales enterizos derecho/ izquierdo","Lateral superior ( techo) solo para las alturas 1800 y 2100","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100","Un frente soldado con laberinto tipo “c”","Cuatro separadores tipo esquineros","Separadores laterales"]
+            },{
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-bt.jpg",
+                "little": "(BT)",
+                "big": "Tapa trasera abulonada",
+                "addons": ["Puerta frontal ciega","Bandeja altura completa, regulable sobre correderas","Una tapa abulonada trasera","No cuenta con cierres laterales enterizos derecho/ izquierdo","Lateral superior ( techo) solo para las alturas 1800 y 2100","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100","Un frente soldado con laberinto tipo “c”","Cuatro separadores tipo esquineros","Separadores laterales"]
+            },{
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-p.jpg",
+                "little": "(P)",
+                "big": "Puerta trasera abisagrada",
+                "addons": ["Puerta frontal ciega","Bandeja altura completa, regulable sobre correderas","Una puerta trasera.","Lateral inferior extraíble ( piso)","Cierres laterales enterizos derecho/ izquierdo","Lateral superior abulonado ( techo )","Un frente soldado con laberinto tipo “c”.","Cuatro separadores tipo esquineros.","Separadores laterales."]
+            },{
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-sp.jpg",
+                "little": "(SP)",
+                "big": "Puerta trasera abisagrada",
+                "addons": ["Puerta frontal ciega","El gabinete se provee Vacio (no cuenta con Bandeja, soportes, ni correderas).","Una puerta trasera, de acuerdo a la alternativa elegida","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100 _ No cuenta con cierres laterales enterizos derecho/ izquierdo","Lateral superior ( techo) solo para las alturas 1800 y 2100","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100","Un frente soldado con laberinto tipo “c”.","Cuatro separadores tipo esquineros.","Separadores laterales"]
+            },{
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-st.jpg",
+                "little": "(ST)",
+                "big": "Tapa trasera abulonada",
+                "addons": ["Puerta frontal ciega","El gabinete se provee Vacio (no cuenta con Bandeja, soportes, ni correderas).","Una tapa abulonada trasera, de acuerdo a la alternativa elegida","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100 _ No cuenta con cierres laterales enterizos derecho/ izquierdo","Lateral superior ( techo) solo para las alturas 1800 y 2100","Lateral inferior extraíble ( piso) solo para las alturas 1800 y 2100","Un frente soldado con laberinto tipo “c”.","Cuatro separadores tipo esquineros.","Separadores laterales"]
+            },{
+                "img": "img/productos/gabinetes/s97/configuracion/s97-config-t.jpg",
+                "little": "(T)",
+                "big": "Tapa trasera abulonada",
+                "addons": ["Puerta frontal ciega","Bandeja altura completa, regulable sobre correderas","Una tapa abulonada trasera.","Lateral inferior extraíble ( piso)","Cierres laterales enterizos derecho/ izquierdo","Lateral superior abulonado ( techo )","Un frente soldado con laberinto tipo “c”.","Cuatro separadores tipo esquineros.","Separadores laterales."]
+            }],
+            "complementos": [
+                {
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-barras.jpg",
+                "name": "Barras"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-contrafrentes.jpg",
+                "name": "Contrafrentes"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-correderas.jpg",
+                "name": "Correderas"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-laterales.jpg",
+                "name": "Laterales"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-puertas-vidriadas.jpg",
+                "name": "Puertas vidriadas"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-puertas.jpg",
+                "name": "Puertas"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-sobretecho-ventilado.jpg",
+                "name": "Sobretecho ventilado"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-soporte-barras.jpg",
+                "name": "Soporte barras"
+            },{
+                "img": "img/productos/gabinetes/s97/accesorios/s97-accesorios-zocalos.jpg",
+                "name": "Zocalos"
+            }]
+        },
+        {
+            "name": "Gabinetes modulares Q Energy",
+            "url": "q-energy",
+            "logoR": true,
+            "logoO": false,
+            "text": "Su uso está orientado a la integración de tableros seccionales de distribución eléctrica, son especialmente indicados en los casos que se requiera una gran cantidad de circuitos de salida, resueltos a partir de elementos con modulación DIN. Permitiendo la integración completa de aparatos de protección, comando y automatización. Especialmente diseñadas para cubrir los nuevos diseños arquitectónicos y las diferentes exigencias del mercado de la construcción en general. Por su elegante línea puede ser instalado en todo tipo de construcciones abarcando desde las grandes obras de arquitectura como centros comerciales, edificios de oficinas, áreas públicas de edificios comerciales, edificios de departamentos, viviendas individuales, escuelas, academias, universidades, hospitales, clínicas, teatros, estadios, industrias, etc.",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-qenergy.png",
+            "catalogo": "catalogos/Gabinetes_Q_Energy.pdf",
+            "slide": ["img/productos/gabinetes/qenergy/slider/qenergy-01.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-02.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-03.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-04.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-05.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-06.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-07.jpg", "img/productos/gabinetes/qenergy/slider/qenergy-08.jpg"],
+
+                "config": [
+                {
+                "img": "img/productos/gabinetes/qenergy/configuracion/qenergy-1.jpg",
+                "little": "Vidrio",
+                "big": "Con aractulas y ducto puerta",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/qenergy/configuracion/qenergy-2.jpg",
+                "little": "Vidrio",
+                "big": "Con caractulas y puerta",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/qenergy/configuracion/qenergy-3.jpg",
+                "little": "Armar",
+                "big": "Para",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            }],
+            "complementos": [
+                {
+                "img": "img/productos/gabinetes/qenergy/accesorios/qenergy-accesorios-bandeja.jpg",
+                "name": "Bandeja"
+            },{
+                "img": "img/productos/gabinetes/qenergy/accesorios/qenergy-accesorios-kit-acople.jpg",
+                "name": "Kit de acople"
+            },{
+                "img": "img/productos/gabinetes/qenergy/accesorios/qenergy-accesorios-corredera.jpg",
+                "name": "Corredera"
+            },{
+                "img": "img/productos/gabinetes/qenergy/accesorios/qenergy-accesorios-kit-fijacion.jpg",
+                "name": "Kit de fijación"
+            },{
+                "img": "img/productos/gabinetes/qenergy/accesorios/qenergy-accesorios-laterales.jpg",
+                "name": "Laterales"
+            }]
+        },
+        {
+            "name": "Q Racks",
+            "url": "q-racks",
+            "logoR": false,
+            "logoO": false,
+            "text": "Q Rack de 19, es apto para la instalación de redes de datos, fibra óptica, elementos de medidas, tanto normalizadas como no normalizadas. Su sistema de soportes rackeables ofrece una gran variedad de configuraciones en combinación con la línea de accesorios disponibles, cubriendo de esta manera la instalación del amplio espectro de dispositivos y equipos que se encuentran en el mercado. Las puertas cuentan con visor de vidrio templado serigrafiado con la posibilidad de invertir su sentido de apertura aun luego de su instalación.Cada modelo cuenta con un sistema de calados, que permiten un versátil acceso para la acometida de potencia y datos.",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-qracks.png",
+            "catalogo": "catalogos/Gabinetes_Q_rack.pdf",
+            "slide": ["img/productos/gabinetes/qracks/slider/qracks-01.jpg", "img/productos/gabinetes/qracks/slider/qracks-02.jpg", "img/productos/gabinetes/qracks/slider/qracks-03.jpg", "img/productos/gabinetes/qracks/slider/qracks-04.jpg", "img/productos/gabinetes/qracks/slider/qracks-05.jpg"],
+            "config": [
+                {
+                "img": "img/productos/gabinetes/qracks/configuracion/qracks-1.jpg",
+                "little": "de pié",
+                "big": "Qrack",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/qracks/configuracion/qracks-2.jpg",
+                "little": "Mural",
+                "big": "Qrack",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/qracks/configuracion/qracks-3.jpg",
+                "little": "Pivotante",
+                "big": "Qrack mural",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            },{
+                "img": "img/productos/gabinetes/qracks/configuracion/qracks-4.jpg",
+                "little": "Abierto",
+                "big": "Qrack",  
+                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            }],
+
+            "complementos": [
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-bandeja-deslizable.jpg",
+                    "name": "Bandeja deslizable"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-bandeja-fija-regulable.jpg",
+                    "name": "Bandeja fija regulable"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-bandeja-fija.jpg",
+                    "name": "Bandeja fija"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-frente-calado.jpg",
+                    "name": "Frente calado"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-frente-ciego.jpg",
+                    "name": "Frente ciego"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-organizador-cables.jpg",
+                    "name": "Organizador de cables"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-tomas.jpg",
+                    "name": "Tomas"
+                },
+                {
+                    "img": "img/productos/gabinetes/qracks/accesorios/qracks-accesorios-ventilacion.jpg",
+                    "name": "Ventilación"
+                }
+            ]
+        },
+        {
+            "name": "Ventilación",
+            "url": "ventilación",
+            "logoR": false,
+            "logoO": true,
+            "text": "El uso del sistema de ventilación GENROD SA (rejilla de entrada + módulo de gestión térmica + rejilla de salida) permite aumentar la potencia disipable de su gabinete. Posee componentes de primera calidad, optimiza la circulación de aire, minimiza la pérdida de presión, permite la evacuación de agua absorbida por el filtro, garantiza la estanqueidad del sistema a largo plazo, con una sencilla instalación y mantenimiento.",
+            "catalogo": "catalogos/ventilacion.pdf",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-ventilacion.png",
+            "slide": ["img/productos/gabinetes/ventilacion/slider/ventilacion-01.jpg", "img/productos/gabinetes/ventilacion/slider/ventilacion-02.jpg", "img/productos/gabinetes/ventilacion/slider/ventilacion-03.jpg"],
+            "config": 
+            [
+            	{
+	                "img": "img/productos/gabinetes/ventilacion/configuracion/ventilacion-entrada.jpg",
+	                "little": "Entrada",
+	                "big": "Modulo de ",  
+	                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            	},{
+	                "img": "img/productos/gabinetes/ventilacion/configuracion/ventilacion-salida.jpg",
+	                "little": "Salida",
+	                "big": "Modulo de ",  
+	                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            	},{
+	                "img": "img/productos/gabinetes/ventilacion/configuracion/ventilacion-modulo.jpg",
+	                "little": "Gestión",
+	                "big": "Modulo de ",  
+	                "addons": ["Incluye bulonería necesaria para su anclaje"]
+           		}
+          ]
+
+        },
+        {
+            "name": "CCTV",
+            "url": "cctv",
+            "logoR": false,
+            "logoO": false,
+            "text": "Estos gabinetes estancos cuentan con: a) Un sistema de ventilación compuesto por: Orificios laterales para fijación de KITS entrada/salida Ø120mm. Referencias: 141201B y 141202B (NO INCLUIDOS). Capuchones laterales (en zona de calado) para protección contra ingreso de agua de lluvia. b) Un sobre techo con caída hacia la parte trasera del gabinete, para impedir la acumulación de agua en el lateral superior y/o laberinto. c) Bandeja de Hº Gº de origen apta para montaje de elementos. d) Un sistema de cierres compuesto por dos cerraduras media vuelta tipo Pomo para candado. Posee también tres bisagras metálicas semi-ocultas. e) Un soporte trasero, para montaje a poste y/o columnas de alumbrado, compuesto por un perfil de acero galvanizado de origen espesor BWG #14. Este soporte admite diversos tipos de fijación (mediante zunchado con fleje de acero inoxidable; fijación mediante tirafondo sobre poste de madera; etc.).",
+            "new": true,
+            "catalogo": "catalogos/cctv.pdf",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-cctv.png",
+            "slide": ["img/productos/gabinetes/cctv/slider/gabinetes-cctv-01.jpg"]
+        },
+        {
+            "name": "Pupitres",
+            "url": "pupitres",
+            "logoR": false,
+            "logoO": false,
+            "text": "Gabinete para mando, control y señalización. Estructura autoportante de alta resistencia al impacto, indeformables. Cuenta con bandeja galvanizada y puertas. Habiendose desarrollado dos modelos uno tipo consola y otro con cabezal",
+            "catalogo": "catalogos/pupitres_s9000.pdf",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-pupitres.png",
+            "slide": ["img/productos/gabinetes/pupitres/slider/pupitres-01.jpg"],
+            "config": 
+            [
+            	{
+	                "img": "img/productos/gabinetes/pupitres/configuracion/pupitres-1.jpg",
+	                "little": "Inoxidable",
+	                "big": "Acero ",  
+	                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            	},{
+	                "img": "img/productos/gabinetes/pupitres/configuracion/pupitres-2.jpg",
+	                "little": "modulares",
+	                "big": "Estancos ",  
+	                "addons": ["Incluye bulonería necesaria para su anclaje"]
+            	}
+          ]
+
+        },
+        {
+            "name": "Puestos",
+            "logoR": false,
+            "logoO": false,
+            "url": "puestos",
+            "text": "Gabinetes indicados para ser ubicados cerca de maquinarias, por su diseño permiten alojar monitor y teclado.",
+            "image": "img/productos/gabinetes/thumbs/gabientes-puestoss.png",
+            "slide": ["img/productos/gabinetes/puestos/slider/puestos-01.jpg", "img/productos/gabinetes/puestos/slider/puestos-02.jpg", "img/productos/gabinetes/puestos/slider/puestos-03.jpg"]
+		},
+        {
+            "name": "Para usos extremos",
+            "logoR": true,
+            "logoO": false,
+            "catalogo": "catalogos/gabinetes_s9000_pesados.pdf", 
+            "url": "para-usos-extremos",
+            "text": "Es una línea de gabinetes robusto en su conformación; cuenta con sobretecho, trineo o zócalo. Con el fin de garantizar un elevado índice de estanqueidad se le aplica a la puerta un burlete de poliuretano de manera continua que incide sobre un laberinto con trampa para agua.",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-petroleros.png",
+            "slide": ["img/productos/gabinetes/petroleros/slider/petroleros-01.jpg", "img/productos/gabinetes/petroleros/slider/petroleros-02.jpg", "img/productos/gabinetes/petroleros/slider/petroleros-03.jpg", "img/productos/gabinetes/petroleros/slider/petroleros-04.jpg"]
+        },
+        {
+            "name": "Gabinetes a pedido",
+            "logoR": false,
+            "logoO": false,
+            "url": "gabinetes-a-pedido",
+            "text": "Desarrollamos envolventes de acuerdo a los requisitos del proyecto, contamos con asesoramiento técnico y un equipo de diseñadores para ofrecer soluciones a medida.",
+            "image": "img/productos/gabinetes/thumbs/gabinetes-pedido.png",
+            "slide": ["img/productos/gabinetes/pedido/slider/pedido-01.jpg", "img/productos/gabinetes/pedido/slider/pedido-02.jpg", "img/productos/gabinetes/pedido/slider/pedido-03.jpg", "img/productos/gabinetes/pedido/slider/pedido-04.jpg"]
+        }
+    ]
+}
