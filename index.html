@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-aXS+9mZiGPcrwcACGT0PUa6kUmktoxjhAmVe2YcgcRY=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-HWdz2gd3MmmGyo3T9S2TNyF8cKP8F/+iTa3ScDEUrj8='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-Hy9v+C91CevSI3FZOKz3GJtSprfYNanrKCY/4Zf2Ctk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1117,6 +1117,9 @@ footer .row a{color:rgba(255,255,255,.6)}
 .cur.dark.big{background:rgba(255,255,255,.1)}
 @media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.cur{display:none}}
 
+/* celular: que tirar hacia abajo arriba de todo no recargue la página sin querer */
+html,body{overscroll-behavior-y:none}
+
 /* intro: encendido */
 .boot{position:fixed;inset:0;z-index:250;pointer-events:auto;cursor:pointer}
 .boot .half{position:absolute;left:0;right:0;height:50.5%;background:var(--night);transition:transform 900ms cubic-bezier(.77,0,.175,1)}
@@ -1143,6 +1146,9 @@ footer .row a{color:rgba(255,255,255,.6)}
 <script>
 /* intro: la corriente cruza la pantalla, salta la chispa, el cartel se enciende y la pantalla se abre.
    Una vez por visita; nunca si la persona pidió menos movimiento. */
+/* la página siempre abre desde arriba (el navegador no restaura la posición anterior) */
+try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
+if (!location.hash) addEventListener('pageshow', function(){ scrollTo(0, 0); });
 (function(){
   var el = document.getElementById('intro'), seen = false;
   try { seen = sessionStorage.getItem('ce-intro') === '1'; } catch(e){}
@@ -2347,7 +2353,9 @@ function specShow(i, first){
   const tx = $('.spec-txt'); tx.classList.remove('swap'); if (!first) { void tx.offsetWidth; tx.classList.add('swap'); }
   $('#specName').textContent = sp.n;
   $('#specFact').textContent = st.n ? `${st.n} ${st.n === 1 ? 'opción' : 'opciones'} · desde ${money(st.min)}${st.unit === 'm' ? '/m' : ''}` : 'Consultá por WhatsApp';
-  const act = document.querySelector('.spec-names [aria-selected="true"]'); if (act && matchMedia('(max-width:700px)').matches && !first) act.scrollIntoView({ block:'nearest', inline:'center', behavior:'smooth' });
+  /* centra la pestaña activa moviendo solo la fila de pestañas (scrollIntoView movía toda la página hacia arriba en el celular) */
+  const act = document.querySelector('.spec-names [aria-selected="true"]');
+  if (act && matchMedia('(max-width:700px)').matches && !first){ const row = act.closest('.spec-names'), a = act.getBoundingClientRect(), r = row.getBoundingClientRect(); row.scrollTo({ left: row.scrollLeft + (a.left - r.left) - (r.width - a.width) / 2, behavior:'smooth' }); }
   specTimer();
 }
 function specTimer(){
