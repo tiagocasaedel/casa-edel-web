@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-obfrPYvluWmZHhmdigVKlC7lzQLahBnr6JbgSc9INOk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-obfrPYvluWmZHhmdigVKlC7lzQLahBnr6JbgSc9INOk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-vUE5bzZUEhlrnOnFHJEyrxnxydeLQnxgZQeCApO/yTM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -484,6 +484,13 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .card .cdots .dot{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 .card .refb,.pd .refb{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.88);color:#4a5068;border:1px solid rgba(27,43,110,.14);border-radius:999px;font-size:.6875rem;font-weight:500;letter-spacing:.01em;padding:.25em .65em;pointer-events:none}
 .card .tile{position:relative}
+.card .nbadge{position:absolute;right:8px;top:8px;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.3em .7em;pointer-events:none}
+.nuevos{padding-bottom:0}
+.nv-row{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 64px) / 5);gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-top:24px;padding-bottom:14px;scrollbar-width:thin}
+.nv-row .card{scroll-snap-align:start}
+@media (max-width:1180px){.nv-row{grid-auto-columns:calc((100% - 48px) / 4)}}
+@media (max-width:900px){.nv-row{grid-auto-columns:calc((100% - 32px) / 3)}}
+@media (max-width:620px){.nv-row{grid-auto-columns:44%;gap:10px}}
 .card .vbadge{position:absolute;left:8px;top:8px;background:#1b2238;color:#f6f2ea;border-radius:999px;font-size:.875rem;font-weight:500;padding:.3em .7em}
 @media (hover:hover) and (pointer:fine){.card .tile:hover .ph{transform:scale(1.05)}}
 .card h3{font-size:1rem;font-weight:500;line-height:1.3;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
@@ -1210,6 +1217,13 @@ document.addEventListener('click', function(e){
   </section>
   <div class="ribbon" aria-label="Marcas que trabajamos"><div class="track" id="track"></div></div>
 
+  <section class="block nuevos" id="nuevos" aria-labelledby="nuevosT" hidden>
+    <div class="wrap">
+      <div class="nv-head"><h2 class="h2" id="nuevosT">Nuevos ingresos</h2><p class="sub">Lo último que llegó al local.</p></div>
+      <div class="nv-row" id="nvRow"></div>
+    </div>
+  </section>
+
   <section class="block jobs-sec" id="trabajos" aria-labelledby="jobsT">
     <div class="wrap">
       <div class="jobs-head"><h2 class="h2" id="jobsT">Para cada trabajo</h2></div>
@@ -1489,7 +1503,7 @@ async function fromDB(){
   }
   const px = (p, u) => u != null && u !== '' && dolar ? Math.round(Number(u) * dolar) : Number(p) || 0;
   return rows.map(x => {
-    const p = { id:x.id, n:x.nombre, b:x.marca||'', c:x.rubro||'Otros', s:x.subrubro||'', u:x.unidad||'u', k:x.codigo||'', i:x.foto||'', r:Number(x.orden)||0, p:px(x.precio, x.precio_usd) };
+    const p = { id:x.id, n:x.nombre, b:x.marca||'', c:x.rubro||'Otros', s:x.subrubro||'', u:x.unidad||'u', k:x.codigo||'', i:x.foto||'', r:Number(x.orden)||0, nv:x.nuevo_desde ? Date.parse(x.nuevo_desde) || 0 : 0, p:px(x.precio, x.precio_usd) };
     if (x.orden_cat != null) p.o = Number(x.orden_cat);
     if (x.variantes && x.variantes.length){ p.v = x.variantes.map(v => ({ l:v.l, p:px(v.p, v.usd), k:v.k||'', i:typeof v.i === 'string' ? v.i : '', m:typeof v.m === 'string' ? v.m : '' })); p.p = Math.min(...p.v.map(v => v.p)); }
     return p;
@@ -1797,12 +1811,21 @@ function buyHTML(p){
   if (!l) return `<button class="add" type="button" data-add="${esc(p.id)}">Agregar</button>`;
   return `<div class="step" role="group" aria-label="Cantidad"><button type="button" data-dec="${esc(p.id)}" aria-label="Quitar uno">−</button><output class="num">${l.q}</output><button type="button" data-inc="${esc(p.id)}" aria-label="Sumar uno">+</button></div>`;
 }
+/* "Nuevos ingresos": a product counts as new for 30 days after nuevo_desde; the home row only shows with 4 or more */
+const NUEVO_DIAS = 30;
+function isNew(p){ return p.nv > 0 && Date.now() - p.nv < NUEVO_DIAS * 864e5; }
+function renderNuevos(){
+  const L = P.filter(isNew).sort((a, b) => b.nv - a.nv).slice(0, 12), sec = $('#nuevos');
+  if (!sec) return;
+  if (L.length < 4){ sec.hidden = true; return; }
+  $('#nvRow').innerHTML = L.map((p, i) => cardHTML(p, i).replace('class="card"', 'class="card seen"')).join(''); sec.hidden = false;
+}
 function cardHTML(p, i){
   const vb = p.v && p.v.length>1 ? `<span class="vbadge">${p.v.some(v=>/rollo/i.test(v.l)) && p.v.length === 2 ? 'Rollo o metro' : p.v.length+' opciones'}</span>` : '';
   const dm = p.v ? dimsOf(p) : null, cd = dm && dm.D.find(d => d.color || d.k === 'c');
   const dots = cd ? `<span class="cdots" aria-hidden="true">${[...new Set(dm.rows.map(r => r[cd.k]))].filter(Boolean).slice(0, 8).map(v => swatch(cd, v)).join('')}</span>` : '';
   return `<article class="card" style="animation-delay:${Math.min(i%CONFIG.pageSize,12)*40}ms" data-id="${esc(p.id)}">
-    <button class="tile" type="button" data-open="${esc(p.id)}" style="background:${field(i)}" aria-label="Ver ${esc(p.n)}">${tileInner(p)}${vb}${dots}</button>
+    <button class="tile" type="button" data-open="${esc(p.id)}" style="background:${field(i)}" aria-label="Ver ${esc(p.n)}">${tileInner(p)}${vb}${dots}${isNew(p) ? '<span class="nbadge">Nuevo</span>' : ''}</button>
     <h3><button type="button" data-open="${esc(p.id)}">${esc(p.n)}</button></h3>
     <div class="meta">${[p.b, p.k ? 'cód. '+p.k : ''].filter(Boolean).map(esc).join(' · ')}</div>
     ${priceHTML(p)}
@@ -1862,8 +1885,7 @@ function renderCatalog(reset=true){
   document.querySelectorAll('.rubro').forEach(b => b.setAttribute('aria-pressed', b.dataset.rubro === state.rubro));
 }
 function refreshCard(id){
-  const el = document.querySelector(`.card[data-id="${CSS.escape(id)}"] .buy`);
-  if (el) el.innerHTML = buyHTML(BY.get(id));
+  document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"] .buy`).forEach(el => el.innerHTML = buyHTML(BY.get(id)));
 }
 
 /* ---------- cart ---------- */
@@ -2397,7 +2419,7 @@ function specGo(){ const sp = SPEC[SP.i]; $('#q').value = sp.q; $('#qClear').hid
 load().then(() => {
   if ($('#factN')) $('#factN').textContent = (Math.floor(P.length / 100) * 100).toLocaleString('es-AR');
   { const bs = new Set(P.map(p => p.b).filter(Boolean)); const fb = $('#factB'); if (fb) fb.textContent = bs.size; }
-  renderStage(); renderMarquee(); carShow(0); renderSpec(); renderRubros(); renderCatalog(); updateCount(); welcomeBack();
+  renderStage(); renderMarquee(); carShow(0); renderSpec(); renderRubros(); renderNuevos(); renderCatalog(); updateCount(); welcomeBack();
   $('#mega').innerHTML = catsHTML('mega'); $('#menuCats').innerHTML = catsHTML('menu');
   matchMedia('(min-width:701px)').addEventListener('change', renderStage);
   requestAnimationFrame(() => setupReveal());
