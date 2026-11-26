@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-Hy9v+C91CevSI3FZOKz3GJtSprfYNanrKCY/4Zf2Ctk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-OGNfcAtukT6Fu3NLHyoe6vkZDM9RSbmx8FW6kx6gMNo=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1120,51 +1120,16 @@ footer .row a{color:rgba(255,255,255,.6)}
 /* celular: que tirar hacia abajo arriba de todo no recargue la página sin querer */
 html,body{overscroll-behavior-y:none}
 
-/* intro: encendido */
-.boot{position:fixed;inset:0;z-index:250;pointer-events:auto;cursor:pointer}
-.boot .half{position:absolute;left:0;right:0;height:50.5%;background:var(--night);transition:transform 900ms cubic-bezier(.77,0,.175,1)}
-.boot .half.t{top:0}.boot .half.b{bottom:0}
-.boot .wire{position:absolute;left:0;top:50%;height:2px;width:100%;margin-top:-1px;background:var(--accent);transform-origin:left;transform:scaleX(0);box-shadow:0 0 12px rgba(255,74,61,.8),0 0 2px #fff;animation:wire 700ms cubic-bezier(.65,0,.35,1) 150ms forwards}
-@keyframes wire{to{transform:scaleX(1)}}
-.boot .spark{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px;border-radius:50%;background:#fff;box-shadow:0 0 20px 8px rgba(255,210,63,.8),0 0 60px 20px rgba(255,74,61,.5);opacity:0;animation:spark 600ms ease-out 620ms forwards}
-@keyframes spark{0%{opacity:0;transform:scale(.2)}25%{opacity:1;transform:scale(1.6)}100%{opacity:0;transform:scale(3)}}
-.boot img{position:absolute;left:50%;top:50%;width:min(420px,70vw);height:auto;translate:-50% -50%;opacity:0;animation:neon 900ms steps(1,end) 700ms forwards;filter:drop-shadow(0 0 18px rgba(255,255,255,.25))}
-@keyframes neon{0%{opacity:0}10%{opacity:.9}18%{opacity:.15}28%{opacity:1}36%{opacity:.35}46%,100%{opacity:1}}
-.boot .skip{position:absolute;right:20px;bottom:20px;color:rgba(255,255,255,.6);font-size:.875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:none;border:0;cursor:pointer}
-.boot.open .half.t{transform:translateY(-101%)}
-.boot.open .half.b{transform:translateY(101%)}
-.boot.open .wire{transform:scaleX(1);animation:none;opacity:0;transition:opacity 300ms ease}
-.boot.open img,.boot.open .skip,.boot.open .spark{opacity:0;transition:opacity 250ms ease;animation:none}
 </style>
 
-<div class="boot" id="intro" aria-hidden="true">
-  <div class="half t"></div><div class="half b"></div>
-  <span class="wire"></span><span class="spark"></span>
-  <img src="img/logo-light.png" alt="" width="541" height="143">
-  <button class="skip" type="button" tabindex="-1">Saltar</button>
-</div>
+<script src="intro.js"></script>
 <script>
 /* intro: la corriente cruza la pantalla, salta la chispa, el cartel se enciende y la pantalla se abre.
    Una vez por visita; nunca si la persona pidió menos movimiento. */
 /* la página siempre abre desde arriba (el navegador no restaura la posición anterior) */
 try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
 if (!location.hash) addEventListener('pageshow', function(){ scrollTo(0, 0); });
-(function(){
-  var el = document.getElementById('intro'), seen = false;
-  try { seen = sessionStorage.getItem('ce-intro') === '1'; } catch(e){}
-  if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.remove(); return; }
-  var root = document.documentElement, done = false; root.classList.add('intro-on', 'intro-ran');
-  function open(){
-    if (done) return; done = true;
-    try { sessionStorage.setItem('ce-intro', '1'); } catch(e){}
-    el.classList.add('open');
-    setTimeout(function(){ root.classList.remove('intro-on'); dispatchEvent(new Event('ce-intro-done')); }, 380);
-    setTimeout(function(){ el.remove(); }, 1000);
-  }
-  setTimeout(open, 2000);
-  el.addEventListener('click', open);
-  addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') open(); });
-})();
+
 </script>
 <div class="band" aria-hidden="true"></div>
 <header class="top" id="top">
