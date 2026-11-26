@@ -45538,19 +45538,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-tubo-led-120-cm-18w-luz-ultravioleta-8150",
-  "nombre": "Tubo LED 120 cm 18W Luz Ultravioleta",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "TL18U",
-  "precio": 15483.49,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "wd-40-limpiador-de-contacto-226g-8163",
   "nombre": "Limpiador de Contacto 226G",
   "marca": "WD-40",
@@ -48866,58 +48853,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-lampara-led-a60-15w-e27-fria-1300lm-76108",
-  "nombre": "Lámpara LED A60 15W E27 Fría 1300LM",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LA15W-F",
-  "precio": 1656.19,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-dicro-led-gu10-7w-120-fria-76111",
-  "nombre": "Lámpara Dicro LED GU10 7W 120° Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD07W-F",
-  "precio": 1328.81,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-tubo-led-9w-60-cm-1-pta-luz-fria-76113",
-  "nombre": "Tubo LED 9W 60 cm (1 Pta) Luz Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "TL09W-F",
-  "precio": 2927.23,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-liston-estanco-1x18w-76115",
-  "nombre": "Listón Estanco 1x18W",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Listones y Cintas LED",
-  "unidad": "u",
-  "codigo": "EST18",
-  "precio": 23871.65,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "alic-lampara-gota-eco-led-5w-e27-luz-fria-76120",
   "nombre": "Lámpara Gota Eco LED 5W E27 Luz Fría",
   "marca": "Alic",
@@ -48991,58 +48926,6 @@
   "unidad": "u",
   "codigo": "JUNO BLANCO",
   "precio": 63995.15,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-dicro-led-gu10-7w-120-neutra-76146",
-  "nombre": "Lámpara Dicro LED GU10 7W 120° Neutra",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD07W-N",
-  "precio": 1328.81,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-proyector-led-20w-luz-fria-1600lm-76147",
-  "nombre": "Proyector LED 20W Luz Fría 1600LM",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Proyectores y Alumbrado",
-  "unidad": "u",
-  "codigo": "PR20W-F",
-  "precio": 6010.09,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-proyector-led-30w-luz-fria-2400lm-76148",
-  "nombre": "Proyector LED 30W Luz Fría 2400LM",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Proyectores y Alumbrado",
-  "unidad": "u",
-  "codigo": "PR30W-F",
-  "precio": 7317.54,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-proyector-led-100w-luz-fria-8000lm-76149",
-  "nombre": "Proyector LED 100W Luz Fría 8000LM",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Proyectores y Alumbrado",
-  "unidad": "u",
-  "codigo": "PR100W-F",
-  "precio": 21214.56,
   "precio_usd": null,
   "visible": true,
   "orden": 0
@@ -49290,32 +49173,6 @@
   "unidad": "u",
   "codigo": "PVA-63A P1",
   "precio": 133485.7,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-light-lion-lampara-led-a60-9w-e27-fria-76258",
-  "nombre": "Light Lion- Lámpara LED A60 9W E27 Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LA09W-F",
-  "precio": 1136.23,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-led-ar111-gu10-12w-luz-calida-76260",
-  "nombre": "Lámpara LED AR111 GU10 12W Luz Calida",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD12W-C",
-  "precio": 6740.32,
   "precio_usd": null,
   "visible": true,
   "orden": 0
@@ -49594,19 +49451,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-light-lion-lampara-led-high-power-50w-e27-fria-4200l-76404",
-  "nombre": "Light Lion- Lámpara LED High Power 50W E27 Fría 4200L",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LH50W-F",
-  "precio": 8223.2,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "delta-localizador-de-fallas-160grs-76406",
   "nombre": "Localizador de Fallas 160GRS",
   "marca": "Delta",
@@ -49654,58 +49498,6 @@
   "unidad": "u",
   "codigo": "A9L65501",
   "precio": 1001725.22,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-led-high-power-80w-e27-fria-76425",
-  "nombre": "Lámpara LED High Power 80W E27 Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LH80W-F",
-  "precio": 18372.2,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-reduccion-e-40-a-e-27-76426",
-  "nombre": "Reducción E-40 a E-27",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Repuestos y Accesorios",
-  "unidad": "u",
-  "codigo": "ADAP-1",
-  "precio": 3205.38,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-proyector-led-150w-luz-fria-76429",
-  "nombre": "Proyector LED 150W Luz Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Proyectores y Alumbrado",
-  "unidad": "u",
-  "codigo": "PR150W-F",
-  "precio": 31252.46,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-led-a60-15w-e27-calida-1300-m-76430",
-  "nombre": "Lámpara LED A60 15W E27 Calida 1300 m",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LA15W-C",
-  "precio": 1656.19,
   "precio_usd": null,
   "visible": true,
   "orden": 0
@@ -49776,32 +49568,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-light-lion-lampara-led-high-power-50w-e27-cali-3200l-76480",
-  "nombre": "Light Lion- Lámpara LED High Power 50W E27 Cali 3200L",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LH50W-C",
-  "precio": 8223.2,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-15w-con-fotocelula-e27-luz-fria-76481",
-  "nombre": "Lámpara 15W con Fotocelula E27 Luz Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LA15W-A-F",
-  "precio": 9609.78,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "zelta-soporte-fijo-tv-led-14-a-42-76512",
   "nombre": "Soporte Fijo TV LED 14\" a 42\"",
   "marca": "Zelta",
@@ -49823,32 +49589,6 @@
   "unidad": "u",
   "codigo": "ZESO1200",
   "precio": 36805.65,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-dicro-led-gu10-7w-38-fria-76526",
-  "nombre": "Lámpara Dicro LED GU10 7W 38° Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD07W-L-F",
-  "precio": 1617.68,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-dicro-led-gu10-7w-38-neutra-76527",
-  "nombre": "Lámpara Dicro LED GU10 7W 38° Neutra",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD07W-L-N",
-  "precio": 1617.68,
   "precio_usd": null,
   "visible": true,
   "orden": 0
@@ -50569,19 +50309,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-lampara-led-ar111-gu10-12w-dim-fria-76840",
-  "nombre": "Lámpara LED AR111 GU10 12W Dim Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD12W-D-F",
-  "precio": 9340.17,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "king-lampara-led-a60-14-5w-e27-fria-1400lm-76859",
   "nombre": "Lámpara LED A60 14,5W E27 Fría 1400LM",
   "marca": "King",
@@ -50764,19 +50491,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-lampara-led-ar111-gu10-12w-luz-fria-76944",
-  "nombre": "Lámpara LED AR111 GU10 12W Luz Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LD12W-F",
-  "precio": 6740.32,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "unit-multimetro-digital-750v-20a-76954",
   "nombre": "Multimetro Digital 750V 20A",
   "marca": "UNIT",
@@ -50946,19 +50660,6 @@
   "orden": 0
  },
  {
-  "id": "light-lion-panel-led-60x60-48w-blanco-luz-fria-77055",
-  "nombre": "Panel LED 60x60 48W Blanco Luz Fría",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Plafones y Paneles",
-  "unidad": "u",
-  "codigo": "LPCE48W-F",
-  "precio": 31716.4,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
   "id": "metalce-soporte-tetrapolar-acr-00-160a-77058",
   "nombre": "Soporte Tetrapolar Acr 00 160A",
   "marca": "Metalce",
@@ -51071,19 +50772,6 @@
   "unidad": "u",
   "codigo": "ZEPI1457",
   "precio": 11345.36,
-  "precio_usd": null,
-  "visible": true,
-  "orden": 0
- },
- {
-  "id": "light-lion-lampara-led-high-power-20w-e27-fria-1600l-77084",
-  "nombre": "Lámpara LED High Power 20W E27 Fría 1600L",
-  "marca": "Light Lion",
-  "rubro": "Iluminación",
-  "subrubro": "Lámparas y Tubos",
-  "unidad": "u",
-  "codigo": "LH20W-F",
-  "precio": 2503.55,
   "precio_usd": null,
   "visible": true,
   "orden": 0
