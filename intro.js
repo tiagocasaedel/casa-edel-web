@@ -17,7 +17,7 @@
 #cei *{box-sizing:border-box}
 #cei .bg{position:absolute;inset:-6%;background:radial-gradient(60% 50% at 50% 46%,#2a3a7a 0%,#18204a 45%,#0b0f22 100%);animation:cei-bg 4.2s cubic-bezier(.23,1,.32,1) both}
 @keyframes cei-bg{from{transform:scale(1.12);opacity:.6}to{transform:none;opacity:1}}
-#cei .stage{position:absolute;left:50%;top:47%;width:min(82vw,820px);height:min(22.36vw,223.6px);right:auto;bottom:auto;aspect-ratio:auto;transform:translate(-50%,-50%)}
+#cei .stage{position:absolute;left:50%;top:47%;width:min(82vw,820px);height:min(22.36vw,223.6px);right:auto;bottom:auto;aspect-ratio:auto;margin:0!important;padding:0;min-height:0!important;transform:translate(-50%,-50%)}
 #cei .logo{position:absolute;inset:0;animation:cei-logo 1.2s var(--eo) 3.0s both}
 #cei .p{position:absolute;background-size:100% 100%;background-repeat:no-repeat}
 #cei .top{left:0;top:0;width:100%;height:25.82%;animation:cei-top .6s var(--eo) 1.42s both}

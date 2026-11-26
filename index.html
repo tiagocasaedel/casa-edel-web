@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-OGNfcAtukT6Fu3NLHyoe6vkZDM9RSbmx8FW6kx6gMNo=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-obfrPYvluWmZHhmdigVKlC7lzQLahBnr6JbgSc9INOk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-Y11RljC3HhjDIzY5ZLLW/yM3Qy331F+PCg50P+om8Lk='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1128,7 +1128,16 @@ html,body{overscroll-behavior-y:none}
    Una vez por visita; nunca si la persona pidió menos movimiento. */
 /* la página siempre abre desde arriba (el navegador no restaura la posición anterior) */
 try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
-if (!location.hash) addEventListener('pageshow', function(){ scrollTo(0, 0); });
+/* si la dirección quedó con #contacto u otra sección (por haber tocado el menú antes), se borra y se abre arriba */
+if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch(e){} }
+addEventListener('pageshow', function(){ scrollTo(0, 0); });
+addEventListener('load', function(){ if (scrollY > 0 && performance.now() < 8000) scrollTo(0, 0); });
+/* los enlaces del menú bajan a la sección sin dejar el # en la dirección */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+  var id = a.getAttribute('href').slice(1), t = id ? document.getElementById(id) : null; if (!t) return;
+  e.preventDefault(); t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
 
 </script>
 <div class="band" aria-hidden="true"></div>
