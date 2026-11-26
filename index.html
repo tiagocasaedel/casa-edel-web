@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-obfrPYvluWmZHhmdigVKlC7lzQLahBnr6JbgSc9INOk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-vUE5bzZUEhlrnOnFHJEyrxnxydeLQnxgZQeCApO/yTM='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests; script-src 'self' 'sha256-uJg5bH0p3/7WOjXRyiTqVipvaQSzGcp4G+eUM22racE=' 'sha256-obfrPYvluWmZHhmdigVKlC7lzQLahBnr6JbgSc9INOk=' 'sha256-wA3L0GkhwEntDQIHI3a3S9ZvUVCBx8gI7eH31Ev6ZBo=' 'sha256-pWmMsAUyfS3xqOrccTZaDIsZ87E1PDh/8VLj2BJEVmE='; img-src 'self' data: https://raw.githubusercontent.com https://pduvxjjvtedpykgwlews.supabase.co; media-src 'self'; connect-src 'self' https://pduvxjjvtedpykgwlews.supabase.co; worker-src 'none'">
 <title>Casa Edel Materiales Eléctricos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -484,6 +484,7 @@ section.block{padding-block:clamp(56px,8vw,120px)}
 .card .cdots .dot{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 .card .refb,.pd .refb{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.88);color:#4a5068;border:1px solid rgba(27,43,110,.14);border-radius:999px;font-size:.6875rem;font-weight:500;letter-spacing:.01em;padding:.25em .65em;pointer-events:none}
 .card .tile{position:relative}
+.alq{font-size:.8em;opacity:.75;white-space:nowrap}
 .card .nbadge{position:absolute;right:8px;top:8px;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.3em .7em;pointer-events:none}
 .nuevos{padding-bottom:0}
 .nv-row{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 64px) / 5);gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-top:24px;padding-bottom:14px;scrollbar-width:thin}
@@ -1503,7 +1504,7 @@ async function fromDB(){
   }
   const px = (p, u) => u != null && u !== '' && dolar ? Math.round(Number(u) * dolar) : Number(p) || 0;
   return rows.map(x => {
-    const p = { id:x.id, n:x.nombre, b:x.marca||'', c:x.rubro||'Otros', s:x.subrubro||'', u:x.unidad||'u', k:x.codigo||'', i:x.foto||'', r:Number(x.orden)||0, nv:x.nuevo_desde ? Date.parse(x.nuevo_desde) || 0 : 0, p:px(x.precio, x.precio_usd) };
+    const p = { id:x.id, n:x.nombre, b:x.marca||'', c:x.rubro||'Otros', s:x.subrubro||'', u:x.unidad||'u', k:x.codigo||'', i:x.foto||'', r:Number(x.orden)||0, nv:x.nuevo_desde ? Date.parse(x.nuevo_desde) || 0 : 0, a:x.codigo_alquimia ? String(x.codigo_alquimia) : '', p:px(x.precio, x.precio_usd) };
     if (x.orden_cat != null) p.o = Number(x.orden_cat);
     if (x.variantes && x.variantes.length){ p.v = x.variantes.map(v => ({ l:v.l, p:px(v.p, v.usd), k:v.k||'', i:typeof v.i === 'string' ? v.i : '', m:typeof v.m === 'string' ? v.m : '' })); p.p = Math.min(...p.v.map(v => v.p)); }
     return p;
@@ -1539,13 +1540,17 @@ async function load(){
   }
   if (!P.length) P = await (await fetch('products.json')).json();
   /* fotos nuevas que se suben a la web (fotos.json); una foto cargada desde el panel tiene prioridad */
-  let FOTOS = {}; try { FOTOS = await (await fetch('fotos.json', {cache:'no-cache'})).json(); } catch {}
-  /* internal (Alquimia) code for each maker code, used in the WhatsApp order */
-  fetch('alquimia.json', {cache:'no-cache'}).then(r => r.json()).then(j => { ALQ = j || {}; }).catch(() => {});
+  /* internal (Alquimia) code for each maker code: shown small on each product, searchable, and sent in the WhatsApp order */
+  const getJ = u => fetch(u, {cache:'no-cache'}).then(r => r.json()).catch(() => ({}));
+  const [FOTOS, ALQJ] = await Promise.all([getJ('fotos.json'), getJ('alquimia.json')]); ALQ = ALQJ || {};
+  const alqOf = k => k ? (ALQ[k] || ALQ[String(k).toUpperCase()] || '') : '';
   P.forEach(p => { const f = FOTOS[p.id]; if (typeof f === 'string' && !/supabase\.co/.test(p.i || '')) p.i = f;
     if (p.v) p.v.forEach(v => { const g = v.m && FOTOS[v.m]; if (typeof g === 'string' && !/supabase\.co/.test(v.i || '')) v.i = g; });
     if (!p.i && p.v) p.i = (p.v.find(v => v.i) || {}).i || ''; });
-    P.forEach(p => { p.h = norm([p.n,p.b,p.k,p.s,p.c,poleAlias(p)].concat(p.v ? p.v.flatMap(v => [v.l, v.k]) : []).join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
+    P.forEach(p => { if (!p.a) p.a = alqOf(p.k); if (p.v) p.v.forEach(v => { v.a = alqOf(v.k); });
+      /* abbreviated words in the name ("Protec.", "Tens.", "Monof/trif.") so "protector" or "tension" still find them */
+      p.ab = [...new Set((p.n.match(/[A-Za-zÁÉÍÓÚÑáéíóúñ]{3,}\.|[A-Za-zÁÉÍÓÚÑáéíóúñ]{3,}(?=\/)/g) || []).map(w => norm(w).replace('.', '')))];
+      p.h = norm([p.n,p.b,p.k,p.s,p.c,poleAlias(p),p.a].concat(p.v ? p.v.flatMap(v => [v.l, v.k, v.a]) : []).join(' ')); p.hc = p.h.replace(/[\s.]/g,''); if (p.o == null) p.o = p.r ? 20 + p.r : 1e5; BY.set(p.id, p); });
   cart = cart.filter(l => { const p = BY.get(l.id); return p && (p.v ? l.v < p.v.length : l.v === 0); });
 }
 
@@ -1703,8 +1708,9 @@ function renderRubros(){
 const SYN = {trifasica:['trifasico'], monofasica:['monofasico'], termica:['termomagn'], termicas:['termomagn'], disyuntor:['diferencial'], diferencial:['disyuntor'], foco:['lampara'], focos:['lampara'], lamparita:['lampara'], lamparitas:['lampara'],
   dicroica:['dicro'], dicroicas:['dicro'], zapatilla:['prolongador'], enchufe:['ficha','toma'], tomacorriente:['toma'], llave:['interruptor','llave'], reflector:['proyector'], reflectores:['proyector'], spot:['spot','aplique'], cano:['cano'], plafon:['plafon','panel']};
 const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-function qToks(q){ return norm(q).split(/\s+/).filter(Boolean).map(t => { const alts = [t, ...(SYN[t]||[])]; if (t.length >= 5 && /[aos]$/.test(t) && !/\d/.test(t)) alts.push(t.slice(0,-1)); if (t.length >= 6 && /es$/.test(t)) alts.push(t.slice(0,-2)); return alts; }); }
-function matchQ(p, toks){ return toks.every(alts => alts.some(a => p.h.includes(a) || (!a.includes('.') && a.length > 1 && p.hc.includes(a)))); }
+function qToks(q){ return norm(q).split(/\s+/).filter(Boolean).map(t => { const alts = [t, ...(SYN[t]||[])]; if (t.length >= 5 && /[aos]$/.test(t) && !/\d/.test(t)) alts.push(t.slice(0,-1)); if (t.length >= 6 && /es$/.test(t)) alts.push(t.slice(0,-2)); if (t.length >= 8 && !/\d/.test(t)) alts.st = t.slice(0, 6); return alts; }); }
+/* a word also matches an abbreviation in the name (protector → "Protec.") or a word with the same root (protector → proteccion) */
+function matchQ(p, toks){ return toks.every(alts => alts.some(a => p.h.includes(a) || (!a.includes('.') && a.length > 1 && p.hc.includes(a)) || (a.length >= 4 && p.ab.some(b => a.startsWith(b)))) || (alts.st && (p.nn ||= norm(p.n)).includes(alts.st))); }
 function qScore(p, toks){
   const n = norm(p.n); let s = 0;
   toks.forEach(alts => { if (!alts.some(a => n.includes(a))) s += 3; else if (!alts.some(a => new RegExp('(^|[\\s/(x-])' + reEsc(a)).test(n))) s += 1; });
@@ -1827,7 +1833,7 @@ function cardHTML(p, i){
   return `<article class="card" style="animation-delay:${Math.min(i%CONFIG.pageSize,12)*40}ms" data-id="${esc(p.id)}">
     <button class="tile" type="button" data-open="${esc(p.id)}" style="background:${field(i)}" aria-label="Ver ${esc(p.n)}">${tileInner(p)}${vb}${dots}${isNew(p) ? '<span class="nbadge">Nuevo</span>' : ''}</button>
     <h3><button type="button" data-open="${esc(p.id)}">${esc(p.n)}</button></h3>
-    <div class="meta">${[p.b, p.k ? 'cód. '+p.k : ''].filter(Boolean).map(esc).join(' · ')}</div>
+    <div class="meta">${[p.b, p.k ? 'cód. '+p.k : ''].filter(Boolean).map(esc).join(' · ')}${p.a ? ` <span class="alq">· Alq. ${esc(p.a)}</span>` : ''}</div>
     ${priceHTML(p)}
     <div class="buy">${buyHTML(p)}</div>
   </article>`;
@@ -1922,7 +1928,7 @@ function orderText(){
   const items = cart.map(l => {
     const p = BY.get(l.id), u = unitOf(p, l.v), v = p.v ? p.v[l.v] : null;
     const mk = (v ? v.k : p.k) || '';
-    return { p, u, v, q: l.q, code: mk || 'sin código', alq: mk && (ALQ[mk] || ALQ[mk.toUpperCase()]), unit: priceOf(p, l.v) };
+    return { p, u, v, q: l.q, code: mk || 'sin código', alq: (v ? v.a : p.a) || (mk && (ALQ[mk] || ALQ[mk.toUpperCase()])), unit: priceOf(p, l.v) };
   });
   const qty = it => it.u === 'm' ? `${it.q} m` : it.v && /rollo/i.test(it.v.l) ? `${it.q} ${it.q === 1 ? 'rollo' : 'rollos'}` : `${it.q} u.`;
   const L = ['¡Hola Casa Edel! Quiero hacer este pedido:', ''];
@@ -2096,7 +2102,7 @@ function renderPD(p){
   <div class="body">
     <p class="crumb"><button type="button" data-crumb="${esc(p.c)}">${esc(p.c)}</button> › ${esc(p.s)}</p>
     <h2 id="pdName">${esc(p.n)}</h2>
-    <p class="meta">${[esc(p.b), code ? 'código ' + esc(code) : ''].filter(Boolean).join(' · ')}</p>
+    <p class="meta">${[esc(p.b), code ? 'código ' + esc(code) : ''].filter(Boolean).join(' · ')}${(p.v ? p.v[pdSel].a : p.a) ? ` <span class="alq">· Alquimia ${esc(p.v ? p.v[pdSel].a : p.a)}</span>` : ''}</p>
     <div class="pricebox">${img ? `<span class="pthumb" style="${img}"></span>` : ''}<div class="price num"><span id="pdPrice">${money(pr)}</span><small>${u === 'm' ? 'el metro' : 'c/u'}${p.v && p.v.length > 2 && maxP > minP && !p.v.some(v => /metro/i.test(v.l)) ? ` · de ${money(minP)} a ${money(maxP)}` : ''}</small></div>${p.v ? `<div class="sel-l"><small>Elegiste</small>${esc(p.v[pdSel].l)}</div>` : ''}</div>
     ${opts}
     ${saveTxt}
