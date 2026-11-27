@@ -10497,8 +10497,6 @@
   "id": "arlen---tapa-reduccion-bombe-10x10-blanca",
   "set": {
    "codigo": "057TA",
-   "precio": 3142,
-   "precio_usd": null,
    "marca": "Santa Maria"
   },
   "motivo": "Código y precio de Santa Maria"
@@ -10507,8 +10505,6 @@
   "id": "arlen---caja-octogonal-grande-ch20-blanca",
   "set": {
    "codigo": "004OG",
-   "precio": 1030,
-   "precio_usd": null,
    "marca": "Santa Maria"
   },
   "motivo": "Código y precio de Santa Maria"
@@ -10517,8 +10513,6 @@
   "id": "arlen---caja-cuadrada-10x10-ch20-blanca",
   "set": {
    "codigo": "005CU",
-   "precio": 1175,
-   "precio_usd": null,
    "marca": "Santa Maria"
   },
   "motivo": "Código y precio de Santa Maria"
@@ -10527,8 +10521,6 @@
   "id": "arlen---caja-octogonal-chica-ch20-blanca",
   "set": {
    "codigo": "002OC",
-   "precio": 460,
-   "precio_usd": null,
    "marca": "Santa Maria"
   },
   "motivo": "Código y precio de Santa Maria"
@@ -10537,8 +10529,6 @@
   "id": "arlen---caja-mignon-5x5-ch20-blanca",
   "set": {
    "codigo": "003MI",
-   "precio": 460,
-   "precio_usd": null,
    "marca": "Santa Maria"
   },
   "motivo": "Código y precio de Santa Maria"
@@ -12728,29 +12718,6 @@
    }
   },
   "motivo": "Código de cada presentación"
- },
- {
-  "id": "hidrolavadora-aspiradora-2-bat-y-carg-lusqtoff-t6478",
-  "set": {
-   "precio": 117326
-  },
-  "motivo": "Precio de la lista 02/11 (LQCOMBO): lista $180.502 −35%"
- },
- {
-  "id": "punta-philips-d-impacto-ph2-50-mm-lusqtoff-t6937",
-  "set": {
-   "precio": 2096
-  },
-  "motivo": "Precio de la lista 02/11 (100820): lista $3.224 −35%"
- },
- {
-  "id": "argenplas-cable-alma-acero-2x050mm-blanco",
-  "vset": {
-   "1": {
-    "p": 1724
-   }
-  },
-  "motivo": "Precio por metro de la lista 02/11 (AAB/1): lista $2.652 −35%"
  },
  {
   "id": "ag---caja-rectangular-10x5-5x10-ch20-1-agujero",
