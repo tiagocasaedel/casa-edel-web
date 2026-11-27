@@ -82,91 +82,95 @@ def build(order):
     return rows, sub, dx, dto, total, now, numero, vd
 
 CSS = """
-@font-face{font-family:'Archivo';font-weight:100 900;font-stretch:62% 125%;src:url(ROOT/fonts/archivo.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:400;src:url(ROOT/fonts/plex-cond-400.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:500;src:url(ROOT/fonts/plex-cond-500.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:600;src:url(ROOT/fonts/plex-cond-600.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:700;src:url(ROOT/fonts/plex-cond-700.woff2) format('woff2')}
 @page{size:A4;margin:0}
-*{box-sizing:border-box}
+*{box-sizing:border-box;border-radius:0}
 html,body{margin:0;background:#fff}
-body{font-family:'Archivo',system-ui,sans-serif;color:#141a38;font-size:10.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{width:210mm;min-height:297mm;padding:0 0 18mm;position:relative;display:flex;flex-direction:column}
-.band{height:5mm;background:linear-gradient(90deg,#c4302a 0 62%,#22306f 62% 100%)}
-header{display:flex;justify-content:space-between;align-items:flex-start;padding:9mm 14mm 6mm}
-header img{height:17mm}
-header .motto{margin:2mm 0 0;font-size:9pt;color:#4f5670;letter-spacing:.02em}
-.doc{text-align:right}
-.doc h1{margin:0;font-size:26pt;line-height:1;font-stretch:125%;font-weight:800;letter-spacing:-.03em;color:#22306f}
-.doc .meta{margin-top:3mm;font-size:9.5pt;color:#4f5670;line-height:1.5}
-.doc .meta b{color:#141a38;font-weight:600}
-.client{margin:0 14mm 6mm;display:flex;gap:8mm;background:#f5f3ef;border-radius:3mm;padding:4mm 5mm}
-.client div{min-width:0}
-.client small{display:block;font-size:7.5pt;text-transform:uppercase;letter-spacing:.12em;color:#4f5670;font-weight:600;margin-bottom:1mm}
-.client span{font-weight:600;font-size:11pt}
-table{width:calc(100% - 28mm);margin:0 14mm;border-collapse:collapse}
-thead th{font-size:7.5pt;text-transform:uppercase;letter-spacing:.1em;color:#fff;background:#22306f;font-weight:600;padding:2.6mm 2.5mm;text-align:left}
-thead th:first-child{border-radius:2mm 0 0 2mm}thead th:last-child{border-radius:0 2mm 2mm 0}
+body{font-family:'Plex',Arial,sans-serif;color:#111;font-size:9.2pt;line-height:1.2;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;min-height:297mm;padding:9mm 12mm 7mm;display:flex;flex-direction:column}
+header{display:grid;grid-template-columns:1fr 62mm;gap:8mm;align-items:stretch;padding-bottom:4mm;border-bottom:.5mm solid #1b2a5e}
+header img{height:13mm;display:block}
+.emp{margin-top:2.5mm;font-size:8pt;color:#333;line-height:1.35}
+.emp b{font-weight:600;color:#111}
+.doc{border:.3mm solid #1b2a5e;display:flex;flex-direction:column}
+.doc h1{margin:0;padding:1.6mm 3mm;background:#1b2a5e;color:#fff;font-size:12pt;font-weight:600;letter-spacing:.14em;text-align:center}
+.doc dl{margin:0;padding:1.6mm 3mm;display:grid;grid-template-columns:auto 1fr;gap:.7mm 3mm;font-size:9pt;flex:1;align-content:center}
+.doc dt{color:#444}.doc dd{margin:0;text-align:right;font-weight:600}
+.client{margin:3mm 0;display:flex;border:.25mm solid #777}
+.client div{padding:1.4mm 3mm;border-right:.25mm solid #777;min-width:32mm}
+.client div:first-child{flex:1}.client div:last-child{border-right:0}
+.client small{display:block;font-size:7.2pt;text-transform:uppercase;letter-spacing:.08em;color:#444;font-weight:500}
+.client span{font-weight:600;font-size:10pt}
+table{width:100%;border-collapse:collapse;border:.25mm solid #777}
+thead{display:table-header-group}
+thead th{white-space:nowrap;font-size:7.6pt;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:#1b2a5e;font-weight:600;padding:1.5mm 2mm;text-align:left;border-right:.2mm solid #4a5788}
+thead th:last-child{border-right:0}
 th.r,td.r{text-align:right}
-tbody td{padding:2.4mm 2.5mm;border-bottom:.25mm solid #e7e3da;vertical-align:middle}
+tbody td{padding:1mm 2mm;border-bottom:.15mm solid #aaa;border-right:.15mm solid #ccc;vertical-align:middle}
+tbody td:last-child{border-right:0}
 tbody tr{break-inside:avoid}
-tbody tr:nth-child(even) td{background:#fbfaf8}
-.ph{width:13mm;height:13mm;border-radius:2mm;background:#fff center/contain no-repeat;box-shadow:inset 0 0 0 .25mm #e7e3da}
-.nm{font-weight:600;line-height:1.25}
-.sub{font-size:8.5pt;color:#4f5670;margin-top:.6mm}
-.alq{font-weight:700;font-size:11pt;font-stretch:90%}
-.emp{font-size:7.5pt;color:#4f5670}
+.nm{font-weight:500}
+.sub{font-size:7.8pt;color:#444;font-weight:400}
+.nowrap{white-space:nowrap}
+.cod{font-weight:600}.ref{font-size:8.2pt;color:#333}
 .num{font-variant-numeric:tabular-nums;white-space:nowrap}
-.q b{font-size:11pt}
-.tag{display:inline-block;margin-left:1.5mm;font-size:7.5pt;font-weight:700;color:#c4302a}
-.tot{display:flex;justify-content:space-between;align-items:flex-start;gap:10mm;margin:6mm 14mm 0;break-inside:avoid}
-.notes{flex:1;font-size:8.8pt;color:#4f5670;line-height:1.5}
-.notes h4{margin:0 0 1.5mm;font-size:7.5pt;text-transform:uppercase;letter-spacing:.12em;color:#141a38}
-.notes ul{margin:0;padding-left:4mm}
-.sum{width:78mm}
-.sum .l{display:flex;justify-content:space-between;padding:1.6mm 0;font-size:10pt}
-.sum .l.d{color:#c4302a;font-weight:600}
-.sum .big{margin-top:2mm;background:#c4302a;color:#fff;border-radius:3mm;padding:4mm 5mm;display:flex;justify-content:space-between;align-items:baseline}
-.sum .big span{font-size:9pt;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
-.sum .big b{font-size:19pt;font-stretch:80%;font-weight:800}
-.miss{margin:5mm 14mm 0;font-size:9pt;border:.3mm dashed #c27a3a;border-radius:3mm;padding:3mm 4mm;color:#6b4a22;break-inside:avoid}
-footer{position:absolute;left:0;right:0;bottom:0;height:18mm;background:#141a38;color:#e8e9f0;display:flex;align-items:center;justify-content:space-between;padding:0 14mm;font-size:8.3pt;line-height:1.45}
-footer b{color:#fff}
-footer .wa{background:#25d366;color:#08331a;font-weight:700;padding:2mm 3.5mm;border-radius:99mm;font-size:9pt}
+.imp{font-weight:600}
+.tag{font-size:7.5pt;font-weight:600;margin-left:1mm}
+.miss{margin-top:3mm;font-size:8.6pt;border:.25mm solid #777;padding:1.6mm 3mm;break-inside:avoid}
+.miss b{font-weight:600}
+.tot{display:grid;grid-template-columns:1fr 72mm;gap:8mm;margin-top:3.5mm;break-inside:avoid;align-items:start}
+.notes{font-size:8.2pt;color:#222;line-height:1.4}
+.notes h4{margin:0 0 .8mm;font-size:7.6pt;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#111}
+.notes ol{margin:0;padding-left:4mm}
+.sum{border:.25mm solid #777}
+.sum .l{display:flex;justify-content:space-between;padding:1.3mm 3mm;border-bottom:.15mm solid #aaa}
+.sum .big{display:flex;justify-content:space-between;align-items:baseline;padding:1.9mm 3mm;background:#1b2a5e;color:#fff}
+.sum .big span{font-size:9.5pt;font-weight:600;letter-spacing:.14em}
+.sum .big b{font-size:14pt;font-weight:700}
 """
+
+def money2(x):
+    a = f"{x:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+    return f"$ {a}"
 
 def page_html(order, data):
     rows, sub, dx, dto, total, now, numero, vd = data
-    hasimg = any(r['img'] for r in rows)
     tr = []
     for r in rows:
-        ph = f'<td><div class="ph" style="background-image:url(\'{(ROOT / r["img"]).as_uri()}\')"></div></td>' if hasimg and r['img'] else ('<td></td>' if hasimg else '')
-        extra = ' · '.join(x for x in [r['pres'], r['marca']] if x)
-        dp = f'<span class="tag">−{fmt_q(r["dp"])}%</span>' if r['dp'] else ''
-        tr.append(f"""<tr>{ph}<td><div class="alq num">{esc(r['alq'] or '—')}</div><div class="emp">{esc(r['cod'])}</div></td>
-<td><div class="nm">{esc(r['name'])}</div>{f'<div class="sub">{esc(extra)}</div>' if extra else ''}</td>
-<td class="r q num"><b>{fmt_q(r['q'])}</b> <span class="emp">{esc(r['uni'])}</span></td>
-<td class="r num">{money(r['unit'])}{dp}</td><td class="r num"><b>{money(r['tot'])}</b></td></tr>""")
-    cli = [(k, order.get(k)) for k in ('cliente', 'contacto') if order.get(k)]
-    clihtml = ''.join(f'<div><small>{"Cliente" if k=="cliente" else "Contacto"}</small><span>{esc(v)}</span></div>' for k, v in cli)
-    clihtml += f'<div><small>Artículos</small><span>{len(rows)}</span></div>'
-    if order.get('nota'): clihtml += f'<div style="flex:1"><small>Nota</small><span style="font-weight:500;font-size:10pt">{esc(order["nota"])}</span></div>'
+        dp = f'<span class="tag">-{fmt_q(r["dp"])}%</span>' if r['dp'] else ''
+        tr.append(f"""<tr><td class="cod num">{esc(r['alq'] or '-')}</td><td class="ref num">{esc(r['cod'])}</td>
+<td><div class="nm">{esc(r['name'])}{f' <span class="sub">({esc(r["pres"])})</span>' if r['pres'] else ''}</div></td>
+<td class="nowrap">{esc(r['marca'])}</td>
+<td class="r num">{fmt_q(r['q'])} {esc(r['uni'])}</td>
+<td class="r num">{money2(r['unit'])}{dp}</td><td class="r num imp">{money(r['tot'])}</td></tr>""")
+    cells = [('Cliente', order.get('cliente') or '-')]
+    if order.get('contacto'): cells.append(('Contacto', order['contacto']))
+    cells.append(('Artículos', len(rows)))
+    clihtml = ''.join(f'<div><small>{k}</small><span>{esc(v)}</span></div>' for k, v in cells)
+    obs = [x for x in [order.get('nota')] if x]
     miss = order.get('faltantes') or []
-    misshtml = f'<div class="miss"><b>No incluido en este presupuesto:</b> {esc("; ".join(miss))}. Consultanos y te lo cotizamos aparte.</div>' if miss else ''
+    if miss: obs.append('No incluido en este presupuesto: ' + '; '.join(miss) + '. Se cotiza aparte a pedido.')
+    obshtml = f'<div class="miss"><b>Observaciones.</b> {esc(" ".join(obs))}</div>' if obs else ''
     venc = (now + datetime.timedelta(days=vd)).strftime('%d/%m/%Y')
-    dline = f'<div class="l d"><span>Descuento especial {fmt_q(dx)}%</span><span class="num">− {money(dto)}</span></div>' if dx else ''
+    dline = f'<div class="l"><span>Descuento especial {fmt_q(dx)}%</span><span class="num">- {money(dto)}</span></div>' if dx else ''
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><style>{CSS.replace('ROOT', ROOT.as_uri())}</style></head><body>
-<div class="page"><div class="band"></div>
-<header><div><img src="{(ROOT/'img/logo-casaedel.png').as_uri()}" alt="Electricidad Casa Edel"><p class="motto">Materiales eléctricos · Santa Fe</p></div>
-<div class="doc"><h1>Presupuesto</h1><div class="meta">N° <b>{esc(numero)}</b><br>Fecha <b>{now.strftime('%d/%m/%Y')}</b><br>Válido hasta <b>{venc}</b></div></div></header>
+<div class="page">
+<header><div><img src="{(ROOT/'img/logo-casaedel.png').as_uri()}" alt="Electricidad Casa Edel">
+<div class="emp"><b>Casa central:</b> Marcial Candioti 2906, Santa Fe. Lun a vie 7:30 a 16:30<br><b>Casa Edel Express:</b> Av. Aristóbulo del Valle 5837, Santa Fe. Lun a vie 8 a 17, sáb 9:30 a 12:30<br><b>WhatsApp:</b> +54 9 342 595-6706</div></div>
+<div class="doc"><h1>PRESUPUESTO</h1><dl><dt>N°</dt><dd>{esc(numero)}</dd><dt>Fecha</dt><dd>{now.strftime('%d/%m/%Y')}</dd><dt>Válido hasta</dt><dd>{venc}</dd></dl></div></header>
 <div class="client">{clihtml}</div>
-<table><thead><tr>{'<th style="width:15mm"></th>' if hasimg else ''}<th style="width:22mm">Código</th><th>Artículo</th><th class="r" style="width:22mm">Cant.</th><th class="r" style="width:27mm">Unitario</th><th class="r" style="width:29mm">Subtotal</th></tr></thead>
+<table><thead><tr><th style="width:13mm">Código</th><th style="width:22mm">Ref.</th><th>Artículo</th><th style="width:18mm">Marca</th><th class="r" style="width:15mm">Cant.</th><th class="r" style="width:20mm">P. unitario</th><th class="r" style="width:19mm">Importe</th></tr></thead>
 <tbody>{''.join(tr)}</tbody></table>
-{misshtml}
-<div class="tot"><div class="notes"><h4>Condiciones</h4><ul>
+{obshtml}
+<div class="tot"><div class="notes"><h4>Condiciones</h4><ol>
 <li>Precios finales con IVA incluido, válidos por {vd} día{'s' if vd != 1 else ''}.</li>
 <li>Sujeto a confirmación de stock al momento de la compra.</li>
-<li>Retiro en cualquiera de nuestros locales o entrega a coordinar.</li></ul></div>
+<li>Retiro en cualquiera de nuestros locales o entrega a coordinar.</li></ol></div>
 <div class="sum"><div class="l"><span>Subtotal</span><span class="num">{money(sub)}</span></div>{dline}
-<div class="big"><span>Total</span><b class="num">{money(total)}</b></div></div></div>
-<footer><div><b>Casa central</b> · Marcial Candioti 2906, Santa Fe · Lun a vie 7:30 a 16:30<br><b>Casa Edel Express</b> · Av. Aristóbulo del Valle 5837 · Lun a vie 8 a 17 · Sáb 9:30 a 12:30</div>
-<div class="wa">WhatsApp +54 9 342 595-6706</div></footer>
+<div class="big"><span>TOTAL</span><b class="num">{money(total)}</b></div></div></div>
 </div></body></html>"""
 
 def main(src, out):
